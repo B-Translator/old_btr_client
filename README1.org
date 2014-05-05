@@ -21,7 +21,7 @@
   A new Drupal project can be created by the script
   =utils/start-new-project.sh=, like this:
   #+BEGIN_EXAMPLE
-  wget https://raw.github.com/dashohoxha/dbox/master/utils/start-new-project.sh
+  wget https://raw.github.com/dashohoxha/btr-client/master/utils/start-new-project.sh
   chmod +x start-new-project.sh
   ./start-new-project.sh --help
   ./start-new-project.sh --project=myproject --prefix=mpr

@@ -57,7 +57,7 @@ as a template project.
     --project=P   the name of the new project
     --prefix=P    the prefix of the new project
     --source=S    source of the template project
-                  (default https://github.com/dashohoxha/dbox)
+                  (default https://github.com/dashohoxha/btr-client)
     --branch=B    branch to be cloned (default master)
 "
     exit 0
@@ -80,7 +80,7 @@ function get_options {
     done
 
     ### set default values for the missing options
-    source=${source:-https://github.com/dashohoxha/dbox}
+    source=${source:-https://github.com/dashohoxha/btr-client}
     #source=/var/chroot/Btranslator   # for testing
     branch=${branch:-master}
 
@@ -125,7 +125,7 @@ function rename_branch_to_master {
     for file in $files
     do
          sed -i $project/$file \
-             -e "s#/dashohoxha/dbox/$branch/#/dashohoxha/dbox/master/#g"
+             -e "s#/dashohoxha/btr-client/$branch/#/dashohoxha/dbox/master/#g"
     done
 
     files="README.org dev/README.org
