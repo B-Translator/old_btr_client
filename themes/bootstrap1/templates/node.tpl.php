@@ -8,12 +8,14 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
+<!--
     <?php if ($display_submitted): ?>
       <span class="submitted">
         <?php print $user_picture; ?>
         <?php print $submitted; ?>
       </span>
     <?php endif; ?>
+-->
   </header>
 
   <?php
@@ -24,6 +26,7 @@
     print render($content);
   ?>
 
+<!--
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
     <footer>
       <?php print render($content['field_tags']); ?>
@@ -32,5 +35,6 @@
   <?php endif; ?>
 
   <?php print render($content['comments']); ?>
+-->
 
 </article> <!-- /.node -->
