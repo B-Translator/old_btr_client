@@ -9,6 +9,10 @@
  */
 function btr_layout_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "boxes" && $api == "box") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -16,6 +20,13 @@ function btr_layout_ctools_plugin_api() {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function btr_layout_views_api() {
+  return array("version" => "3.0");
 }
 
 /**
@@ -45,6 +56,14 @@ function btr_layout_node_info() {
       'description' => t('Use <em>basic pages</em> for your static content, such as an \'About us\' page.'),
       'has_title' => '1',
       'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'projects' => array(
+      'name' => t('Translation Projects'),
+      'base' => 'node_content',
+      'description' => t('Translating a software project.'),
+      'has_title' => '1',
+      'title_label' => t('Project Title'),
       'help' => '',
     ),
   );

@@ -2,6 +2,9 @@ disqus_domain
 disqus_userapikey
 disqus_publickey
 disqus_secretkey
+sharethis_publisherID
+sharethis_twitter_handle
+sharethis_twitter_suffix
 simplenews_from_address
 simplenews_test_address
 mass_contact_default_sender_email
@@ -9,6 +12,8 @@ mass_contact_default_sender_name
 recaptcha_private_key
 recaptcha_public_key
 googleanalytics_account
+fb_connect_primary_label
+fb_stream_token
 cron_key
 date_default_timezone
 date_first_day
@@ -33,14 +38,6 @@ date_format_long
 reroute_email_address
 reroute_email_enable
 reroute_email_enable_message
-hybridauth_provider_Facebook_keys_id
-hybridauth_provider_Facebook_keys_secret
-hybridauth_provider_GitHub_keys_id
-hybridauth_provider_GitHub_keys_key
-hybridauth_provider_GitHub_keys_secret
-hybridauth_provider_Google_keys_id
-hybridauth_provider_Google_keys_secret
-hybridauth_provider_LinkedIn_keys_key
-hybridauth_provider_LinkedIn_keys_secret
-hybridauth_provider_Twitter_keys_key
-hybridauth_provider_Twitter_keys_secret
+btrClient_server_url
+btrClient_client_id
+btrClient_client_secret
