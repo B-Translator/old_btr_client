@@ -1,0 +1,72 @@
+#+TITLE:     Tasks
+#+AUTHOR:    Dashamir Hoxha
+#+EMAIL:     dashohoxha@gmail.com
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:overview toc:t ltoc:t mouse:#aadddd buttons:0 path:org-info.js
+
+* Tasks
+
+** UI
+
+*** List of *string-->translations*
+    + For each l10n string, display also the corresponding translations
+      (best suggestions) in auxiliary (helper) languages. For example,
+      besides the original l10n string (in English), the French and German
+      translations may be displayed as well, if these are selected on
+      the display options of the filter.
+
+    + For each suggestion, add a Like (or +1) button. When it is clicked,
+      the vote is submitted through an AJAX call. The voted (or liked,
+      or +1'd) suggestion should be visibly distinguished from the rest.
+    + For each suggestion add a Flag (or -1) button. A suggestion is flagged
+      when it is totally irrelevant to the string, or is spam, or is abusive, etc.
+      In general, when a suggestion is flagged, it is something that should be
+      removed. When flagging a suggestion, a reason/explanation may be given as
+      well. When a suggestion is flagged, it has to be reviwed and removed
+      by an admin/moderator. The admin may also take some action on the user that
+      submitted the offending suggestion (or on the user that submitted the flag,
+      if the suggestion is ok).
+
+    + Voting mode can be 'single' or 'multiple', and it can be selected by admin
+      (during installation). On mode 'single' at most one vote per string is allowed.
+      On mode 'multiple' at most one vote for translation is allowed (user can
+      approve more than one translation for the same string).
+    + For the 'multiple' mode, an Unlike button should be available as well (in order
+      to change the voting at any time).
+
+** Integration with Facebook
+*** For each translation review add a button for posting it on FB as a poll.
+*** When a FB user votes or leaves a comment, update his status.
+
+
+** Misc
+
+*** Add in l10n.org.al a page for each project which can be liked, +1-d, etc.
+    Update: A content type for projects has been created, but more work
+    needs to be done in order to make it usable.
+*** Use modules: views, pannels, views_slideshow, etc.
+    Try also: Organic Groups (for project pages), Display Suite,
+    Entity View Attach, Entity Cache, Features, etc.
+
+*** TODO Try to replace Disqus with something better (maybe LiveFyre).
+
+*** Upgrade the server on rackspace
+    From 512MB RAM and 20GB HDD, to 1024MB RAM and 40GB HDD.
+    Need to find some funds or sponsors, to support this.
+
+*** Upgrade to Drupal8
+*** Improve the look of number of votes.
+*** Context information about the strings
+    - Internal link to translations into other auxiliary languages.
+    - External link to google.com, which tries to get more details
+      about the context in which a string is used.
+    - Other external links (related to the projects to which the
+      string appears)
+      + transvision.mozfr.org
+    - Links to any related tearms from vocabulary.
+
+
