@@ -1,5 +1,5 @@
-name = Btranslator
-description = Drupal installation profile for Btranslator.
+name = B-Translator Client
+description = Drupal installation profile for B-Translator Client.
 version = 1.x
 core = 7.x
 exclusive = TRUE
@@ -78,7 +78,6 @@ dependencies[] = subpathauto
 ; Drupal Localization
 ;--------------------
 ;dependencies[] = l10n_update
-;dependencies[] = l10n_client
 
 ;--------------------
 ; Contrib Mail
@@ -88,12 +87,6 @@ dependencies[] = phpmailer
 dependencies[] = mimemail
 dependencies[] = mimemail_action
 dependencies[] = mimemail_compress
-
-;--------------------
-; Btranslator
-;--------------------
-;dependencies[] = btr_hub
-;dependencies[] = btr_village
 
 ;--------------------
 ; Other
@@ -112,3 +105,19 @@ dependencies[] = devel
 ;--------------------
 dependencies[] = boost
 dependencies[] = memcache
+
+;--------------------
+; B-Translator Client
+;--------------------
+dependencies[] = btrClient
+
+dependencies[] = btr_btrClient
+dependencies[] = btr_btr
+dependencies[] = btr_misc
+;dependencies[] = btr_layout
+dependencies[] = btr_hybridauth
+;dependencies[] = btr_disqus
+dependencies[] = btr_content
+;dependencies[] = btr_sharethis
+dependencies[] = btr_captcha
+dependencies[] = btr_permissions

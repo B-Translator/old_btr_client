@@ -11,15 +11,21 @@
  */
 function btranslator_install() {
 
+  // Get a connection to the btr_db. All the queries
+  // of the l10n_feedback module will use this connection.
+  if (isset($GLOBALS['databases']['btr_db']['default'])) {
+    $GLOBALS['btr_db'] = Database::getConnection('default', 'btr_db');
+  }
+  else {
+    $GLOBALS['btr_db'] = Database::getConnection('default', 'default');
+  }
+
   include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
   standard_install();
 
-  // enable themes and set the default theme
-  theme_enable(array('bootstrap1'));
-  variable_set('theme_default', 'bootstrap1');
-  variable_set('jquery_update_compression_type', 'min');
-  variable_set('jquery_update_jquery_cdn', 'google');
-  variable_set('jquery_update_jquery_version', '1.8');
+  // Apply all the features.
+  features_rebuild();
+  features_revert();
 
   // user settings
   variable_set('user_register', USER_REGISTER_VISITORS);
@@ -27,6 +33,7 @@ function btranslator_install() {
 
   _btranslator_install_mailsystem();
   _btranslator_install_actions();
+  _btranslator_install_user_restrictions();
 }
 
 function _btranslator_install_mailsystem()
@@ -70,6 +77,16 @@ function _btranslator_install_actions()
     ->fields(array('hook', 'aid', 'weight'))
     ->values(array('hook' => 'user_insert', 'aid' => $action_id_1, 'weight' => 0))
     ->values(array('hook' => 'user_update', 'aid' => $action_id_2, 'weight' => 0))
+    ->execute();
+}
+
+function _btranslator_install_user_restrictions() {
+  db_insert('user_restrictions')
+    ->fields(array(
+      'mask' => '%@netcourrier.com',
+      'type' => 'mail',
+      'status' => 0,  // deny
+      ))
     ->execute();
 }
 
