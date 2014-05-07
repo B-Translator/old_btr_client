@@ -4,6 +4,7 @@ package = B-Translator
 core = 7.x
 
 dependencies[] = entity
+dependencies[] = mailsystem
 dependencies[] = field_sql_storage
 dependencies[] = list
 dependencies[] = options

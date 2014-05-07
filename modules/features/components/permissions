@@ -29,8 +29,6 @@ user_permission:administer homebox
 user_permission:administer image styles
 user_permission:administer languages
 user_permission:translate interface
-user_permission:use on-page translation
-user_permission:submit translations to localization server
 user_permission:administer mailsystem
 user_permission:administer menu
 user_permission:edit mimemail user settings
