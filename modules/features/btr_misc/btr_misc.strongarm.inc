@@ -400,23 +400,6 @@ function btr_misc_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'color_bartik1_palette';
-  $strongarm->value = array(
-    'top' => '#2268a1',
-    'bottom' => '#48a9e4',
-    'bg' => '#ffffff',
-    'sidebar' => '#d8eaf9',
-    'sidebarborders' => '#b7d7f1',
-    'footer' => '#2268a1',
-    'titleslogan' => '#fffeff',
-    'text' => '#3b3b3b',
-    'link' => '#0071B3',
-  );
-  $export['color_bartik1_palette'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_blog';
   $strongarm->value = 0;
   $export['comment_anonymous_blog'] = $strongarm;
@@ -1065,70 +1048,6 @@ function btr_misc_strongarm() {
     'devel_switch_user' => 0,
   );
   $export['user_dashboard_available_blocks'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'user_dashboard_default_blocks';
-  $strongarm->value = array(
-    0 => array(
-      'module' => 'user',
-      'delta' => 'new',
-      'region' => 'user_dashboard_main',
-      'weight' => 0,
-      'status' => 1,
-      'theme' => 'bartik',
-    ),
-    1 => array(
-      'module' => 'user',
-      'delta' => 'online',
-      'region' => 'user_dashboard_sidebar',
-      'weight' => 0,
-      'status' => 1,
-      'theme' => 'bartik',
-    ),
-    2 => array(
-      'module' => 'disqus',
-      'delta' => NULL,
-      'region' => 'user_dashboard_sidebar',
-      'weight' => 1,
-      'status' => 1,
-      'theme' => 'bartik',
-    ),
-    3 => array(
-      'module' => 'node',
-      'delta' => 'recent',
-      'region' => 'user_dashboard_column1',
-      'weight' => 0,
-      'status' => 1,
-      'theme' => 'bartik',
-    ),
-    4 => array(
-      'module' => 'system',
-      'delta' => 'user-menu',
-      'region' => 'user_dashboard_column2',
-      'weight' => 0,
-      'status' => 1,
-      'theme' => 'bartik',
-    ),
-    5 => array(
-      'module' => 'invite',
-      'delta' => 'invite',
-      'region' => 'user_dashboard_column3',
-      'weight' => 0,
-      'status' => 1,
-      'theme' => 'bartik',
-    ),
-    6 => array(
-      'module' => 'node',
-      'delta' => 'syndicate',
-      'region' => 'user_dashboard_footer',
-      'weight' => 0,
-      'status' => 1,
-      'theme' => 'bartik',
-    ),
-  );
-  $export['user_dashboard_default_blocks'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -69,7 +69,6 @@ features[variable][] = boost_lifetime_min_text/html
 features[variable][] = boost_lifetime_min_text/javascript
 features[variable][] = boost_lifetime_min_text/xml
 features[variable][] = clean_url
-features[variable][] = color_bartik1_palette
 features[variable][] = comment_anonymous_blog
 features[variable][] = comment_blog
 features[variable][] = comment_default_mode_blog

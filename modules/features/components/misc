@@ -53,7 +53,6 @@ variable:boost_lifetime_min_text/html
 variable:boost_lifetime_min_text/javascript
 variable:boost_lifetime_min_text/xml
 variable:clean_url
-variable:color_bartik1_palette
 variable:comment_anonymous_blog
 variable:comment_blog
 variable:comment_default_mode_blog

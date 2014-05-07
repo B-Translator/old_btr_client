@@ -67,7 +67,7 @@ function show_devel_menu_on_footer() {
       'cache'  => DRUPAL_NO_CACHE,
     ),
   );
-  $default_theme = variable_get('theme_default', 'bartik');
+  $default_theme = variable_get('theme_default', 'bootstrap');
 
   foreach ($blocks as $block) {
     extract($block);
