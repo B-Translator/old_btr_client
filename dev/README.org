@@ -2,7 +2,15 @@
 #+OPTIONS:  num:nil toc:t ^:nil f:nil TeX:nil LaTeX:nil
 #+STYLE: <link href="css/org.css" rel="stylesheet" type="text/css"/>
 
-Development Setup of Btranslator
+Development Setup of B-Translator
+
+[[http://info.btranslator.org][B-Translator]] helps to get feedback about /l10n/ (translations of the
+programs). It tries to collect very small translation contributions
+from a wide crowd of people and to dilute them into something useful.
+It is developed as a Drupal7 profile and the [[https://github.com/dashohoxha/B-Translator][code]] is hosted on GitHub.
+Here I describe the development setup and process that I use for this
+project. Most of the the tips are project specific, however some of
+them can be used on any Drupal project.
 
 * Installation
 
@@ -11,8 +19,8 @@ Development Setup of Btranslator
   #+BEGIN_EXAMPLE
   mkdir /var/chroot
   cd /var/chroot/
-  git clone https://github.com/B-Translator/client.git Btranslator
-  nohup nice Btranslator/install/install.sh btr &
+  git clone https://github.com/dashohoxha/B-Translator.git
+  nohup nice B-Translator/install/install.sh btr &
   tail -f nohup.out
   chroot btr/ /tmp/install/config.sh
   chroot btr/ rm -rf /tmp/install
@@ -47,7 +55,7 @@ Development Setup of Btranslator
   I also add something like this on */etc/hosts*, so that I can access
   it on the browser with a domain name:
   #+BEGIN_EXAMPLE
-  127.0.0.1  btranslator.org dev.btranslator.org
+  127.0.0.1  l10n.org.xx dev.l10n.org.xx
   #+END_EXAMPLE
   This modification has to be done manually as well.
 
@@ -60,8 +68,9 @@ Development Setup of Btranslator
   /var/www/btr/profiles/btranslator/dev/reinstall.sh
   #+END_EXAMPLE
   It will rebuild the Drupal directory with *drush make* and install
-  the btranslator profile with *drush site-install*, and then do all the
-  rest of configurations just like they are done during installation.
+  the btranslator profile with *drush site-install*, and then do all
+  the rest of configurations just like they are done during
+  installation.
 
   Normally there is no need to reinstall the application, unless we
   want to test the installation profile and the installation scripts.
@@ -93,7 +102,7 @@ Development Setup of Btranslator
   It creates a new application with root */var/www/btr_dev/* and with
   DB named *btr_dev*. It also creates the drush alias *@dev*, and
   modifies the configuration of the webserver so that the cloned
-  application can be accessed at *dev.btranslator.org*.
+  application can be accessed at *dev.l10n.org.xx*.
 
   *Caution:* The root directory and the DB of the clone will be
   erased, if they exist.
@@ -108,16 +117,15 @@ Development Setup of Btranslator
 
   By the way, we can also modify a little bit the configuration of a
   development copy of the application (in order to help us not confuse
-  a development copy with a live or testing one), with the script
-  =dev/config.php=:
+  a development copy with a live or testing one), with the script =dev/config.php=:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/btr/
   cd /var/www/
-  drush @btr php-script btr/profiles/btranslator/dev/config.php dev1
-  drush @dev php-script btr/profiles/btranslator/dev/config.php dev2
+  drush @btr php-script btr/profiles/btranslator/config.php dev1
+  drush @dev php-script btr/profiles/btranslator/config.php dev2
   #+END_EXAMPLE
 
-  It will set site_name to 'Btranslator (dev1)', will make site email
+  It will set site_name to 'B-Translator (dev1)', will make site email
   something like 'user+dev1@gmail.com', will enable email re-routing,
   display the /devel/ menu on the footer region, etc. It is not
   required, but sometimes may be useful.
@@ -138,18 +146,19 @@ Development Setup of Btranslator
   #+BEGIN_EXAMPLE
   chroot /var/chroot/btr/
   cd /var/www/
-  ln -s btr_dev/profiles/btranslator/ Btranslator
+  ln -s btr_dev/profiles/btranslator/ B-Translator
 
-  Btranslator/dev/snapshot.sh make @btr
-  Btranslator/dev/snapshot.sh make @dev
+  B-Translator/dev/snapshot.sh make
+  B-Translator/dev/snapshot.sh make @dev
   #+END_EXAMPLE
-  These will create the files ~snapshot-btr-20130602.tgz~ and
-  ~snapshot-btr_dev-20130602.tgz~. They can be restored like this:
+  These will create the files ~snapshot-btr-20130602.tgz~
+  and ~snapshot-btr_dev-20130602.tgz~. They can be restored
+  like this:
   #+BEGIN_EXAMPLE
-  Btranslator/dev/snapshot.sh restore @btr --file=snapshot-btr-20130602.tgz
-  Btranslator/dev/snapshot.sh restore @btr --file=snapshot-btr_dev-20130602.tgz
-  Btranslator/dev/snapshot.sh restore @dev --file=snapshot-btr-20130602.tgz
-  Btranslator/dev/snapshot.sh restore @dev --file=snapshot-btr_dev-20130602.tgz
+  B-Translator/dev/snapshot.sh restore --file=snapshot-btr-20130602.tgz
+  B-Translator/dev/snapshot.sh restore --file=snapshot-btr_dev-20130602.tgz
+  B-Translator/dev/snapshot.sh restore @dev --file=snapshot-btr-20130602.tgz
+  B-Translator/dev/snapshot.sh restore @dev --file=snapshot-btr_dev-20130602.tgz
   #+END_EXAMPLE
   As you may notice, a snapshot of @dev can also be restored on the
   main application, and the other way around.
@@ -158,11 +167,11 @@ Development Setup of Btranslator
   is needed, and it is more efficient. It can be done with *drush
   sql-dump* and *drush sql-query* like this:
   #+BEGIN_EXAMPLE
-  drush sql-dump @btr > btr.sql
+  drush sql-dump > btr.sql
   drush sql-dump @dev > btr_dev.sql
 
-  drush @btr sql-query --file=$(pwd)/btr.sql
-  drush @btr sql-query --file=$(pwd)/btr_dev.sql
+  drush sql-query --file=$(pwd)/btr.sql
+  drush sql-query --file=$(pwd)/btr_dev.sql
 
   drush @dev sql-query --file=$(pwd)/btr.sql
   drush @dev sql-query --file=$(pwd)/btr_dev.sql
@@ -187,9 +196,10 @@ Development Setup of Btranslator
 
 * Pushing commits to github
 
-  The copy of the application on =/var/www/btr_dev/profiles/btranslator/=
-  (as well as the one on =/var/www/btr/profiles/btranslator/=) are actually
-  clones of the git repository at https://github.com/B-Translator/client
+  The copy of the application on
+  =/var/www/btr_dev/profiles/btranslator/= (as well as the one
+  on =/var/www/btr/profiles/btranslator/=) are actually clones
+  of the git repository at https://github.com/dashohoxha/B-Translator
   so we can *pull* from it and *push* to it. Pulling (to get
   up-to-date) can be done by everybody, however pushing requires a
   username and password (the ones that are used to access the account
@@ -215,12 +225,12 @@ Development Setup of Btranslator
   git branch -D dev       ### erase the branch
   #+END_EXAMPLE
 
-  Usually there are no commits comming from github, since I am the
-  only developper (unless I have worked and commited from some other
-  location). So, when I merge without *--squash* this usually results
-  in *fast-forward* merge, which means that all the commits that I
-  have done on the branch *dev* are automatically transferred to the
-  branch *master*.
+  Usually there are no commits comming from github, since I am
+  the only developper (unless I have worked and commited from some
+  other location). So, when I merge without *--squash* this usually
+  results in *fast-forward* merge, which means that all the
+  commits that I have done on the branch *dev* are automatically
+  transferred to the branch *master*.
 
   However sometimes there may be /dirty commits/ on the *dev* branch,
   which means that there may be incomplete commits, or commits that
@@ -240,7 +250,7 @@ Development Setup of Btranslator
   case when I have to test install/uninstall, enable/disable modules,
   features, etc. In this case I test them on the main application
   instance (~/var/www/btr~). Since both applications are clones of the
-  [[https://github.com/B-Translator/client][GitHub repository]] it is easy to push commits from /btr_dev/ to
+  [[https://github.com/dashohoxha/B-Translator][GitHub repository]], it is easy to push commits from /btr_dev/ to
   /github/ and to pull them from /github/ to /btr/.
 
   However, sometimes it is better to test modifications and make sure
@@ -303,14 +313,17 @@ Development Setup of Btranslator
 
   $aliases['live'] = array (
     'root' => '/var/www/btr',
-    'uri' => 'http://btranslator.org',
+    'uri' => 'http://l10n.org.al',
 
-    'remote-host' => 'btranslator.org',
+    'remote-host' => 'l10n.org.al',
     'remote-user' => 'root',
     'ssh-options' => '-p 2201 -i /root/.ssh/id_rsa',
 
     'path-aliases' => array (
       '%profile' => 'profiles/btranslator',
+      '%data' => '/var/www/data',
+      '%pofiles' => '/var/www/PO_files',
+      '%exports' => '/var/www/exports',
       '%downloads' => '/var/www/downloads',
     ),
 
@@ -327,8 +340,8 @@ Development Setup of Btranslator
   $aliases['test'] = array (
     'parent' => '@live',
     'root' => '/var/www/btr',
-    'uri' => 'http://test.btranslator.org',
-    'remote-host' => 'test.btranslator.org',
+    'uri' => 'http://www2.l10n.org.al',
+    'remote-host' => 'www2.l10n.org.al',
 
     'command-specific' => array (
       'sql-sync' => array (
@@ -345,10 +358,10 @@ Development Setup of Btranslator
   is almost identical to the live/production one, however it is not
   for public use. The idea is to test there first any updates/upgrades
   of the application, in order to make sure that they don't break any
-  things, before applying them to the real live application. In my
-  case it is placed on a different server, however it can also be
-  placed on the same server as the live application (just make a clone
-  of the main application with =dev/clone.sh test=).
+  things, before applying them to the real live application. In my case
+  it is placed on a different server, however it can also be placed on
+  the same server as the live application (just make a clone of the main
+  application with =dev/clone.sh test=).
 
   When everything is set up correctly, the synchronization can be done
   as simply as this:

@@ -1,5 +1,17 @@
 #!/bin/bash -x
 
+### prevent robots from crawling translations
+sed -i $drupal_dir/robots.txt \
+    -e '/# B-Translator/,$ d'
+cat <<EOF >> $drupal_dir/robots.txt
+# B-Translator
+Disallow: /translations/
+Disallow: /?q=translations/
+Disallow: /fb_cb/
+Disallow: /?q=fb_cb/
+Disallow: /downloads/
+EOF
+
 # Protect Drupal settings from prying eyes
 drupal_settings=$drupal_dir/sites/default/settings.php
 chown root:www-data $drupal_settings
@@ -59,17 +71,38 @@ EOF
 
 ### install features modules
 ### $drush is an alias for 'drush --root=/var/www/btr'
-$drush --yes pm-enable btr_layout
-$drush --yes features-revert btr_layout
+#$drush --yes pm-enable btr_discus
+#$drush --yes pm-enable btr_service_links
+#$drush --yes pm-enable btr_sharethis
+#$drush --yes pm-enable btr_invite
+#$drush --yes pm-enable btr_simplenews
+#$drush --yes pm-enable btr_mass_contact
+#$drush --yes pm-enable btr_googleanalytics
+#$drush --yes pm-enable btr_drupalchat
 
-$drush --yes pm-enable btr_hybridauth
-$drush --yes features-revert btr_hybridauth
+### install FB integration
+#$drush --yes pm-enable btr_fb
+
+# enable FB config
+cat >> $drupal_settings << EOF
+/* fb config
+\$conf['fb_api_file'] = 'profiles/btranslator/libraries/facebook-php-sdk/src/facebook.php';
+include "profiles/btranslator/modules/contrib/fb/fb_url_rewrite.inc";
+include "profiles/btranslator/modules/contrib/fb/fb_settings.inc";
+if (!headers_sent()) {
+  header('P3P: CP="We do not have a P3P policy."');
+}
+fb config */
+
+EOF
+#sed -i $drupal_settings \
+#    -e '#^/*fb config# c // /* fb config' \
+#    -e '#^fb config */# c // fb config */'
 
 ### update to the latest version of core and modules
-$drush --yes pm-update
+#$drush --yes pm-update
 
 ### install also multi-language support
-$drush --yes pm-enable l10n_client l10n_update
+$drush --yes pm-enable l10n_update
 mkdir -p $drupal_dir/sites/all/translations
 chown -R www-data: $drupal_dir/sites/all/translations
-$drush --yes l10n-update

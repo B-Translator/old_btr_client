@@ -13,5 +13,5 @@ includes[drupal] = https://raw.github.com/B-Translator/client/master/drupal-org-
 projects[btranslator][type] = profile
 projects[btranslator][download][type] = git
 projects[btranslator][download][url] = https://github.com/B-Translator/client.git
-;projects[btranslator][download][url] = /var/www/btr-client
+;projects[btranslator][download][url] = /var/www/B-Translator
 ;projects[btranslator][download][branch] = dev

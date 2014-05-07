@@ -4,17 +4,17 @@
 
 ### create a symlink /var/www/btr to the git repo
 cd /var/www/
-test -h Btranslator || ln -s btr_dev/profiles/btranslator/ Btranslator
+test -h B-Translator || ln -s btr_dev/profiles/btranslator/ B-Translator
 
 ### on the repo create a 'dev' branch
-cd Btranslator/
+cd B-Translator/
 git branch dev master
 
 ### clone the dev branch
 cd /var/www/btr/profiles/
 rm -rf btranslator-bak
 mv btranslator btranslator-bak
-git clone -b dev /var/www/Btranslator btranslator
+git clone -b dev /var/www/B-Translator btranslator
 
 ### copy contrib libraries and modules
 cp -a btranslator-bak/libraries/ btranslator/

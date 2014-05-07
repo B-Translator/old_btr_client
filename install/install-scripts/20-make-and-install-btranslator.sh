@@ -7,8 +7,7 @@ drush make --prepare-install --force-complete \
            --contrib-destination=profiles/btranslator \
            $makefile $drupal_dir
 cp -a $drupal_dir/profiles/btranslator/{libraries/bootstrap,themes/contrib/bootstrap/}
-cp -a $drupal_dir/profiles/btranslator/{libraries/hybridauth-2.1.2/hybridauth,libraries/}
-cp $drupal_dir/profiles/btranslator/libraries/hybridauth-additional-providers-1.8/hybridauth-github/Providers/GitHub.php $drupal_dir/profiles/btranslator/libraries/hybridauth/Hybrid/Providers/
+cp $drupal_dir/profiles/btranslator/libraries/hybridauth/{additional-providers/hybridauth-drupaloauth2/Providers/DrupalOAuth2.php,hybridauth/Hybrid/Providers/}
 
 ### create the downloads dir
 mkdir -p /var/www/downloads/
@@ -25,7 +24,7 @@ fi
 db_name=btr
 db_user=btr
 db_pass=btr
-site_name="Btranslator"
+site_name="B-Translator"
 site_mail="admin@example.org"
 account_name=admin
 account_pass=admin

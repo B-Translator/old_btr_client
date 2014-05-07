@@ -2,81 +2,100 @@
 ### Create a local clone of the main drupal
 ### application (/var/www/btr).
 
-if [ $# -ne 1 ]
+if [ $# -ne 2 ]
 then
-    echo " * Usage: $0 variant
+    echo " * Usage: $0 src dst
 
-      Creates a local clone of the main drupal application.
-      <variant> can be something like 'dev', 'test', '01', etc.
-      It will create a new application with root
-      /var/www/btr_<variant> and with DB named
-      btr_<variant>
+      Makes a clone from /var/www/btr_<src> to /var/www/btr_<dst>
+      The database btr_<src> will also be cloned to btr_<dst>
+      If src='btr' then the main application will be cloned
+      (/var/www/btr and DB btr).
+      <dst> can be something like 'dev', 'test', '01', etc.
 
-      Caution: The root directory and the DB will be erased,
-      if they exist.
+      Caution: The root directory and the DB of the destination
+      will be erased, if they exist.
 "
     exit 1
 fi
-var=$1
-root_dir=/var/www/btr_$var
-db_name=btr_$var
+src=$1
+dst=$2
+if [ "$src" = 'btr' ]
+then
+    src_name=btr
+    src_config=default
+else
+    src_name=btr_$src
+    src_config=$src
+fi
+dst_name=btr_$dst
+src_dir=/var/www/$src_name
+dst_dir=/var/www/$dst_name
 
 ### copy the root directory
-rm -rf $root_dir
-cp -a /var/www/btr $root_dir
+rm -rf $dst_dir
+cp -a $src_dir $dst_dir
 
 ### modify settings.php
 domain=$(cat /etc/hostname)
-sed -i $root_dir/sites/default/settings.php \
-    -e "/^\\\$databases = array/,+10  s/'database' => .*/'database' => '$db_name',/" \
-    -e "/^\\\$base_url/c \$base_url = \"https://$var.$domain\";" \
-    -e "/^\\\$conf\['memcache_key_prefix'\]/c \$conf['memcache_key_prefix'] = 'btr_$var';"
+hostname=$dst.$domain
+sed -i $dst_dir/sites/default/settings.php \
+    -e "/^\\\$databases = array/,+10  s/'database' => .*/'database' => '$dst_name',/" \
+    -e "/^\\\$base_url/c \$base_url = \"https://$hostname\";" \
+    -e "/^\\\$conf\['memcache_key_prefix'\]/c \$conf['memcache_key_prefix'] = '$dst_name';"
+
+### add to /etc/hosts
+sed -i /etc/hosts -e "/^127.0.0.1  $hostname/d"
+echo "127.0.0.1  $hostname" >> /etc/hosts
 
 ### create a drush alias
 sed -i /etc/drush/local.aliases.drushrc.php \
-    -e "/^\\\$aliases\['$var'\] = /,+5 d"
+    -e "/^\\\$aliases\['$dst'\] = /,+5 d"
 cat <<EOF >> /etc/drush/local.aliases.drushrc.php
-\$aliases['$var'] = array (
+\$aliases['$dst'] = array (
   'parent' => '@btr',
-  'root' => '/var/www/btr_$var',
-  'uri' => 'http://$var.example.org',
+  'root' => '$dst_dir',
+  'uri' => 'http://$hostname',
 );
 
 EOF
 
 ### create a new database
 mysql --defaults-file=/etc/mysql/debian.cnf -e "
-    DROP DATABASE IF EXISTS $db_name;
-    CREATE DATABASE $db_name;
-    GRANT ALL ON $db_name.* TO btr@localhost;
+    DROP DATABASE IF EXISTS $dst_name;
+    CREATE DATABASE $dst_name;
+    GRANT ALL ON $dst_name.* TO btr@localhost;
 "
 
 ### copy the database
-drush sql-sync @btr @$var
+drush sql-sync @$src @$dst
 
 ### clear the cache
-drush @$var cc all
+drush @$dst cc all
 
 ### copy and modify the configuration of nginx
-rm -f /etc/nginx/sites-{available,enabled}/$var
-cp /etc/nginx/sites-available/{default,$var}
-sed -i /etc/nginx/sites-available/$var \
+rm -f /etc/nginx/sites-{available,enabled}/$dst
+cp /etc/nginx/sites-available/{$src_config,$dst}
+sed -i /etc/nginx/sites-available/$dst \
     -e "s/443 default ssl/443 ssl/" \
-    -e "s/server_name \(.*\);/server_name $var.\\1;/" \
-    -e "s/btr/btr_$var/g"
-ln -s /etc/nginx/sites-{available,enabled}/$var
+    -e "s/server_name .*;/server_name $hostname;/" \
+    -e "s/$src_name/$dst_name/g"
+ln -s /etc/nginx/sites-{available,enabled}/$dst
 
 ### copy and modify the configuration of apache2
-rm -f /etc/apache2/sites-{available,enabled}/$var{,-ssl}
-cp /etc/apache2/sites-available/{default,$var}
-cp /etc/apache2/sites-available/{default-ssl,$var-ssl}
-sed -i /etc/apache2/sites-available/$var \
-    -e "s/ServerName \(.*\)/ServerName $var.\\1/" \
-    -e "s/btr/btr_$var/g"
-sed -i /etc/apache2/sites-available/$var-ssl \
-    -e "s/ServerName \(.*\)/ServerName $var.\\1/" \
-    -e "s/btr/btr_$var/g"
-a2ensite $var $var-ssl
+rm -f /etc/apache2/sites-{available,enabled}/$dst{,-ssl}
+cp /etc/apache2/sites-available/{$src_config,$dst}
+cp /etc/apache2/sites-available/{$src_config-ssl,$dst-ssl}
+sed -i /etc/apache2/sites-available/$dst \
+    -e "s/ServerName .*/ServerName $hostname/" \
+    -e "s/$src_name/$dst_name/g"
+sed -i /etc/apache2/sites-available/$dst-ssl \
+    -e "s/ServerName .*/ServerName $hostname/" \
+    -e "s/$src_name/$dst_name/g"
+a2ensite $dst $dst-ssl
+
+### fix permissions
+chown www-data: -R $dst_dir/sites/default/files/*
+chown root: $dst_dir/sites/default/files/.htaccess
 
 ### restart services
 #for SRV in php5-fpm memcached mysql nginx
