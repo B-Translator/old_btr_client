@@ -72,6 +72,7 @@ dependencies[] = delete_all
 dependencies[] = entity
 dependencies[] = pathauto
 dependencies[] = subpathauto
+dependencies[] = user_restrictions
 
 
 ;--------------------
