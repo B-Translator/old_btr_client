@@ -112,7 +112,6 @@ dependencies[] = memcache
 dependencies[] = btrClient
 
 dependencies[] = btr_btrClient
-dependencies[] = btr_btr
 dependencies[] = btr_misc
 ;dependencies[] = btr_layout
 dependencies[] = btr_hybridauth
