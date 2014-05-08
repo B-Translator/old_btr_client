@@ -21,7 +21,7 @@ function btranslator_install_tasks($install_state) {
   // Add our custom CSS file for the installation process
   drupal_add_css(drupal_get_path('profile', 'btranslator') . '/btranslator.css');
 
-  require_once(drupal_get_path('module', 'phpmailer') . '/phpmailer.admin.inc');
+  module_load_include('inc', 'phpmailer', 'phpmailer.admin');
   module_load_include('inc', 'btrClient', 'btrClient.admin');
 
   $tasks = array(
