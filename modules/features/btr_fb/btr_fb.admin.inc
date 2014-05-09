@@ -14,7 +14,7 @@ function btr_fb_menu() {
     'description'      => 'Private FB settings.',
     'page callback'    => 'drupal_get_form',
     'page arguments'   => array('btr_fb_config'),
-    'access arguments' => array('btranslator-admin'),
+    'access callback'  => TRUE,
   );
 
   return $items;

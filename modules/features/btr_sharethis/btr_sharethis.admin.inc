@@ -14,7 +14,7 @@ function btr_sharethis_menu() {
     'description'      => 'Custom Sharethis settings.',
     'page callback'    => 'drupal_get_form',
     'page arguments'   => array('btr_sharethis_config'),
-    'access arguments' => array('btranslator-admin'),
+    'access callback'  => TRUE,
   );
 
   return $items;

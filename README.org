@@ -6,30 +6,30 @@ This is a Drupal installation profile for B-Translator.
   The recommended way of installation for a production server is to
   install it inside a chroot, in precise (ubuntu 12.04). Assuming that
   we have already installed a minimal ubuntu server 12.04 (precise),
-  btranslator can be installed in it like this:
+  B-Translator Client can be installed in it like this:
   #+BEGIN_EXAMPLE
   mkdir /var/chroot
   cd /var/chroot/
-  git clone https://github.com/dashohoxha/B-Translator.git
-  nohup nice B-Translator/install/install.sh btr &
+  git clone https://github.com/B-Translator/btrclient.git
+  nohup nice btrclient/install/install.sh bcl &
   tail -f nohup.out
-  chroot btr/ /tmp/install/config.sh
-  chroot btr/ rm -rf /tmp/install
+  chroot bcl/ /tmp/install/config.sh
+  chroot bcl/ rm -rf /tmp/install
   reboot  ## it is advisable to reboot the host after this installation
   #+END_EXAMPLE
 
-  This will install in ~/var/chroot/btr~ a minimal ubuntu system,
+  This will install in ~/var/chroot/bcl~ a minimal ubuntu system,
   B-Translator, and everything that is needed for the normal work of
   the system. It will also make the neccessary common configurations
   of the system and prompt for customizing it (for example the domain,
   email address, etc.)
 
   The installation script will also create the init script
-  ~/etc/init.d/chroot-btr~, which can be used to start and stop the services
+  ~/etc/init.d/chroot-bcl~, which can be used to start and stop the services
   inside the chroot:
   #+BEGIN_EXAMPLE
-  service chroot-btr start
-  service chroot-btr stop
+  service chroot-bcl start
+  service chroot-bcl stop
   #+END_EXAMPLE
 
   *Note:* The default options of the script are: =--arch=i386=,
@@ -38,7 +38,7 @@ This is a Drupal installation profile for B-Translator.
   option explicitly on the command line. For example, on a /rackspace/
   server it can be like this:
   #+BEGIN_EXAMPLE
-  nohup nice B-Translator/install/install.sh btr \
+  nohup nice btrclient/install/install.sh bcl \
         --mirror=http://mirror.rackspace.com/ubuntu/ --arch=amd64 &
   #+END_EXAMPLE
   On /amazon/ it can be like this:
@@ -144,7 +144,6 @@ This is a Drupal installation profile for B-Translator.
     + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/uml/db_schema.org][docs/uml/db_schema.org]]
     + [[https://github.com/dashohoxha/B-Translator/blob/master/modules/custom/btrClient/README.org][modules/custom/btrClient/README.org]]
     + [[https://github.com/dashohoxha/B-Translator/blob/master/modules/features/README.org][modules/features/README.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/TKL/patch-btranslator-precise/README.org][TKL/patch-btranslator-precise/README.org]] (deprecated)
 
   - External docs:
     + http://dashohoxha.blogspot.com/2012/08/btranslator-project.html

@@ -1,15 +1,15 @@
 #!/bin/bash
 ### Create a local clone of the main drupal
-### application (/var/www/btr).
+### application (/var/www/bcl).
 
 if [ $# -ne 2 ]
 then
     echo " * Usage: $0 src dst
 
-      Makes a clone from /var/www/btr_<src> to /var/www/btr_<dst>
-      The database btr_<src> will also be cloned to btr_<dst>
-      If src='btr' then the main application will be cloned
-      (/var/www/btr and DB btr).
+      Makes a clone from /var/www/bcl_<src> to /var/www/bcl_<dst>
+      The database bcl_<src> will also be cloned to bcl_<dst>
+      If src='bcl' then the main application will be cloned
+      (/var/www/bcl and DB bcl).
       <dst> can be something like 'dev', 'test', '01', etc.
 
       Caution: The root directory and the DB of the destination
@@ -19,15 +19,15 @@ then
 fi
 src=$1
 dst=$2
-if [ "$src" = 'btr' ]
+if [ "$src" = 'bcl' ]
 then
-    src_name=btr
+    src_name=bcl
     src_config=default
 else
-    src_name=btr_$src
+    src_name=bcl_$src
     src_config=$src
 fi
-dst_name=btr_$dst
+dst_name=bcl_$dst
 src_dir=/var/www/$src_name
 dst_dir=/var/www/$dst_name
 
@@ -52,7 +52,7 @@ sed -i /etc/drush/local.aliases.drushrc.php \
     -e "/^\\\$aliases\['$dst'\] = /,+5 d"
 cat <<EOF >> /etc/drush/local.aliases.drushrc.php
 \$aliases['$dst'] = array (
-  'parent' => '@btr',
+  'parent' => '@bcl',
   'root' => '$dst_dir',
   'uri' => 'http://$hostname',
 );
@@ -63,7 +63,7 @@ EOF
 mysql --defaults-file=/etc/mysql/debian.cnf -e "
     DROP DATABASE IF EXISTS $dst_name;
     CREATE DATABASE $dst_name;
-    GRANT ALL ON $dst_name.* TO btr@localhost;
+    GRANT ALL ON $dst_name.* TO bcl@localhost;
 "
 
 ### copy the database

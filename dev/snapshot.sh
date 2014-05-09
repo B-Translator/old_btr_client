@@ -77,12 +77,12 @@ case $action in
 
         umount $drupal_dir/cache
         mv $drupal_dir $drupal_dir-del
-        mv $snapshot/btranslator* $drupal_dir
+        mv $snapshot/btrclient* $drupal_dir
         mount -a
 
-        profile_dir=$drupal_dir/profiles/btranslator
+        profile_dir=$drupal_dir/profiles/btrclient
         mv $profile_dir $profile_dir-old
-        cp -a $drupal_dir-del/profiles/btranslator $profile_dir
+        cp -a $drupal_dir-del/profiles/btrclient $profile_dir
 
         for subdir in libraries modules/{contrib,libraries} themes/contrib
         do

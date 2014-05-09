@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHROOT=/var/chroot/btr
+CHROOT=/var/chroot/bcl
 
 HOST_SERVICES="mysql apache2"
 #CHROOT_SERVICES="cron php5-fpm memcached mysql nginx"

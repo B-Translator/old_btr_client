@@ -18,7 +18,7 @@ B-Translator.
     #+BEGIN_EXAMPLE
     [precise]
     description=Ubuntu Precise LTS
-    location=/var/chroot/btranslator
+    location=/var/chroot/bcl
     priority=3
     users=ubuntu
     groups=sbuild
@@ -28,11 +28,11 @@ B-Translator.
   + Bootstrap the chroot with a minimal Ubuntu installation:
     #+BEGIN_EXAMPLE
     debootstrap --variant=minbase --arch=amd64 precise \
-        /var/chroot/btranslator http://mirror.rackspace.com/ubuntu/
-    cp /etc/resolv.conf /var/chroot/btranslator/etc/resolv.conf
-    cp /etc/apt/sources.list /var/chroot/btranslator/etc/apt/
-    mount -o bind /proc /var/chroot/btranslator/proc
-    chroot /var/chroot/btranslator/
+        /var/chroot/bcl http://mirror.rackspace.com/ubuntu/
+    cp /etc/resolv.conf /var/chroot/bcl/etc/resolv.conf
+    cp /etc/apt/sources.list /var/chroot/bcl/etc/apt/
+    mount -o bind /proc /var/chroot/bcl/proc
+    chroot /var/chroot/bcl/
 
     apt-get install ubuntu-minimal
     apt-get update
@@ -47,11 +47,11 @@ B-Translator.
     tasksel install lamp-server
     #+END_EXAMPLE
 
-  + Make a startup script =/etc/init.d/chroot-btranslator= with a
+  + Make a startup script =/etc/init.d/chroot-bcl= with a
     content like this:
     #+BEGIN_EXAMPLE
 
-    CHROOT=/var/chroot/btranslator
+    CHROOT=/var/chroot/bcl
 
     case "$1" in
       start)
@@ -84,9 +84,9 @@ B-Translator.
 
   + Make it executable and start it at boot:
     #+BEGIN_EXAMPLE
-    chmod +x /etc/init.d/chroot-btranslator
-    update-rc.d chroot-btranslator defaults
-    service chroot-btranslator start
+    chmod +x /etc/init.d/chroot-bcl
+    update-rc.d chroot-bcl defaults
+    service chroot-bcl start
     #+END_EXAMPLE
 
   Referencies:
@@ -119,9 +119,9 @@ B-Translator.
 
   For those like me that use Emacs for development, checkout this:
   http://drupal.org/project/emacs
-  
 
-* Install the profile btranslator
+
+* Install the profile btrclient
 
   #+BEGIN_EXAMPLE
   cd /var/www/
@@ -170,14 +170,14 @@ B-Translator.
 
 ** Site configurations for development and testing
 
-   + Create configuration files ~/etc/apache2/sites-available/btranslator-dev~,
-     and ~/etc/apache2/sites-available/btranslator-dev-ssl~ by copying ~default~
+   + Create configuration files ~/etc/apache2/sites-available/bcl-dev~,
+     and ~/etc/apache2/sites-available/bcl-dev-ssl~ by copying ~default~
      and ~default-ssl~ and modifying them like this:
      #+BEGIN_EXAMPLE
      <VirtualHost *:80>
 	 ServerName dev.btranslator.org
 	 ServerAdmin dashohoxha@gmail.com
-	 DocumentRoot /var/www/btranslator-dev
+	 DocumentRoot /var/www/bcl-dev
 
 	 <Directory />
 	     Options FollowSymLinks
@@ -185,7 +185,7 @@ B-Translator.
 	 </Directory>
 
 	 ### directory where application is installed
-	 <Directory /var/www/btranslator-dev/>
+	 <Directory /var/www/bcl-dev/>
 	     Options Indexes FollowSymLinks MultiViews
 	     # AllowOverride None
 	     AllowOverride All   ### this is needed for clean URLs
@@ -199,7 +199,7 @@ B-Translator.
      <VirtualHost *:443>
 	 ServerName dev.btranslator.org
 	 ServerAdmin dashohoxha@gmail.com
-	 DocumentRoot /var/www/btranslator-dev
+	 DocumentRoot /var/www/bcl-dev
 
 	 <Directory />
 	     Options FollowSymLinks
@@ -207,7 +207,7 @@ B-Translator.
 	 </Directory>
 
 	 ### directory where application is installed
-	 <Directory /var/www/btranslator-dev/>
+	 <Directory /var/www/bcl-dev/>
 	     Options Indexes FollowSymLinks MultiViews
 	     # AllowOverride None
 	     AllowOverride All   ### this is needed for clean URLs
@@ -217,13 +217,13 @@ B-Translator.
      #+END_EXAMPLE
 
    + Similarly, create the configuration files
-     ~/etc/apache2/sites-available/btranslator-tst~, and
-     ~/etc/apache2/sites-available/btranslator-tst-ssl~ for a testing
+     ~/etc/apache2/sites-available/bcl-tst~, and
+     ~/etc/apache2/sites-available/bcl-tst-ssl~ for a testing
      installation.
 
    + Enable the sites:
      #+BEGIN_EXAMPLE
-     a2ensite btranslator-dev btranslator-dev-ssl btranslator-tst btranslator-tst-ssl
+     a2ensite bcl-dev bcl-dev-ssl bcl-tst bcl-tst-ssl
      #+END_EXAMPLE
 
    + Add these lines to ~/etc/hosts~
@@ -249,7 +249,7 @@ B-Translator.
 
   + On /Site information/ page
     (=/admin/config/system/site-information=) set email address to your
-    email address (for example ~dashohoxha+btranslator@gmail.com~).  Modify
+    email address (for example ~dashohoxha+bcl@gmail.com~).  Modify
     also the site name and slogan.
 
   + Install module SMTP Authentication support and enable and
@@ -259,7 +259,7 @@ B-Translator.
     - Use encrypted protocol: ~Use SSL~
     - SMTP authentication username: ~dashohoxha@gmail.com~ (set
       the password as well)
-    - Email from address: ~dashohoxha+btranslator@gmail.com~
+    - Email from address: ~dashohoxha+bcl@gmail.com~
     - Email from name: ~btranslator~
     - Allow to send email formatted as html: ~checked~
     - Sends also a test email to ~dashohoxha+test@gmail.com~

@@ -1,29 +1,29 @@
 /* Overview navigation tables for projects and languages */
-.btr-ui-overview td.rowhead, .btr-ui-overview thead th.rowhead {
+.bcl-ui-overview td.rowhead, .bcl-ui-overview thead th.rowhead {
   text-align: right;
 }
-.btr-ui-progress-translated,
-.btr-ui-progress-untranslated {
+.bcl-ui-progress-translated,
+.bcl-ui-progress-untranslated {
   float: right;
 }
 
 /* String search filtering form */
-.btr-ui-filter {
+.bcl-ui-filter {
   padding: 0.6em 0.6em 1.5em 150px;
 }
-.btr-ui-filter .filter-widget {
+.bcl-ui-filter .filter-widget {
   float: right;
   padding: 0 0 0 1em;
 }
-.btr-ui-filter .filter-submit .form-submit {
+.bcl-ui-filter .filter-submit .form-submit {
   right: auto;
   left: 0;
 }
-.btr-ui-filter .filter-submit .reset-link {
+.bcl-ui-filter .filter-submit .reset-link {
   right: auto;
   left: 0;
 }
-.btr-ui-filter .reveal-link {
+.bcl-ui-filter .reveal-link {
   left: auto;
   right: 0;
   margin: 0 1em 0.5em 0;

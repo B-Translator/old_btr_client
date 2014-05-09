@@ -17,7 +17,7 @@ function btrClient_import() {
  */
 function btrClient_import_form($form, &$form_state) {
   $form = array(
-    '#prefix' => '<div class="btr-ui-filter clear-block">',
+    '#prefix' => '<div class="bcl-ui-filter clear-block">',
     '#suffix' => '</div>',
   );
 

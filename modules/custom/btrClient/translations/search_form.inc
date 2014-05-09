@@ -207,7 +207,7 @@ function btrClient_filter_form($form, &$form_state, $filter) {
   }
 
   $form = array(
-    //'#prefix' => '<div class="btr-ui-filter clear-block">',
+    //'#prefix' => '<div class="bcl-ui-filter clear-block">',
     '#prefix' => '<div class="clear-block">',
     '#suffix' => '</div>',
   );

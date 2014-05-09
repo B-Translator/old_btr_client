@@ -13,8 +13,8 @@ lng=${input:-$lng}
 
 ### set drupal variable btrClient_translation_lng
 $(dirname $0)/mysqld.sh start
-drush @btr --yes --exact vset btrClient_translation_lng $lng
+drush @bcl --yes --exact vset btrClient_translation_lng $lng
 
 ### add $lng as a drupal language
-drush @btr language-add $lng
-drush @btr --yes l10n-update
+drush @bcl language-add $lng
+drush @bcl --yes l10n-update

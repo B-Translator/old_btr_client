@@ -9,17 +9,17 @@
     drush help sql-sync
  */
 
-$aliases['btr'] = array (
-  'root' => '/var/www/btr',
+$aliases['bcl'] = array (
+  'root' => '/var/www/bcl',
   'uri' => 'http://example.org',
   'path-aliases' => array (
-    '%profile' => 'profiles/btranslator',
+    '%profile' => 'profiles/btrclient',
     '%downloads' => '/var/www/downloads',
   ),
 );
 
 $aliases['dev'] = array (
-  'parent' => '@main',
-  'root' => '/var/www/btr_dev',
+  'parent' => '@bcl',
+  'root' => '/var/www/bcl_dev',
   'uri' => 'http://dev.example.org',
 );

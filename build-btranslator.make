@@ -8,10 +8,10 @@ includes[drupal] = https://raw.github.com/B-Translator/client/master/drupal-org-
 ;includes[drupal] = drupal-org-core.make
 
 ;------------------------------
-; Get profile btranslator.
+; Get profile btrclient.
 ;------------------------------
-projects[btranslator][type] = profile
-projects[btranslator][download][type] = git
-projects[btranslator][download][url] = https://github.com/B-Translator/client.git
-;projects[btranslator][download][url] = /var/www/B-Translator
-;projects[btranslator][download][branch] = dev
+projects[btrclient][type] = profile
+projects[btrclient][download][type] = git
+projects[btrclient][download][url] = https://github.com/B-Translator/client.git
+;projects[btrclient][download][url] = /var/www/B-Translator
+;projects[btrclient][download][branch] = dev

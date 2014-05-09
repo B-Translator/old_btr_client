@@ -6,7 +6,7 @@ function btrClient_menu() {
 
   $items = array();
 
-  $items['admin/config/btr'] = array(
+  $items['admin/config/bcl'] = array(
     'title' => 'B-Translator',
     'description' => 'B-Translator Configuration',
     'weight' => -100,
@@ -17,12 +17,12 @@ function btrClient_menu() {
     //'position' => 'right',
   );
 
-  $items['admin/config/btr/client'] = array(
+  $items['admin/config/bcl/client'] = array(
     'title'            => 'BTR Client',
     'description'      => 'B-Translator Client configuration settings.',
     'page callback'    => 'drupal_get_form',
     'page arguments'   => array('btrClient_config'),
-    'access arguments' => array('btranslator-admin'),
+    'access callback'  => TRUE,
     'file'             => 'btrClient.admin.inc',
   );
 

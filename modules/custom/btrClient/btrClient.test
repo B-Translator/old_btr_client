@@ -5,7 +5,7 @@
  * Test cases for the module btrClient.
  *
  * They can be run from commad line by calling the script:
- *   profiles/btranslator/utils/run-tests.sh
+ *   profiles/btrclient/utils/run-tests.sh
  * The output of the tests is left of the directory
  * 'tests/' under the root of the drupal directory.
  *
@@ -42,10 +42,10 @@ module_load_include('test', 'simpletest_clone');
 /**
  * btrClient test cases
  */
-//class BtrUiTestCase extends DrupalWebTestCase {
-class BtrUiTestCase extends SimpleTestCloneTestCase {
+//class BclUiTestCase extends DrupalWebTestCase {
+class BclUiTestCase extends SimpleTestCloneTestCase {
 
-  protected $profile = 'btranslator';
+  protected $profile = 'btrclient';
 
   public static function getInfo() {
     return array(
@@ -96,7 +96,7 @@ class BtrUiTestCase extends SimpleTestCloneTestCase {
   }
 
   // Test Case1
-  public function testBtrUiCase1() {
+  public function testBclUiCase1() {
     $this->setupUsers();
     $this->_test_anonymous();
     $this->_test_contributor();
@@ -186,7 +186,7 @@ class BtrUiTestCase extends SimpleTestCloneTestCase {
 
   /*
   // Test Case2
-  public function testBtrUiCase2() {
+  public function testBclUiCase2() {
     // nothing yet
   }
   */
@@ -196,13 +196,13 @@ class BtrUiTestCase extends SimpleTestCloneTestCase {
  * btrClient unit testing
  */
 /*
-class BtrUiUnitTestCase extends DrupalUnitTestCase {
+class BclUiUnitTestCase extends DrupalUnitTestCase {
 
   public static function getInfo() {
     return array(
       'name' => 'btrClient unit tests',
       'description' => 'Unit testing for module btrClient.',
-      'group' => 'btr',
+      'group' => 'bcl',
     );
   }
 
@@ -211,7 +211,7 @@ class BtrUiUnitTestCase extends DrupalUnitTestCase {
     //parent::setUp();
   }
 
-  public function testBtrUiUnitTestCase1() {
+  public function testBclUiUnitTestCase1() {
     // nothing yet
   }
 }

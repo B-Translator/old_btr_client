@@ -49,7 +49,7 @@ EOF
 cat >> $drupal_settings << EOF
 // Adds memcache as a cache backend
 /* comment memcache config
-\$conf['cache_backends'][] = 'profiles/btranslator/modules/contrib/memcache/memcache.inc';
+\$conf['cache_backends'][] = 'profiles/btrclient/modules/contrib/memcache/memcache.inc';
 // Makes it so that memcache is the default caching backend
 \$conf['cache_default_class'] = 'MemCacheDrupal';
 // Keep forms in persistent storage, as per discussed at the beginning
@@ -64,13 +64,13 @@ cat >> $drupal_settings << EOF
 \$conf['memcache_bins'] = array('cache' => 'default');
 
 // If you wanted multiple Drupal installations to share one Memcache instance use the prefix like so:
-\$conf['memcache_key_prefix'] = 'btranslator';
+\$conf['memcache_key_prefix'] = 'btrclient';
 comment memcache config */
 
 EOF
 
 ### install features modules
-### $drush is an alias for 'drush --root=/var/www/btr'
+### $drush is an alias for 'drush --root=/var/www/bcl'
 #$drush --yes pm-enable btr_discus
 #$drush --yes pm-enable btr_service_links
 #$drush --yes pm-enable btr_sharethis
@@ -86,9 +86,9 @@ EOF
 # enable FB config
 cat >> $drupal_settings << EOF
 /* fb config
-\$conf['fb_api_file'] = 'profiles/btranslator/libraries/facebook-php-sdk/src/facebook.php';
-include "profiles/btranslator/modules/contrib/fb/fb_url_rewrite.inc";
-include "profiles/btranslator/modules/contrib/fb/fb_settings.inc";
+\$conf['fb_api_file'] = 'profiles/btrclient/libraries/facebook-php-sdk/src/facebook.php';
+include "profiles/btrclient/modules/contrib/fb/fb_url_rewrite.inc";
+include "profiles/btrclient/modules/contrib/fb/fb_settings.inc";
 if (!headers_sent()) {
   header('P3P: CP="We do not have a P3P policy."');
 }

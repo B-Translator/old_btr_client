@@ -18,7 +18,7 @@ function btrClient_export() {
  */
 function btrClient_export_form() {
   $form = array(
-    '#prefix' => '<div class="btr-ui-filter clear-block">',
+    '#prefix' => '<div class="bcl-ui-filter clear-block">',
     '#suffix' => '</div>',
   );
 

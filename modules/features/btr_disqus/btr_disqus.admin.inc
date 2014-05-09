@@ -9,12 +9,12 @@
  */
 function btr_disqus_menu() {
   $items = array();
-  $items['admin/config/btr/disqus'] = array(
+  $items['admin/config/bcl/disqus'] = array(
     'title'            => 'Disqus',
     'description'      => 'Private Disqus settings.',
     'page callback'    => 'drupal_get_form',
     'page arguments'   => array('btr_disqus_config'),
-    'access arguments' => array('btranslator-admin'),
+    'access callback'  => TRUE,
   );
 
   return $items;

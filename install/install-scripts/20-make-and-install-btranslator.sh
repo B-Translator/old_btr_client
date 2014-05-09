@@ -1,13 +1,13 @@
 #!/bin/bash -x
 
 ### retrieve all the projects/modules and build the application directory
-makefile="https://raw.github.com/B-Translator/client/master/build-btranslator.make"
+makefile="https://raw.github.com/B-Translator/client/master/build-btrclient.make"
 rm -rf $drupal_dir
 drush make --prepare-install --force-complete \
-           --contrib-destination=profiles/btranslator \
+           --contrib-destination=profiles/btrclient \
            $makefile $drupal_dir
-cp -a $drupal_dir/profiles/btranslator/{libraries/bootstrap,themes/contrib/bootstrap/}
-cp $drupal_dir/profiles/btranslator/libraries/hybridauth/{additional-providers/hybridauth-drupaloauth2/Providers/DrupalOAuth2.php,hybridauth/Hybrid/Providers/}
+cp -a $drupal_dir/profiles/btrclient/{libraries/bootstrap,themes/contrib/bootstrap/}
+cp $drupal_dir/profiles/btrclient/libraries/hybridauth/{additional-providers/hybridauth-drupaloauth2/Providers/DrupalOAuth2.php,hybridauth/Hybrid/Providers/}
 
 ### create the downloads dir
 mkdir -p /var/www/downloads/
@@ -21,9 +21,9 @@ then
 fi
 
 ### settings for the database and the drupal site
-db_name=btr
-db_user=btr
-db_pass=btr
+db_name=bcl
+db_user=bcl
+db_pass=bcl
 site_name="B-Translator"
 site_mail="admin@example.org"
 account_name=admin
@@ -41,7 +41,7 @@ $mysql -e "
 ### start site installation
 sed -e '/memory_limit/ c memory_limit = -1' -i /etc/php5/cli/php.ini
 cd $drupal_dir
-drush site-install --verbose --yes btranslator \
+drush site-install --verbose --yes btrclient \
       --db-url="mysql://$db_user:$db_pass@localhost/$db_name" \
       --site-name="$site_name" --site-mail="$site_mail" \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"

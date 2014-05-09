@@ -3,7 +3,7 @@
 /* uncomment and modify properly
 
 $aliases['live'] = array (
-  'root' => '/var/www/btr',
+  'root' => '/var/www/bcl',
   'uri' => 'http://example.org',
 
   'remote-host' => 'example.org',
@@ -11,7 +11,7 @@ $aliases['live'] = array (
   'ssh-options' => '-p 2201 -i /root/.ssh/id_rsa',
 
   'path-aliases' => array (
-    '%profile' => 'profiles/btranslator',
+    '%profile' => 'profiles/btrclient',
     '%exports' => '/var/www/exports',
     '%downloads' => '/var/www/downloads',
   ),
@@ -28,7 +28,7 @@ $aliases['live'] = array (
 
 $aliases['test'] = array (
   'parent' => '@live',
-  'root' => '/var/www/btr_test',
+  'root' => '/var/www/bcl_test',
   'uri' => 'http://test.example.org',
 
   'command-specific' => array (

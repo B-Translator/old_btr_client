@@ -6,7 +6,7 @@ sed -i /etc/fstab \
 cat <<EOF >> /etc/fstab
 ##### appended by installation scripts
 tmpfs		/dev/shm	tmpfs	defaults,noexec,nosuid	0	0
-tmpfs		/var/www/btr/cache	tmpfs	defaults,size=5M,mode=0777,noexec,nosuid	0	0
+tmpfs		/var/www/bcl/cache	tmpfs	defaults,size=5M,mode=0777,noexec,nosuid	0	0
 devpts		/dev/pts	devpts	rw,noexec,nosuid,gid=5,mode=620		0	0
 # mount /tmp on RAM for better performance
 tmpfs /tmp tmpfs defaults,noatime,mode=1777,nosuid 0 0
@@ -17,7 +17,7 @@ mkdir -p /var/run/memcached/
 chown nobody /var/run/memcached/
 
 ### change the prompt to display the chroot name, the git branch etc
-echo 'btranslator' > /etc/debian_chroot
+echo 'btrclient' > /etc/debian_chroot
 sed -i /root/.bashrc \
     -e '/^#force_color_prompt=/c force_color_prompt=yes' \
     -e '/^# get the git branch/,+4 d'
@@ -51,5 +51,5 @@ sed -i /etc/apache2/apache2.conf \
 update-locale
 
 ### replace nginx with apache2 (which is better for development)
-dev_scripts="$drupal_dir/profiles/btranslator/dev"
+dev_scripts="$drupal_dir/profiles/btrclient/dev"
 $dev_scripts/apache2.sh start

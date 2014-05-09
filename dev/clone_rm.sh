@@ -5,15 +5,15 @@ if [ $# -ne 1 ]
 then
     echo " * Usage: $0 variant
 
-   Deletes the application with root /var/www/btr_<variant>
-   and with DB named btr_<variant>
+   Deletes the application with root /var/www/bcl_<variant>
+   and with DB named bcl_<variant>
    <variant> is something like 'dev', 'test', '01', etc.
 "
     exit 1
 fi
 var=$1
-root_dir=/var/www/btr_$var
-db_name=btr_$var
+root_dir=/var/www/bcl_$var
+db_name=bcl_$var
 
 ### remove the root directory
 rm -rf $root_dir

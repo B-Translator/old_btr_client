@@ -6,10 +6,10 @@ server {
 	ssl_certificate_key	/etc/ssl/private/ssl-cert-snakeoil.key;
 
 	server_name example.org;
-	root /var/www/btr;
+	root /var/www/bcl;
 
-	access_log /var/log/nginx/btranslator.access.log;
- 	error_log  /var/log/nginx/btranslator.error.log info;
+	access_log /var/log/nginx/btrclient.access.log;
+ 	error_log  /var/log/nginx/btrclient.error.log info;
 
 	location /downloads {
 		root /var/www/;

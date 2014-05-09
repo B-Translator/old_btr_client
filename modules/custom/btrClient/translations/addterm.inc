@@ -42,7 +42,7 @@ function btrClient_addterm_form() {
   $first_project = current(array_keys($projects));
 
   $form = array(
-    '#prefix' => '<div class="btr-ui-filter clear-block">',
+    '#prefix' => '<div class="bcl-ui-filter clear-block">',
     '#suffix' => '</div>',
   );
 
@@ -111,7 +111,7 @@ function btrClient_addterm_form_submit($form, &$form_state) {
  */
 function btrClient_delterm_form() {
   $form = array(
-    '#prefix' => '<div class="btr-ui-filter clear-block">',
+    '#prefix' => '<div class="bcl-ui-filter clear-block">',
     '#suffix' => '</div>',
   );
 

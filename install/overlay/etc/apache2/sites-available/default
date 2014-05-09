@@ -2,12 +2,12 @@
         ServerName example.org
 	ServerAdmin info@example.org
 
-	DocumentRoot /var/www/btr
+	DocumentRoot /var/www/bcl
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	<Directory /var/www/btr/>
+	<Directory /var/www/bcl/>
 		Options Indexes FollowSymLinks MultiViews
 		# AllowOverride None
 		AllowOverride All

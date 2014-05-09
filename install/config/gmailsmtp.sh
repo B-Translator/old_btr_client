@@ -41,5 +41,5 @@ $(dirname $0)/mysqld.sh start
 drush @local php-script $(dirname $0)/gmailsmtp.php "$GMAIL" "$PASSWD"
 
 ### drush may create css/js files with wrong(root) permissions
-rm -rf /var/www/btr/sites/default/files/css/
-rm -rf /var/www/btr/sites/default/files/js/
+rm -rf /var/www/bcl/sites/default/files/css/
+rm -rf /var/www/bcl/sites/default/files/js/

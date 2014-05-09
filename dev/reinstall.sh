@@ -1,8 +1,8 @@
 #!/bin/bash
-### Reinstall btranslator from scratch.
+### Reinstall btrclient from scratch.
 ### Useful for testing installation scripts.
 
-export drupal_dir=/var/www/btr
+export drupal_dir=/var/www/bcl
 export drush="drush --root=$drupal_dir"
 
 mv $drupal_dir $drupal_dir-bak
@@ -10,9 +10,9 @@ mv $drupal_dir $drupal_dir-bak
 cd $(dirname $0)
 cd ../install/install-scripts/
 
-./20-make-and-install-btranslator.sh
-./30-git-clone-btranslator.sh
-./40-configure-btranslator.sh
+./20-make-and-install-btrclient.sh
+./30-git-clone-btrclient.sh
+./40-configure-btrclient.sh
 
 ../config.sh
 

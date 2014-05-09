@@ -14,7 +14,7 @@ function btr_googleanalytics_menu() {
     'description'      => 'Private GoogleAnalytics settings.',
     'page callback'    => 'drupal_get_form',
     'page arguments'   => array('btr_googleanalytics_config'),
-    'access arguments' => array('btranslator-admin'),
+    'access callback'  => TRUE,
   );
 
   return $items;
