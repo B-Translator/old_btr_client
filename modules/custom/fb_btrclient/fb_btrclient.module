@@ -17,12 +17,12 @@
  * facebook users know that content may be published to their Wall,
  * and gives them a chance to prevent that.
  */
-function fb_btranslator_form_alter(&$form, $form_state, $form_id) {
+function fb_btrclient_form_alter(&$form, $form_state, $form_id) {
   // Add stream publish option.
   if (isset($GLOBALS['_fb']) && fb_facebook_user()) {
     if (substr($form['#id'], -9) == 'node-form') {
       // Add checkbox to control feed publish.
-      $form['fb_btranslator']['stream_publish'] = array(
+      $form['fb_btrclient']['stream_publish'] = array(
         '#type' => 'checkbox',
         '#title' => t('Share on Facebook'),
         '#default_value' => TRUE,
@@ -30,7 +30,7 @@ function fb_btranslator_form_alter(&$form, $form_state, $form_id) {
     }
     elseif ($form['form_id']['#value'] == 'comment_form') {
       // Add checkbox to control feed publish.
-      $form['fb_btranslator']['stream_publish'] = array(
+      $form['fb_btrclient']['stream_publish'] = array(
         '#type' => 'checkbox',
         '#title' => t('Share on Facebook'),
         '#default_value' => TRUE,
@@ -47,7 +47,7 @@ function fb_btranslator_form_alter(&$form, $form_state, $form_id) {
  * @see http://developers.facebook.com/docs/reference/rest/stream.publish
  * @see http://developers.facebook.com/docs/guides/attachments
  */
-function fb_btranslator_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+function fb_btrclient_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
   if ($op == 'insert' || $op == 'update') {
     if (isset($node->stream_publish) && $node->stream_publish) {
       $attachment = array(
@@ -92,7 +92,7 @@ function fb_btranslator_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
   }
 
   // Another way to add like button, as part of a node.
-  if ($op == 'view' && variable_get('fb_btranslator_nodeapi_add_like', FALSE)) {
+  if ($op == 'view' && variable_get('fb_btrclient_nodeapi_add_like', FALSE)) {
     $url = fb_scrub_urls(url('node/' . $node->nid, array('absolute' => TRUE)));
     $node->content['dff_like'] = array(
       '#value' => "<fb:like href={$url}></fb:like>",
@@ -108,10 +108,10 @@ function fb_btranslator_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
  *
  * Publish to facebook Walls when users submit comments.
  */
-function fb_btranslator_comment(&$a1, $op) {
+function fb_btrclient_comment(&$a1, $op) {
   if ($op == 'insert' || $op == 'update') {
     if ($a1['stream_publish']) {
-      //dpm($a1, "fb_btranslator_comment, publishing to stream");
+      //dpm($a1, "fb_btrclient_comment, publishing to stream");
       $node = node_load($a1['nid']);
 
       // http://wiki.developers.facebook.com/index.php/Attachment_(Streams)
@@ -153,8 +153,8 @@ function fb_btranslator_comment(&$a1, $op) {
  * Builds a list of extended permissions required when authorizing the current facebook app.
  * @see http://developers.facebook.com/docs/authentication/permissions
  */
-function fb_btranslator_fb_required_perms_alter(&$perms) {
-  if (variable_get('fb_btranslator_require_email', TRUE)) {
+function fb_btrclient_fb_required_perms_alter(&$perms) {
+  if (variable_get('fb_btrclient_require_email', TRUE)) {
     $perms[] = 'email';
   }
 }
@@ -191,16 +191,16 @@ function fb_btranslator_fb_required_perms_alter(&$perms) {
  * Note, some example code is disabled.  Change the FALSE to TRUE in
  * variable_get calls to test the code.
  */
-function fb_btranslator_fb($op, $data, &$return) {
+function fb_btrclient_fb($op, $data, &$return) {
   $fb_app = isset($data['fb_app']) ? $data['fb_app'] : NULL;
   $fb = isset($data['fb']) ? $data['fb'] : NULL;
 
   // Use devel module to figure out when this hook is called and what it is passed.
-  //dpm(func_get_args(), "fb_btranslator_fb($op) called"); // debug
+  //dpm(func_get_args(), "fb_btrclient_fb($op) called"); // debug
 
   if ($op == FB_OP_AJAX_EVENT) {
     // We get FB_OP_AJAX_EVENT when fb.js calls us in reponse to a javascript event.
-    if ($data['event_type'] == 'edge.create' && variable_get('fb_btranslator_like_thanks', FALSE)) {
+    if ($data['event_type'] == 'edge.create' && variable_get('fb_btrclient_like_thanks', FALSE)) {
       // Facebook calls this event 'edge.create', because there's a new 'edge'
       // in the open graph.
       drupal_set_message(t('Thanks for clicking Like!'));
@@ -209,8 +209,8 @@ function fb_btranslator_fb($op, $data, &$return) {
       // from adding a comment.  In practice, you could put some other javascript here.
       $return[] = "FB_JS.reload();";
     }
-    if ($data['event_type'] == 'session_change' && variable_get('fb_btranslator_session_change_redirect', TRUE)) {
-      if (!isset($GLOBALS['fb_btranslator_new_user'])) {
+    if ($data['event_type'] == 'session_change' && variable_get('fb_btrclient_session_change_redirect', TRUE)) {
+      if (!isset($GLOBALS['fb_btrclient_new_user'])) {
         // The user has clicked the connect button, or logged into/out-of
         // facebook in another browser window, then refreshed.
         if ($fbu = fb_facebook_user()) {
@@ -223,10 +223,10 @@ function fb_btranslator_fb($op, $data, &$return) {
           //$return[] = "FB_JS.reload('$url');";
         }
       }
-      elseif ($GLOBALS['fb_btranslator_new_user']) {
+      elseif ($GLOBALS['fb_btrclient_new_user']) {
         // The user has clicked the connect button and that results in a new
-        // user being created.  Note this will work only when fb_btranslator.module
-        // has heavier weight than fb_user.module.  See fb_btranslator.install.
+        // user being created.  Note this will work only when fb_btrclient.module
+        // has heavier weight than fb_user.module.  See fb_btrclient.install.
 
         drupal_set_message(t('Please fill the fields of your profile!'));
         // Send the user to their edit page.
@@ -270,15 +270,15 @@ function fb_btranslator_fb($op, $data, &$return) {
  *   hook.
  *
  */
-function fb_btranslator_fb_user($op, $data, &$return) {
+function fb_btrclient_fb_user($op, $data, &$return) {
   $fb_app = isset($data['fb_app']) ? $data['fb_app'] : NULL;
   $fb = isset($data['fb']) ? $data['fb'] : NULL;
 
   if ($op == FB_USER_OP_POST_USER) {
     // Set a global that can be checked in hook_fb, above.  Note for this to
-    // work properly, fb_btranslator.module must be weighted heavier then
-    // fb_user.module.  (See fb_btranslator.install).
-    $GLOBALS['fb_btranslator_new_user'] = TRUE;
+    // work properly, fb_btrclient.module must be weighted heavier then
+    // fb_user.module.  (See fb_btrclient.install).
+    $GLOBALS['fb_btrclient_new_user'] = TRUE;
   }
 }
 
@@ -303,7 +303,7 @@ function fb_btranslator_fb_user($op, $data, &$return) {
  * building >> facebook apps >> canvas pages are disabled.
  */
 /*
-function fb_btranslator_preprocess_page(&$variables) {
+function fb_btrclient_preprocess_page(&$variables) {
   if (module_exists('fb_canvas') && fb_is_canvas()) {
     include_once drupal_get_path('module', 'fb') . '/fb.process.inc';
 
@@ -330,7 +330,7 @@ function fb_btranslator_preprocess_page(&$variables) {
  * when clicking the facebook connect button on the login or register forms.
  * Here will simply redirect the user to the profile page when that happens.
  */
-function fb_btranslator_init() {
+function fb_btrclient_init() {
   global $user;
   if ($user->uid != 0) {
     if (arg(0) == 'user' &&
