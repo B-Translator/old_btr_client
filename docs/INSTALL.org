@@ -121,12 +121,12 @@ B-Translator.
   http://drupal.org/project/emacs
 
 
-* Install the profile btrclient
+* Install the profile btr_client
 
   #+BEGIN_EXAMPLE
   cd /var/www/
-  sudo git clone https://github.com/dashohoxha/B-Translator.git
-  sudo B-Translator/install/dev/all.sh
+  sudo git clone https://github.com/B-Translator/btr_client.git
+  sudo btr_client/install/dev/all.sh
   #+END_EXAMPLE
 
 

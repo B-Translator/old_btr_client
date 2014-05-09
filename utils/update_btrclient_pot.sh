@@ -8,7 +8,7 @@
 ### will scan also the other modules that are on
 ### the directory 'modules/'.
 
-### go to the btrclient directory
+### go to the btr_client directory
 cd $(dirname $0)
 cd ..
 

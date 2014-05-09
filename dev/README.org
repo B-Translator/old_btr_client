@@ -37,8 +37,8 @@ them can be used on any Drupal project.
   suitable. It can be started and stopped like this:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/bcl/
-  /var/www/bcl/profiles/btrclient/dev/apache2.sh start
-  /var/www/bcl/profiles/btrclient/dev/apache2.sh stop
+  /var/www/bcl/profiles/btr_client/dev/apache2.sh start
+  /var/www/bcl/profiles/btr_client/dev/apache2.sh stop
   #+END_EXAMPLE
 
   *Important:* When /apache2/ is started, the services /nginx/,
@@ -65,10 +65,10 @@ them can be used on any Drupal project.
   It can be done with the script =dev/install.sh=:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/bcl/
-  /var/www/bcl/profiles/btrclient/dev/reinstall.sh
+  /var/www/bcl/profiles/btr_client/dev/reinstall.sh
   #+END_EXAMPLE
   It will rebuild the Drupal directory with *drush make* and install
-  the btrclient profile with *drush site-install*, and then do all
+  the btr_client profile with *drush site-install*, and then do all
   the rest of configurations just like they are done during
   installation.
 
@@ -80,7 +80,7 @@ them can be used on any Drupal project.
   =dev/install.sh=:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/bcl/
-  /var/www/bcl/profiles/btrclient/dev/reinstall-db.sh
+  /var/www/bcl/profiles/btr_client/dev/reinstall-db.sh
   #+END_EXAMPLE
 
   It is useful for testing the features. Usually, when features are
@@ -95,7 +95,7 @@ them can be used on any Drupal project.
   Inside the chroot I make a clone for development like this:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/bcl/
-  cd /var/www/bcl/profiles/btrclient/
+  cd /var/www/bcl/profiles/btr_client/
   dev/clone.sh dev
   #+END_EXAMPLE
 
@@ -111,7 +111,7 @@ them can be used on any Drupal project.
   (remove/erase) a clone, we can use *clone_rm.sh* like this:
   #+BEGIN_EXAMPLE
   chroot /var/chroot/bcl/
-  cd /var/www/bcl/profiles/btrclient/
+  cd /var/www/bcl/profiles/btr_client/
   dev/clone_rm.sh dev
   #+END_EXAMPLE
 
@@ -121,8 +121,8 @@ them can be used on any Drupal project.
   #+BEGIN_EXAMPLE
   chroot /var/chroot/bcl/
   cd /var/www/
-  drush @bcl php-script bcl/profiles/btrclient/config.php dev1
-  drush @dev php-script bcl/profiles/btrclient/config.php dev2
+  drush @bcl php-script bcl/profiles/btr_client/config.php dev1
+  drush @dev php-script bcl/profiles/btr_client/config.php dev2
   #+END_EXAMPLE
 
   It will set site_name to 'B-Translator (dev1)', will make site email
@@ -146,7 +146,7 @@ them can be used on any Drupal project.
   #+BEGIN_EXAMPLE
   chroot /var/chroot/bcl/
   cd /var/www/
-  ln -s bcl_dev/profiles/btrclient/ B-Translator
+  ln -s bcl_dev/profiles/btr_client/ .
 
   B-Translator/dev/snapshot.sh make
   B-Translator/dev/snapshot.sh make @dev
@@ -184,7 +184,7 @@ them can be used on any Drupal project.
   chroot, I create a symbolic link like this:
   #+BEGIN_EXAMPLE
   cd /var/chroot/
-  ln -s bcl/var/www/bcl_dev/profiles/btrclient/ \
+  ln -s bcl/var/www/bcl_dev/profiles/btr_client/ \
         dev
   #+END_EXAMPLE
 
@@ -197,8 +197,8 @@ them can be used on any Drupal project.
 * Pushing commits to github
 
   The copy of the application on
-  =/var/www/bcl_dev/profiles/btrclient/= (as well as the one
-  on =/var/www/bcl/profiles/btrclient/=) are actually clones
+  =/var/www/bcl_dev/profiles/btr_client/= (as well as the one
+  on =/var/www/bcl/profiles/btr_client/=) are actually clones
   of the git repository at https://github.com/dashohoxha/B-Translator
   so we can *pull* from it and *push* to it. Pulling (to get
   up-to-date) can be done by everybody, however pushing requires a
@@ -267,7 +267,7 @@ them can be used on any Drupal project.
      making is OK.
   4. Push changes upwards to github, like this:
      #+BEGIN_EXAMPLE
-     cd /var/www/bcl_dev/profiles/btrclient
+     cd /var/www/bcl_dev/profiles/btr_client
      git checkout master
      git merge dev [--squash]
      git push
@@ -278,7 +278,7 @@ them can be used on any Drupal project.
      the branch *dev* and create a new one.
   5. Make a git pull on *bcl* and sync it with *bcl_dev*
      #+BEGIN_EXAMPLE
-     cd /var/www/bcl/profiles/btrclient
+     cd /var/www/bcl/profiles/btr_client
      git pull
      #+END_EXAMPLE
 
@@ -320,7 +320,7 @@ them can be used on any Drupal project.
     'ssh-options' => '-p 2201 -i /root/.ssh/id_rsa',
 
     'path-aliases' => array (
-      '%profile' => 'profiles/btrclient',
+      '%profile' => 'profiles/btr_client',
       '%data' => '/var/www/data',
       '%pofiles' => '/var/www/PO_files',
       '%exports' => '/var/www/exports',

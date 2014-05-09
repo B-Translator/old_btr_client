@@ -10,8 +10,8 @@ This is a Drupal installation profile for B-Translator.
   #+BEGIN_EXAMPLE
   mkdir /var/chroot
   cd /var/chroot/
-  git clone https://github.com/B-Translator/btrclient.git
-  nohup nice btrclient/install/install.sh bcl &
+  git clone https://github.com/B-Translator/btr_client.git
+  nohup nice btr_client/install/install.sh bcl &
   tail -f nohup.out
   chroot bcl/ /tmp/install/config.sh
   chroot bcl/ rm -rf /tmp/install
@@ -38,7 +38,7 @@ This is a Drupal installation profile for B-Translator.
   option explicitly on the command line. For example, on a /rackspace/
   server it can be like this:
   #+BEGIN_EXAMPLE
-  nohup nice btrclient/install/install.sh bcl \
+  nohup nice btr_client/install/install.sh bcl \
         --mirror=http://mirror.rackspace.com/ubuntu/ --arch=amd64 &
   #+END_EXAMPLE
   On /amazon/ it can be like this:

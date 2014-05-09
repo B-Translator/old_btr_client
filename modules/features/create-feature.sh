@@ -18,5 +18,5 @@ feature=$1
 
 ### export the feature
 drush features-export \
-      --destination=profiles/btrclient/modules/features \
+      --destination=profiles/btr_client/modules/features \
       bcl_$feature $(cat components/$feature)

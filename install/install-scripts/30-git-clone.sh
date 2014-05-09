@@ -1,18 +1,18 @@
 #!/bin/bash -x
-### Replace the profile btrclient with a version
+### Replace the profile btr_client with a version
 ### that is cloned from github, so that any updates
 ### can be retrieved easily (without having to
 ### reinstall the whole application).
 
-### clone btrclient from github
+### clone btr_client from github
 cd $drupal_dir/profiles/
-mv btrclient btrclient-bak
-git clone https://github.com/B-Translator/btrclient btrclient
+mv btr_client btr_client-bak
+git clone https://github.com/B-Translator/btr_client btr_client
 
 ### copy contrib libraries and modules
-cp -a btrclient-bak/libraries/ btrclient/
-cp -a btrclient-bak/modules/contrib/ btrclient/modules/
-cp -a btrclient-bak/themes/contrib/ btrclient/themes/
+cp -a btr_client-bak/libraries/ btr_client/
+cp -a btr_client-bak/modules/contrib/ btr_client/modules/
+cp -a btr_client-bak/themes/contrib/ btr_client/themes/
 
 ### cleanup
-rm -rf btrclient-bak/
+rm -rf btr_client-bak/

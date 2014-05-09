@@ -8,8 +8,8 @@ server {
 	server_name example.org;
 	root /var/www/bcl;
 
-	access_log /var/log/nginx/btrclient.access.log;
- 	error_log  /var/log/nginx/btrclient.error.log info;
+	access_log /var/log/nginx/btr_client.access.log;
+ 	error_log  /var/log/nginx/btr_client.error.log info;
 
 	location /downloads {
 		root /var/www/;

@@ -5,7 +5,7 @@
  * Test cases for the module btrClient.
  *
  * They can be run from commad line by calling the script:
- *   profiles/btrclient/utils/run-tests.sh
+ *   profiles/btr_client/utils/run-tests.sh
  * The output of the tests is left of the directory
  * 'tests/' under the root of the drupal directory.
  *
@@ -45,7 +45,7 @@ module_load_include('test', 'simpletest_clone');
 //class BclUiTestCase extends DrupalWebTestCase {
 class BclUiTestCase extends SimpleTestCloneTestCase {
 
-  protected $profile = 'btrclient';
+  protected $profile = 'btr_client';
 
   public static function getInfo() {
     return array(
