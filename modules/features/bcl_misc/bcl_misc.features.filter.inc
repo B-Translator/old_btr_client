@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_misc.features.filter.inc
+ * bcl_misc.features.filter.inc
  */
 
 /**
  * Implements hook_filter_default_formats().
  */
-function btr_misc_filter_default_formats() {
+function bcl_misc_filter_default_formats() {
   $formats = array();
 
   // Exported format: Filtered HTML.

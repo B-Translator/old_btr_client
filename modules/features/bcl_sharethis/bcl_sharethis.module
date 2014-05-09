@@ -1,8 +1,8 @@
 <?php
 /**
  * @file
- * Code for the btr_sharethis feature.
+ * Code for the bcl_sharethis feature.
  */
 
-include_once 'btr_sharethis.admin.inc';
-include_once 'btr_sharethis.features.inc';
+include_once 'bcl_sharethis.admin.inc';
+include_once 'bcl_sharethis.features.inc';

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_btrClient.strongarm.inc
+ * bcl_btrClient.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_btrClient_strongarm() {
+function bcl_btrClient_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -27,37 +27,37 @@ function btr_btrClient_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'btr_export_notify_admin';
+  $strongarm->name = 'bcl_export_notify_admin';
   $strongarm->value = 1;
-  $export['btr_export_notify_admin'] = $strongarm;
+  $export['bcl_export_notify_admin'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'btr_export_path';
+  $strongarm->name = 'bcl_export_path';
   $strongarm->value = '/var/www/exports';
-  $export['btr_export_path'] = $strongarm;
+  $export['bcl_export_path'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'btr_preferred_projects';
+  $strongarm->name = 'bcl_preferred_projects';
   $strongarm->value = 'test';
-  $export['btr_preferred_projects'] = $strongarm;
+  $export['bcl_preferred_projects'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'btr_translation_lng';
+  $strongarm->name = 'bcl_translation_lng';
   $strongarm->value = 'sq';
-  $export['btr_translation_lng'] = $strongarm;
+  $export['bcl_translation_lng'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'btr_voting_mode';
+  $strongarm->name = 'bcl_voting_mode';
   $strongarm->value = 'single';
-  $export['btr_voting_mode'] = $strongarm;
+  $export['bcl_voting_mode'] = $strongarm;
 
   return $export;
 }

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_layout.features.taxonomy.inc
+ * bcl_layout.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function btr_layout_taxonomy_default_vocabularies() {
+function bcl_layout_taxonomy_default_vocabularies() {
   return array(
     'tags' => array(
       'name' => 'Tags',

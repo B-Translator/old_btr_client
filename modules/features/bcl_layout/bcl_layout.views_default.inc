@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_layout.views_default.inc
+ * bcl_layout.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function btr_layout_views_default_views() {
+function bcl_layout_views_default_views() {
   $export = array();
 
   $view = new view();

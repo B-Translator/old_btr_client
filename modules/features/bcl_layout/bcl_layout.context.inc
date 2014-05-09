@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_layout.context.inc
+ * bcl_layout.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function btr_layout_context_default_contexts() {
+function bcl_layout_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

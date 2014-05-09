@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_service_links.strongarm.inc
+ * bcl_service_links.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_service_links_strongarm() {
+function bcl_service_links_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -21,7 +21,7 @@ function btr_service_links_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_path_icons';
-  $strongarm->value = 'profiles/btrclient/modules/features/btr_service_links/images';
+  $strongarm->value = 'profiles/btrclient/modules/features/bcl_service_links/images';
   $export['service_links_path_icons'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_hybridauth.features.user_permission.inc
+ * bcl_hybridauth.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function btr_hybridauth_user_default_permissions() {
+function bcl_hybridauth_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: use hybridauth.

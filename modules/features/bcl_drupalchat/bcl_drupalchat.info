@@ -1,4 +1,4 @@
-name = btr_drupalchat
+name = bcl_drupalchat
 core = 7.x
 package = Features
 dependencies[] = ctools

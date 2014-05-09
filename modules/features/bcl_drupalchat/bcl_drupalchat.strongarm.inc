@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_drupalchat.strongarm.inc
+ * bcl_drupalchat.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_drupalchat_strongarm() {
+function bcl_drupalchat_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

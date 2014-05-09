@@ -1,4 +1,4 @@
-name = btr_hybridauth
+name = bcl_hybridauth
 core = 7.x
 package = Features
 php = 5.2.4

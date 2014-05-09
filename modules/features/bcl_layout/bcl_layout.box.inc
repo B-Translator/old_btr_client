@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_layout.box.inc
+ * bcl_layout.box.inc
  */
 
 /**
  * Implements hook_default_box().
  */
-function btr_layout_default_box() {
+function bcl_layout_default_box() {
   $export = array();
 
   $box = new stdClass();

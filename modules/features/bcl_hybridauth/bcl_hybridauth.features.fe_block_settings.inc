@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_hybridauth.features.fe_block_settings.inc
+ * bcl_hybridauth.features.fe_block_settings.inc
  */
 
 /**
  * Implements hook_default_fe_block_settings().
  */
-function btr_hybridauth_default_fe_block_settings() {
+function bcl_hybridauth_default_fe_block_settings() {
   $export = array();
 
   $export['version'] = '2.0';

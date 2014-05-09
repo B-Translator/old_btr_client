@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_hybridauth.strongarm.inc
+ * bcl_hybridauth.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_hybridauth_strongarm() {
+function bcl_hybridauth_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

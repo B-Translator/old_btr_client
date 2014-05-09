@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_captcha.features.user_permission.inc
+ * bcl_captcha.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function btr_captcha_user_default_permissions() {
+function bcl_captcha_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: administer CAPTCHA settings.

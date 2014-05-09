@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_simplenews.features.user_permission.inc
+ * bcl_simplenews.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function btr_simplenews_user_default_permissions() {
+function bcl_simplenews_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: administer newsletters.

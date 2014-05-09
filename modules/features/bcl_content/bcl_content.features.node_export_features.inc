@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_content.features.node_export_features.inc
+ * bcl_content.features.node_export_features.inc
  */
 
 /**
  * Implements hook_node_export_features_default().
  */
-function btr_content_node_export_features_default() {
+function bcl_content_node_export_features_default() {
   $node_export = array(
   'code_string' => 'array(
   (object) array(

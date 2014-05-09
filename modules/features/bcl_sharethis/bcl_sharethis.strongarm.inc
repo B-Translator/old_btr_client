@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_sharethis.strongarm.inc
+ * bcl_sharethis.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_sharethis_strongarm() {
+function bcl_sharethis_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_layout.features.inc
+ * bcl_layout.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function btr_layout_ctools_plugin_api() {
+function bcl_layout_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "boxes" && $api == "box") {
     return array("version" => "1");
@@ -25,14 +25,14 @@ function btr_layout_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function btr_layout_views_api() {
+function bcl_layout_views_api() {
   return array("version" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function btr_layout_node_info() {
+function bcl_layout_node_info() {
   $items = array(
     'article' => array(
       'name' => t('Article'),

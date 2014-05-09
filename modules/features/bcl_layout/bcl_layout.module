@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the btr_layout feature.
+ * Code for the bcl_layout feature.
  */
 
-include_once 'btr_layout.features.inc';
+include_once 'bcl_layout.features.inc';

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_fb.strongarm.inc
+ * bcl_fb.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_fb_strongarm() {
+function bcl_fb_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

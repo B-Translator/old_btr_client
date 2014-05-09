@@ -7,13 +7,13 @@
 /**
  * Implements hook_menu().
  */
-function btr_disqus_menu() {
+function bcl_disqus_menu() {
   $items = array();
   $items['admin/config/bcl/disqus'] = array(
     'title'            => 'Disqus',
     'description'      => 'Private Disqus settings.',
     'page callback'    => 'drupal_get_form',
-    'page arguments'   => array('btr_disqus_config'),
+    'page arguments'   => array('bcl_disqus_config'),
     'access callback'  => TRUE,
   );
 
@@ -27,7 +27,7 @@ function btr_disqus_menu() {
  * @return
  *   An array containing form items to place on the module settings page.
  */
-function btr_disqus_config() {
+function bcl_disqus_config() {
   $form = array();
 
   $form['disqus_domain'] = array(

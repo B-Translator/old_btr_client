@@ -1,4 +1,4 @@
-name = btr_captcha
+name = bcl_captcha
 core = 7.x
 package = Features
 php = 5.2.4

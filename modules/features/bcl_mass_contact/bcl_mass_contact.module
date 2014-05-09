@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the btr_mass_contact feature.
+ * Code for the bcl_mass_contact feature.
  */
 
-include_once 'btr_mass_contact.features.inc';
+include_once 'bcl_mass_contact.features.inc';

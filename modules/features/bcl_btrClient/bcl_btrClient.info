@@ -1,4 +1,4 @@
-name = btr_btrClient
+name = bcl_btrClient
 core = 7.x
 package = Features
 php = 5.2.4

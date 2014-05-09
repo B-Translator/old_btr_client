@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_layout.strongarm.inc
+ * bcl_layout.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_layout_strongarm() {
+function bcl_layout_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

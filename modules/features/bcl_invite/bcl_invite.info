@@ -1,4 +1,4 @@
-name = btr_invite
+name = bcl_invite
 core = 7.x
 package = Features
 dependencies[] = ctools

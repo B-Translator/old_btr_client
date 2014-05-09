@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_invite.strongarm.inc
+ * bcl_invite.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_invite_strongarm() {
+function bcl_invite_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

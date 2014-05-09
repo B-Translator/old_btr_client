@@ -7,13 +7,13 @@
 /**
  * Implements hook_menu().
  */
-function btr_captcha_menu() {
+function bcl_captcha_menu() {
   $items = array();
   $items['admin/config/btr/captcha'] = array(
     'title'            => 'reCaptcha',
     'description'      => 'Private reCaptca settings.',
     'page callback'    => 'drupal_get_form',
-    'page arguments'   => array('btr_captcha_config'),
+    'page arguments'   => array('bcl_captcha_config'),
     'access callback'  => TRUE,
   );
 
@@ -27,7 +27,7 @@ function btr_captcha_menu() {
  * @return
  *   An array containing form items to place on the module settings page.
  */
-function btr_captcha_config() {
+function bcl_captcha_config() {
   // Load the recaptcha library.
   _recaptcha_load_library();
 

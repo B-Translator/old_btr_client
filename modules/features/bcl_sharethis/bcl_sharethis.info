@@ -1,4 +1,4 @@
-name = btr_sharethis
+name = bcl_sharethis
 core = 7.x
 package = Features
 dependencies[] = ctools

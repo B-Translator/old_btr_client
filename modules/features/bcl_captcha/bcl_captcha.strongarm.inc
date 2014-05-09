@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_captcha.strongarm.inc
+ * bcl_captcha.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_captcha_strongarm() {
+function bcl_captcha_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

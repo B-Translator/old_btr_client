@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * btr_googleanalytics.strongarm.inc
+ * bcl_googleanalytics.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function btr_googleanalytics_strongarm() {
+function bcl_googleanalytics_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

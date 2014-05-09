@@ -7,13 +7,13 @@
 /**
  * Implements hook_menu().
  */
-function btr_googleanalytics_menu() {
+function bcl_googleanalytics_menu() {
   $items = array();
   $items['admin/config/btr/googleanalytics'] = array(
     'title'            => 'GoogleAnalytics',
     'description'      => 'Private GoogleAnalytics settings.',
     'page callback'    => 'drupal_get_form',
-    'page arguments'   => array('btr_googleanalytics_config'),
+    'page arguments'   => array('bcl_googleanalytics_config'),
     'access callback'  => TRUE,
   );
 
@@ -27,7 +27,7 @@ function btr_googleanalytics_menu() {
  * @return
  *   An array containing form items to place on the module settings page.
  */
-function btr_googleanalytics_config() {
+function bcl_googleanalytics_config() {
   $form = array();
 
   $form['googleanalytics_account'] = array(
