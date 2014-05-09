@@ -7,10 +7,10 @@ export drush="drush --root=$drupal_dir"
 
 cwd=$(dirname $0)
 
-$cwd/10-install-additional-packages.sh
-$cwd/20-make-and-install-btrclient.sh
-$cwd/30-git-clone-btrclient.sh
-$cwd/40-configure-btrclient.sh
+$cwd/10-additional-packages.sh
+$cwd/20-make-and-install.sh
+$cwd/30-git-clone.sh
+$cwd/40-configure.sh
 
 ### copy overlay files over to the system
 cp -TdR $(dirname $cwd)/overlay/ /
