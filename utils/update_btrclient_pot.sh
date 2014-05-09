@@ -1,10 +1,10 @@
 #/bin/bash
-### Extract translatable strings of B-Translator
+### Extract translatable strings of btr_client
 ### and update the file 'btrclient.pot'.
 ###
-### Run it on a copy of B-Translator that is just
+### Run it on a copy of btr_client that is just
 ### cloned from git, don't run it on an installed
-### copy of B-Translator, otherwise 'potx-cli.php'
+### copy of btr_client, otherwise 'potx-cli.php'
 ### will scan also the other modules that are on
 ### the directory 'modules/'.
 

@@ -1,6 +1,6 @@
 
 Instructions for installing a development/testing copy of
-B-Translator.
+B-Translator Client.
 
 * Set up a chroot environment
 

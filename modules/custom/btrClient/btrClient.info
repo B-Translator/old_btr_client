@@ -1,5 +1,5 @@
-name = B-Translator UI
-description = B-Translator User Interface for Drupal.
+name = B-Translator Client
+description = B-Translator Client Module.
 package = B-Translator
 core = 7.x
 

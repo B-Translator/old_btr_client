@@ -7,8 +7,8 @@ function btrClient_menu() {
   $items = array();
 
   $items['admin/config/bcl'] = array(
-    'title' => 'B-Translator',
-    'description' => 'B-Translator Configuration',
+    'title' => 'B-Translator Client',
+    'description' => 'B-Translator Client Profile',
     'weight' => -100,
     'page callback' => 'system_admin_menu_block_page',
     'file' => 'system.admin.inc',

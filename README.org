@@ -1,5 +1,5 @@
 
-This is a Drupal installation profile for B-Translator.
+This is a Drupal installation profile for B-Translator Client.
 
 * Installation
 
@@ -19,10 +19,10 @@ This is a Drupal installation profile for B-Translator.
   #+END_EXAMPLE
 
   This will install in ~/var/chroot/bcl~ a minimal ubuntu system,
-  B-Translator, and everything that is needed for the normal work of
-  the system. It will also make the neccessary common configurations
-  of the system and prompt for customizing it (for example the domain,
-  email address, etc.)
+  B-Translator Client, and everything that is needed for the normal
+  work of the system. It will also make the neccessary common
+  configurations of the system and prompt for customizing it (for
+  example the domain, email address, etc.)
 
   The installation script will also create the init script
   ~/etc/init.d/chroot-bcl~, which can be used to start and stop the services
@@ -44,7 +44,7 @@ This is a Drupal installation profile for B-Translator.
   On /amazon/ it can be like this:
   =--mirror=http://us-east-1.ec2.archive.ubuntu.com/ubuntu/=
 
-  For development purposes, the scripts in ~B-Translator/install/dev/~
+  For development purposes, the scripts in ~btr_client/install/dev/~
   can be used to make a development environment.
 
   For more detailed information about installation see *docs/INSTALL.org*.
@@ -116,8 +116,8 @@ This is a Drupal installation profile for B-Translator.
 
   - Misc
     + Homepage: http://info.btranslator.org
-    + Wiki: https://github.com/dashohoxha/B-Translator/wiki
-    + Issues: https://github.com/dashohoxha/B-Translator/issues
+    + Wiki: https://github.com/B-Translator/btr_client/wiki
+    + Issues: https://github.com/B-Translator/btr_client/issues
 
 
 * Sites
@@ -132,18 +132,18 @@ This is a Drupal installation profile for B-Translator.
 * Documentation
 
   - Internal doc files:
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/README.org][README.org]] (this file)
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/dev/README.org][dev/README.org]] (tips for developers)
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/INSTALL.org][docs/INSTALL.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/NGINX.org][docs/NGINX.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/tasks.org][docs/tasks.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/notes.org][docs/notes.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/README.org][docs/README.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/btranslator-project.org][docs/btranslator-project.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/btranslator-project.pdf][docs/btranslator-project.pdf]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/docs/uml/db_schema.org][docs/uml/db_schema.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/modules/custom/btrClient/README.org][modules/custom/btrClient/README.org]]
-    + [[https://github.com/dashohoxha/B-Translator/blob/master/modules/features/README.org][modules/features/README.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/README.org][README.org]] (this file)
+    + [[https://github.com/B-Translator/btr_client/blob/master/dev/README.org][dev/README.org]] (tips for developers)
+    + [[https://github.com/B-Translator/btr_client/blob/master/docs/INSTALL.org][docs/INSTALL.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/docs/NGINX.org][docs/NGINX.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/docs/tasks.org][docs/tasks.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/docs/notes.org][docs/notes.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/docs/README.org][docs/README.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/docs/btranslator-project.org][docs/btranslator-project.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/docs/btranslator-project.pdf][docs/btranslator-project.pdf]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/docs/uml/db_schema.org][docs/uml/db_schema.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/modules/custom/btrClient/README.org][modules/custom/btrClient/README.org]]
+    + [[https://github.com/B-Translator/btr_client/blob/master/modules/features/README.org][modules/features/README.org]]
 
   - External docs:
     + http://dashohoxha.blogspot.com/2012/08/btranslator-project.html

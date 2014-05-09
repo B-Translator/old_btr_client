@@ -2,12 +2,12 @@
 #+OPTIONS:  num:nil toc:t ^:nil f:nil TeX:nil LaTeX:nil
 #+STYLE: <link href="css/org.css" rel="stylesheet" type="text/css"/>
 
-Development Setup of B-Translator
+Development Setup of B-Translator Client
 
 [[http://info.btranslator.org][B-Translator]] helps to get feedback about /l10n/ (translations of the
 programs). It tries to collect very small translation contributions
 from a wide crowd of people and to dilute them into something useful.
-It is developed as a Drupal7 profile and the [[https://github.com/dashohoxha/B-Translator][code]] is hosted on GitHub.
+It is developed as a Drupal7 profile and the [[https://github.com/B-Translator/btr_client][code]] is hosted on GitHub.
 Here I describe the development setup and process that I use for this
 project. Most of the the tips are project specific, however some of
 them can be used on any Drupal project.
@@ -19,8 +19,8 @@ them can be used on any Drupal project.
   #+BEGIN_EXAMPLE
   mkdir /var/chroot
   cd /var/chroot/
-  git clone https://github.com/dashohoxha/B-Translator.git
-  nohup nice B-Translator/install/install.sh bcl &
+  git clone https://github.com/B-Translator/btr_client.git
+  nohup nice btr_client/install/install.sh bcl &
   tail -f nohup.out
   chroot bcl/ /tmp/install/config.sh
   chroot bcl/ rm -rf /tmp/install
@@ -148,17 +148,17 @@ them can be used on any Drupal project.
   cd /var/www/
   ln -s bcl_dev/profiles/btr_client/ .
 
-  B-Translator/dev/snapshot.sh make
-  B-Translator/dev/snapshot.sh make @dev
+  btr_client/dev/snapshot.sh make
+  btr_client/dev/snapshot.sh make @dev
   #+END_EXAMPLE
   These will create the files ~snapshot-bcl-20130602.tgz~
   and ~snapshot-bcl_dev-20130602.tgz~. They can be restored
   like this:
   #+BEGIN_EXAMPLE
-  B-Translator/dev/snapshot.sh restore --file=snapshot-bcl-20130602.tgz
-  B-Translator/dev/snapshot.sh restore --file=snapshot-bcl_dev-20130602.tgz
-  B-Translator/dev/snapshot.sh restore @dev --file=snapshot-bcl-20130602.tgz
-  B-Translator/dev/snapshot.sh restore @dev --file=snapshot-bcl_dev-20130602.tgz
+  btr_client/dev/snapshot.sh restore --file=snapshot-bcl-20130602.tgz
+  btr_client/dev/snapshot.sh restore --file=snapshot-bcl_dev-20130602.tgz
+  btr_client/dev/snapshot.sh restore @dev --file=snapshot-bcl-20130602.tgz
+  btr_client/dev/snapshot.sh restore @dev --file=snapshot-bcl_dev-20130602.tgz
   #+END_EXAMPLE
   As you may notice, a snapshot of @dev can also be restored on the
   main application, and the other way around.
@@ -199,7 +199,7 @@ them can be used on any Drupal project.
   The copy of the application on
   =/var/www/bcl_dev/profiles/btr_client/= (as well as the one
   on =/var/www/bcl/profiles/btr_client/=) are actually clones
-  of the git repository at https://github.com/dashohoxha/B-Translator
+  of the git repository at https://github.com/B-Translator/btr_client
   so we can *pull* from it and *push* to it. Pulling (to get
   up-to-date) can be done by everybody, however pushing requires a
   username and password (the ones that are used to access the account
@@ -250,7 +250,7 @@ them can be used on any Drupal project.
   case when I have to test install/uninstall, enable/disable modules,
   features, etc. In this case I test them on the main application
   instance (~/var/www/bcl~). Since both applications are clones of the
-  [[https://github.com/dashohoxha/B-Translator][GitHub repository]], it is easy to push commits from /bcl_dev/ to
+  [[https://github.com/B-Translator/btr_client][GitHub repository]] it is easy to push commits from /bcl_dev/ to
   /github/ and to pull them from /github/ to /bcl/.
 
   However, sometimes it is better to test modifications and make sure
