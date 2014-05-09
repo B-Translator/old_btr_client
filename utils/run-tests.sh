@@ -32,7 +32,7 @@ output_file="tests/output_$timestamp.txt"
 mkdir -p tests/
 
 ### make a backup of the database
-dbname=${BTR_DATA:-btr_data}
+dbname=${BCL:-bcl}
 mysqldump="mysqldump --defaults-file=/etc/mysql/debian.cnf --database=$dbname"
 $mysqldump --opt > $dump_file
 
@@ -42,9 +42,9 @@ php scripts/run-tests.sh --clean
 ### run the test scripts
 if [ "$stdout" != '' ]
 then
-    php scripts/run-tests.sh --url "$URL" --verbose --color B-Translator
+    php scripts/run-tests.sh --url "$URL" --verbose --color btr_client
 else
-    php scripts/run-tests.sh --url "$URL" --verbose B-Translator > $output_file
+    php scripts/run-tests.sh --url "$URL" --verbose btr_client > $output_file
     echo
     echo " - Results stored on the file: "
     echo "     $drupal_dir/$output_file"

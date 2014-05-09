@@ -71,17 +71,17 @@ EOF
 
 ### install features modules
 ### $drush is an alias for 'drush --root=/var/www/bcl'
-#$drush --yes pm-enable btr_discus
-#$drush --yes pm-enable btr_service_links
-#$drush --yes pm-enable btr_sharethis
-#$drush --yes pm-enable btr_invite
-#$drush --yes pm-enable btr_simplenews
-#$drush --yes pm-enable btr_mass_contact
-#$drush --yes pm-enable btr_googleanalytics
-#$drush --yes pm-enable btr_drupalchat
+#$drush --yes pm-enable bcl_discus
+#$drush --yes pm-enable bcl_service_links
+#$drush --yes pm-enable bcl_sharethis
+#$drush --yes pm-enable bcl_invite
+#$drush --yes pm-enable bcl_simplenews
+#$drush --yes pm-enable bcl_mass_contact
+#$drush --yes pm-enable bcl_googleanalytics
+#$drush --yes pm-enable bcl_drupalchat
 
 ### install FB integration
-#$drush --yes pm-enable btr_fb
+#$drush --yes pm-enable bcl_fb
 
 # enable FB config
 cat >> $drupal_settings << EOF

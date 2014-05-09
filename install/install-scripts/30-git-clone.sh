@@ -7,7 +7,7 @@
 ### clone btr_client from github
 cd $drupal_dir/profiles/
 mv btr_client btr_client-bak
-git clone https://github.com/B-Translator/btr_client btr_client
+git clone https://github.com/B-Translator/btr_client.git
 
 ### copy contrib libraries and modules
 cp -a btr_client-bak/libraries/ btr_client/

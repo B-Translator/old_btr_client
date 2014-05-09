@@ -46,15 +46,15 @@ drush site-install --verbose --yes btr_client \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
 
 ## install features modules
-#drush --yes pm-enable btr_disqus
-#drush --yes pm-enable btr_sharethis
-#drush --yes pm-enable btr_service_links
-#drush --yes pm-enable btr_invite
-#drush --yes pm-enable btr_simplenews
-#drush --yes pm-enable btr_mass_contact
-#drush --yes pm-enable btr_googleanalytics
-#drush --yes pm-enable btr_drupalchat
-#drush --yes pm-enable btr_fb
+#drush --yes pm-enable bcl_disqus
+#drush --yes pm-enable bcl_sharethis
+#drush --yes pm-enable bcl_service_links
+#drush --yes pm-enable bcl_invite
+#drush --yes pm-enable bcl_simplenews
+#drush --yes pm-enable bcl_mass_contact
+#drush --yes pm-enable bcl_googleanalytics
+#drush --yes pm-enable bcl_drupalchat
+#drush --yes pm-enable bcl_fb
 
 ### update to the latest version of core and modules
 drush --yes pm-update

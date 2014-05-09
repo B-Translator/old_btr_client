@@ -112,12 +112,12 @@ dependencies[] = memcache
 ;--------------------
 dependencies[] = btrClient
 
-dependencies[] = btr_btrClient
-dependencies[] = btr_misc
-;dependencies[] = btr_layout
-dependencies[] = btr_hybridauth
-;dependencies[] = btr_disqus
-dependencies[] = btr_content
-;dependencies[] = btr_sharethis
-dependencies[] = btr_captcha
-dependencies[] = btr_permissions
+dependencies[] = bcl_btrClient
+dependencies[] = bcl_misc
+;dependencies[] = bcl_layout
+dependencies[] = bcl_hybridauth
+;dependencies[] = bcl_disqus
+dependencies[] = bcl_content
+;dependencies[] = bcl_sharethis
+dependencies[] = bcl_captcha
+dependencies[] = bcl_permissions
