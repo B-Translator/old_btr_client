@@ -57,9 +57,9 @@ function bcl_hybridauth_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_forms';
   $strongarm->value = array(
-    'user_login' => 'user_login',
-    'user_login_block' => 'user_login_block',
-    'user_register_form' => 'user_register_form',
+    'user_login' => 0,
+    'user_login_block' => 0,
+    'user_register_form' => 0,
     'comment_form' => 0,
   );
   $export['hybridauth_forms'] = $strongarm;

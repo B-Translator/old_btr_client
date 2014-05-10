@@ -1,8 +1,9 @@
 name = bcl_content
 core = 7.x
 package = Features
-dependencies[] = blog
+php = 5.2.4
 dependencies[] = bcl_layout
+dependencies[] = blog
 dependencies[] = node_export_features
 features[features_api][] = api:1
 features[node_export_features][] = 04ff4698-bddc-4974-8d02-56a84f83a4e9

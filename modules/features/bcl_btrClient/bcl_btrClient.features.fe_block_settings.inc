@@ -27,12 +27,6 @@ function bcl_btrClient_default_fe_block_settings() {
         'theme' => 'bootstrap1',
         'weight' => '0',
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => '0',
-      ),
     ),
     'title' => '',
     'visibility' => '0',
@@ -51,17 +45,11 @@ function bcl_btrClient_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'bootstrap1',
-        'weight' => '-19',
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => '0',
       ),
     ),
     'title' => '',
-    'visibility' => '1',
+    'visibility' => '0',
   );
 
   $export['btrClient-topcontrib'] = array(
@@ -77,17 +65,11 @@ function bcl_btrClient_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'bootstrap1',
-        'weight' => '-18',
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => '0',
       ),
     ),
     'title' => '',
-    'visibility' => '1',
+    'visibility' => '0',
   );
 
   return $export;
