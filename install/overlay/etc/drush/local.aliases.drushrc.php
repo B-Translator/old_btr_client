@@ -18,10 +18,8 @@ $aliases['bcl'] = array (
   ),
 );
 
-/*
-$aliases['dev'] = array (
-  'parent' => '@bcl',
-  'root' => '/var/www/bcl_dev',
-  'uri' => 'http://dev.example.org',
-);
-*/
+// $aliases['dev'] = array (
+//   'parent' => '@bcl',
+//   'root' => '/var/www/bcl_dev',
+//   'uri' => 'http://dev.example.org',
+// );
