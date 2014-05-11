@@ -9,8 +9,10 @@ $cwd/config/gmailsmtp.sh
 $cwd/config/drupalpass.sh
 $cwd/config/languages.sh
 
-$cwd/config/mysqld.sh stop
-
 ### drush may create some css/js files with wrong permissions
 ### clean them up
 rm -rf /var/www/bcl/sites/default/files/*
+
+$cwd/../dev/make-dev-clone.sh
+
+$cwd/config/mysqld.sh stop

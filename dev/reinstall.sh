@@ -15,4 +15,3 @@ cd ../install/install-scripts/
 ./40-configure.sh
 
 ../config.sh
-
