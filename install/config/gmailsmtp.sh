@@ -29,10 +29,9 @@ sed -i /etc/ssmtp/revaliases \
     -e "/^root:/ c root:$GMAIL:smtp.gmail.com:587" \
     -e "/^admin:/ c admin:$GMAIL:smtp.gmail.com:587"
 
-for file in $(ls /etc/apache2/sites-available/)
+for file in $(ls /etc/apache2/sites-available/*)
 do
-    sed -i /etc/apache2/sites-available/$file -e "s/ServerAdmin .*\$/ServerAdmin $GMAIL/"
-    sed -i /etc/apache2/sites-available/$file -e "s/ServerAdmin .*\$/ServerAdmin $GMAIL/"
+    sed -i $file -e "s/ServerAdmin .*\$/ServerAdmin $GMAIL/"
 done
 
 ### modify drupal variables that are used for sending email

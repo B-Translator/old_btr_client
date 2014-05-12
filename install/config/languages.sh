@@ -5,7 +5,7 @@ echo "
 ===> Translation language of B-Translator Client
 
 This is the code of the translation language
-of your site (something like 'fr' or 'fr_FR').
+of your client site (something like 'fr' or 'fr_FR').
 "
 lng='fr'
 read -p "Enter the language code [$lng]: " input

@@ -7,5 +7,5 @@ test -d btr_client || git clone https://github.com/B-Translator/btr_client.git
 cd btr_client/
 git pull
 
-### make a clone of /var/www/bcl to /var/www/bcl_dev1
-dev/clone.sh bcl dev1
+### make a clone of /var/www/bcl to /var/www/bcl_dev
+dev/clone.sh bcl bcl_dev

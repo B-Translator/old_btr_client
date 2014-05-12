@@ -7,9 +7,7 @@ cwd=$(dirname $0)
 $cwd/mysqld.sh start
 
 echo "
-===> MySQL Password of Drupal Database of B-Translator Client
-
-Please enter new password for the MySQL 'bcl' account.
+===> Please enter new password for the MySQL 'bcl' account.
 "
 random_passwd=$(mcookie | head -c 16)
 stty -echo
