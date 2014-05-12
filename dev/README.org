@@ -100,7 +100,7 @@ them can be used on any Drupal project.
   #+END_EXAMPLE
 
   It creates a new application with root */var/www/bcl_dev/* and with
-  DB named *bcl_dev*. It also creates the drush alias *@dev*, and
+  DB named *bcl_dev*. It also creates the drush alias *@bcl_dev*, and
   modifies the configuration of the webserver so that the cloned
   application can be accessed at *dev.l10n.org.xx*.
 
@@ -122,7 +122,7 @@ them can be used on any Drupal project.
   chroot /var/chroot/bcl/
   cd /var/www/
   drush @bcl php-script bcl/profiles/btr_client/config.php dev1
-  drush @dev php-script bcl/profiles/btr_client/config.php dev2
+  drush @bcl_dev php-script bcl/profiles/btr_client/config.php dev2
   #+END_EXAMPLE
 
   It will set site_name to 'B-Translator (dev1)', will make site email
@@ -149,7 +149,7 @@ them can be used on any Drupal project.
   ln -s bcl_dev/profiles/btr_client/ .
 
   btr_client/dev/snapshot.sh make
-  btr_client/dev/snapshot.sh make @dev
+  btr_client/dev/snapshot.sh make @bcl_dev
   #+END_EXAMPLE
   These will create the files ~snapshot-bcl-20130602.tgz~
   and ~snapshot-bcl_dev-20130602.tgz~. They can be restored
@@ -157,10 +157,10 @@ them can be used on any Drupal project.
   #+BEGIN_EXAMPLE
   btr_client/dev/snapshot.sh restore --file=snapshot-bcl-20130602.tgz
   btr_client/dev/snapshot.sh restore --file=snapshot-bcl_dev-20130602.tgz
-  btr_client/dev/snapshot.sh restore @dev --file=snapshot-bcl-20130602.tgz
-  btr_client/dev/snapshot.sh restore @dev --file=snapshot-bcl_dev-20130602.tgz
+  btr_client/dev/snapshot.sh restore @bcl_dev --file=snapshot-bcl-20130602.tgz
+  btr_client/dev/snapshot.sh restore @bcl_dev --file=snapshot-bcl_dev-20130602.tgz
   #+END_EXAMPLE
-  As you may notice, a snapshot of @dev can also be restored on the
+  As you may notice, a snapshot of @bcl_dev can also be restored on the
   main application, and the other way around.
 
   However, in many cases a backup/restore of the database is all that
@@ -168,13 +168,13 @@ them can be used on any Drupal project.
   sql-dump* and *drush sql-query* like this:
   #+BEGIN_EXAMPLE
   drush sql-dump > bcl.sql
-  drush sql-dump @dev > bcl_dev.sql
+  drush sql-dump @bcl_dev > bcl_dev.sql
 
   drush sql-query --file=$(pwd)/bcl.sql
   drush sql-query --file=$(pwd)/bcl_dev.sql
 
-  drush @dev sql-query --file=$(pwd)/bcl.sql
-  drush @dev sql-query --file=$(pwd)/bcl_dev.sql
+  drush @bcl_dev sql-query --file=$(pwd)/bcl.sql
+  drush @bcl_dev sql-query --file=$(pwd)/bcl_dev.sql
   #+END_EXAMPLE
 
 
@@ -246,7 +246,7 @@ them can be used on any Drupal project.
 * Making a local git clone of the dev application
 
   Sometimes it is not easy or suitable to test modifications on the
-  *@dev* application (~/var/www/bcl_dev~). For example this is the
+  *@bcl_dev* application (~/var/www/bcl_dev~). For example this is the
   case when I have to test install/uninstall, enable/disable modules,
   features, etc. In this case I test them on the main application
   instance (~/var/www/bcl~). Since both applications are clones of the
