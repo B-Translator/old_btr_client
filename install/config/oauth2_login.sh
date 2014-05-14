@@ -2,11 +2,11 @@
 
 ### read server_url, client_id and client_secret
 echo "
-===> Settings for the connection to B-Translator Server
+===> Settings for OAuth2 Login
 
 User login is done with OAuth2 to a B-Translator Server.
-Translation data is also retrieved/stored to the B-Translator
-Server using the API. For these to work, a client must be
+Translation data is also retrieved/stored to this server
+using the B-Translator API. For these to work, a client must be
 registered on the B-Translator Server. Give below the URL
 of the B-Translator server and the Client ID and Client Secret
 of the registered client.
@@ -26,7 +26,7 @@ client_secret=${input:-$client_secret}
 ### set drupal variables and configs
 skip_ssl=1
 $(dirname $0)/mysqld.sh start
-drush --yes @bcl php-script $(dirname $0)/btr_server.php "$server_url" "$client_id" "$client_secret" "$skip_ssl"
+drush --yes @bcl php-script $(dirname $0)/oauth2_login.php "$server_url" "$client_id" "$client_secret" "$skip_ssl"
 drush @bcl cc all
 
 ### drush may create css/js files with wrong(root) permissions

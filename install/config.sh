@@ -7,7 +7,7 @@ $cwd/config/mysql_passwords.sh
 $cwd/config/mysql_btrclient.sh
 $cwd/config/gmailsmtp.sh
 $cwd/config/drupalpass.sh
-$cwd/config/btr_server.sh
+$cwd/config/oauth2_login.sh
 $cwd/config/languages.sh
 
 ### drush may create some css/js files with wrong permissions

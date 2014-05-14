@@ -1,8 +1,8 @@
 <?php
 /**
- * Set drupal variables and configurations related to
- * OAuth2 login and to B-Translator Server
- * Takes the arguments:
+ * Set drupal variables and configurations related
+ * to OAuth2 Login and to B-Translator Server.
+ * Takes these arguments:
  *   server_url, client_id, client_secret, skip_ssl
  */
 
