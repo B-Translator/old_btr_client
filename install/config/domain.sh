@@ -14,24 +14,27 @@ It will modify the files:
  5) /var/www/bcl*/sites/default/settings.php
 "
 
-FQDN1='example.org'
-read -p "Enter the domain name for btr_client [$FQDN1]: " input
-FQDN1=${input:-$FQDN1}
+if [ -z ${bcl_domain+xxx} -o "$bcl_domain" = '' ]
+then
+    bcl_domain='example.org'
+    read -p "Enter the domain name for btr_client [$bcl_domain]: " input
+    bcl_domain=${input:-$bcl_domain}
+fi
 
-echo $FQDN1 > /etc/hostname
+echo $bcl_domain > /etc/hostname
 sed -i /etc/hosts \
-    -e "/ localhost/c 127.0.0.1 $FQDN1 localhost"
+    -e "/ localhost/c 127.0.0.1 $bcl_domain localhost"
 
 ### change config files
 for file in $(ls /etc/nginx/sites-available/bcl*)
 do
-    sed -i $file -e "s/server_name .*\$/server_name $FQDN1;/"
+    sed -i $file -e "s/server_name .*\$/server_name $bcl_domain;/"
 done
 for file in $(ls /etc/apache2/sites-available/bcl*)
 do
-    sed -i $file -e "s/ServerName .*\$/ServerName $FQDN1/"
+    sed -i $file -e "s/ServerName .*\$/ServerName $bcl_domain/"
 done
 for file in $(ls /var/www/bcl*/sites/default/settings.php)
 do
-    sed -i $file -e "/^\\\$base_url/c \$base_url = \"https://$FQDN1\";"
+    sed -i $file -e "/^\\\$base_url/c \$base_url = \"https://$bcl_domain\";"
 done

@@ -1,19 +1,24 @@
 #!/bin/bash
 
-cwd=$(dirname $0)
+### get config settings from etc/config.sh
+set -a
+.  $(dirname $0)/etc/config.sh
+set +a
 
-$cwd/config/domain.sh
-$cwd/config/mysql_passwords.sh
-$cwd/config/mysql_btrclient.sh
-$cwd/config/gmailsmtp.sh
-$cwd/config/drupalpass.sh
-$cwd/config/oauth2_login.sh
-$cwd/config/languages.sh
+bcl=/var/www/bcl/profiles/btr_client/install
+
+$bcl/config/domain.sh
+$bcl/config/mysql_passwords.sh
+$bcl/config/mysql_btrclient.sh
+$bcl/config/gmailsmtp.sh
+$bcl/config/drupalpass.sh
+$bcl/config/oauth2_login.sh
+$bcl/config/languages.sh
 
 ### drush may create some css/js files with wrong permissions
 ### clean them up
 rm -rf /var/www/bcl/sites/default/files/*
 
-$cwd/../dev/make-dev-clone.sh
+$bcl/../dev/make-dev-clone.sh
 
-$cwd/config/mysqld.sh stop
+$bcl/config/mysqld.sh stop

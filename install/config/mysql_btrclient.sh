@@ -6,22 +6,29 @@ cwd=$(dirname $0)
 
 $cwd/mysqld.sh start
 
-echo "
-===> Please enter new password for the MySQL 'bcl' account.
-"
-random_passwd=$(mcookie | head -c 16)
-stty -echo
-read -p "Enter password [$random_passwd]: " passwd
-stty echo
-echo
-drupal_passwd=${passwd:-$random_passwd}
+### get a new password for the mysql user 'bcl'
+if [ "$mysql_passwd_bcl" = 'random' ]
+then
+    mysql_passwd_bcl=$(mcookie | head -c 16)
+elif [ -z ${mysql_passwd_bcl+xxx} -o "$mysql_passwd_bcl" = '' ]
+then
+    echo
+    echo " ===> Please enter new password for the MySQL 'bcl' account. "
+    echo
+    mysql_passwd_bcl=$(mcookie | head -c 16)
+    stty -echo
+    read -p "Enter password [$mysql_passwd_bcl]: " passwd
+    stty echo
+    echo
+    mysql_passwd_bcl=${passwd:-$mysql_passwd_bcl}
+fi
 
 ### set password
-set_mysql_passwd bcl $drupal_passwd
+set_mysql_passwd bcl $mysql_passwd_bcl
 
 ### modify the configuration file of Drupal (settings.php)
 for file in $(ls /var/www/bcl*/sites/default/settings.php)
 do
     sed -i $file \
-	-e "/^\\\$databases = array/,+10  s/'password' => .*/'password' => '$drupal_passwd',/"
+	-e "/^\\\$databases = array/,+10  s/'password' => .*/'password' => '$mysql_passwd_bcl',/"
 done
