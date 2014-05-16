@@ -14,7 +14,7 @@ It will modify the files:
  5) /var/www/bcl*/sites/default/settings.php
 "
 
-if [ -z ${bcl_domain+xxx} -o "$bcl_domain" = '' ]
+if [ -z "${bcl_domain+xxx}" -o "$bcl_domain" = '' ]
 then
     bcl_domain='example.org'
     read -p "Enter the domain name for btr_client [$bcl_domain]: " input

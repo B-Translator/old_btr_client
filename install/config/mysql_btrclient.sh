@@ -10,7 +10,7 @@ $cwd/mysqld.sh start
 if [ "$mysql_passwd_bcl" = 'random' ]
 then
     mysql_passwd_bcl=$(mcookie | head -c 16)
-elif [ -z ${mysql_passwd_bcl+xxx} -o "$mysql_passwd_bcl" = '' ]
+elif [ -z "${mysql_passwd_bcl+xxx}" -o "$mysql_passwd_bcl" = '' ]
 then
     echo
     echo " ===> Please enter new password for the MySQL 'bcl' account. "

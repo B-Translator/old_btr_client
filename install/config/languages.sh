@@ -7,7 +7,7 @@ echo "
 This is the code of the translation language
 of your client site (something like 'fr' or 'fr_FR').
 "
-if [ -z ${bcl_translation_lng+xxx} -o "$bcl_translation_lng" = '' ]
+if [ -z "${bcl_translation_lng+xxx}" -o "$bcl_translation_lng" = '' ]
 then
     bcl_translation_lng='fr'
     read -p "Enter the language code [$bcl_translation_lng]: " input

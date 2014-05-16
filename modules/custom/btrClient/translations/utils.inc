@@ -108,13 +108,6 @@ function btrClient_get_languages() {
 function _btrClient_get_languages() {
 
   $arr_langs = array(
-    'en' => array(
-      'code' => 'en',
-      'name' => 'English',
-      'encoding' => 'latin1',
-      'direction' => LANGUAGE_LTR,
-      'plurals' => 2,
-    ),
     'fr' => array(
       'code' => 'fr',
       'name' => 'French',

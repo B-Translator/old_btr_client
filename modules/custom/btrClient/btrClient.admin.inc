@@ -20,7 +20,6 @@ function btrClient_config() {
   // get a list of available languages
   $languages = btrClient_get_languages();
   foreach ($languages as $code => $lang)  $lang_options[$code] = $lang['name'];
-  unset($lang_options['en']);
 
   // btrClient_translation_lng
   $form['defaults']['btrClient_translation_lng'] = array(

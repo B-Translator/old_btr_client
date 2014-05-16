@@ -12,21 +12,21 @@ of the B-Translator server and the Client ID and Client Secret
 of the registered client.
 "
 
-if [ -z ${oauth2_server_url+xxx} -o "$oauth2_server_url" = '' ]
+if [ -z "${oauth2_server_url+xxx}" -o "$oauth2_server_url" = '' ]
 then
     oauth2_server_url='https://dev.btranslator.org'
     read -p "Enter the URL of the B-Translator Server [$oauth2_server_url]: " input
     oauth2_server_url=${input:-$oauth2_server_url}
 fi
 
-if [ -z ${oauth2_client_id+xxx} -o "$oauth2_client_id" = '' ]
+if [ -z "${oauth2_client_id+xxx}" -o "$oauth2_client_id" = '' ]
 then
     oauth2_client_id='client1'
     read -p "Enter the Client ID [$oauth2_client_id]: " input
     oauth2_client_id=${input:-$oauth2_client_id}
 fi
 
-if [ -z ${oauth2_client_secret+xxx} -o "$oauth2_client_secret" = '' ]
+if [ -z "${oauth2_client_secret+xxx}" -o "$oauth2_client_secret" = '' ]
 then
     oauth2_client_secret='0123456789'
     read -p "Enter the Client Secret [$oauth2_client_secret]: " input
