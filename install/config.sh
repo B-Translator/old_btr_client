@@ -1,9 +1,13 @@
 #!/bin/bash
 
-### get config settings from etc/config.sh
-set -a
-.  $(dirname $0)/etc/config.sh
-set +a
+### get config settings from a file
+if [ "$1" != '' ]
+then
+    settings=$1
+    set -a
+    source  $settings
+    set +a
+fi
 
 bcl=/var/www/bcl/profiles/btr_client/install
 
@@ -13,7 +17,7 @@ $bcl/config/mysql_btrclient.sh
 $bcl/config/gmailsmtp.sh
 $bcl/config/drupalpass.sh
 $bcl/config/oauth2_login.sh
-$bcl/config/languages.sh
+#$bcl/config/languages.sh
 
 ### drush may create some css/js files with wrong permissions
 ### clean them up

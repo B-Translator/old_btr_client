@@ -99,10 +99,18 @@ EOF
 #    -e '#^/*fb config# c // /* fb config' \
 #    -e '#^fb config */# c // fb config */'
 
-### update to the latest version of core and modules
-#$drush --yes pm-update
-
 ### install also multi-language support
-#$drush --yes pm-enable l10n_update
+$drush --yes pm-enable l10n_update
 mkdir -p $drupal_dir/sites/all/translations
 chown -R www-data: $drupal_dir/sites/all/translations
+
+### set drupal variable btrClient_translation_lng
+$(dirname $0)/mysqld.sh start
+$drush --yes --exact vset btrClient_translation_lng $bcl_translation_lng
+
+### add $bcl_translation_lng as a drupal language
+$drush language-add $bcl_translation_lng
+$drush --yes l10n-update
+
+### update to the latest version of core and modules
+#$drush --yes pm-update

@@ -1,4 +1,14 @@
 
+### Default settings for building the chroot.
+target_dir='btr'
+arch='i386'
+suite='precise'
+apt_mirror='http://archive.ubuntu.com/ubuntu'
+
+### A reboot is needed after installation/configuration.
+### If you want to do it automatically, set it to 'true'.
+reboot='false'
+
 ### Domain of the website.
 bcl_domain='example.org'
 
