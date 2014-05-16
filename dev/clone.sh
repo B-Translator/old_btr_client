@@ -28,7 +28,7 @@ rm -rf $dst_dir
 cp -a $src_dir $dst_dir
 
 ### modify settings.php
-domain=$(cat /etc/hostname)
+domain=$(grep ' localhost' /etc/hosts | head -n 1 | cut -d' ' -f2)
 sub=${dst#*_}
 hostname=$sub.$domain
 sed -i $dst_dir/sites/default/settings.php \
@@ -37,8 +37,8 @@ sed -i $dst_dir/sites/default/settings.php \
     -e "/^\\\$conf\['memcache_key_prefix'\]/c \$conf['memcache_key_prefix'] = '$dst';"
 
 ### add to /etc/hosts
-sed -i /etc/hosts -e "/^127.0.0.1  $hostname/d"
-echo "127.0.0.1  $hostname" >> /etc/hosts
+sed -i /etc/hosts -e "/^127.0.0.1 $hostname/d"
+echo "127.0.0.1 $hostname" >> /etc/hosts
 
 ### create a drush alias
 sed -i /etc/drush/local.aliases.drushrc.php \
