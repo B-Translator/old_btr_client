@@ -1,6 +1,6 @@
 
 ### Default settings for building the chroot.
-target_dir='btr'
+target_dir='bcl'
 arch='i386'
 suite='precise'
 apt_mirror='http://archive.ubuntu.com/ubuntu'
