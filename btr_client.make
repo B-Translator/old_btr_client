@@ -133,7 +133,8 @@ projects[mass_contact][version] = "1.0-beta3"
 
 ;projects[phpmailer][version] = "3.x-dev"
 projects[phpmailer][download][type] = "git"
-projects[phpmailer][download][url] = "http://drupalcode.org/project/phpmailer.git"
+projects[phpmailer][download][url] = "http://git.drupal.org/project/phpmailer.git"
+projects[phpmailer][download][branch] = "7.x-3.x"
 
 libraries[phpmailer][directory_name] = "phpmailer"
 libraries[phpmailer][download][type] = "get"
