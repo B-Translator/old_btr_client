@@ -34,11 +34,13 @@ then
 fi
 
 ### set drupal variables and configs
+alias=${1:-@bcl}
 skip_ssl=1
 $(dirname $0)/mysqld.sh start
-drush --yes @bcl php-script $(dirname $0)/oauth2_login.php  \
+drush --yes $alias php-script $(dirname $0)/oauth2_login.php  \
     "$oauth2_server_url" "$oauth2_client_id" "$oauth2_client_secret" "$skip_ssl"
-drush @bcl cc all
+drush $alias cc all
 
 ### drush may create css/js files with wrong(root) permissions
-rm -rf /var/www/bcl/sites/default/files/*
+drupal_dir=$(drush $alias dd)
+rm -rf $drupal_dir/sites/default/files/*
