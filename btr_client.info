@@ -114,10 +114,10 @@ dependencies[] = btrClient
 
 dependencies[] = bcl_btrClient
 dependencies[] = bcl_misc
-;dependencies[] = bcl_layout
+dependencies[] = bcl_layout
 dependencies[] = bcl_hybridauth
-;dependencies[] = bcl_disqus
+dependencies[] = bcl_disqus
 dependencies[] = bcl_content
-;dependencies[] = bcl_sharethis
+dependencies[] = bcl_service_links
 dependencies[] = bcl_captcha
 dependencies[] = bcl_permissions
