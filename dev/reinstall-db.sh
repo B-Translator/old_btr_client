@@ -57,13 +57,13 @@ drush site-install --verbose --yes btr_client \
 drush --yes pm-enable bcl_service_links
 drush --yes pm-enable bcl_disqus
 #drush --yes pm-enable bcl_sharethis
+#drush --yes features-revert bcl_sharethis
 #drush --yes pm-enable bcl_invite
 #drush --yes pm-enable bcl_simplenews
 #drush --yes pm-enable bcl_mass_contact
 #drush --yes pm-enable bcl_googleanalytics
 #drush --yes pm-enable bcl_drupalchat
 #drush --yes pm-enable bcl_fb
-drush --force features-revert-all
 
 ### configure oauth2 login
 export oauth2_server_url='https://dev.btranslator.org'

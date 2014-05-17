@@ -69,9 +69,10 @@ comment memcache config */
 
 EOF
 
-### install features modules
+### install additional features
 ### $drush is an alias for 'drush --root=/var/www/bcl'
 #$drush --yes pm-enable bcl_discus
+#$drush --yes features-revert bcl_discus
 #$drush --yes pm-enable bcl_service_links
 #$drush --yes pm-enable bcl_sharethis
 #$drush --yes pm-enable bcl_invite
