@@ -19,11 +19,11 @@ export drush="drush --root=$drupal_dir"
 rm -rf $drupal_dir-bak
 mv $drupal_dir $drupal_dir-bak
 
-cd /var/www/github/btr_client/install/install-scripts/
+cd /var/www/code/btr_client/install/install-scripts/
 ./20-make-and-install.sh
 ./30-git-clone.sh
 ./40-configure.sh
 
 ### configure
-cd /var/www/github/btr_client/install/
+cd /var/www/code/btr_client/install/
 ./config.sh
