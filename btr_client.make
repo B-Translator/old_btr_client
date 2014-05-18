@@ -91,7 +91,7 @@ projects[oauth2_login][version] = "1.0"
 
 projects[drupalchat][version] = "1.0-beta15"
 projects[disqus][version] = "1.10"
-projects[disqus][patch][] = "http://drupal.org/files/disqus-https.patch"
+;projects[disqus][patch][] = "http://drupal.org/files/disqus-https.patch"
 projects[sharethis][version] = "2.6"
 projects[service_links][version] = "2.2"
 projects[fb][version] = "3.4"
