@@ -87,7 +87,7 @@ cd $current_dir
 ### copy the local git repository to the target dir
 export code_dir=/var/www/code
 chroot $target_dir mkdir -p $code_dir
-cp -a $git_repo $target_dir/$code_dir/bcl_server
+cp -a $git_repo $target_dir/$code_dir/btr_client
 
 ### stop any services that may get into the way
 ### of installing services inside the chroot
@@ -95,8 +95,8 @@ for SRV in apache2 nginx mysql
 do service $SRV stop; done
 
 ### run install/config scripts
-chroot $target_dir $code_dir/bcl_server/install/install-scripts/00-install.sh
-chroot $target_dir $code_dir/bcl_server/install/config.sh
+chroot $target_dir $code_dir/btr_client/install/install-scripts/00-install.sh
+chroot $target_dir $code_dir/btr_client/install/config.sh
 
 ### create an init script
 cd $target_dir
