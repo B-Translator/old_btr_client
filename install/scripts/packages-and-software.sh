@@ -13,6 +13,10 @@ sed -i /etc/hosts \
     -e "/^127.0.0.1/c 127.0.0.1 example.org localhost"
 hostname example.org
 
+### install localization
+install language-pack-en
+update-locale
+
 ### install and upgrade packages
 apt-get update
 apt-get -y upgrade

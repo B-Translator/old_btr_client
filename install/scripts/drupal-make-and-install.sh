@@ -1,12 +1,11 @@
 #!/bin/bash -x
 
 ### set the right version to the make file
-version_type=${bcl_git_version%%:*}
 makefile="$code_dir/btr_client/build-btrclient.make"
 sed -i $makefile -e '/^; version to be used/,$ d'
 cat <<EOF >> $makefile
 ; version to be used
-projects[btr_client][download][$version_type] = '$bcl_version'
+projects[btr_client][download][branch] = '$bcl_git_branch'
 EOF
 
 ### retrieve all the projects/modules and build the application directory
@@ -59,3 +58,17 @@ mkdir -p sites/default/files/
 chown -R www-data: sites/default/files/
 mkdir -p cache/
 chown -R www-data: cache/
+
+### Replace the profile btr_client with a version
+### that is a git clone, so that any updates
+### can be retrieved easily (without having to
+### reinstall the whole application).
+cd $drupal_dir/profiles/
+mv btr_client btr_client-bak
+cp -a $code_dir/btr_client .
+### copy contrib libraries and modules
+cp -a btr_client-bak/libraries/ btr_client/
+cp -a btr_client-bak/modules/contrib/ btr_client/modules/
+cp -a btr_client-bak/themes/contrib/ btr_client/themes/
+### cleanup
+rm -rf btr_client-bak/

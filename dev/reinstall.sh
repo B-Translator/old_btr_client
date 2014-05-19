@@ -21,11 +21,9 @@ mv /var/www/{bcl,bcl-bak}
 export drupal_dir=/var/www/bcl
 export drush="drush --root=$drupal_dir"
 export code_dir=/var/www/code
-cd $code_dir/btr_client/install/install-scripts/
-./20-make-and-install.sh
-./30-git-clone.sh
-./40-configure.sh
+cd $code_dir/btr_client/install/scripts/
+./drupal-make-and-install.sh
+./drupal-config.sh
 
 ### configure
-cd $code_dir/btr_client/install/
-./config.sh
+$code_dir/btr_client/install/config.sh

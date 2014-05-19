@@ -21,7 +21,7 @@ Install B-Translator inside a chroot in the target directory.
 for opt in "$@"
 do
     case $opt in
-	--target=*)    target_dir=${opt#*=} ;;
+	--target=*)    target=${opt#*=} ;;
 	--arch=*)      arch=${opt#*=} ;;
 	--suite=*)     suite=${opt#*=} ;;
 	--mirror=*)    apt_mirror=${opt#*=} ;;
@@ -54,40 +54,44 @@ then
     usage
 fi
 
+### check that the code of btr_server and btr_client does exist
+if ! test -d btr_client
+then
+    echo "Fatal error: 'btr_client' does not exist."
+    exit 1
+fi
+
+### make sure that we are using the right version of install scripts
+cd btr_client/
+git fetch
+git checkout $bcl_git_branch
+cd ..
+
 ### install debootstrap dchroot
 apt-get install -y debootstrap dchroot
 
 ### install a minimal system
 export DEBIAN_FRONTEND=noninteractive
-debootstrap --variant=minbase --arch=$arch $suite $target_dir $apt_mirror
+debootstrap --variant=minbase --arch=$arch $suite $target $apt_mirror
 
-cat <<EOF > $target_dir/etc/apt/sources.list
+cat <<EOF > $target/etc/apt/sources.list
 deb $apt_mirror $suite main restricted universe multiverse
 deb $apt_mirror $suite-updates main restricted universe multiverse
 deb http://security.ubuntu.com/ubuntu $suite-security main restricted universe multiverse
 EOF
 
-cp /etc/resolv.conf $target_dir/etc/resolv.conf
-mount -o bind /proc $target_dir/proc
-chroot $target_dir apt-get update
-chroot $target_dir apt-get -y install ubuntu-minimal
+cp /etc/resolv.conf $target/etc/resolv.conf
+mount -o bind /proc $target/proc
+chroot $target apt-get update
+chroot $target apt-get -y install ubuntu-minimal
 
 ### display the name of the chroot on the prompt
-echo $(basename $target_dir) > $target_dir/etc/debian_chroot
-
-### make sure that we are using the right version of install scripts
-export bcl_version=${bcl_git_version#*:}
-current_dir=$(pwd)
-git_repo=$(dirname $(dirname $0))
-cd $git_repo
-git pull
-git checkout $bcl_version
-cd $current_dir
+echo $target > $target/etc/debian_chroot
 
 ### copy the local git repository to the target dir
 export code_dir=/var/www/code
-chroot $target_dir mkdir -p $code_dir
-cp -a $git_repo $target_dir/$code_dir/btr_client
+chroot $target mkdir -p $code_dir
+cp -a btr_client $target/$code_dir
 
 ### stop any services that may get into the way
 ### of installing services inside the chroot
@@ -95,20 +99,17 @@ for SRV in apache2 nginx mysql
 do service $SRV stop; done
 
 ### run install/config scripts
-chroot $target_dir $code_dir/btr_client/install/install-scripts/00-install.sh
-chroot $target_dir $code_dir/btr_client/install/config.sh
+chroot $target $code_dir/btr_client/install/install-and-config.sh
 
 ### create an init script
-cd $target_dir
-chroot_dir=$(pwd)
-cd $current_dir
-template_init=$git_repo/install/init.sh
-init_script="/etc/init.d/chroot-$(basename $chroot_dir)"
+template_init=btr_client/install/init.sh
+init_script="/etc/init.d/chroot-$target"
+chroot_dir="$(pwd)/$target"
 sed -e "/^CHROOT=/c CHROOT='$chroot_dir'" $template_init > $init_script
 chmod +x $init_script
 
 ### start the chroot system on boot
-service=$(basename $init_script)
+service="chroot-$target"
 update-rc.d $service defaults
 if [ "$start_on_boot" = 'true' ]
 then
