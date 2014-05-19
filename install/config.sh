@@ -9,7 +9,7 @@ then
     set +a
 fi
 
-bcl=/var/www/bcl/profiles/btr_client/install
+bcl=/var/www/code/btr_client/install
 
 $bcl/config/domain.sh
 $bcl/config/mysql_passwords.sh

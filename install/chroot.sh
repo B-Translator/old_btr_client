@@ -54,7 +54,7 @@ then
     usage
 fi
 
-### check that the code of btr_server and btr_client does exist
+### check that the code of btr_client does exist
 if ! test -d btr_client
 then
     echo "Fatal error: 'btr_client' does not exist."

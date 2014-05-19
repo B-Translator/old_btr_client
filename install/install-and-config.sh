@@ -10,7 +10,7 @@ export drupal_dir=/var/www/bcl
 export drush="drush --root=$drupal_dir"
 
 ### go to the directory of scripts
-cd $code_dir/btr_client/install/install-scripts/
+cd $code_dir/btr_client/install/scripts/
 
 ### additional packages and software
 ./packages-and-software.sh
