@@ -43,10 +43,3 @@ echo "extension = uploadprogress.so" > /etc/php5/conf.d/uploadprogress.ini
 ### install drush
 pear channel-discover pear.drush.org
 pear install pear.drush.org/drush-6.2.0.0
-
-### get a local copy of btr_client
-code_dir=/var/www/code
-mkdir -p $code_dir
-git clone $bcl_git_repo $code_dir/btr_client
-cd $code_dir/btr_client
-git checkout $bcl_version

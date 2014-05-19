@@ -1,10 +1,9 @@
 #!/bin/bash
 ### set password for the mysql user bcl
 
-cwd=$(dirname $0)
-. $cwd/set_mysql_passwd.sh
-
-$cwd/mysqld.sh start
+### make sure that mysqld is running
+source $(dirname $0)/set_mysql_passwd.sh
+$(dirname $0)/mysqld.sh start
 
 ### get a new password for the mysql user 'bcl'
 if [ "$mysql_passwd_bcl" = 'random' ]

@@ -2,7 +2,7 @@
 
 ### set the right version to the make file
 version_type=${bcl_git_version%%:*}
-makefile="/var/www/code/btr_client/build-btrclient.make"
+makefile="$code_dir/btr_client/build-btrclient.make"
 sed -i $makefile -e '/^; version to be used/,$ d'
 cat <<EOF >> $makefile
 ; version to be used
