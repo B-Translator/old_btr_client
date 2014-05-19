@@ -1,7 +1,15 @@
 #!/bin/bash -x
 
-### retrieve all the projects/modules and build the application directory
+### set the right version to the make file
+version_type=${bcl_git_version%%:*}
 makefile="/var/www/code/btr_client/build-btrclient.make"
+sed -i $makefile -e '/^; version to be used/,$ d'
+cat <<EOF >> $makefile
+; version to be used
+projects[btr_client][download][$version_type] = '$bcl_version'
+EOF
+
+### retrieve all the projects/modules and build the application directory
 rm -rf $drupal_dir
 drush make --prepare-install --force-complete \
            --contrib-destination=profiles/btr_client \

@@ -5,12 +5,11 @@ arch='i386'
 suite='precise'
 apt_mirror='http://archive.ubuntu.com/ubuntu'
 
-### A reboot is needed after installation/configuration.
-### If you want to do it automatically, set it to 'true'.
-reboot='false'
-
-### Start chroot service automatically on reboot.
-start_on_boot='false'
+### Git repositories and branches that will be used.
+### Version can be 'branch:branch_name' or 'tag:tag_name'
+### or 'revision:commit_id'
+bcl_git_repo='https://github.com/B-Translator/btr_client.git'
+bcl_git_version='branch:master'
 
 ### Domain of the website.
 bcl_domain='example.org'
@@ -36,3 +35,10 @@ mysql_passwd_bcl='random'
 oauth2_server_url='https://dev.btranslator.org'
 oauth2_client_id='client1'
 oauth2_client_secret='0123456789'
+
+### A reboot is needed after installation/configuration.
+### If you want to do it automatically, set it to 'true'.
+reboot='false'
+
+### Start chroot service automatically on reboot.
+start_on_boot='false'
