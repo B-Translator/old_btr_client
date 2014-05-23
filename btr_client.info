@@ -51,8 +51,8 @@ dependencies[] = text
 ;;; Development
 dependencies[] = reroute_email
 dependencies[] = devel
+dependencies[] = diff
 ;dependencies[] = coder
-;dependencies[] = diff
 ;dependencies[] = simpletest_clone
 
 ;;; Extensions
