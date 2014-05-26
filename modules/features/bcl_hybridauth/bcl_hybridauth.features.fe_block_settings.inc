@@ -27,6 +27,12 @@ function bcl_hybridauth_default_fe_block_settings() {
         'theme' => 'bootstrap1',
         'weight' => '0',
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
     ),
     'title' => '',
     'visibility' => '0',

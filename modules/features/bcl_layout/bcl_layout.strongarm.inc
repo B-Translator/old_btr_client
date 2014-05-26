@@ -338,7 +338,7 @@ function bcl_layout_strongarm() {
     'favicon_upload' => '',
     'bootstrap_rebuild_registry' => 0,
     'cdn_bootstrap' => 1,
-    'cdn_bootstrap_version' => '2.3.1',
+    'cdn_bootstrap_version' => '2.3.2',
   );
   $export['theme_bootstrap1_settings'] = $strongarm;
 
@@ -348,6 +348,13 @@ function bcl_layout_strongarm() {
   $strongarm->name = 'theme_default';
   $strongarm->value = 'bootstrap1';
   $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_theme';
+  $strongarm->value = 'seven';
+  $export['admin_theme'] = $strongarm;
 
   return $export;
 }

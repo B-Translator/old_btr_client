@@ -25,7 +25,6 @@ dependencies[] = path
 dependencies[] = taxonomy
 dependencies[] = block
 dependencies[] = aggregator
-;dependencies[] = comment
 dependencies[] = dashboard
 dependencies[] = filter
 dependencies[] = image

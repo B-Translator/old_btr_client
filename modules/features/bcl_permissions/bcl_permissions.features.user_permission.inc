@@ -24,13 +24,6 @@ function bcl_permissions_user_default_permissions() {
     'module' => 'views',
   );
 
-  // Exported permission: access comments.
-  $permissions['access comments'] = array(
-    'name' => 'access comments',
-    'roles' => array(),
-    'module' => 'comment',
-  );
-
   // Exported permission: access content.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -175,13 +168,6 @@ function bcl_permissions_user_default_permissions() {
     'module' => 'boxes',
   );
 
-  // Exported permission: administer comments.
-  $permissions['administer comments'] = array(
-    'name' => 'administer comments',
-    'roles' => array(),
-    'module' => 'comment',
-  );
-
   // Exported permission: administer contact forms.
   $permissions['administer contact forms'] = array(
     'name' => 'administer contact forms',
@@ -215,13 +201,6 @@ function bcl_permissions_user_default_permissions() {
     'name' => 'administer filters',
     'roles' => array(),
     'module' => 'filter',
-  );
-
-  // Exported permission: administer homebox.
-  $permissions['administer homebox'] = array(
-    'name' => 'administer homebox',
-    'roles' => array(),
-    'module' => 'homebox',
   );
 
   // Exported permission: administer image styles.
@@ -630,13 +609,6 @@ function bcl_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit own comments.
-  $permissions['edit own comments'] = array(
-    'name' => 'edit own comments',
-    'roles' => array(),
-    'module' => 'comment',
-  );
-
   // Exported permission: edit own page content.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
@@ -679,13 +651,6 @@ function bcl_permissions_user_default_permissions() {
     'module' => 'features',
   );
 
-  // Exported permission: post comments.
-  $permissions['post comments'] = array(
-    'name' => 'post comments',
-    'roles' => array(),
-    'module' => 'comment',
-  );
-
   // Exported permission: revert revisions.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
@@ -705,13 +670,6 @@ function bcl_permissions_user_default_permissions() {
     'name' => 'select account cancellation method',
     'roles' => array(),
     'module' => 'user',
-  );
-
-  // Exported permission: skip comment approval.
-  $permissions['skip comment approval'] = array(
-    'name' => 'skip comment approval',
-    'roles' => array(),
-    'module' => 'comment',
   );
 
   // Exported permission: switch users.
