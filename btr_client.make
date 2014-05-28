@@ -35,7 +35,7 @@ projects[btrClient][download][url] = "https://github.com/B-Translator/btrClient.
 ;--------------------
 
 ;;; Development
-projects[devel][version] = "1.4"
+projects[devel][version] = "1.5"
 ;projects[coder][version] = "1.2"
 projects[diff][version] = "3.2"
 ;projects[simpletest_clone][version] = "1.0-beta3"
@@ -46,13 +46,14 @@ projects[libraries][version] = "2.2"
 projects[entity][version] = "1.5"
 projects[xautoload][version] = "4.5"
 projects[token][version] = "1.5"
-projects[rules][version] = "2.6"
+projects[rules][version] = "2.7"
 projects[pathauto][version] = "1.2"
 projects[subpathauto][version] = "1.3"
 
 ;;; User interface
 projects[context][version] = "3.2"
-projects[views][version] = "3.7"
+projects[views][version] = "3.8
+"
 projects[homebox][version] = "2.0-beta7"
 projects[boxes][version] = "1.1"
 projects[edit_profile][version] = "1.0-beta2"
@@ -79,7 +80,7 @@ projects[delete_all][version] = "1.1"
 projects[l10n_update][version] = "1.0"
 
 ;;; Performance
-projects[boost][version] = "1.0-beta2"
+projects[boost][version] = "1.0"
 projects[memcache][version] = "1.0"
 
 ;;; Services and Social
