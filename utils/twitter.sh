@@ -5,6 +5,6 @@
 
 t='/usr/local/bin/t'
 base_url=https://l10n.org.al
-tweet="$(wget --no-check-certificate $base_url/translations/twitter/sq -O-)"
+tweet=$(curl -k $base_url/translations/twitter)
 mention=$($t following | sort -R | tail -1)
 $t update "$tweet @$mention"
