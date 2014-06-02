@@ -28,14 +28,14 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_disable_username_change';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_disable_username_change'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_display_name';
-  $strongarm->value = '[user:hybridauth:firstName] [user:hybridauth:lastName]';
+  $strongarm->value = '';
   $export['hybridauth_display_name'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -49,7 +49,7 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_email_verification';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['hybridauth_email_verification'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -68,7 +68,7 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_override_realname';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_override_realname'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -89,7 +89,7 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Facebook_enabled';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_provider_Facebook_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -143,7 +143,7 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Facebook_weight';
-  $strongarm->value = '-20';
+  $strongarm->value = '-19';
   $export['hybridauth_provider_Facebook_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -171,14 +171,14 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_GitHub_enabled';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_provider_GitHub_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_GitHub_weight';
-  $strongarm->value = '-16';
+  $strongarm->value = '-15';
   $export['hybridauth_provider_GitHub_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -206,7 +206,7 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Google_enabled';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_provider_Google_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -220,7 +220,7 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Google_weight';
-  $strongarm->value = '-19';
+  $strongarm->value = '-18';
   $export['hybridauth_provider_Google_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -248,14 +248,14 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_LinkedIn_enabled';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_provider_LinkedIn_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_LinkedIn_weight';
-  $strongarm->value = '-17';
+  $strongarm->value = '-16';
   $export['hybridauth_provider_LinkedIn_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -283,14 +283,14 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Twitter_enabled';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_provider_Twitter_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_provider_Twitter_weight';
-  $strongarm->value = '-18';
+  $strongarm->value = '-17';
   $export['hybridauth_provider_Twitter_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -318,21 +318,21 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_register';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['hybridauth_register'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_registration_password';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_registration_password'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_registration_username_change';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['hybridauth_registration_username_change'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -358,7 +358,7 @@ function bcl_hybridauth_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_username';
-  $strongarm->value = '[user:hybridauth:firstName] [user:hybridauth:lastName]';
+  $strongarm->value = '[user:hybridauth:displayName]';
   $export['hybridauth_username'] = $strongarm;
 
   $strongarm = new stdClass();
