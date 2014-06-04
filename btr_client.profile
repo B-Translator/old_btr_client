@@ -41,3 +41,12 @@ function btr_client_install_tasks($install_state) {
 
   return $tasks;
 }
+
+/**
+ * Implements hook_menu_alter().
+ */
+function btr_client_menu_alter(&$items) {
+  // Disable registration on the local site.
+  unset($items['user/register']);
+  unset($items['user/password']);
+}
