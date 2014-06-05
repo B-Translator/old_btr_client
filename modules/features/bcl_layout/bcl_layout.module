@@ -8,15 +8,8 @@ include_once 'bcl_layout.features.inc';
 
 /**
  * Implements hook_menu_alter().
- *
- * Change the user account menu:
- *  - Remove the View tab.
- *  - Remove the hybridauth tab.
  */
 function bcl_layout_menu_alter(&$items) {
-  // Remove the View tab.
-  unset($items['user/%user/view']);
-
   // Remove the Hybridauth tab.
   unset($items['user/%user/hybridauth']);
 }
