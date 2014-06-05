@@ -42,6 +42,7 @@ dependencies[] = list
 dependencies[] = number
 dependencies[] = options
 dependencies[] = text
+dependencies[] = comment
 
 ;--------------------
 ; Contrib
@@ -110,10 +111,10 @@ dependencies[] = bcl_service_links
 dependencies[] = bcl_disqus
 
 ;;; Features
-dependencies[] = bcl_btrClient
-dependencies[] = bcl_misc
-dependencies[] = bcl_layout
-dependencies[] = bcl_hybridauth
-dependencies[] = bcl_content
-dependencies[] = bcl_captcha
-dependencies[] = bcl_permissions
+;dependencies[] = bcl_btrClient
+;dependencies[] = bcl_misc
+;dependencies[] = bcl_layout
+;dependencies[] = bcl_hybridauth
+;dependencies[] = bcl_content
+;dependencies[] = bcl_captcha
+;dependencies[] = bcl_permissions

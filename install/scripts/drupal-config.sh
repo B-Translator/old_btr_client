@@ -71,6 +71,26 @@ EOF
 
 ### install additional features
 ### $drush is an alias for 'drush --root=/var/www/bcl'
+$drush --yes pm-enable bcl_btrClient
+$drush --yes features-revert bcl_btrClient
+
+$drush --yes pm-enable bcl_misc
+$drush --yes features-revert bcl_misc
+
+$drush --yes pm-enable bcl_layout
+$drush --yes features-revert bcl_layout
+
+$drush --yes pm-enable bcl_hybridauth
+$drush --yes features-revert bcl_hybridauth
+
+$drush --yes pm-enable bcl_content
+
+$drush --yes pm-enable bcl_captcha
+$drush --yes features-revert bcl_captcha
+
+$drush --yes pm-enable bcl_permissions
+$drush --yes features-revert bcl_permissions
+
 #$drush --yes pm-enable bcl_discus
 #$drush --yes features-revert bcl_discus
 #$drush --yes pm-enable bcl_service_links

@@ -54,6 +54,26 @@ drush site-install --verbose --yes btr_client \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
 
 ## install features modules
+drush --yes pm-enable bcl_btrClient
+drush --yes features-revert bcl_btrClient
+
+drush --yes pm-enable bcl_misc
+drush --yes features-revert bcl_misc
+
+drush --yes pm-enable bcl_layout
+drush --yes features-revert bcl_layout
+
+drush --yes pm-enable bcl_hybridauth
+drush --yes features-revert bcl_hybridauth
+
+drush --yes pm-enable bcl_content
+
+drush --yes pm-enable bcl_captcha
+drush --yes features-revert bcl_captcha
+
+drush --yes pm-enable bcl_permissions
+drush --yes features-revert bcl_permissions
+
 drush --yes pm-enable bcl_service_links
 drush --yes pm-enable bcl_disqus
 #drush --yes pm-enable bcl_sharethis
@@ -71,6 +91,8 @@ export oauth2_client_id='client1'
 export oauth2_client_secret='0123456789'
 config=$drupal_dir/profiles/btr_client/install/config
 $config/oauth2_login.sh $alias
+
+#exit
 
 ### add language
 drush --yes pm-enable l10n_update
