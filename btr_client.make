@@ -62,7 +62,7 @@ projects[wysiwyg][version] = "2.2"
 ;;; Security
 projects[captcha][version] = "1.0"
 projects[recaptcha][version] = "1.11"
-projects[honeypot][version] = "1.16"
+projects[honeypot][version] = "1.17"
 projects[user_restrictions][version] = "1.0"
 
 ;;; Features
