@@ -52,7 +52,7 @@ projects[subpathauto][version] = "1.3"
 
 ;;; User interface
 projects[context][version] = "3.2"
-projects[views][version] = "3.8
+projects[views][version] = "3.8"
 "
 projects[homebox][version] = "2.0-beta7"
 projects[boxes][version] = "1.1"
