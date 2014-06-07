@@ -48,5 +48,5 @@ function btr_client_install_tasks($install_state) {
 function btr_client_menu_alter(&$items) {
   // Disable registration on the local site.
   unset($items['user/register']);
-  unset($items['user/password']);
+  //unset($items['user/password']);
 }
