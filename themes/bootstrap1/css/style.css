@@ -131,3 +131,7 @@ h2.block-title {
     padding: 10px;
     margin-bottom: 10px;
 }
+
+.breadcrumb, .page-header {
+    display: none;
+}
