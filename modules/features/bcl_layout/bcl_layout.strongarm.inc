@@ -13,6 +13,13 @@ function bcl_layout_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'admin_theme';
+  $strongarm->value = 'seven';
+  $export['admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_article';
   $strongarm->value = 0;
   $export['comment_anonymous_article'] = $strongarm;
@@ -282,7 +289,7 @@ function bcl_layout_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_bootstrap1_settings';
   $strongarm->value = array(
-    'toggle_logo' => 0,
+    'toggle_logo' => 1,
     'toggle_name' => 1,
     'toggle_slogan' => 0,
     'toggle_node_user_picture' => 1,
@@ -291,15 +298,15 @@ function bcl_layout_strongarm() {
     'toggle_favicon' => 1,
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
-    'default_logo' => 1,
-    'logo_path' => '',
-    'logo_upload' => '',
-    'default_favicon' => 1,
-    'favicon_path' => '',
+    'default_logo' => 0,
+    'logo_path' => drupal_get_path('module', 'bcl_layout') . '/small_logo.png',
+    'default_favicon' => 0,
+    'favicon_path' => drupal_get_path('module', 'bcl_layout') . '/favicon.png',
     'favicon_upload' => '',
     'bootstrap_rebuild_registry' => 0,
     'cdn_bootstrap' => 1,
     'cdn_bootstrap_version' => '2.3.2',
+    'favicon_mimetype' => 'image/png',
   );
   $export['theme_bootstrap1_settings'] = $strongarm;
 
@@ -309,13 +316,6 @@ function bcl_layout_strongarm() {
   $strongarm->name = 'theme_default';
   $strongarm->value = 'bootstrap1';
   $export['theme_default'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'admin_theme';
-  $strongarm->value = 'seven';
-  $export['admin_theme'] = $strongarm;
 
   return $export;
 }
