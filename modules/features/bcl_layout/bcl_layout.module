@@ -13,3 +13,19 @@ function bcl_layout_menu_alter(&$items) {
   // Remove the Hybridauth tab.
   unset($items['user/%user/hybridauth']);
 }
+
+/**
+ * Implements hook_oauth2_login_enabled().
+ */
+function bcl_layout_oauth2_login_enabled($enabled) {
+  db_update('menu_links')
+    ->fields(array(
+        'hidden' => ($enabled ? 1 : 0),
+      ))
+    ->condition('menu_name', 'user-menu')
+    ->condition('link_path', 'user/login')
+    ->condition('router_path', 'user/login')
+    ->condition('plid', 0)
+    ->condition('module', 'menu')
+    ->execute();
+}
