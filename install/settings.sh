@@ -2,11 +2,13 @@
 ### Default settings for building the chroot.
 target='bcl'
 arch='i386'
-suite='precise'
+#suite='precise'
+suite='trusty'
 apt_mirror='http://archive.ubuntu.com/ubuntu'
 
 ### Git branche that will be used.
-bcl_git_branch='master'
+#bcl_git_branch='master'
+bcl_git_branch='trusty'
 
 ### Domain of the website.
 bcl_domain='example.org'
