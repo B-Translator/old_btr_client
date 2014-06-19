@@ -94,8 +94,13 @@ cp -a btr_client $target/$code_dir
 
 ### stop any services that may get into the way
 ### of installing services inside the chroot
-for SRV in apache2 nginx mysql
-do service $SRV stop; done
+for service in apache2 nginx mysql
+do
+    if test -f /etc/init.d/$service
+    then
+        /etc/init.d/$service stop
+    fi
+done
 
 ### run install/config scripts
 chroot $target $code_dir/btr_client/install/install-and-config.sh
