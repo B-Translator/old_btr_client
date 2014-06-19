@@ -23,5 +23,5 @@ variable_set('btrClient_server', $server_url);
 // Enable the oauth2 login link and set the settings to hybridauth.
 variable_set('oauth2_login_enabled', TRUE);
 module_load_include('inc', 'oauth2_login', 'oauth2_login.admin');
-oauth2_login_update_login_link();
 oauth2_login_admin_set_settings();
+oauth2_login_call_hook_enabled();
