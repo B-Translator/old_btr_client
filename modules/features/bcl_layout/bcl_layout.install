@@ -26,10 +26,13 @@ function _bcl_layout_create_aliases() {
   }
 }
 
+/**
+ * Add menu links user/login and user/oauth2_login
+ */
 function _bcl_layout_add_login_link() {
   $query = "DELETE FROM {menu_links}
             WHERE menu_name='user-menu'
-              AND link_path='user/login'
+              AND (link_path='user/login' OR link_path='user/oauth2_login')
               AND link_title='Login' AND plid='0' ";
   db_query($query);
 
@@ -41,6 +44,16 @@ function _bcl_layout_add_login_link() {
     'router_path' => 'user/login',
   );
   menu_link_save($login);
+
+  $oauth2_login = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/oauth2_login',
+    'router_path' => 'user/oauth2_login',
+    'link_title' => 'Login',
+    'plid' => '0',
+    'module' => 'system',
+  );
+  menu_link_save($oauth2_login);
 }
 
 function  _bcl_layout_block_settings() {
