@@ -16,10 +16,6 @@ files[] = btr_client.profile
 dependencies[] = book
 dependencies[] = contact
 dependencies[] = blog
-dependencies[] = field
-dependencies[] = field_sql_storage
-dependencies[] = field_ui
-dependencies[] = file
 dependencies[] = menu
 dependencies[] = path
 dependencies[] = taxonomy
@@ -38,10 +34,6 @@ dependencies[] = update
 dependencies[] = user
 dependencies[] = syslog
 dependencies[] = rdf
-dependencies[] = list
-dependencies[] = number
-dependencies[] = options
-dependencies[] = text
 dependencies[] = comment
 
 ;--------------------

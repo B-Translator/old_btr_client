@@ -27,3 +27,6 @@ cd $code_dir/btr_client/install/scripts/
 
 ### configure
 $code_dir/btr_client/install/config.sh
+
+### restart mysql
+/etc/init.d/mysql restart
