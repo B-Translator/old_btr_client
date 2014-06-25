@@ -32,7 +32,9 @@ do
 done
 for file in $(ls /etc/apache2/sites-available/bcl*)
 do
-    sed -i $file -e "s/ServerName .*\$/ServerName $bcl_domain/"
+    sed -i $file \
+        -e "s#ServerName .*\$#ServerName $bcl_domain#" \
+        -e "s#RedirectPermanent .*\$#RedirectPermanent / https://$bcl_domain/#"
 done
 for file in $(ls /var/www/bcl*/sites/default/settings.php)
 do
