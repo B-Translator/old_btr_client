@@ -10,13 +10,6 @@
  * Perform actions to set up the site for this profile.
  */
 function btr_client_install() {
-  //include_once DRUPAL_ROOT . '/profiles/openatrium/openatrium.install';
-  //openatrium_install();
-
-  // Apply all the features.
-  //features_rebuild();
-  //features_revert();
-
   // user settings
   variable_set('user_register', USER_REGISTER_VISITORS);
   variable_set('user_email_verification', TRUE);
