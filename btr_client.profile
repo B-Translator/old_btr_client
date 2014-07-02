@@ -67,8 +67,8 @@ function btr_client_install_tasks($install_state) {
     ),
 
     // Installation tasks of the base profile (openatrium).
-    'open_atrium_features_revert_all' => array('type' => 'normal'),
-    'open_atrium_rebuild_search' => array('type' => 'normal'),
+    'openatrium_features_revert_all' => array('type' => 'normal'),
+    'openatrium_rebuild_search' => array('type' => 'normal'),
   );
 
   return $tasks;
