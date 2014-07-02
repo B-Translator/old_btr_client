@@ -4,6 +4,33 @@
  * Installation steps for the profile btr_client.
  */
 
+// Use functions from the base profile.
+require_once(drupal_get_path('profile', 'openatrium') . '/openatrium.profile');
+
+/**
+ * Implements hook_install_tasks_alter()
+ */
+function btr_client_install_tasks_alter(&$tasks, $install_state) {
+  // Call the hook of the base profile.
+  openatrium_install_tasks_alter($tasks, $install_state);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ */
+function btr_client_form_apps_profile_apps_select_form_alter(&$form, $form_state) {
+  // Call the hook of the base profile.
+  openatrium_form_apps_profile_apps_select_form_alter($form, $form_state);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ */
+function btr_client_form_panopoly_theme_selection_form_alter(&$form, &$form_state, $form_id) {
+  // Call the hook of the base profile.
+  openatrium_form_panopoly_theme_selection_form_alter($form, $form_state, $form_id);
+}
+
 /**
  * Implements hook_form_FORM_ID_alter().
  *
@@ -38,12 +65,10 @@ function btr_client_install_tasks($install_state) {
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'function' => 'btrClient_config',
     ),
-    'oauth2_login_settings' => array(
-      'display_name' => st('OAuth2 Login Settings'),
-      'type' => 'form',
-      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
-      'function' => 'oauth2_login_admin_settings',
-    ),
+
+    // Installation tasks of the base profile (openatrium).
+    'open_atrium_features_revert_all' => array('type' => 'normal'),
+    'open_atrium_rebuild_search' => array('type' => 'normal'),
   );
 
   return $tasks;

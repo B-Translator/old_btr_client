@@ -7,6 +7,14 @@ core = 7.x
 includes[drupal] = drupal-org-core.make
 
 ;------------------------------
+; Get base profile openatrium
+;------------------------------
+projects[openatrium][type] = profile
+projects[openatrium][download][type] = git
+projects[openatrium][download][url] = http://git.drupal.org/project/openatrium.git
+projects[openatrium][download][branch] = 7.x-2.x
+
+;------------------------------
 ; Get profile btr_client.
 ;------------------------------
 projects[btr_client][type] = profile
