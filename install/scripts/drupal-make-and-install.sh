@@ -14,7 +14,7 @@ drush make --prepare-install --force-complete \
            --contrib-destination=profiles/btr_client \
            $makefile $drupal_dir
 cp -a $drupal_dir/profiles/btr_client/{libraries/bootstrap,themes/contrib/bootstrap/}
-cp $drupal_dir/profiles/btr_client/libraries/hybridauth/{additional-providers/hybridauth-drupaloauth2/Providers/DrupalOAuth2.php,hybridauth/Hybrid/Providers/}
+cp $drupal_dir/profiles/btr_client/libraries/{hybridauth-drupaloauth2/DrupalOAuth2.php,hybridauth/hybridauth/Hybrid/Providers/}
 
 ### create the downloads dir
 mkdir -p /var/www/downloads/
