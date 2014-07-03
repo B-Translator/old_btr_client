@@ -55,7 +55,7 @@ projects[context][version] = "3.2"
 projects[views][version] = "3.8"
 "
 projects[homebox][version] = "2.0-beta7"
-projects[boxes][version] = "1.1"
+projects[boxes][version] = "1.2"
 projects[edit_profile][version] = "1.0-beta2"
 projects[wysiwyg][version] = "2.2"
 
