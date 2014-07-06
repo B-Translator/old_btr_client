@@ -63,9 +63,6 @@ drush --yes features-revert bcl_misc
 drush --yes pm-enable bcl_layout
 drush --yes features-revert bcl_layout
 
-drush --yes pm-enable bcl_hybridauth
-drush --yes features-revert bcl_hybridauth
-
 drush --yes pm-enable bcl_content
 
 drush --yes pm-enable bcl_captcha

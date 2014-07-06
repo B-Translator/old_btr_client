@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the bcl_hybridauth feature.
- */
-
-include_once 'bcl_hybridauth.features.inc';
