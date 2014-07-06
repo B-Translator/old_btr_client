@@ -104,7 +104,6 @@ dependencies[] = btrClient
 dependencies[] = bcl_service_links
 dependencies[] = bcl_disqus
 
-
 ;--------------------
 ; OpenAtrium dependencies
 ;--------------------
