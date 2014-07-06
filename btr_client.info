@@ -105,7 +105,6 @@ dependencies[] = mimemail_compress
 dependencies[] = btrClient
 dependencies[] = bcl_disqus
 
-
 ;--------------------
 ; OpenAtrium dependencies
 ;--------------------
