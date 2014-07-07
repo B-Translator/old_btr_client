@@ -65,6 +65,12 @@ function btr_client_install_tasks($install_state) {
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'function' => 'btrClient_config',
     ),
+    'oauth2_login_settings' => array(
+      'display_name' => st('OAuth2 Login Settings'),
+      'type' => 'form',
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'function' => 'oauth2_login_admin_settings',
+    ),
 
     // Installation tasks of the base profile (openatrium).
     'openatrium_features_revert_all' => array('type' => 'normal'),
