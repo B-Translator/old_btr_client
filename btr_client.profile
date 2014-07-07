@@ -23,6 +23,7 @@ function btr_client_install_tasks($install_state) {
 
   module_load_include('inc', 'phpmailer', 'phpmailer.admin');
   module_load_include('inc', 'btrClient', 'btrClient.admin');
+  module_load_include('inc', 'oauth2_login', 'oauth2_login.admin');
 
   $tasks = array(
     'btr_client_mail_config' => array(
@@ -36,6 +37,12 @@ function btr_client_install_tasks($install_state) {
       'type' => 'form',
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'function' => 'btrClient_config',
+    ),
+    'oauth2_login_settings' => array(
+      'display_name' => st('OAuth2 Login Settings'),
+      'type' => 'form',
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'function' => 'oauth2_login_admin_settings',
     ),
   );
 
