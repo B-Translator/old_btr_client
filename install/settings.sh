@@ -33,6 +33,9 @@ oauth2_server_url='https://dev.btranslator.org'
 oauth2_client_id='client1'
 oauth2_client_secret='0123456789'
 
+### Install also extra things that are useful for development.
+development='true'
+
 ### A reboot is needed after installation/configuration.
 ### If you want to do it automatically, set it to 'true'.
 reboot='false'

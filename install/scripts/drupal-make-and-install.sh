@@ -70,7 +70,13 @@ cp -a $code_dir/btr_client .
 cp -a btr_client-bak/libraries/ btr_client/
 cp -a btr_client-bak/modules/contrib/ btr_client/modules/
 cp -a btr_client-bak/themes/contrib/ btr_client/themes/
-### get a clone of btrClient from github
-git clone https://github.com/B-Translator/btrClient btr_client/modules/custom/btrClient
 ### cleanup
 rm -rf btr_client-bak/
+
+### get a clone of btrClient from github
+if [ "$development" = 'true' ]
+then
+    rm -rf btr_client/modules/contrib/btrclient
+    git clone https://github.com/B-Translator/btrClient.git \
+              btr_client/modules/custom/btrClient
+fi

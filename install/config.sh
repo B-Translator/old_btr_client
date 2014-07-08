@@ -23,6 +23,9 @@ $bcl/config/oauth2_login.sh
 ### clean them up
 rm -rf /var/www/bcl/sites/default/files/*
 
-$bcl/../dev/make-dev-clone.sh
+if [ "$development" = 'true' ]
+then
+    $bcl/../dev/make-dev-clone.sh
+fi
 
 $bcl/config/mysqld.sh stop

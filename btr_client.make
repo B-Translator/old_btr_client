@@ -24,11 +24,7 @@ libraries[bootstrap][download][url] = "https://github.com/twbs/bootstrap/archive
 ; Custom
 ;--------------------
 
-projects[btrClient][type] = "module"
-projects[btrClient][subdir] = "custom"
-projects[btrClient][download][type] = "git"
-projects[btrClient][download][url] = "https://github.com/B-Translator/btrClient.git"
-;projects[btrClient][download][branch] = "7.x-1.x"
+projects[btrclient][version] = "1.x-dev"
 
 ;--------------------
 ; Contrib
