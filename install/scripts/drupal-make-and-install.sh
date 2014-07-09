@@ -13,8 +13,36 @@ rm -rf $drupal_dir
 drush make --prepare-install --force-complete \
            --contrib-destination=profiles/btr_client \
            $makefile $drupal_dir
-cp -a $drupal_dir/profiles/btr_client/{libraries/bootstrap,themes/contrib/bootstrap/}
-cp $drupal_dir/profiles/btr_client/libraries/{hybridauth-drupaloauth2/DrupalOAuth2.php,hybridauth/hybridauth/Hybrid/Providers/}
+
+### fix some things on the application directory
+cd $drupal_dir/profiles/btr_client/
+cp -a libraries/bootstrap themes/contrib/bootstrap/
+cd $drupal_dir/profiles/btr_client/libraries/
+cp hybridauth-drupaloauth2/DrupalOAuth2.php \
+   hybridauth/hybridauth/Hybrid/Providers/
+
+### Replace the profile btr_client with a version
+### that is a git clone, so that any updates
+### can be retrieved easily (without having to
+### reinstall the whole application).
+cd $drupal_dir/profiles/
+mv btr_client btr_client-bak
+cp -a $code_dir/btr_client .
+### copy contrib libraries and modules
+cp -a btr_client-bak/libraries/ btr_client/
+cp -a btr_client-bak/modules/contrib/ btr_client/modules/
+cp -a btr_client-bak/themes/contrib/ btr_client/themes/
+### cleanup
+rm -rf btr_client-bak/
+
+### get a clone of btrclient from github
+if [ "$development" = 'true' ]
+then
+    cd $drupal_dir/profiles/btr_server/modules/contrib/btrclient
+    git clone https://github.com/B-Translator/btrclient.git
+    cp -a btrclient/.git .
+    rm -rf btrclient/
+fi
 
 ### create the downloads dir
 mkdir -p /var/www/downloads/
@@ -58,25 +86,3 @@ mkdir -p sites/default/files/
 chown -R www-data: sites/default/files/
 mkdir -p cache/
 chown -R www-data: cache/
-
-### Replace the profile btr_client with a version
-### that is a git clone, so that any updates
-### can be retrieved easily (without having to
-### reinstall the whole application).
-cd $drupal_dir/profiles/
-mv btr_client btr_client-bak
-cp -a $code_dir/btr_client .
-### copy contrib libraries and modules
-cp -a btr_client-bak/libraries/ btr_client/
-cp -a btr_client-bak/modules/contrib/ btr_client/modules/
-cp -a btr_client-bak/themes/contrib/ btr_client/themes/
-### cleanup
-rm -rf btr_client-bak/
-
-### get a clone of btrClient from github
-if [ "$development" = 'true' ]
-then
-    rm -rf btr_client/modules/contrib/btrclient
-    git clone https://github.com/B-Translator/btrClient.git \
-              btr_client/modules/custom/btrClient
-fi

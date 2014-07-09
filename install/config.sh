@@ -19,13 +19,12 @@ $bcl/config/drupalpass.sh
 $bcl/config/oauth2_login.sh
 #$bcl/config/languages.sh
 
-### drush may create some css/js files with wrong permissions
-### clean them up
-rm -rf /var/www/bcl/sites/default/files/*
-
 if [ "$development" = 'true' ]
 then
     $bcl/../dev/make-dev-clone.sh
 fi
+
+### drush may create some css/js files with wrong permissions
+chown wwwd-data: -R /var/www/bcl*/sites/default/files
 
 $bcl/config/mysqld.sh stop
