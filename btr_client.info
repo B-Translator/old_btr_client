@@ -42,44 +42,24 @@ dependencies[] = comment
 ; Contrib
 ;--------------------
 
-;;; Development
-dependencies[] = reroute_email
-dependencies[] = devel
-dependencies[] = diff
-;dependencies[] = coder
-;dependencies[] = simpletest_clone
-
 ;;; Extensions
-dependencies[] = ctools
-dependencies[] = libraries
-dependencies[] = entity
 dependencies[] = xautoload
-dependencies[] = token
 dependencies[] = rules_scheduler
 dependencies[] = rules_admin
-dependencies[] = pathauto
-dependencies[] = subpathauto
 
-;;; User Interface
-dependencies[] = less
-dependencies[] = context
-dependencies[] = context_ui
-dependencies[] = views
-dependencies[] = views_ui
-dependencies[] = boxes
-dependencies[] = edit_profile
-dependencies[] = color
+; ;;; User Interface
+; dependencies[] = context
+; dependencies[] = context_ui
+; dependencies[] = boxes
+; dependencies[] = edit_profile
+; dependencies[] = color
 
 ;;; Features
-dependencies[] = strongarm
-dependencies[] = features
 dependencies[] = fe_block
-dependencies[] = uuid
 dependencies[] = node_export
 dependencies[] = node_export_features
 
 ;;; Admin Utils
-dependencies[] = module_filter
 dependencies[] = l10n_update
 dependencies[] = user_restrictions
 dependencies[] = advuser
