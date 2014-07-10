@@ -81,8 +81,8 @@ $drush --yes features-revert bcl_btrClient
 $drush --yes pm-enable bcl_misc
 $drush --yes features-revert bcl_misc
 
-$drush --yes pm-enable bcl_layout
-$drush --yes features-revert bcl_layout
+# $drush --yes pm-enable bcl_layout
+# $drush --yes features-revert bcl_layout
 
 $drush --yes pm-enable bcl_content
 
