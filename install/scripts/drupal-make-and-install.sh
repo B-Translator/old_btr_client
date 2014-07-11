@@ -18,6 +18,10 @@ cd $drupal_dir/profiles/btr_client/libraries/
 cp hybridauth-drupaloauth2/DrupalOAuth2.php \
    hybridauth/hybridauth/Hybrid/Providers/
 
+### copy libraries from the profile openatrium
+cd $drupal_dir/profiles/
+cp -a openatrium/libraries/* btr_client/libraries/
+
 ### Replace the profile btr_client with a version
 ### that is a git clone, so that any updates
 ### can be retrieved easily (without having to
