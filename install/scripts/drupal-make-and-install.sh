@@ -38,7 +38,7 @@ rm -rf btr_client-bak/
 ### get a clone of btrclient from github
 if [ "$development" = 'true' ]
 then
-    cd $drupal_dir/profiles/btr_server/modules/contrib/btrclient
+    cd $drupal_dir/profiles/btr_client/modules/contrib/btrclient
     git clone https://github.com/B-Translator/btrclient.git
     cp -a btrclient/.git .
     rm -rf btrclient/
