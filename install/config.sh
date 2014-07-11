@@ -25,6 +25,6 @@ then
 fi
 
 ### drush may create some css/js files with wrong permissions
-chown wwwd-data: -R /var/www/bcl*/sites/default/files
+chown wwwd-data: -R /var/www/bcl*/sites/default/files/{css,js}
 
 $bcl/config/mysqld.sh stop
