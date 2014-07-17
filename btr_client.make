@@ -54,7 +54,7 @@ projects[edit_profile] = 1.0-beta2
 projects[wysiwyg] = 2.2
 
 ;;; Security
-projects[captcha] = 1.0
+projects[captcha] = 1.1
 projects[recaptcha] = 1.11
 projects[honeypot] = 1.17
 projects[user_restrictions] = 1.0
