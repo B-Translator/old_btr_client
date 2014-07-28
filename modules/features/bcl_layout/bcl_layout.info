@@ -31,6 +31,7 @@ features[menu_links][] = main-menu:<front>
 features[menu_links][] = main-menu:contact
 features[menu_links][] = main-menu:node/1
 features[menu_links][] = main-menu:translations
+features[menu_links][] = main-menu:vocabulary
 features[variable][] = comment_anonymous_article
 features[variable][] = comment_anonymous_book
 features[variable][] = comment_anonymous_page

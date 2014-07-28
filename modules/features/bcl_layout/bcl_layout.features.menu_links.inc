@@ -40,7 +40,7 @@ function bcl_layout_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-45',
+    'weight' => '-46',
   );
   // Exported menu link: main-menu:node/1
   $menu_links['main-menu:node/1'] = array(
@@ -58,17 +58,17 @@ function bcl_layout_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-46',
+    'weight' => '-47',
   );
   // Exported menu link: main-menu:translations
   $menu_links['main-menu:translations'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'translations',
     'router_path' => 'translations',
-    'link_title' => 'Përkthimet',
+    'link_title' => 'Translations',
     'options' => array(
       'attributes' => array(
-        'title' => 'Votimi i përkthimeve dhe sugjerime përkthimesh.',
+        'title' => 'Voting or suggesting translations.',
       ),
     ),
     'module' => 'menu',
@@ -76,14 +76,34 @@ function bcl_layout_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-47',
+    'weight' => '-49',
+  );
+  // Exported menu link: main-menu:vocabulary
+  $menu_links['main-menu:vocabulary'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'vocabulary',
+    'router_path' => 'vocabulary',
+    'link_title' => 'Vocabulary',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Vocabulary of terms.',
+        'target' => '_blank',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-48',
   );
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
   t('Contact');
   t('Home');
-  t('Përkthimet');
+  t('Translations');
+  t('Vocabulary');
 
 
   return $menu_links;
