@@ -135,3 +135,7 @@ h2.block-title {
 .breadcrumb, .page-header {
     display: none;
 }
+
+footer {
+    display: none;
+}
