@@ -75,15 +75,15 @@ projects[l10n_update] = 1.0
 
 ;;; Performance
 projects[boost] = 1.0
-projects[memcache] = 1.0
+projects[memcache] = 1.2
 
 ;;; Services and Social
-projects[google_analytics] = 1.3
-projects[drupalchat] = 1.0-beta15
+projects[google_analytics] = 2.0
+projects[drupalchat] = 1.2
 projects[fb] = 3.4
 projects[invite] = 2.1-beta2
-projects[simplenews] = 1.0
-projects[mass_contact] = 1.0-beta3
+projects[simplenews] = 1.1
+projects[mass_contact] = 1.0
 
 ;--------------------
 ; Sending Emails
