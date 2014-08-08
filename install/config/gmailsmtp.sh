@@ -47,4 +47,4 @@ drush --yes @local_bcl php-script $(dirname $0)/gmailsmtp.php  \
     "$gmail_account" "$gmail_passwd"
 
 ### drush may create css/js files with wrong(root) permissions
-rm -rf /var/www/bcl/sites/default/files/*
+chown www-data: -R /var/www/bcl*/sites/default/files/{css,js}
