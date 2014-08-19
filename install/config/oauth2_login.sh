@@ -43,4 +43,4 @@ drush $alias cc all
 
 ### drush may create css/js files with wrong(root) permissions
 drupal_dir=$(drush $alias dd)
-rm -rf $drupal_dir/sites/default/files/*
+chown www-data: -R $drupal_dir/sites/default/files/{css,js}
