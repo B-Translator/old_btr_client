@@ -73,6 +73,8 @@ EOF
 
 ### install additional features
 ### $drush is an alias for 'drush --root=/var/www/bcl'
+$drush --yes pm-enable btrVocabulary
+
 $drush --yes pm-enable bcl_btrClient
 $drush --yes features-revert bcl_btrClient
 
