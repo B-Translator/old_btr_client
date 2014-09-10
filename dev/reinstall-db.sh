@@ -35,7 +35,7 @@ site_name=$(drush vget site_name --format=string)
 site_mail=$(drush vget site_mail --format=string)
 account_name=admin
 account_pass=admin
-account_mail="admin@example.com"
+account_mail="admin@example.org"
 
 ### create the database and user
 mysql='mysql --defaults-file=/etc/mysql/debian.cnf'

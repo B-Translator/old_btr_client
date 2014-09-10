@@ -3,17 +3,15 @@ Drupal installation profile for B-Translator Client.
 
 * Installation
 
-  The recommended way of installation for a production server is to
-  install it inside a chroot, in /trusty/ (ubuntu 14.04). Assuming
-  that we have already installed a minimal ubuntu server 14.04
-  (trusty), B-Translator Client can be installed in it like this:
+  Assuming that we have a minimal ubuntu server 14.04 (trusty),
+  B-Translator Client can be installed in it like this:
   #+BEGIN_EXAMPLE
   mkdir /var/chroot
   cd /var/chroot/
   git clone https://github.com/B-Translator/btr_client.git
-  cp btr_client/install/settings.sh bcl.sh
-  vim bcl.sh
-  nohup nice btr_client/install/chroot.sh bcl.sh &
+  cp btr_client/install/settings.sh btr_client/bcl.sh
+  vim btr_client/bcl.sh
+  nohup time nice btr_client/install/chroot.sh btr_client/bcl.sh &
   tail -f nohup.out
   less -r nohup.out
   #+END_EXAMPLE
@@ -27,9 +25,24 @@ Drupal installation profile for B-Translator Client.
   ~/etc/init.d/chroot-bcl~, which can be used to start and stop the
   services inside the chroot:
   #+BEGIN_EXAMPLE
-  service chroot-bcl start
-  service chroot-bcl stop
+  /etc/init.d/chroot-bcl start
+  /etc/init.d/chroot-bcl stop
   #+END_EXAMPLE
+
+* Installation in a docker container
+
+  This is almost the same as the installation above, except that
+  instead of ~install/chroot.sh~ you call ~install/docker.sh~:
+  #+BEGIN_EXAMPLE
+  nohup time nice btr_client/install/docker.sh btr_client/bcl.sh &
+  #+END_EXAMPLE
+
+  Then to start and stop B-Translator Client you do:
+  #+BEGIN_EXAMPLE
+  docker.io start bcl
+  docker.io stop bcl
+  #+END_EXAMPLE
+
 
 * What is B-Translator
 
