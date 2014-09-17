@@ -21,7 +21,7 @@ gmail_account='MyEmailAddress@gmail.com'
 gmail_passwd=
 
 ### Translation language of B-Translator Client.
-bcl_translation_lng='fr'
+translation_lng='fr'
 
 ### Mysql passwords. Leave it as 'random'
 ### to generate a new one randomly

@@ -127,7 +127,7 @@ mkdir -p $drupal_dir/sites/all/translations
 chown -R www-data: $drupal_dir/sites/all/translations
 
 ### set drupal variable btrClient_translation_lng
-$drush --yes --exact vset btrClient_translation_lng $bcl_translation_lng
+$drush --yes --exact vset btrClient_translation_lng $translation_lng
 
 ### add $bcl_translation_lng as a drupal language
 $drush language-add $bcl_translation_lng
