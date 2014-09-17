@@ -73,7 +73,7 @@ fi
 current_dir=$(pwd)
 cd $source_dir/
 source_dir=$(pwd)
-git checkout $bcl_git_branch && git pull origin $bcl_git_branch
+git checkout $git_branch && git pull origin $git_branch
 cd $current_dir
 
 ### make sure that docker is installed

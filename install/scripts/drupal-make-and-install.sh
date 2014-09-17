@@ -3,7 +3,7 @@
 ### make sure that we have the right git branch on the make file
 makefile="$code_dir/build-btrclient.make"
 sed -i $makefile \
-    -e "/btr_client..download..branch/ c projects[btr_client][download][branch] = $bcl_git_branch"
+    -e "/btr_client..download..branch/ c projects[btr_client][download][branch] = $git_branch"
 
 ### retrieve all the projects/modules and build the application directory
 rm -rf $drupal_dir

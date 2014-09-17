@@ -14,29 +14,29 @@ It will modify the files:
  5) /var/www/bcl*/sites/default/settings.php
 "
 
-if [ -z "${bcl_domain+xxx}" -o "$bcl_domain" = '' ]
+if [ -z "${domain+xxx}" -o "$domain" = '' ]
 then
-    bcl_domain='example.org'
-    read -p "Enter the domain name for btr_client [$bcl_domain]: " input
-    bcl_domain=${input:-$bcl_domain}
+    domain='example.org'
+    read -p "Enter the domain name for btr_client [$domain]: " input
+    domain=${input:-$domain}
 fi
 
-echo $bcl_domain > /etc/hostname
+echo $domain > /etc/hostname
 sed -i /etc/hosts \
-    -e "/ localhost/c 127.0.0.1 $bcl_domain localhost"
+    -e "/ localhost/c 127.0.0.1 $domain localhost"
 
 ### change config files
 for file in $(ls /etc/nginx/sites-available/bcl*)
 do
-    sed -i $file -e "s/server_name .*\$/server_name $bcl_domain;/"
+    sed -i $file -e "s/server_name .*\$/server_name $domain;/"
 done
 for file in $(ls /etc/apache2/sites-available/bcl*)
 do
     sed -i $file \
-        -e "s#ServerName .*\$#ServerName $bcl_domain#" \
-        -e "s#RedirectPermanent .*\$#RedirectPermanent / https://$bcl_domain/#"
+        -e "s#ServerName .*\$#ServerName $domain#" \
+        -e "s#RedirectPermanent .*\$#RedirectPermanent / https://$domain/#"
 done
 for file in $(ls /var/www/bcl*/sites/default/settings.php)
 do
-    sed -i $file -e "/^\\\$base_url/c \$base_url = \"https://$bcl_domain\";"
+    sed -i $file -e "/^\\\$base_url/c \$base_url = \"https://$domain\";"
 done

@@ -6,13 +6,13 @@ suite='trusty'
 apt_mirror='http://archive.ubuntu.com/ubuntu'
 
 ### Git branch that will be used.
-bcl_git_branch='master'
+git_branch='master'
 
 ### Domain of the website.
-bcl_domain='example.org'
+domain='example.org'
 
 ### Drupal 'admin' password.
-bcl_admin_passwd='admin'
+admin_passwd='admin'
 
 ### Emails from the server are sent through the SMTP
 ### of a GMAIL account. Give the full email
