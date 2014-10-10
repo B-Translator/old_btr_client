@@ -129,8 +129,8 @@ chown -R www-data: $drupal_dir/sites/all/translations
 ### set drupal variable btrClient_translation_lng
 $drush --yes --exact vset btrClient_translation_lng $translation_lng
 
-### add $bcl_translation_lng as a drupal language
-$drush language-add $bcl_translation_lng
+### add $translation_lng as a drupal language
+$drush language-add $translation_lng
 $drush --yes l10n-update
 
 ### update to the latest version of core and modules
