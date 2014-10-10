@@ -44,5 +44,5 @@ do
 done
 
 ### update uri on drush aliases
-sed -i /etc/drush/local_lbd.aliases.drushrc.php \
+sed -i /etc/drush/local_bcl.aliases.drushrc.php \
     -e "/'uri'/ s/$old_domain/$domain/"
