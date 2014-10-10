@@ -13,6 +13,8 @@ function btr_client_install() {
   // user settings
   variable_set('user_register', USER_REGISTER_VISITORS);
   variable_set('user_email_verification', TRUE);
+  theme_enable(array('oa_radix'));
+  variable_set('theme_default', 'oa_radix');
 
   _btrclient_install_mailsystem();
   _btrclient_install_user_restrictions();
@@ -37,4 +39,3 @@ function _btrclient_install_user_restrictions() {
       ))
     ->execute();
 }
-
