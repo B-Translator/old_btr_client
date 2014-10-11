@@ -17,7 +17,7 @@
 ++ admin_passwd=admin
 ++ gmail_account=MyEmailAddress@gmail.com
 ++ gmail_passwd=
-++ bcl_translation_lng=fr
+++ translation_lng=fr
 ++ mysql_passwd_root=random
 ++ mysql_passwd_bcl=random
 ++ oauth2_server_url=https://dev.btranslator.org
@@ -49,17 +49,10 @@
 + cd btr_client/
 + git checkout openatrium
 Switched to branch 'openatrium'
-A	utils/logs/nohup-master-chroot.out
-Your branch and 'origin/openatrium' have diverged,
-and have 7 and 14 different commits each, respectively.
-  (use "git pull" to merge the remote branch into yours)
 + git pull origin openatrium
 From https://github.com/B-Translator/btr_client
  * branch            openatrium -> FETCH_HEAD
-error: Your local changes to the following files would be overwritten by merge:
-	utils/logs/nohup-master-chroot.out
-Please, commit your changes or stash them before you can merge.
-Aborting
+Already up-to-date.
 + cd /var/chroot
 + apt-get install -y debootstrap dchroot
 Reading package lists...
@@ -71,10 +64,8 @@ debootstrap is already the newest version.
 + export DEBIAN_FRONTEND=noninteractive
 + DEBIAN_FRONTEND=noninteractive
 + debootstrap --variant=minbase --arch=i386 trusty bcl http://archive.ubuntu.com/ubuntu
+W: Cannot check Release signature; keyring file not available /usr/share/keyrings/ubuntu-archive-keyring.gpg
 I: Retrieving Release 
-I: Retrieving Release.gpg 
-I: Checking Release signature
-I: Valid Release signature (key id 790BC7277767219C42C86F933B4FE6ACC0B21F32)
 I: Retrieving Packages 
 I: Validating Packages 
 I: Resolving dependencies of required packages...
@@ -623,37 +614,37 @@ I: Base system installed successfully.
 Ign http://archive.ubuntu.com trusty InRelease
 Ign http://security.ubuntu.com trusty-security InRelease
 Ign http://archive.ubuntu.com trusty-updates InRelease
-Get:1 http://security.ubuntu.com trusty-security Release.gpg [933 B]
-Hit http://archive.ubuntu.com trusty Release.gpg
-Get:2 http://security.ubuntu.com trusty-security Release [59.7 kB]
+Get:1 http://archive.ubuntu.com trusty Release.gpg [933 B]
+Get:2 http://security.ubuntu.com trusty-security Release.gpg [933 B]
 Get:3 http://archive.ubuntu.com trusty-updates Release.gpg [933 B]
+Get:4 http://security.ubuntu.com trusty-security Release [59.7 kB]
 Hit http://archive.ubuntu.com trusty Release
-Get:4 http://archive.ubuntu.com trusty-updates Release [59.7 kB]
-Get:5 http://security.ubuntu.com trusty-security/main i386 Packages [133 kB]
+Get:5 http://archive.ubuntu.com trusty-updates Release [59.7 kB]
+Get:6 http://security.ubuntu.com trusty-security/main i386 Packages [142 kB]
 Hit http://archive.ubuntu.com trusty/main i386 Packages
-Get:6 http://archive.ubuntu.com trusty/restricted i386 Packages [13.4 kB]
-Get:7 http://archive.ubuntu.com trusty/universe i386 Packages [5866 kB]
-Get:8 http://security.ubuntu.com trusty-security/restricted i386 Packages [14 B]
-Get:9 http://security.ubuntu.com trusty-security/universe i386 Packages [47.0 kB]
-Get:10 http://security.ubuntu.com trusty-security/multiverse i386 Packages [1398 B]
-Get:11 http://security.ubuntu.com trusty-security/main Translation-en [68.0 kB]
-Get:12 http://security.ubuntu.com trusty-security/multiverse Translation-en [587 B]
-Get:13 http://security.ubuntu.com trusty-security/restricted Translation-en [14 B]
-Get:14 http://security.ubuntu.com trusty-security/universe Translation-en [27.0 kB]
-Get:15 http://archive.ubuntu.com trusty/multiverse i386 Packages [134 kB]
-Get:16 http://archive.ubuntu.com trusty/main Translation-en [762 kB]
-Get:17 http://archive.ubuntu.com trusty/multiverse Translation-en [102 kB]
-Get:18 http://archive.ubuntu.com trusty/restricted Translation-en [3457 B]
-Get:19 http://archive.ubuntu.com trusty/universe Translation-en [4089 kB]
-Get:20 http://archive.ubuntu.com trusty-updates/main i386 Packages [314 kB]
-Get:21 http://archive.ubuntu.com trusty-updates/restricted i386 Packages [5820 B]
-Get:22 http://archive.ubuntu.com trusty-updates/universe i386 Packages [202 kB]
-Get:23 http://archive.ubuntu.com trusty-updates/multiverse i386 Packages [9545 B]
-Get:24 http://archive.ubuntu.com trusty-updates/main Translation-en [143 kB]
-Get:25 http://archive.ubuntu.com trusty-updates/multiverse Translation-en [4719 B]
-Get:26 http://archive.ubuntu.com trusty-updates/restricted Translation-en [1736 B]
-Get:27 http://archive.ubuntu.com trusty-updates/universe Translation-en [101 kB]
-Fetched 12.2 MB in 12s (995 kB/s)
+Get:7 http://archive.ubuntu.com trusty/restricted i386 Packages [13.4 kB]
+Get:8 http://archive.ubuntu.com trusty/universe i386 Packages [5866 kB]
+Get:9 http://security.ubuntu.com trusty-security/restricted i386 Packages [14 B]
+Get:10 http://security.ubuntu.com trusty-security/universe i386 Packages [49.7 kB]
+Get:11 http://security.ubuntu.com trusty-security/multiverse i386 Packages [1398 B]
+Get:12 http://security.ubuntu.com trusty-security/main Translation-en [72.4 kB]
+Get:13 http://security.ubuntu.com trusty-security/multiverse Translation-en [587 B]
+Get:14 http://security.ubuntu.com trusty-security/restricted Translation-en [14 B]
+Get:15 http://security.ubuntu.com trusty-security/universe Translation-en [29.0 kB]
+Get:16 http://archive.ubuntu.com trusty/multiverse i386 Packages [134 kB]
+Get:17 http://archive.ubuntu.com trusty/main Translation-en [762 kB]
+Get:18 http://archive.ubuntu.com trusty/multiverse Translation-en [102 kB]
+Get:19 http://archive.ubuntu.com trusty/restricted Translation-en [3457 B]
+Get:20 http://archive.ubuntu.com trusty/universe Translation-en [4089 kB]
+Get:21 http://archive.ubuntu.com trusty-updates/main i386 Packages [333 kB]
+Get:22 http://archive.ubuntu.com trusty-updates/restricted i386 Packages [5820 B]
+Get:23 http://archive.ubuntu.com trusty-updates/universe i386 Packages [211 kB]
+Get:24 http://archive.ubuntu.com trusty-updates/multiverse i386 Packages [9532 B]
+Get:25 http://archive.ubuntu.com trusty-updates/main Translation-en [151 kB]
+Get:26 http://archive.ubuntu.com trusty-updates/multiverse Translation-en [4719 B]
+Get:27 http://archive.ubuntu.com trusty-updates/restricted Translation-en [1736 B]
+Get:28 http://archive.ubuntu.com trusty-updates/universe Translation-en [106 kB]
+Fetched 12.2 MB in 29s (411 kB/s)
 Reading package lists...
 + chroot bcl apt-get -y install ubuntu-minimal
 Reading package lists...
@@ -706,7 +697,7 @@ Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main liblocale-gettext-perl i386 
 Get:4 http://archive.ubuntu.com/ubuntu/ trusty/main keyboard-configuration all 1.70ubuntu8 [556 kB]
 Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main console-setup all 1.70ubuntu8 [1113 kB]
 Get:6 http://archive.ubuntu.com/ubuntu/ trusty/main kbd i386 1.15.5-1ubuntu1 [241 kB]
-Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libapt-inst1.5 i386 1.0.1ubuntu2.3 [58.4 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libapt-inst1.5 i386 1.0.1ubuntu2.5 [58.3 kB]
 Get:8 http://archive.ubuntu.com/ubuntu/ trusty/main libbsd0 i386 0.6.0-2ubuntu1 [32.1 kB]
 Get:9 http://archive.ubuntu.com/ubuntu/ trusty/main dmsetup i386 2:1.02.77-6ubuntu2 [37.1 kB]
 Get:10 http://archive.ubuntu.com/ubuntu/ trusty/main libdevmapper1.02.1 i386 2:1.02.77-6ubuntu2 [89.5 kB]
@@ -723,7 +714,7 @@ Get:20 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgnutls26 i386 2.
 Get:21 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgnutls-openssl27 i386 2.12.23-12ubuntu2.1 [18.3 kB]
 Get:22 http://archive.ubuntu.com/ubuntu/ trusty/main liblockfile-bin i386 1.09-6ubuntu1 [10.7 kB]
 Get:23 http://archive.ubuntu.com/ubuntu/ trusty/main liblockfile1 i386 1.09-6ubuntu1 [7926 B]
-Get:24 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libmagic1 i386 1:5.14-2ubuntu3.1 [185 kB]
+Get:24 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libmagic1 i386 1:5.14-2ubuntu3.2 [185 kB]
 Get:25 http://archive.ubuntu.com/ubuntu/ trusty/main libmpdec2 i386 2.4.0-6 [73.3 kB]
 Get:26 http://archive.ubuntu.com/ubuntu/ trusty/main libnewt0.52 i386 0.52.15-2ubuntu5 [40.8 kB]
 Get:27 http://archive.ubuntu.com/ubuntu/ trusty/main libpopt0 i386 1.16-8ubuntu1 [25.8 kB]
@@ -736,7 +727,7 @@ Get:33 http://archive.ubuntu.com/ubuntu/ trusty/main netbase all 5.2 [12.9 kB]
 Get:34 http://archive.ubuntu.com/ubuntu/ trusty/main ntpdate i386 1:4.2.6.p5+dfsg-3ubuntu2 [63.8 kB]
 Get:35 http://archive.ubuntu.com/ubuntu/ trusty/main python3.4-minimal i386 3.4.0-2ubuntu1 [1201 kB]
 Get:36 http://archive.ubuntu.com/ubuntu/ trusty-updates/main resolvconf all 1.69ubuntu1.1 [54.4 kB]
-Get:37 http://archive.ubuntu.com/ubuntu/ trusty-updates/main apt-utils i386 1.0.1ubuntu2.3 [172 kB]
+Get:37 http://archive.ubuntu.com/ubuntu/ trusty-updates/main apt-utils i386 1.0.1ubuntu2.5 [172 kB]
 Get:38 http://archive.ubuntu.com/ubuntu/ trusty/main bzip2 i386 1.0.6-5 [37.4 kB]
 Get:39 http://archive.ubuntu.com/ubuntu/ trusty/main libtext-iconv-perl i386 1.7-5build2 [15.2 kB]
 Get:40 http://archive.ubuntu.com/ubuntu/ trusty/main libtext-charwidth-perl i386 0.04-7build3 [10.8 kB]
@@ -748,7 +739,7 @@ Get:45 http://archive.ubuntu.com/ubuntu/ trusty/main libpython3-stdlib i386 3.4.
 Get:46 http://archive.ubuntu.com/ubuntu/ trusty/main python3 i386 3.4.0-0ubuntu2 [8676 B]
 Get:47 http://archive.ubuntu.com/ubuntu/ trusty/main dh-python all 1.20140128-1ubuntu8 [51.0 kB]
 Get:48 http://archive.ubuntu.com/ubuntu/ trusty/main eject i386 2.1.5+deb1+cvs20081104-13.1 [22.8 kB]
-Get:49 http://archive.ubuntu.com/ubuntu/ trusty-updates/main file i386 1:5.14-2ubuntu3.1 [18.5 kB]
+Get:49 http://archive.ubuntu.com/ubuntu/ trusty-updates/main file i386 1:5.14-2ubuntu3.2 [18.4 kB]
 Get:50 http://archive.ubuntu.com/ubuntu/ trusty/main perl-modules all 5.18.2-2ubuntu1 [2696 kB]
 Get:51 http://archive.ubuntu.com/ubuntu/ trusty/main perl i386 5.18.2-2ubuntu1 [2173 kB]
 Get:52 http://archive.ubuntu.com/ubuntu/ trusty/main init-system-helpers all 1.14 [12.1 kB]
@@ -770,7 +761,7 @@ Get:67 http://archive.ubuntu.com/ubuntu/ trusty/main lsb-release all 4.1+Debian1
 Get:68 http://archive.ubuntu.com/ubuntu/ trusty-updates/main net-tools i386 1.60-25ubuntu2.1 [170 kB]
 Get:69 http://archive.ubuntu.com/ubuntu/ trusty/main netcat-openbsd i386 1.105-7ubuntu1 [39.1 kB]
 Get:70 http://archive.ubuntu.com/ubuntu/ trusty/main ucf all 3.0027+nmu1 [56.3 kB]
-Get:71 http://archive.ubuntu.com/ubuntu/ trusty-updates/main rsyslog i386 7.4.4-1ubuntu2.1 [352 kB]
+Get:71 http://archive.ubuntu.com/ubuntu/ trusty-updates/main rsyslog i386 7.4.4-1ubuntu2.3 [351 kB]
 Get:72 http://archive.ubuntu.com/ubuntu/ trusty/main sudo i386 1.8.9p5-1ubuntu1 [329 kB]
 Get:73 http://archive.ubuntu.com/ubuntu/ trusty/main ureadahead i386 0.100.0-16 [26.7 kB]
 Get:74 http://archive.ubuntu.com/ubuntu/ trusty/main vim-common i386 2:7.4.052-1ubuntu3 [95.2 kB]
@@ -781,11 +772,11 @@ perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = (unset),
 	LC_ALL = (unset),
-	LANG = "en_US.UTF-8"
+	LANG = "en_GB.UTF-8"
     are supported and installed on your system.
 perl: warning: Falling back to the standard locale ("C").
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 17.4 MB in 11s (1538 kB/s)
+Fetched 17.4 MB in 3s (4385 kB/s)
 Selecting previously unselected package cron.
 (Reading database ... 7396 files and directories currently installed.)
 Preparing to unpack .../cron_3.0pl1-124ubuntu2_i386.deb ...
@@ -806,8 +797,8 @@ Selecting previously unselected package kbd.
 Preparing to unpack .../kbd_1.15.5-1ubuntu1_i386.deb ...
 Unpacking kbd (1.15.5-1ubuntu1) ...
 Selecting previously unselected package libapt-inst1.5:i386.
-Preparing to unpack .../libapt-inst1.5_1.0.1ubuntu2.3_i386.deb ...
-Unpacking libapt-inst1.5:i386 (1.0.1ubuntu2.3) ...
+Preparing to unpack .../libapt-inst1.5_1.0.1ubuntu2.5_i386.deb ...
+Unpacking libapt-inst1.5:i386 (1.0.1ubuntu2.5) ...
 Selecting previously unselected package libbsd0:i386.
 Preparing to unpack .../libbsd0_0.6.0-2ubuntu1_i386.deb ...
 Unpacking libbsd0:i386 (0.6.0-2ubuntu1) ...
@@ -857,8 +848,8 @@ Selecting previously unselected package liblockfile1:i386.
 Preparing to unpack .../liblockfile1_1.09-6ubuntu1_i386.deb ...
 Unpacking liblockfile1:i386 (1.09-6ubuntu1) ...
 Selecting previously unselected package libmagic1:i386.
-Preparing to unpack .../libmagic1_1%3a5.14-2ubuntu3.1_i386.deb ...
-Unpacking libmagic1:i386 (1:5.14-2ubuntu3.1) ...
+Preparing to unpack .../libmagic1_1%3a5.14-2ubuntu3.2_i386.deb ...
+Unpacking libmagic1:i386 (1:5.14-2ubuntu3.2) ...
 Selecting previously unselected package libmpdec2:i386.
 Preparing to unpack .../libmpdec2_2.4.0-6_i386.deb ...
 Unpacking libmpdec2:i386 (2.4.0-6) ...
@@ -896,8 +887,8 @@ Selecting previously unselected package resolvconf.
 Preparing to unpack .../resolvconf_1.69ubuntu1.1_all.deb ...
 Unpacking resolvconf (1.69ubuntu1.1) ...
 Selecting previously unselected package apt-utils.
-Preparing to unpack .../apt-utils_1.0.1ubuntu2.3_i386.deb ...
-Unpacking apt-utils (1.0.1ubuntu2.3) ...
+Preparing to unpack .../apt-utils_1.0.1ubuntu2.5_i386.deb ...
+Unpacking apt-utils (1.0.1ubuntu2.5) ...
 Selecting previously unselected package bzip2.
 Preparing to unpack .../bzip2_1.0.6-5_i386.deb ...
 Unpacking bzip2 (1.0.6-5) ...
@@ -932,8 +923,8 @@ Selecting previously unselected package eject.
 Preparing to unpack .../eject_2.1.5+deb1+cvs20081104-13.1_i386.deb ...
 Unpacking eject (2.1.5+deb1+cvs20081104-13.1) ...
 Selecting previously unselected package file.
-Preparing to unpack .../file_1%3a5.14-2ubuntu3.1_i386.deb ...
-Unpacking file (1:5.14-2ubuntu3.1) ...
+Preparing to unpack .../file_1%3a5.14-2ubuntu3.2_i386.deb ...
+Unpacking file (1:5.14-2ubuntu3.2) ...
 Selecting previously unselected package perl-modules.
 Preparing to unpack .../perl-modules_5.18.2-2ubuntu1_all.deb ...
 Unpacking perl-modules (5.18.2-2ubuntu1) ...
@@ -1001,8 +992,8 @@ Preparing to unpack .../ucf_3.0027+nmu1_all.deb ...
 Moving old data out of the way
 Unpacking ucf (3.0027+nmu1) ...
 Selecting previously unselected package rsyslog.
-Preparing to unpack .../rsyslog_7.4.4-1ubuntu2.1_i386.deb ...
-Unpacking rsyslog (7.4.4-1ubuntu2.1) ...
+Preparing to unpack .../rsyslog_7.4.4-1ubuntu2.3_i386.deb ...
+Unpacking rsyslog (7.4.4-1ubuntu2.3) ...
 Selecting previously unselected package sudo.
 Preparing to unpack .../sudo_1.8.9p5-1ubuntu1_i386.deb ...
 Unpacking sudo (1.8.9p5-1ubuntu1) ...
@@ -1024,6 +1015,12 @@ Unpacking ubuntu-minimal (1.325) ...
 Setting up cron (3.0pl1-124ubuntu2) ...
 Adding group `crontab' (GID 103) ...
 Done.
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+invoke-rc.d: initscript cron, action "start" failed.
+dpkg: error processing package cron (--configure):
+ subprocess installed post-installation script returned error exit status 1
 Setting up xkb-data (2.10.1-1ubuntu1) ...
 Setting up liblocale-gettext-perl (1.05-7build3) ...
 Setting up keyboard-configuration (1.70ubuntu8) ...
@@ -1037,7 +1034,7 @@ locale: Cannot set LC_CTYPE to default locale: No such file or directory
 locale: Cannot set LC_MESSAGES to default locale: No such file or directory
 locale: Cannot set LC_ALL to default locale: No such file or directory
 update-initramfs: deferring update (trigger activated)
-Setting up libapt-inst1.5:i386 (1.0.1ubuntu2.3) ...
+Setting up libapt-inst1.5:i386 (1.0.1ubuntu2.5) ...
 Setting up libbsd0:i386 (0.6.0-2ubuntu1) ...
 Setting up libestr0 (0.1.9-0ubuntu2) ...
 Setting up libexpat1:i386 (2.1.0-4ubuntu1) ...
@@ -1052,7 +1049,7 @@ Setting up libgnutls26:i386 (2.12.23-12ubuntu2.1) ...
 Setting up libgnutls-openssl27:i386 (2.12.23-12ubuntu2.1) ...
 Setting up liblockfile-bin (1.09-6ubuntu1) ...
 Setting up liblockfile1:i386 (1.09-6ubuntu1) ...
-Setting up libmagic1:i386 (1:5.14-2ubuntu3.1) ...
+Setting up libmagic1:i386 (1:5.14-2ubuntu3.2) ...
 Setting up libmpdec2:i386 (2.4.0-6) ...
 Setting up libnewt0.52:i386 (0.52.15-2ubuntu5) ...
 update-alternatives: using /etc/newt/palette.ubuntu to provide /etc/newt/palette (newt-palette) in auto mode
@@ -1073,7 +1070,10 @@ Setting up resolvconf (1.69ubuntu1.1) ...
 locale: Cannot set LC_CTYPE to default locale: No such file or directory
 locale: Cannot set LC_MESSAGES to default locale: No such file or directory
 locale: Cannot set LC_ALL to default locale: No such file or directory
-Setting up apt-utils (1.0.1ubuntu2.3) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * Setting up resolvconf...
+   ...done.
+Setting up apt-utils (1.0.1ubuntu2.5) ...
 Setting up bzip2 (1.0.6-5) ...
 Setting up libtext-iconv-perl (1.7-5build2) ...
 Setting up libtext-charwidth-perl (0.04-7build3) ...
@@ -1082,7 +1082,7 @@ Setting up debconf-i18n (1.5.51ubuntu2) ...
 Setting up python3.4 (3.4.0-2ubuntu1) ...
 Setting up python3-minimal (3.4.0-0ubuntu2) ...
 Setting up libpython3-stdlib:i386 (3.4.0-0ubuntu2) ...
-Setting up file (1:5.14-2ubuntu3.1) ...
+Setting up file (1:5.14-2ubuntu3.2) ...
 Setting up iputils-ping (3:20121221-4ubuntu1.1) ...
 Setting up isc-dhcp-common (4.2.4-7ubuntu12) ...
 Setting up isc-dhcp-client (4.2.4-7ubuntu12) ...
@@ -1099,7 +1099,15 @@ locale: Cannot set LC_CTYPE to default locale: No such file or directory
 locale: Cannot set LC_MESSAGES to default locale: No such file or directory
 locale: Cannot set LC_ALL to default locale: No such file or directory
 Setting up lockfile-progs (0.1.17) ...
-Setting up logrotate (3.8.7-1ubuntu1) ...
+dpkg: dependency problems prevent configuration of logrotate:
+ logrotate depends on cron | anacron | cron-daemon; however:
+  Package cron is not configured yet.
+  Package anacron is not installed.
+  Package cron-daemon is not installed.
+  Package cron which provides cron-daemon is not configured yet.
+
+dpkg: error processing package logrotate (--configure):
+ dependency problems - leaving unconfigured
 Setting up net-tools (1.60-25ubuntu2.1) ...
 Setting up netcat-openbsd (1.105-7ubuntu1) ...
 update-alternatives: using /bin/nc.openbsd to provide /bin/nc (nc) in auto mode
@@ -1132,7 +1140,7 @@ Setting up libpod-latex-perl (0.61-1) ...
 Setting up libterm-ui-perl (0.42-1) ...
 Setting up libtext-soundex-perl (3.4-1build1) ...
 Setting up lsb-release (4.1+Debian11ubuntu6) ...
-Setting up rsyslog (7.4.4-1ubuntu2.1) ...
+Setting up rsyslog (7.4.4-1ubuntu2.3) ...
 locale: Cannot set LC_CTYPE to default locale: No such file or directory
 locale: Cannot set LC_MESSAGES to default locale: No such file or directory
 locale: Cannot set LC_ALL to default locale: No such file or directory
@@ -1141,6 +1149,9 @@ Creating config file /etc/rsyslog.d/50-default.conf with new version
 Adding user `syslog' to group `adm' ...
 Adding user syslog to group adm
 Done.
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * Starting enhanced syslogd rsyslogd
+   ...done.
 Setting up dmsetup (2:1.02.77-6ubuntu2) ...
 update-initramfs: deferring update (trigger activated)
 Setting up console-setup (1.70ubuntu8) ...
@@ -1160,6 +1171,10 @@ Setting up kbd (1.15.5-1ubuntu1) ...
 Setting up ubuntu-minimal (1.325) ...
 Processing triggers for initramfs-tools (0.103ubuntu4) ...
 Processing triggers for libc-bin (2.19-0ubuntu6) ...
+Errors were encountered while processing:
+ cron
+ logrotate
+E: Sub-process /usr/bin/dpkg returned an error code (1)
 +++ sed -e 's/\.info$//'
 +++ ls btr_client/btr_client.info
 ++ basename btr_client/btr_client
@@ -1168,18 +1183,14 @@ Processing triggers for libc-bin (2.19-0ubuntu6) ...
 + cp -a btr_client bcl/usr/local/src/
 ++ basename btr_client
 + mv bcl/usr/local/src/btr_client bcl/usr/local/src/btr_client
-mv: cannot move ‘bcl/usr/local/src/btr_client’ to a subdirectory of itself, ‘bcl/usr/local/src/btr_client/btr_client’
+mv: cannot move `bcl/usr/local/src/btr_client' to a subdirectory of itself, `bcl/usr/local/src/btr_client/btr_client'
 + export code_dir=/usr/local/src/btr_client
 + code_dir=/usr/local/src/btr_client
 + chroot bcl /usr/local/src/btr_client/install/install-and-config.sh
-+ sed -i /etc/hosts -e '/^127.0.0.1/c 127.0.0.1 example.org localhost'
-+ hostname example.org
-+ export drupal_dir=/var/www/bcl
-+ drupal_dir=/var/www/bcl
-+ export 'drush=drush --root=/var/www/bcl'
-+ drush='drush --root=/var/www/bcl'
 + cd /usr/local/src/btr_client/install/scripts/
 + ./packages-and-software.sh
++ test -f /tmp/packages-installed
++ touch /tmp/packages-installed
 + apt-get update
 Ign http://archive.ubuntu.com trusty InRelease
 Ign http://security.ubuntu.com trusty-security InRelease
@@ -1188,23 +1199,23 @@ Hit http://security.ubuntu.com trusty-security Release.gpg
 Hit http://archive.ubuntu.com trusty Release.gpg
 Hit http://security.ubuntu.com trusty-security Release
 Hit http://archive.ubuntu.com trusty-updates Release.gpg
-Hit http://security.ubuntu.com trusty-security/main i386 Packages
 Hit http://archive.ubuntu.com trusty Release
-Hit http://security.ubuntu.com trusty-security/restricted i386 Packages
 Hit http://archive.ubuntu.com trusty-updates Release
-Hit http://security.ubuntu.com trusty-security/universe i386 Packages
+Hit http://security.ubuntu.com trusty-security/main i386 Packages
 Hit http://archive.ubuntu.com trusty/main i386 Packages
-Hit http://security.ubuntu.com trusty-security/multiverse i386 Packages
+Hit http://security.ubuntu.com trusty-security/restricted i386 Packages
 Hit http://archive.ubuntu.com trusty/restricted i386 Packages
-Hit http://security.ubuntu.com trusty-security/main Translation-en
+Hit http://security.ubuntu.com trusty-security/universe i386 Packages
 Hit http://archive.ubuntu.com trusty/universe i386 Packages
-Hit http://security.ubuntu.com trusty-security/multiverse Translation-en
+Hit http://security.ubuntu.com trusty-security/multiverse i386 Packages
 Hit http://archive.ubuntu.com trusty/multiverse i386 Packages
-Hit http://security.ubuntu.com trusty-security/restricted Translation-en
+Hit http://security.ubuntu.com trusty-security/main Translation-en
 Hit http://archive.ubuntu.com trusty/main Translation-en
-Hit http://security.ubuntu.com trusty-security/universe Translation-en
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en
 Hit http://archive.ubuntu.com trusty/multiverse Translation-en
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en
 Hit http://archive.ubuntu.com trusty/restricted Translation-en
+Hit http://security.ubuntu.com trusty-security/universe Translation-en
 Hit http://archive.ubuntu.com trusty/universe Translation-en
 Hit http://archive.ubuntu.com trusty-updates/main i386 Packages
 Hit http://archive.ubuntu.com trusty-updates/restricted i386 Packages
@@ -1226,35 +1237,36 @@ The following packages will be upgraded:
   libudev1 libuuid1 locales mount multiarch-support tzdata udev upstart
   util-linux
 31 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2 not fully installed or removed.
 Need to get 15.2 MB of archives.
-After this operation, 145 kB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main base-files i386 7.2ubuntu5.1 [62.0 kB]
-Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main bash i386 4.3-7ubuntu1 [548 kB]
-Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg i386 1.17.5ubuntu5.3 [1936 kB]
-Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/main mount i386 2.20.1-5.1ubuntu20.1 [113 kB]
-Get:5 http://archive.ubuntu.com/ubuntu/ trusty-updates/main tzdata all 2014e-0ubuntu0.14.04 [181 kB]
-Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/main util-linux i386 2.20.1-5.1ubuntu20.1 [450 kB]
-Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libdbus-1-3 i386 1.6.18-0ubuntu4.1 [131 kB]
-Get:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libjson-c2 i386 0.11-3ubuntu1.2 [22.5 kB]
-Get:9 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libselinux1 i386 2.2.2-1ubuntu0.1 [57.5 kB]
-Get:10 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libuuid1 i386 2.20.1-5.1ubuntu20.1 [11.5 kB]
-Get:11 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libblkid1 i386 2.20.1-5.1ubuntu20.1 [67.4 kB]
-Get:12 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libcgmanager0 i386 0.24-0ubuntu7 [25.3 kB]
-Get:13 http://archive.ubuntu.com/ubuntu/ trusty-updates/main udev i386 204-5ubuntu20.6 [738 kB]
-Get:14 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libudev1 i386 204-5ubuntu20.6 [34.1 kB]
-Get:15 http://archive.ubuntu.com/ubuntu/ trusty-updates/main ifupdown i386 0.7.47.2ubuntu4.1 [51.4 kB]
-Get:16 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libjson0 i386 0.11-3ubuntu1.2 [1078 B]
-Get:17 http://archive.ubuntu.com/ubuntu/ trusty-updates/main upstart i386 1.12.1-0ubuntu4.2 [367 kB]
-Get:18 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc-bin i386 2.19-0ubuntu6.3 [1108 kB]
-Get:19 http://archive.ubuntu.com/ubuntu/ trusty-updates/main gcc-4.9-base i386 4.9.1-0ubuntu1 [14.9 kB]
-Get:20 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgcc1 i386 1:4.9.1-0ubuntu1 [47.9 kB]
-Get:21 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc6 i386 2.19-0ubuntu6.3 [4006 kB]
-Get:22 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libapt-pkg4.12 i386 1.0.1ubuntu2.3 [634 kB]
+After this operation, 158 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libdbus-1-3 i386 1.6.18-0ubuntu4.2 [132 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libjson-c2 i386 0.11-3ubuntu1.2 [22.5 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libselinux1 i386 2.2.2-1ubuntu0.1 [57.5 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libuuid1 i386 2.20.1-5.1ubuntu20.2 [11.5 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libblkid1 i386 2.20.1-5.1ubuntu20.2 [67.4 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libcgmanager0 i386 0.24-0ubuntu7 [25.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main tzdata all 2014e-0ubuntu0.14.04 [181 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg i386 1.17.5ubuntu5.3 [1936 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ trusty-updates/main util-linux i386 2.20.1-5.1ubuntu20.2 [452 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ trusty-updates/main udev i386 204-5ubuntu20.7 [737 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libudev1 i386 204-5ubuntu20.7 [34.2 kB]
+Get:12 http://archive.ubuntu.com/ubuntu/ trusty-updates/main ifupdown i386 0.7.47.2ubuntu4.1 [51.4 kB]
+Get:13 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libjson0 i386 0.11-3ubuntu1.2 [1078 B]
+Get:14 http://archive.ubuntu.com/ubuntu/ trusty-updates/main upstart i386 1.12.1-0ubuntu4.2 [367 kB]
+Get:15 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc-bin i386 2.19-0ubuntu6.3 [1108 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ trusty-updates/main gcc-4.9-base i386 4.9.1-0ubuntu1 [14.9 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgcc1 i386 1:4.9.1-0ubuntu1 [47.9 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc6 i386 2.19-0ubuntu6.3 [4006 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ trusty-updates/main base-files i386 7.2ubuntu5.1 [62.0 kB]
+Get:20 http://archive.ubuntu.com/ubuntu/ trusty-updates/main bash i386 4.3-7ubuntu1.5 [549 kB]
+Get:21 http://archive.ubuntu.com/ubuntu/ trusty-updates/main mount i386 2.20.1-5.1ubuntu20.2 [113 kB]
+Get:22 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libapt-pkg4.12 i386 1.0.1ubuntu2.5 [634 kB]
 Get:23 http://archive.ubuntu.com/ubuntu/ trusty-updates/main gpgv i386 1.4.16-1ubuntu2.1 [152 kB]
 Get:24 http://archive.ubuntu.com/ubuntu/ trusty-updates/main gnupg i386 1.4.16-1ubuntu2.1 [592 kB]
-Get:25 http://archive.ubuntu.com/ubuntu/ trusty-updates/main apt i386 1.0.1ubuntu2.3 [955 kB]
-Get:26 http://archive.ubuntu.com/ubuntu/ trusty-updates/main bsdutils i386 1:2.20.1-5.1ubuntu20.1 [34.0 kB]
-Get:27 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libmount1 i386 2.20.1-5.1ubuntu20.1 [59.7 kB]
+Get:25 http://archive.ubuntu.com/ubuntu/ trusty-updates/main apt i386 1.0.1ubuntu2.5 [953 kB]
+Get:26 http://archive.ubuntu.com/ubuntu/ trusty-updates/main bsdutils i386 1:2.20.1-5.1ubuntu20.2 [34.0 kB]
+Get:27 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libmount1 i386 2.20.1-5.1ubuntu20.2 [59.7 kB]
 Get:28 http://archive.ubuntu.com/ubuntu/ trusty-updates/main multiarch-support i386 2.19-0ubuntu6.3 [4488 B]
 Get:29 http://archive.ubuntu.com/ubuntu/ trusty-updates/main initramfs-tools all 0.103ubuntu4.2 [44.3 kB]
 Get:30 http://archive.ubuntu.com/ubuntu/ trusty-updates/main initramfs-tools-bin i386 0.103ubuntu4.2 [8894 B]
@@ -1263,7 +1275,7 @@ perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = (unset),
 	LC_ALL = (unset),
-	LANG = "en_US.UTF-8"
+	LANG = "en_GB.UTF-8"
     are supported and installed on your system.
 perl: warning: Falling back to the standard locale ("C").
 locale: Cannot set LC_CTYPE to default locale: No such file or directory
@@ -1271,47 +1283,10 @@ locale: Cannot set LC_MESSAGES to default locale: No such file or directory
 locale: Cannot set LC_ALL to default locale: No such file or directory
 Extracting templates from packages: 96%Extracting templates from packages: 100%
 Preconfiguring packages ...
-Fetched 15.2 MB in 8s (1690 kB/s)
+Fetched 15.2 MB in 1s (15.0 MB/s)
 (Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../base-files_7.2ubuntu5.1_i386.deb ...
-Unpacking base-files (7.2ubuntu5.1) over (7.2ubuntu5) ...
-Setting up base-files (7.2ubuntu5.1) ...
-Installing new version of config file /etc/issue ...
-Installing new version of config file /etc/issue.net ...
-Installing new version of config file /etc/lsb-release ...
-Installing new version of config file /etc/os-release ...
-(Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../bash_4.3-7ubuntu1_i386.deb ...
-Unpacking bash (4.3-7ubuntu1) over (4.3-6ubuntu1) ...
-Setting up bash (4.3-7ubuntu1) ...
-update-alternatives: using /usr/share/man/man7/bash-builtins.7.gz to provide /usr/share/man/man7/builtins.7.gz (builtins.7.gz) in auto mode
-(Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../dpkg_1.17.5ubuntu5.3_i386.deb ...
-Unpacking dpkg (1.17.5ubuntu5.3) over (1.17.5ubuntu5) ...
-Setting up dpkg (1.17.5ubuntu5.3) ...
-(Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../mount_2.20.1-5.1ubuntu20.1_i386.deb ...
-Unpacking mount (2.20.1-5.1ubuntu20.1) over (2.20.1-5.1ubuntu20) ...
-Setting up mount (2.20.1-5.1ubuntu20.1) ...
-(Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../tzdata_2014e-0ubuntu0.14.04_all.deb ...
-Unpacking tzdata (2014e-0ubuntu0.14.04) over (2014b-1) ...
-Setting up tzdata (2014e-0ubuntu0.14.04) ...
-
-Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Sep 17 08:17:04 UTC 2014.
-Universal Time is now:  Wed Sep 17 08:17:04 UTC 2014.
-Run 'dpkg-reconfigure tzdata' if you wish to change it.
-
-(Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../util-linux_2.20.1-5.1ubuntu20.1_i386.deb ...
-Unpacking util-linux (2.20.1-5.1ubuntu20.1) over (2.20.1-5.1ubuntu20) ...
-Processing triggers for mime-support (3.54ubuntu1) ...
-Processing triggers for ureadahead (0.100.0-16) ...
-Setting up util-linux (2.20.1-5.1ubuntu20.1) ...
-(Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../libdbus-1-3_1.6.18-0ubuntu4.1_i386.deb ...
-Unpacking libdbus-1-3:i386 (1.6.18-0ubuntu4.1) over (1.6.18-0ubuntu4) ...
+Preparing to unpack .../libdbus-1-3_1.6.18-0ubuntu4.2_i386.deb ...
+Unpacking libdbus-1-3:i386 (1.6.18-0ubuntu4.2) over (1.6.18-0ubuntu4) ...
 Preparing to unpack .../libjson-c2_0.11-3ubuntu1.2_i386.deb ...
 Unpacking libjson-c2:i386 (0.11-3ubuntu1.2) over (0.11-3ubuntu1) ...
 Preparing to unpack .../libselinux1_2.2.2-1ubuntu0.1_i386.deb ...
@@ -1328,23 +1303,43 @@ Setting up libc6:i386 (2.19-0ubuntu6.3) ...
 Setting up libselinux1:i386 (2.2.2-1ubuntu0.1) ...
 Processing triggers for libc-bin (2.19-0ubuntu6) ...
 (Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../libuuid1_2.20.1-5.1ubuntu20.1_i386.deb ...
-Unpacking libuuid1:i386 (2.20.1-5.1ubuntu20.1) over (2.20.1-5.1ubuntu20) ...
-Setting up libuuid1:i386 (2.20.1-5.1ubuntu20.1) ...
+Preparing to unpack .../libuuid1_2.20.1-5.1ubuntu20.2_i386.deb ...
+Unpacking libuuid1:i386 (2.20.1-5.1ubuntu20.2) over (2.20.1-5.1ubuntu20) ...
+Setting up libuuid1:i386 (2.20.1-5.1ubuntu20.2) ...
 Processing triggers for libc-bin (2.19-0ubuntu6) ...
 (Reading database ... 11512 files and directories currently installed.)
-Preparing to unpack .../libblkid1_2.20.1-5.1ubuntu20.1_i386.deb ...
-Unpacking libblkid1:i386 (2.20.1-5.1ubuntu20.1) over (2.20.1-5.1ubuntu20) ...
-Setting up libblkid1:i386 (2.20.1-5.1ubuntu20.1) ...
+Preparing to unpack .../libblkid1_2.20.1-5.1ubuntu20.2_i386.deb ...
+Unpacking libblkid1:i386 (2.20.1-5.1ubuntu20.2) over (2.20.1-5.1ubuntu20) ...
+Setting up libblkid1:i386 (2.20.1-5.1ubuntu20.2) ...
 Processing triggers for libc-bin (2.19-0ubuntu6) ...
 (Reading database ... 11512 files and directories currently installed.)
 Preparing to unpack .../libcgmanager0_0.24-0ubuntu7_i386.deb ...
 Unpacking libcgmanager0:i386 (0.24-0ubuntu7) over (0.24-0ubuntu5) ...
-Preparing to unpack .../udev_204-5ubuntu20.6_i386.deb ...
+Preparing to unpack .../tzdata_2014e-0ubuntu0.14.04_all.deb ...
+Unpacking tzdata (2014e-0ubuntu0.14.04) over (2014b-1) ...
+Setting up tzdata (2014e-0ubuntu0.14.04) ...
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Fri Oct 10 17:31:39 UTC 2014.
+Universal Time is now:  Fri Oct 10 17:31:39 UTC 2014.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+(Reading database ... 11512 files and directories currently installed.)
+Preparing to unpack .../dpkg_1.17.5ubuntu5.3_i386.deb ...
+Unpacking dpkg (1.17.5ubuntu5.3) over (1.17.5ubuntu5) ...
+Setting up dpkg (1.17.5ubuntu5.3) ...
+(Reading database ... 11512 files and directories currently installed.)
+Preparing to unpack .../util-linux_2.20.1-5.1ubuntu20.2_i386.deb ...
+Unpacking util-linux (2.20.1-5.1ubuntu20.2) over (2.20.1-5.1ubuntu20) ...
+Processing triggers for mime-support (3.54ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up util-linux (2.20.1-5.1ubuntu20.2) ...
+(Reading database ... 11512 files and directories currently installed.)
+Preparing to unpack .../udev_204-5ubuntu20.7_i386.deb ...
 Adding 'diversion of /bin/udevadm to /bin/udevadm.upgrade by fake-udev'
-Unpacking udev (204-5ubuntu20.6) over (204-5ubuntu20) ...
-Preparing to unpack .../libudev1_204-5ubuntu20.6_i386.deb ...
-Unpacking libudev1:i386 (204-5ubuntu20.6) over (204-5ubuntu20) ...
+Unpacking udev (204-5ubuntu20.7) over (204-5ubuntu20) ...
+Preparing to unpack .../libudev1_204-5ubuntu20.7_i386.deb ...
+Unpacking libudev1:i386 (204-5ubuntu20.7) over (204-5ubuntu20) ...
 Preparing to unpack .../ifupdown_0.7.47.2ubuntu4.1_i386.deb ...
 Unpacking ifupdown (0.7.47.2ubuntu4.1) over (0.7.47.2ubuntu4) ...
 Preparing to unpack .../libjson0_0.11-3ubuntu1.2_i386.deb ...
@@ -1356,9 +1351,26 @@ Unpacking libc-bin (2.19-0ubuntu6.3) over (2.19-0ubuntu6) ...
 Processing triggers for ureadahead (0.100.0-16) ...
 Setting up libc-bin (2.19-0ubuntu6.3) ...
 (Reading database ... 11513 files and directories currently installed.)
-Preparing to unpack .../libapt-pkg4.12_1.0.1ubuntu2.3_i386.deb ...
-Unpacking libapt-pkg4.12:i386 (1.0.1ubuntu2.3) over (1.0.1ubuntu2) ...
-Setting up libapt-pkg4.12:i386 (1.0.1ubuntu2.3) ...
+Preparing to unpack .../base-files_7.2ubuntu5.1_i386.deb ...
+Unpacking base-files (7.2ubuntu5.1) over (7.2ubuntu5) ...
+Setting up base-files (7.2ubuntu5.1) ...
+Installing new version of config file /etc/issue ...
+Installing new version of config file /etc/issue.net ...
+Installing new version of config file /etc/lsb-release ...
+Installing new version of config file /etc/os-release ...
+(Reading database ... 11513 files and directories currently installed.)
+Preparing to unpack .../bash_4.3-7ubuntu1.5_i386.deb ...
+Unpacking bash (4.3-7ubuntu1.5) over (4.3-6ubuntu1) ...
+Setting up bash (4.3-7ubuntu1.5) ...
+update-alternatives: using /usr/share/man/man7/bash-builtins.7.gz to provide /usr/share/man/man7/builtins.7.gz (builtins.7.gz) in auto mode
+(Reading database ... 11513 files and directories currently installed.)
+Preparing to unpack .../mount_2.20.1-5.1ubuntu20.2_i386.deb ...
+Unpacking mount (2.20.1-5.1ubuntu20.2) over (2.20.1-5.1ubuntu20) ...
+Setting up mount (2.20.1-5.1ubuntu20.2) ...
+(Reading database ... 11513 files and directories currently installed.)
+Preparing to unpack .../libapt-pkg4.12_1.0.1ubuntu2.5_i386.deb ...
+Unpacking libapt-pkg4.12:i386 (1.0.1ubuntu2.5) over (1.0.1ubuntu2) ...
+Setting up libapt-pkg4.12:i386 (1.0.1ubuntu2.5) ...
 Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
 (Reading database ... 11513 files and directories currently installed.)
 Preparing to unpack .../gpgv_1.4.16-1ubuntu2.1_i386.deb ...
@@ -1369,18 +1381,18 @@ Preparing to unpack .../gnupg_1.4.16-1ubuntu2.1_i386.deb ...
 Unpacking gnupg (1.4.16-1ubuntu2.1) over (1.4.16-1ubuntu2) ...
 Setting up gnupg (1.4.16-1ubuntu2.1) ...
 (Reading database ... 11513 files and directories currently installed.)
-Preparing to unpack .../apt_1.0.1ubuntu2.3_i386.deb ...
-Unpacking apt (1.0.1ubuntu2.3) over (1.0.1ubuntu2) ...
-Setting up apt (1.0.1ubuntu2.3) ...
+Preparing to unpack .../apt_1.0.1ubuntu2.5_i386.deb ...
+Unpacking apt (1.0.1ubuntu2.5) over (1.0.1ubuntu2) ...
+Setting up apt (1.0.1ubuntu2.5) ...
 Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
 (Reading database ... 11513 files and directories currently installed.)
-Preparing to unpack .../bsdutils_1%3a2.20.1-5.1ubuntu20.1_i386.deb ...
-Unpacking bsdutils (1:2.20.1-5.1ubuntu20.1) over (1:2.20.1-5.1ubuntu20) ...
-Setting up bsdutils (1:2.20.1-5.1ubuntu20.1) ...
+Preparing to unpack .../bsdutils_1%3a2.20.1-5.1ubuntu20.2_i386.deb ...
+Unpacking bsdutils (1:2.20.1-5.1ubuntu20.2) over (1:2.20.1-5.1ubuntu20) ...
+Setting up bsdutils (1:2.20.1-5.1ubuntu20.2) ...
 (Reading database ... 11513 files and directories currently installed.)
-Preparing to unpack .../libmount1_2.20.1-5.1ubuntu20.1_i386.deb ...
-Unpacking libmount1:i386 (2.20.1-5.1ubuntu20.1) over (2.20.1-5.1ubuntu20) ...
-Setting up libmount1:i386 (2.20.1-5.1ubuntu20.1) ...
+Preparing to unpack .../libmount1_2.20.1-5.1ubuntu20.2_i386.deb ...
+Unpacking libmount1:i386 (2.20.1-5.1ubuntu20.2) over (2.20.1-5.1ubuntu20) ...
+Setting up libmount1:i386 (2.20.1-5.1ubuntu20.2) ...
 Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
 (Reading database ... 11513 files and directories currently installed.)
 Preparing to unpack .../multiarch-support_2.19-0ubuntu6.3_i386.deb ...
@@ -1393,29 +1405,56 @@ Preparing to unpack .../initramfs-tools-bin_0.103ubuntu4.2_i386.deb ...
 Unpacking initramfs-tools-bin (0.103ubuntu4.2) over (0.103ubuntu4) ...
 Preparing to unpack .../locales_2.13+git20120306-12.1_all.deb ...
 Unpacking locales (2.13+git20120306-12.1) over (2.13+git20120306-12) ...
-Setting up libdbus-1-3:i386 (1.6.18-0ubuntu4.1) ...
+Setting up libdbus-1-3:i386 (1.6.18-0ubuntu4.2) ...
 Setting up libjson-c2:i386 (0.11-3ubuntu1.2) ...
 Setting up libcgmanager0:i386 (0.24-0ubuntu7) ...
-Setting up libudev1:i386 (204-5ubuntu20.6) ...
-Setting up udev (204-5ubuntu20.6) ...
-udev stop/waiting
-udev start/running, process 15592
-Removing 'diversion of /bin/udevadm to /bin/udevadm.upgrade by fake-udev'
-update-initramfs: deferring update (trigger activated)
+Setting up libudev1:i386 (204-5ubuntu20.7) ...
 Setting up ifupdown (0.7.47.2ubuntu4.1) ...
 Installing new version of config file /etc/init/network-interface.conf ...
 Setting up libjson0:i386 (0.11-3ubuntu1.2) ...
+Setting up udev (204-5ubuntu20.7) ...
+Installing new version of config file /etc/init/udev-fallback-graphics.conf ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * udev requires a mounted sysfs, not started
+   ...fail!
+invoke-rc.d: initscript udev, action "restart" failed.
+dpkg: error processing package udev (--configure):
+ subprocess installed post-installation script returned error exit status 1
 Setting up initramfs-tools-bin (0.103ubuntu4.2) ...
-Setting up initramfs-tools (0.103ubuntu4.2) ...
-update-initramfs: deferring update (trigger activated)
+dpkg: dependency problems prevent configuration of initramfs-tools:
+ initramfs-tools depends on udev (>= 147~-5); however:
+  Package udev is not configured yet.
+
+dpkg: error processing package initramfs-tools (--configure):
+ dependency problems - leaving unconfigured
 Setting up locales (2.13+git20120306-12.1) ...
 Processing triggers for ureadahead (0.100.0-16) ...
 Setting up upstart (1.12.1-0ubuntu4.2) ...
 Installing new version of config file /etc/cron.daily/upstart ...
+Setting up cron (3.0pl1-124ubuntu2) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+invoke-rc.d: initscript cron, action "start" failed.
+dpkg: error processing package cron (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of logrotate:
+ logrotate depends on cron | anacron | cron-daemon; however:
+  Package cron is not configured yet.
+  Package anacron is not installed.
+  Package cron-daemon is not installed.
+  Package cron which provides cron-daemon is not configured yet.
+
+dpkg: error processing package logrotate (--configure):
+ dependency problems - leaving unconfigured
 Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
-Processing triggers for initramfs-tools (0.103ubuntu4.2) ...
-+ install='apt-get -y -o DPkg::Options::=--force-confdef -o DPkg::Options::=--force-confold install'
-+ apt-get -y -o DPkg::Options::=--force-confdef -o DPkg::Options::=--force-confold install language-pack-en
+Errors were encountered while processing:
+ udev
+ initramfs-tools
+ cron
+ logrotate
+E: Sub-process /usr/bin/dpkg returned an error code (1)
++ apt-get -y install language-pack-en
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -1424,6 +1463,7 @@ The following extra packages will be installed:
 The following NEW packages will be installed:
   language-pack-en language-pack-en-base
 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+4 not fully installed or removed.
 Need to get 459 kB of archives.
 After this operation, 4215 kB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main language-pack-en-base all 1:14.04+20140707 [457 kB]
@@ -1432,20 +1472,49 @@ perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = (unset),
 	LC_ALL = (unset),
-	LANG = "en_US.UTF-8"
+	LANG = "en_GB.UTF-8"
     are supported and installed on your system.
 perl: warning: Falling back to the standard locale ("C").
 locale: Cannot set LC_CTYPE to default locale: No such file or directory
 locale: Cannot set LC_MESSAGES to default locale: No such file or directory
 locale: Cannot set LC_ALL to default locale: No such file or directory
-Fetched 459 kB in 0s (1334 kB/s)
+Fetched 459 kB in 0s (1592 kB/s)
 Selecting previously unselected package language-pack-en-base.
-(Reading database ... 11512 files and directories currently installed.)
+(Reading database ... 11513 files and directories currently installed.)
 Preparing to unpack .../language-pack-en-base_1%3a14.04+20140707_all.deb ...
 Unpacking language-pack-en-base (1:14.04+20140707) ...
 Selecting previously unselected package language-pack-en.
 Preparing to unpack .../language-pack-en_1%3a14.04+20140707_all.deb ...
 Unpacking language-pack-en (1:14.04+20140707) ...
+Setting up cron (3.0pl1-124ubuntu2) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+invoke-rc.d: initscript cron, action "start" failed.
+dpkg: error processing package cron (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of logrotate:
+ logrotate depends on cron | anacron | cron-daemon; however:
+  Package cron is not configured yet.
+  Package anacron is not installed.
+  Package cron-daemon is not installed.
+  Package cron which provides cron-daemon is not configured yet.
+
+dpkg: error processing package logrotate (--configure):
+ dependency problems - leaving unconfigured
+Setting up udev (204-5ubuntu20.7) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * udev requires a mounted sysfs, not started
+   ...fail!
+invoke-rc.d: initscript udev, action "restart" failed.
+dpkg: error processing package udev (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of initramfs-tools:
+ initramfs-tools depends on udev (>= 147~-5); however:
+  Package udev is not configured yet.
+
+dpkg: error processing package initramfs-tools (--configure):
+ dependency problems - leaving unconfigured
 Setting up language-pack-en (1:14.04+20140707) ...
 Setting up language-pack-en-base (1:14.04+20140707) ...
 Generating locales...
@@ -1467,8 +1536,14 @@ Generating locales...
   en_ZM.UTF-8... done
   en_ZW.UTF-8... done
 Generation complete.
+Errors were encountered while processing:
+ cron
+ logrotate
+ udev
+ initramfs-tools
+E: Sub-process /usr/bin/dpkg returned an error code (1)
 + update-locale
-+ apt-get -y -o DPkg::Options::=--force-confdef -o DPkg::Options::=--force-confold install aptitude tasksel vim nano psmisc cron supervisor
++ apt-get -y install aptitude tasksel vim nano psmisc cron supervisor
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -1490,7 +1565,7 @@ Suggested packages:
   python-gtk2 python-vte python-apt-doc python-distribute
   python-distribute-doc xapian-doc python2.7-doc binutils binfmt-support ctags
   vim-doc vim-scripts
-The following NEW packages will be installed:
+The following NEW packages will be installed
   apt-xapian-index aptitude aptitude-common dmidecode iso-codes laptop-detect
   libboost-iostreams1.54.0 libclass-accessor-perl libcwidget3 libept1.4.12
   libgpm2 libio-string-perl libparse-debianchangelog-perl libpython-stdlib
@@ -1499,7 +1574,8 @@ The following NEW packages will be installed:
   python-apt-common python-chardet python-debian python-meld3 python-minimal
   python-pkg-resources python-six python-xapian python2.7 python2.7-minimal
   supervisor tasksel tasksel-data vim vim-runtime xz-utils
-0 upgraded, 41 newly installed, 0 to remove and 0 not upgraded.
+0 to upgrade, 41 to newly install, 0 to remove and 0 not to upgrade.
+4 not fully installed or removed.
 Need to get 17.3 MB of archives.
 After this operation, 85.4 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libboost-iostreams1.54.0 i386 1.54.0-4ubuntu3.1 [29.3 kB]
@@ -1543,11 +1619,11 @@ Get:38 http://archive.ubuntu.com/ubuntu/ trusty/main vim i386 2:7.4.052-1ubuntu3
 Get:39 http://archive.ubuntu.com/ubuntu/ trusty/main xz-utils i386 5.1.1alpha+20120614-2ubuntu2 [79.8 kB]
 Get:40 http://archive.ubuntu.com/ubuntu/ trusty/universe python-meld3 i386 0.6.10-1 [38.6 kB]
 Get:41 http://archive.ubuntu.com/ubuntu/ trusty/universe supervisor all 3.0b2-1 [314 kB]
-Extracting templates from packages: 73%Extracting templates from packages: 100%
+Extract templates from packages: 73%Extract templates from packages: 100%
 Preconfiguring packages ...
-Fetched 17.3 MB in 11s (1,552 kB/s)
+Fetched 17.3 MB in 5s (2,978 kB/s)
 Selecting previously unselected package libboost-iostreams1.54.0:i386.
-(Reading database ... 12130 files and directories currently installed.)
+(Reading database ... 12131 files and directories currently installed.)
 Preparing to unpack .../libboost-iostreams1.54.0_1.54.0-4ubuntu3.1_i386.deb ...
 Unpacking libboost-iostreams1.54.0:i386 (1.54.0-4ubuntu3.1) ...
 Selecting previously unselected package libept1.4.12:i386.
@@ -1674,6 +1750,35 @@ Preparing to unpack .../supervisor_3.0b2-1_all.deb ...
 Unpacking supervisor (3.0b2-1) ...
 Processing triggers for mime-support (3.54ubuntu1) ...
 Processing triggers for ureadahead (0.100.0-16) ...
+Setting up cron (3.0pl1-124ubuntu2) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+invoke-rc.d: initscript cron, action "start" failed.
+dpkg: error processing package cron (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of logrotate:
+ logrotate depends on cron | anacron | cron-daemon; however:
+  Package cron is not configured yet.
+  Package anacron is not installed.
+  Package cron-daemon is not installed.
+  Package cron which provides cron-daemon is not configured yet.
+
+dpkg: error processing package logrotate (--configure):
+ dependency problems - leaving unconfigured
+Setting up udev (204-5ubuntu20.7) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * udev requires a mounted sysfs, not started
+   ...fail!
+invoke-rc.d: initscript udev, action "restart" failed.
+dpkg: error processing package udev (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of initramfs-tools:
+ initramfs-tools depends on udev (>= 147~-5); however:
+  Package udev is not configured yet.
+
+dpkg: error processing package initramfs-tools (--configure):
+ dependency problems - leaving unconfigured
 Setting up libboost-iostreams1.54.0:i386 (1.54.0-4ubuntu3.1) ...
 Setting up libept1.4.12:i386 (1.0.12) ...
 Setting up libgpm2:i386 (1.20.4-6.1) ...
@@ -1726,12 +1831,19 @@ Setting up xz-utils (5.1.1alpha+20120614-2ubuntu2) ...
 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
 Setting up python-meld3 (0.6.10-1) ...
 Setting up supervisor (3.0b2-1) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
 Starting supervisor: supervisord.
 Setting up tasksel-data (2.88ubuntu15) ...
 Setting up tasksel (2.88ubuntu15) ...
 Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
 Processing triggers for ureadahead (0.100.0-16) ...
-+ apt-get -y -o DPkg::Options::=--force-confdef -o DPkg::Options::=--force-confold install mysql-server ssmtp memcached php5-memcached php5-mysql php5-gd php-db php5-dev php-pear php5-curl php-apc make ssl-cert gawk unzip wget curl diffutils phpmyadmin git ruby
+Errors were encountered while processing:
+ cron
+ logrotate
+ udev
+ initramfs-tools
+E: Sub-process /usr/bin/dpkg returned an error code (1)
++ apt-get -y install mysql-server ssmtp memcached php5-memcached php5-mysql php5-gd php-db php5-dev php-pear php5-curl php-apc make ssl-cert gawk unzip wget curl diffutils phpmyadmin git ruby
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -1792,7 +1904,7 @@ Suggested packages:
   openssl-blacklist zip
 Recommended packages:
   ssh-client
-The following NEW packages will be installed:
+The following NEW packages will be installed
   apache2 apache2-bin apache2-data autoconf automake autotools-dev binutils
   bsdmainutils build-essential ca-certificates cpp cpp-4.8 curl
   dbconfig-common debhelper dh-apparmor dpkg-dev fakeroot fontconfig-config
@@ -1827,7 +1939,8 @@ The following NEW packages will be installed:
   php5-readline phpmyadmin pkg-php-tools po-debconf rsync ruby ruby1.9.1
   sgml-base shared-mime-info shtool ssl-cert ssmtp tcpd unzip wget xauth
   xml-core zlib1g-dev
-0 upgraded, 186 newly installed, 0 to remove and 0 not upgraded.
+0 to upgrade, 186 to newly install, 0 to remove and 0 not to upgrade.
+4 not fully installed or removed.
 Need to get 75.3 MB of archives.
 After this operation, 360 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libroken18-heimdal i386 1.6~git20131207+dfsg-1ubuntu1 [40.9 kB]
@@ -1864,7 +1977,7 @@ Get:31 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libxml2 i386 2.9.1+
 Get:32 http://archive.ubuntu.com/ubuntu/ trusty/main libxmuu1 i386 2:1.1.1-1 [11.1 kB]
 Get:33 http://archive.ubuntu.com/ubuntu/ trusty/main groff-base i386 1.22.2-5 [1,030 kB]
 Get:34 http://archive.ubuntu.com/ubuntu/ trusty/main bsdmainutils i386 9.0.5ubuntu1 [197 kB]
-Get:35 http://archive.ubuntu.com/ubuntu/ trusty/main man-db i386 2.6.7.1-1 [851 kB]
+Get:35 http://archive.ubuntu.com/ubuntu/ trusty-updates/main man-db i386 2.6.7.1-1ubuntu1 [852 kB]
 Get:36 http://archive.ubuntu.com/ubuntu/ trusty/main sgml-base all 1.26+nmu4ubuntu1 [12.5 kB]
 Get:37 http://archive.ubuntu.com/ubuntu/ trusty/main libsigsegv2 i386 2.10-2 [14.8 kB]
 Get:38 http://archive.ubuntu.com/ubuntu/ trusty/main gawk i386 1:4.0.1+dfsg-2.1ubuntu2 [730 kB]
@@ -1942,7 +2055,7 @@ Get:109 http://archive.ubuntu.com/ubuntu/ trusty/main autotools-dev all 20130810
 Get:110 http://archive.ubuntu.com/ubuntu/ trusty/main automake all 1:1.14.1-2ubuntu1 [510 kB]
 Get:111 http://archive.ubuntu.com/ubuntu/ trusty/main binutils i386 2.24-5ubuntu3 [2,112 kB]
 Get:112 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc-dev-bin i386 2.19-0ubuntu6.3 [63.4 kB]
-Get:113 http://archive.ubuntu.com/ubuntu/ trusty-updates/main linux-libc-dev i386 3.13.0-35.62 [793 kB]
+Get:113 http://archive.ubuntu.com/ubuntu/ trusty-updates/main linux-libc-dev i386 3.13.0-37.64 [800 kB]
 Get:114 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc6-dev i386 2.19-0ubuntu6.3 [1,555 kB]
 Get:115 http://archive.ubuntu.com/ubuntu/ trusty/main cpp-4.8 i386 4.8.2-19ubuntu1 [4,448 kB]
 Get:116 http://archive.ubuntu.com/ubuntu/ trusty/main cpp i386 4:4.8.2-1ubuntu6 [27.4 kB]
@@ -2016,11 +2129,11 @@ Get:183 http://archive.ubuntu.com/ubuntu/ trusty/universe libjs-codemirror all 2
 Get:184 http://archive.ubuntu.com/ubuntu/ trusty/universe phpmyadmin all 4:4.0.10-1 [4,224 kB]
 Get:185 http://archive.ubuntu.com/ubuntu/ trusty/main pkg-php-tools all 1.11 [21.6 kB]
 Get:186 http://archive.ubuntu.com/ubuntu/ trusty/universe ssmtp i386 2.64-7 [45.0 kB]
-Extracting templates from packages: 16%Extracting templates from packages: 32%Extracting templates from packages: 48%Extracting templates from packages: 64%Extracting templates from packages: 80%Extracting templates from packages: 96%Extracting templates from packages: 100%
+Extract templates from packages: 16%Extract templates from packages: 32%Extract templates from packages: 48%Extract templates from packages: 64%Extract templates from packages: 80%Extract templates from packages: 96%Extract templates from packages: 100%
 Preconfiguring packages ...
-Fetched 75.3 MB in 13s (5,763 kB/s)
+Fetched 75.3 MB in 58s (1,293 kB/s)
 Selecting previously unselected package libroken18-heimdal:i386.
-(Reading database ... 16122 files and directories currently installed.)
+(Reading database ... 16123 files and directories currently installed.)
 Preparing to unpack .../libroken18-heimdal_1.6~git20131207+dfsg-1ubuntu1_i386.deb ...
 Unpacking libroken18-heimdal:i386 (1.6~git20131207+dfsg-1ubuntu1) ...
 Selecting previously unselected package libasn1-8-heimdal:i386.
@@ -2123,8 +2236,8 @@ Selecting previously unselected package bsdmainutils.
 Preparing to unpack .../bsdmainutils_9.0.5ubuntu1_i386.deb ...
 Unpacking bsdmainutils (9.0.5ubuntu1) ...
 Selecting previously unselected package man-db.
-Preparing to unpack .../man-db_2.6.7.1-1_i386.deb ...
-Unpacking man-db (2.6.7.1-1) ...
+Preparing to unpack .../man-db_2.6.7.1-1ubuntu1_i386.deb ...
+Unpacking man-db (2.6.7.1-1ubuntu1) ...
 Selecting previously unselected package sgml-base.
 Preparing to unpack .../sgml-base_1.26+nmu4ubuntu1_all.deb ...
 Unpacking sgml-base (1.26+nmu4ubuntu1) ...
@@ -2135,7 +2248,7 @@ Processing triggers for mime-support (3.54ubuntu1) ...
 Setting up libsigsegv2:i386 (2.10-2) ...
 Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
 Selecting previously unselected package gawk.
-(Reading database ... 17107 files and directories currently installed.)
+(Reading database ... 17109 files and directories currently installed.)
 Preparing to unpack .../gawk_1%3a4.0.1+dfsg-2.1ubuntu2_i386.deb ...
 Unpacking gawk (1:4.0.1+dfsg-2.1ubuntu2) ...
 Selecting previously unselected package libaio1:i386.
@@ -2260,7 +2373,7 @@ Preparing to unpack .../mysql-server-core-5.5_5.5.38-0ubuntu0.14.04.1_i386.deb .
 Unpacking mysql-server-core-5.5 (5.5.38-0ubuntu0.14.04.1) ...
 Setting up mysql-common (5.5.38-0ubuntu0.14.04.1) ...
 Selecting previously unselected package mysql-server-5.5.
-(Reading database ... 17865 files and directories currently installed.)
+(Reading database ... 17867 files and directories currently installed.)
 Preparing to unpack .../mysql-server-5.5_5.5.38-0ubuntu0.14.04.1_i386.deb ...
 df: Warning: cannot read table of mounted file systems: No such file or directory
 Unpacking mysql-server-5.5 (5.5.38-0ubuntu0.14.04.1) ...
@@ -2364,8 +2477,8 @@ Selecting previously unselected package libc-dev-bin.
 Preparing to unpack .../libc-dev-bin_2.19-0ubuntu6.3_i386.deb ...
 Unpacking libc-dev-bin (2.19-0ubuntu6.3) ...
 Selecting previously unselected package linux-libc-dev:i386.
-Preparing to unpack .../linux-libc-dev_3.13.0-35.62_i386.deb ...
-Unpacking linux-libc-dev:i386 (3.13.0-35.62) ...
+Preparing to unpack .../linux-libc-dev_3.13.0-37.64_i386.deb ...
+Unpacking linux-libc-dev:i386 (3.13.0-37.64) ...
 Selecting previously unselected package libc6-dev:i386.
 Preparing to unpack .../libc6-dev_2.19-0ubuntu6.3_i386.deb ...
 Unpacking libc6-dev:i386 (2.19-0ubuntu6.3) ...
@@ -2587,6 +2700,35 @@ Preparing to unpack .../archives/ssmtp_2.64-7_i386.deb ...
 Unpacking ssmtp (2.64-7) ...
 Processing triggers for ureadahead (0.100.0-16) ...
 Processing triggers for mime-support (3.54ubuntu1) ...
+Setting up cron (3.0pl1-124ubuntu2) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+invoke-rc.d: initscript cron, action "start" failed.
+dpkg: error processing package cron (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of logrotate:
+ logrotate depends on cron | anacron | cron-daemon; however:
+  Package cron is not configured yet.
+  Package anacron is not installed.
+  Package cron-daemon is not installed.
+  Package cron which provides cron-daemon is not configured yet.
+
+dpkg: error processing package logrotate (--configure):
+ dependency problems - leaving unconfigured
+Setting up udev (204-5ubuntu20.7) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * udev requires a mounted sysfs, not started
+   ...fail!
+invoke-rc.d: initscript udev, action "restart" failed.
+dpkg: error processing package udev (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of initramfs-tools:
+ initramfs-tools depends on udev (>= 147~-5); however:
+  Package udev is not configured yet.
+
+dpkg: error processing package initramfs-tools (--configure):
+ dependency problems - leaving unconfigured
 Setting up libroken18-heimdal:i386 (1.6~git20131207+dfsg-1ubuntu1) ...
 Setting up libasn1-8-heimdal:i386 (1.6~git20131207+dfsg-1ubuntu1) ...
 Setting up libasprintf0c2:i386 (0.18.3.1-1ubuntu3) ...
@@ -2624,7 +2766,7 @@ Setting up groff-base (1.22.2-5) ...
 Setting up bsdmainutils (9.0.5ubuntu1) ...
 update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode
 update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode
-Setting up man-db (2.6.7.1-1) ...
+Setting up man-db (2.6.7.1-1ubuntu1) ...
 Building database of manual pages ...
 Setting up sgml-base (1.26+nmu4ubuntu1) ...
 Setting up gawk (1:4.0.1+dfsg-2.1ubuntu2) ...
@@ -2668,8 +2810,15 @@ Setting up mysql-client-core-5.5 (5.5.38-0ubuntu0.14.04.1) ...
 Setting up mysql-client-5.5 (5.5.38-0ubuntu0.14.04.1) ...
 Setting up mysql-server-core-5.5 (5.5.38-0ubuntu0.14.04.1) ...
 Setting up mysql-server-5.5 (5.5.38-0ubuntu0.14.04.1) ...
-initctl: Unknown job: mysql
-initctl: Unknown job: mysql
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * Stopping MySQL database server mysqld
+   ...done.
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+df: Warning: cannot read table of mounted file systems: No such file or directory
+ * Starting MySQL database server mysqld
+   ...done.
+ * Checking for tables which need an upgrade, are corrupt or were 
+not closed cleanly.
 Setting up lsof (4.86+dfsg-1ubuntu2) ...
 Setting up libmpc3:i386 (1.0.1-1ubuntu1) ...
 Setting up openssl (1.0.1f-1ubuntu2.5) ...
@@ -2691,6 +2840,7 @@ update-rc.d: warning: default stop runlevel arguments (0 1 6) do not match rsync
    /etc/rc3.d/S20rsync -> ../init.d/rsync
    /etc/rc4.d/S20rsync -> ../init.d/rsync
    /etc/rc5.d/S20rsync -> ../init.d/rsync
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
 Setting up shared-mime-info (1.2-0ubuntu3) ...
 Setting up wget (1.15-1ubuntu1) ...
 Setting up xauth (1:1.0.7-1ubuntu1) ...
@@ -2724,6 +2874,7 @@ Enabling conf other-vhosts-access-log.
 Enabling conf security.
 Enabling conf serve-cgi-bin.
 Enabling site 000-default.
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
  * Starting web server apache2
  * 
 Setting up m4 (1.4.17-2ubuntu1) ...
@@ -2733,7 +2884,7 @@ Setting up automake (1:1.14.1-2ubuntu1) ...
 update-alternatives: using /usr/bin/automake-1.14 to provide /usr/bin/automake (automake) in auto mode
 Setting up binutils (2.24-5ubuntu3) ...
 Setting up libc-dev-bin (2.19-0ubuntu6.3) ...
-Setting up linux-libc-dev:i386 (3.13.0-35.62) ...
+Setting up linux-libc-dev:i386 (3.13.0-37.64) ...
 Setting up libc6-dev:i386 (2.19-0ubuntu6.3) ...
 Setting up cpp-4.8 (4.8.2-19ubuntu1) ...
 Setting up cpp (4:4.8.2-1ubuntu6) ...
@@ -2766,6 +2917,7 @@ Setting up git-man (1:1.9.1-1) ...
 Setting up git (1:1.9.1-1) ...
 Setting up javascript-common (11) ...
 apache2_invoke: Enable configuration javascript-common
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
  * Reloading web server apache2
  * 
 Setting up libalgorithm-diff-perl (1.19.02-3) ...
@@ -2793,6 +2945,7 @@ Setting up libssl-doc (1.0.1f-1ubuntu2.5) ...
 Setting up libtool (2.4.2-1.7ubuntu1) ...
 Setting up manpages-dev (3.54-1ubuntu1) ...
 Setting up memcached (1.4.14-0ubuntu9) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
 Starting memcached: memcached.
 Setting up shtool (2.0.8-6) ...
 Setting up ssl-cert (1.0.33) ...
@@ -2838,12 +2991,12 @@ Setting up php5-cli (5.5.9+dfsg-1ubuntu4.4) ...
 update-alternatives: using /usr/bin/php5 to provide /usr/bin/php (php) in auto mode
 
 Creating config file /etc/php5/cli/php.ini with new version
-php5_invoke curl: already enabled for cli SAPI
-php5_invoke opcache: already enabled for cli SAPI
 php5_invoke mysqli: already enabled for cli SAPI
+php5_invoke pdo: already enabled for cli SAPI
 php5_invoke pdo_mysql: already enabled for cli SAPI
 php5_invoke gd: already enabled for cli SAPI
-php5_invoke pdo: already enabled for cli SAPI
+php5_invoke opcache: already enabled for cli SAPI
+php5_invoke curl: already enabled for cli SAPI
 php5_invoke mysql: already enabled for cli SAPI
 Setting up php5-readline (5.5.9+dfsg-1ubuntu4.4) ...
 
@@ -2853,20 +3006,22 @@ php5_invoke: Enable module readline for apache2 SAPI
 Setting up libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.4) ...
 
 Creating config file /etc/php5/apache2/php.ini with new version
-php5_invoke curl: already enabled for apache2 SAPI
-php5_invoke opcache: already enabled for apache2 SAPI
 php5_invoke mysqli: already enabled for apache2 SAPI
+php5_invoke pdo: already enabled for apache2 SAPI
 php5_invoke pdo_mysql: already enabled for apache2 SAPI
 php5_invoke gd: already enabled for apache2 SAPI
-php5_invoke pdo: already enabled for apache2 SAPI
-php5_invoke readline: already enabled for apache2 SAPI
+php5_invoke opcache: already enabled for apache2 SAPI
+php5_invoke curl: already enabled for apache2 SAPI
 php5_invoke mysql: already enabled for apache2 SAPI
+php5_invoke readline: already enabled for apache2 SAPI
 Module mpm_event disabled.
 Enabling module mpm_prefork.
 apache2_switch_mpm Switch to prefork
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
  * Restarting web server apache2
    ...done.
 apache2_invoke: Enable module php5
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
  * Restarting web server apache2
    ...done.
 Setting up ruby (1:1.9.3.4) ...
@@ -2894,12 +3049,10 @@ dbconfig-common: writing config to /etc/dbconfig-common/phpmyadmin.conf
 Creating config file /etc/dbconfig-common/phpmyadmin.conf with new version
 
 Creating config file /etc/phpmyadmin/config-db.php with new version
-ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2).
-unable to connect to mysql server.
-error encountered creating user:
-ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
-dbconfig-common: phpmyadmin configure: noninteractive fail.
-dbconfig-common: phpmyadmin configure: ignoring errors from here forwards
+granting access to database phpmyadmin for phpmyadmin@localhost: success.
+verifying access for phpmyadmin@localhost: success.
+creating database phpmyadmin: success.
+verifying database phpmyadmin exists: success.
 populating database via sql...  done.
 dbconfig-common: flushing administrative password
 Setting up pkg-php-tools (1.11) ...
@@ -2908,7 +3061,13 @@ Processing triggers for ca-certificates (20130906ubuntu2) ...
 Updating certificates in /etc/ssl/certs... 164 added, 0 removed; done.
 Running hooks in /etc/ca-certificates/update.d....done.
 Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
-+ apt-get -y -o DPkg::Options::=--force-confdef -o DPkg::Options::=--force-confold install screen logwatch
+Errors were encountered while processing:
+ cron
+ logrotate
+ udev
+ initramfs-tools
+E: Sub-process /usr/bin/dpkg returned an error code (1)
++ apt-get -y install screen logwatch
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -2916,17 +3075,18 @@ The following extra packages will be installed:
   libdate-manip-perl
 Suggested packages:
   fortune-mod iselect screenie byobu
-The following NEW packages will be installed:
+The following NEW packages will be installed
   libdate-manip-perl logwatch screen
-0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+0 to upgrade, 3 to newly install, 0 to remove and 0 not to upgrade.
+4 not fully installed or removed.
 Need to get 2,009 kB of archives.
 After this operation, 13.9 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libdate-manip-perl all 6.42-1 [913 kB]
 Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main logwatch all 7.4.0+svn20130529rev144-1ubuntu1 [468 kB]
 Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main screen i386 4.1.0~20120320gitdb59704-9 [628 kB]
-Fetched 2,009 kB in 1s (1,222 kB/s)
+Fetched 2,009 kB in 0s (8,854 kB/s)
 Selecting previously unselected package libdate-manip-perl.
-(Reading database ... 31197 files and directories currently installed.)
+(Reading database ... 31199 files and directories currently installed.)
 Preparing to unpack .../libdate-manip-perl_6.42-1_all.deb ...
 Unpacking libdate-manip-perl (6.42-1) ...
 Selecting previously unselected package logwatch.
@@ -2935,40 +3095,112 @@ Unpacking logwatch (7.4.0+svn20130529rev144-1ubuntu1) ...
 Selecting previously unselected package screen.
 Preparing to unpack .../screen_4.1.0~20120320gitdb59704-9_i386.deb ...
 Unpacking screen (4.1.0~20120320gitdb59704-9) ...
-Processing triggers for man-db (2.6.7.1-1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
 Processing triggers for ureadahead (0.100.0-16) ...
+Setting up cron (3.0pl1-124ubuntu2) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+invoke-rc.d: initscript cron, action "start" failed.
+dpkg: error processing package cron (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of logrotate:
+ logrotate depends on cron | anacron | cron-daemon; however:
+  Package cron is not configured yet.
+  Package anacron is not installed.
+  Package cron-daemon is not installed.
+  Package cron which provides cron-daemon is not configured yet.
+
+dpkg: error processing package logrotate (--configure):
+ dependency problems - leaving unconfigured
+Setting up udev (204-5ubuntu20.7) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * udev requires a mounted sysfs, not started
+   ...fail!
+invoke-rc.d: initscript udev, action "restart" failed.
+dpkg: error processing package udev (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of initramfs-tools:
+ initramfs-tools depends on udev (>= 147~-5); however:
+  Package udev is not configured yet.
+
+dpkg: error processing package initramfs-tools (--configure):
+ dependency problems - leaving unconfigured
 Setting up libdate-manip-perl (6.42-1) ...
 Setting up logwatch (7.4.0+svn20130529rev144-1ubuntu1) ...
 Setting up screen (4.1.0~20120320gitdb59704-9) ...
 update-rc.d: warning: default start runlevel arguments (2 3 4 5) do not match screen-cleanup Default-Start values (S)
 update-rc.d: warning: default stop runlevel arguments (0 1 6) do not match screen-cleanup Default-Stop values (none)
 Processing triggers for ureadahead (0.100.0-16) ...
+Errors were encountered while processing:
+ cron
+ logrotate
+ udev
+ initramfs-tools
+E: Sub-process /usr/bin/dpkg returned an error code (1)
 + initctl reload-configuration
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
 + curl http://hub.github.com/standalone -sLo /bin/hub
 + chmod +x /bin/hub
-+ apt-get -y -o DPkg::Options::=--force-confdef -o DPkg::Options::=--force-confold install ruby-dev
++ apt-get -y install ruby-dev
 Reading package lists...
 Building dependency tree...
 Reading state information...
 The following extra packages will be installed:
   ruby1.9.1-dev
-The following NEW packages will be installed:
+The following NEW packages will be installed
   ruby-dev ruby1.9.1-dev
-0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+0 to upgrade, 2 to newly install, 0 to remove and 0 not to upgrade.
+4 not fully installed or removed.
 Need to get 892 kB of archives.
 After this operation, 3,591 kB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main ruby1.9.1-dev i386 1.9.3.484-2ubuntu1 [887 kB]
 Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main ruby-dev all 1:1.9.3.4 [4,660 B]
-Fetched 892 kB in 1s (757 kB/s)
+Fetched 892 kB in 0s (3,234 kB/s)
 Selecting previously unselected package ruby1.9.1-dev.
-(Reading database ... 32652 files and directories currently installed.)
+(Reading database ... 32654 files and directories currently installed.)
 Preparing to unpack .../ruby1.9.1-dev_1.9.3.484-2ubuntu1_i386.deb ...
 Unpacking ruby1.9.1-dev (1.9.3.484-2ubuntu1) ...
 Selecting previously unselected package ruby-dev.
 Preparing to unpack .../ruby-dev_1%3a1.9.3.4_all.deb ...
 Unpacking ruby-dev (1:1.9.3.4) ...
+Setting up cron (3.0pl1-124ubuntu2) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+invoke-rc.d: initscript cron, action "start" failed.
+dpkg: error processing package cron (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of logrotate:
+ logrotate depends on cron | anacron | cron-daemon; however:
+  Package cron is not configured yet.
+  Package anacron is not installed.
+  Package cron-daemon is not installed.
+  Package cron which provides cron-daemon is not configured yet.
+
+dpkg: error processing package logrotate (--configure):
+ dependency problems - leaving unconfigured
+Setting up udev (204-5ubuntu20.7) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * udev requires a mounted sysfs, not started
+   ...fail!
+invoke-rc.d: initscript udev, action "restart" failed.
+dpkg: error processing package udev (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of initramfs-tools:
+ initramfs-tools depends on udev (>= 147~-5); however:
+  Package udev is not configured yet.
+
+dpkg: error processing package initramfs-tools (--configure):
+ dependency problems - leaving unconfigured
 Setting up ruby1.9.1-dev (1.9.3.484-2ubuntu1) ...
 Setting up ruby-dev (1:1.9.3.4) ...
+Errors were encountered while processing:
+ cron
+ logrotate
+ udev
+ initramfs-tools
+E: Sub-process /usr/bin/dpkg returned an error code (1)
 + gem install t
 Building native extensions.  This could take a while...
 Building native extensions.  This could take a while...
@@ -2977,7 +3209,7 @@ file 'tomdoc' not found
 Successfully installed addressable-2.3.6
 Successfully installed launchy-2.4.2
 Successfully installed multi_json-1.10.1
-Successfully installed geokit-1.8.5
+Successfully installed geokit-1.9.0
 Successfully installed htmlentities-4.3.2
 Successfully installed oauth-0.4.7
 Successfully installed retryable-1.3.6
@@ -2999,7 +3231,7 @@ Successfully installed t-2.7.0
 Installing ri documentation for addressable-2.3.6...
 Installing ri documentation for launchy-2.4.2...
 Installing ri documentation for multi_json-1.10.1...
-Installing ri documentation for geokit-1.8.5...
+Installing ri documentation for geokit-1.9.0...
 Installing ri documentation for htmlentities-4.3.2...
 Installing ri documentation for oauth-0.4.7...
 Installing ri documentation for retryable-1.3.6...
@@ -3020,7 +3252,7 @@ Installing ri documentation for t-2.7.0...
 Installing RDoc documentation for addressable-2.3.6...
 Installing RDoc documentation for launchy-2.4.2...
 Installing RDoc documentation for multi_json-1.10.1...
-Installing RDoc documentation for geokit-1.8.5...
+Installing RDoc documentation for geokit-1.9.0...
 Installing RDoc documentation for htmlentities-4.3.2...
 Installing RDoc documentation for oauth-0.4.7...
 Installing RDoc documentation for retryable-1.3.6...
@@ -3061,7 +3293,7 @@ update-rc.d: warning:  stop runlevel arguments (none) do not match apache2 Defau
    /etc/rc3.d/K09apache2 -> ../init.d/apache2
    /etc/rc4.d/K09apache2 -> ../init.d/apache2
    /etc/rc5.d/K09apache2 -> ../init.d/apache2
-+ apt-get -y -o DPkg::Options::=--force-confdef -o DPkg::Options::=--force-confold install nginx nginx-common nginx-full php5-fpm
++ apt-get -y install nginx nginx-common nginx-full php5-fpm
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -3069,28 +3301,29 @@ The following extra packages will be installed:
   geoip-database libgeoip1 libsystemd-daemon0 libxslt1.1
 Suggested packages:
   geoip-bin fcgiwrap nginx-doc
-The following NEW packages will be installed:
+The following NEW packages will be installed
   geoip-database libgeoip1 libsystemd-daemon0 libxslt1.1 nginx nginx-common
   nginx-full php5-fpm
-0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3,970 kB of archives.
+0 to upgrade, 8 to newly install, 0 to remove and 0 not to upgrade.
+4 not fully installed or removed.
+Need to get 3,969 kB of archives.
 After this operation, 15.2 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libgeoip1 i386 1.6.0-1 [77.8 kB]
-Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libsystemd-daemon0 i386 204-5ubuntu20.6 [9,686 B]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libsystemd-daemon0 i386 204-5ubuntu20.7 [9,750 B]
 Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main libxslt1.1 i386 1.1.28-2build1 [140 kB]
 Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe php5-fpm i386 5.5.9+dfsg-1ubuntu4.4 [2,182 kB]
 Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main geoip-database all 20140313-1 [1,196 kB]
-Get:6 http://archive.ubuntu.com/ubuntu/ trusty/main nginx-common all 1.4.6-1ubuntu3 [18.1 kB]
-Get:7 http://archive.ubuntu.com/ubuntu/ trusty/universe nginx-full i386 1.4.6-1ubuntu3 [340 kB]
-Get:8 http://archive.ubuntu.com/ubuntu/ trusty/main nginx all 1.4.6-1ubuntu3 [5,586 B]
-Fetched 3,970 kB in 4s (968 kB/s)
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/main nginx-common all 1.4.6-1ubuntu3.1 [17.9 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe nginx-full i386 1.4.6-1ubuntu3.1 [341 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main nginx all 1.4.6-1ubuntu3.1 [5,218 B]
+Fetched 3,969 kB in 1s (3,175 kB/s)
 Selecting previously unselected package libgeoip1:i386.
-(Reading database ... 32697 files and directories currently installed.)
+(Reading database ... 32699 files and directories currently installed.)
 Preparing to unpack .../libgeoip1_1.6.0-1_i386.deb ...
 Unpacking libgeoip1:i386 (1.6.0-1) ...
 Selecting previously unselected package libsystemd-daemon0:i386.
-Preparing to unpack .../libsystemd-daemon0_204-5ubuntu20.6_i386.deb ...
-Unpacking libsystemd-daemon0:i386 (204-5ubuntu20.6) ...
+Preparing to unpack .../libsystemd-daemon0_204-5ubuntu20.7_i386.deb ...
+Unpacking libsystemd-daemon0:i386 (204-5ubuntu20.7) ...
 Selecting previously unselected package libxslt1.1:i386.
 Preparing to unpack .../libxslt1.1_1.1.28-2build1_i386.deb ...
 Unpacking libxslt1.1:i386 (1.1.28-2build1) ...
@@ -3101,40 +3334,76 @@ Selecting previously unselected package geoip-database.
 Preparing to unpack .../geoip-database_20140313-1_all.deb ...
 Unpacking geoip-database (20140313-1) ...
 Selecting previously unselected package nginx-common.
-Preparing to unpack .../nginx-common_1.4.6-1ubuntu3_all.deb ...
-Unpacking nginx-common (1.4.6-1ubuntu3) ...
+Preparing to unpack .../nginx-common_1.4.6-1ubuntu3.1_all.deb ...
+Unpacking nginx-common (1.4.6-1ubuntu3.1) ...
 Selecting previously unselected package nginx-full.
-Preparing to unpack .../nginx-full_1.4.6-1ubuntu3_i386.deb ...
-Unpacking nginx-full (1.4.6-1ubuntu3) ...
+Preparing to unpack .../nginx-full_1.4.6-1ubuntu3.1_i386.deb ...
+Unpacking nginx-full (1.4.6-1ubuntu3.1) ...
 Selecting previously unselected package nginx.
-Preparing to unpack .../nginx_1.4.6-1ubuntu3_all.deb ...
-Unpacking nginx (1.4.6-1ubuntu3) ...
-Processing triggers for man-db (2.6.7.1-1) ...
+Preparing to unpack .../nginx_1.4.6-1ubuntu3.1_all.deb ...
+Unpacking nginx (1.4.6-1ubuntu3.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
 Processing triggers for ureadahead (0.100.0-16) ...
+Setting up cron (3.0pl1-124ubuntu2) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+invoke-rc.d: initscript cron, action "start" failed.
+dpkg: error processing package cron (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of logrotate:
+ logrotate depends on cron | anacron | cron-daemon; however:
+  Package cron is not configured yet.
+  Package anacron is not installed.
+  Package cron-daemon is not installed.
+  Package cron which provides cron-daemon is not configured yet.
+
+dpkg: error processing package logrotate (--configure):
+ dependency problems - leaving unconfigured
+Setting up udev (204-5ubuntu20.7) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+ * udev requires a mounted sysfs, not started
+   ...fail!
+invoke-rc.d: initscript udev, action "restart" failed.
+dpkg: error processing package udev (--configure):
+ subprocess installed post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of initramfs-tools:
+ initramfs-tools depends on udev (>= 147~-5); however:
+  Package udev is not configured yet.
+
+dpkg: error processing package initramfs-tools (--configure):
+ dependency problems - leaving unconfigured
 Setting up libgeoip1:i386 (1.6.0-1) ...
-Setting up libsystemd-daemon0:i386 (204-5ubuntu20.6) ...
+Setting up libsystemd-daemon0:i386 (204-5ubuntu20.7) ...
 Setting up libxslt1.1:i386 (1.1.28-2build1) ...
 Setting up php5-fpm (5.5.9+dfsg-1ubuntu4.4) ...
 
 Creating config file /etc/php5/fpm/php.ini with new version
-php5_invoke: Enable module curl for fpm SAPI
-php5_invoke: Enable module opcache for fpm SAPI
 php5_invoke: Enable module mysqli for fpm SAPI
-php5_invoke: Enable module pdo_mysql for fpm SAPI
 php5_invoke: Enable module memcached for fpm SAPI
-php5_invoke: Enable module gd for fpm SAPI
 php5_invoke: Enable module pdo for fpm SAPI
-php5_invoke: Enable module apcu for fpm SAPI
+php5_invoke: Enable module pdo_mysql for fpm SAPI
+php5_invoke: Enable module gd for fpm SAPI
+php5_invoke: Enable module opcache for fpm SAPI
+php5_invoke: Enable module curl for fpm SAPI
 php5_invoke: Enable module json for fpm SAPI
-php5_invoke: Enable module readline for fpm SAPI
 php5_invoke: Enable module mysql for fpm SAPI
-initctl: Unknown job: php5-fpm
+php5_invoke: Enable module apcu for fpm SAPI
+php5_invoke: Enable module readline for fpm SAPI
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
 Setting up geoip-database (20140313-1) ...
-Setting up nginx-common (1.4.6-1ubuntu3) ...
+Setting up nginx-common (1.4.6-1ubuntu3.1) ...
 Processing triggers for ureadahead (0.100.0-16) ...
-Setting up nginx-full (1.4.6-1ubuntu3) ...
-Setting up nginx (1.4.6-1ubuntu3) ...
+Setting up nginx-full (1.4.6-1ubuntu3.1) ...
+initctl: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+Setting up nginx (1.4.6-1ubuntu3.1) ...
 Processing triggers for libc-bin (2.19-0ubuntu6.3) ...
+Errors were encountered while processing:
+ cron
+ logrotate
+ udev
+ initramfs-tools
+E: Sub-process /usr/bin/dpkg returned an error code (1)
 + pecl install uploadprogress
 downloading uploadprogress-1.0.3.1.tgz ...
 Starting to download uploadprogress-1.0.3.1.tgz (9,040 bytes)
@@ -3152,7 +3421,7 @@ Configuring for:
 PHP Api Version:         20121113
 Zend Module Api No:      20121212
 Zend Extension Api No:   220121212
-building in /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1
+building in /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1
 running: /tmp/pear/temp/uploadprogress/configure
 checking for grep that handles long lines and -e... /bin/grep
 checking for egrep... /bin/grep -E
@@ -3243,8 +3512,8 @@ configure: creating ./config.status
 config.status: creating config.h
 config.status: executing libtool commands
 running: make
-/bin/bash /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/libtool --mode=compile cc  -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -DHAVE_CONFIG_H  -g -O2   -c /tmp/pear/temp/uploadprogress/uploadprogress.c -o uploadprogress.lo
-libtool: compile:  cc -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -g -O2 -c /tmp/pear/temp/uploadprogress/uploadprogress.c  -fPIC -DPIC -o .libs/uploadprogress.o
+/bin/bash /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/libtool --mode=compile cc  -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -DHAVE_CONFIG_H  -g -O2   -c /tmp/pear/temp/uploadprogress/uploadprogress.c -o uploadprogress.lo
+libtool: compile:  cc -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -g -O2 -c /tmp/pear/temp/uploadprogress/uploadprogress.c  -fPIC -DPIC -o .libs/uploadprogress.o
 /tmp/pear/temp/uploadprogress/uploadprogress.c: In function 'uploadprogress_php_rfc1867_file':
 /tmp/pear/temp/uploadprogress/uploadprogress.c:222:17: warning: format '%d' expects argument of type 'int', but argument 6 has type 'time_t' [-Wformat=]
                  progress->est_sec );
@@ -3252,16 +3521,16 @@ libtool: compile:  cc -I. -I/tmp/pear/temp/uploadprogress -DPHP_ATOM_INC -I/tmp/
 /tmp/pear/temp/uploadprogress/uploadprogress.c:222:17: warning: format '%d' expects argument of type 'int', but argument 7 has type 'time_t' [-Wformat=]
 /tmp/pear/temp/uploadprogress/uploadprogress.c:222:17: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long unsigned int' [-Wformat=]
 /tmp/pear/temp/uploadprogress/uploadprogress.c:222:17: warning: format '%d' expects argument of type 'int', but argument 11 has type 'long unsigned int' [-Wformat=]
-/bin/bash /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/libtool --mode=link cc -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -DHAVE_CONFIG_H  -g -O2   -o uploadprogress.la -export-dynamic -avoid-version -prefer-pic -module -rpath /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/modules  uploadprogress.lo
+/bin/bash /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/libtool --mode=link cc -DPHP_ATOM_INC -I/tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/include -I/tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/main -I/tmp/pear/temp/uploadprogress -I/usr/include/php5 -I/usr/include/php5/main -I/usr/include/php5/TSRM -I/usr/include/php5/Zend -I/usr/include/php5/ext -I/usr/include/php5/ext/date/lib -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -DHAVE_CONFIG_H  -g -O2   -o uploadprogress.la -export-dynamic -avoid-version -prefer-pic -module -rpath /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/modules  uploadprogress.lo
 libtool: link: cc -shared  -fPIC -DPIC  .libs/uploadprogress.o    -O2   -Wl,-soname -Wl,uploadprogress.so -o .libs/uploadprogress.so
 libtool: link: ( cd ".libs" && rm -f "uploadprogress.la" && ln -s "../uploadprogress.la" "uploadprogress.la" )
-/bin/bash /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/libtool --mode=install cp ./uploadprogress.la /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/modules
-libtool: install: cp ./.libs/uploadprogress.so /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/modules/uploadprogress.so
-libtool: install: cp ./.libs/uploadprogress.lai /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/modules/uploadprogress.la
-libtool: finish: PATH="/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/sbin" ldconfig -n /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/modules
+/bin/bash /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/libtool --mode=install cp ./uploadprogress.la /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/modules
+libtool: install: cp ./.libs/uploadprogress.so /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/modules/uploadprogress.so
+libtool: install: cp ./.libs/uploadprogress.lai /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/modules/uploadprogress.la
+libtool: finish: PATH="/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/modules
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /tmp/pear/temp/pear-build-rootIhwrYX/uploadprogress-1.0.3.1/modules
+   /tmp/pear/temp/pear-build-rootprXV8U/uploadprogress-1.0.3.1/modules
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -3281,15 +3550,15 @@ more information, such as the ld(1) and ld.so(8) manual pages.
 Build complete.
 Don't forget to run 'make test'.
 
-running: make INSTALL_ROOT="/tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1" install
-Installing shared extensions:     /tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs/
-running: find "/tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1" | xargs ls -dils
-308178  4 drwxr-xr-x 3 root root  4096 Sep 17 08:25 /tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1
-308200  4 drwxr-xr-x 3 root root  4096 Sep 17 08:25 /tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1/usr
-308201  4 drwxr-xr-x 3 root root  4096 Sep 17 08:25 /tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1/usr/lib
-308202  4 drwxr-xr-x 3 root root  4096 Sep 17 08:25 /tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1/usr/lib/php5
-308203  4 drwxr-xr-x 2 root root  4096 Sep 17 08:25 /tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs
-308199 52 -rwxr-xr-x 1 root root 49512 Sep 17 08:25 /tmp/pear/temp/pear-build-rootIhwrYX/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs/uploadprogress.so
+running: make INSTALL_ROOT="/tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1" install
+Installing shared extensions:     /tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs/
+running: find "/tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1" | xargs ls -dils
+462652  4 drwxr-xr-x 3 root root  4096 Oct 10 17:49 /tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1
+462674  4 drwxr-xr-x 3 root root  4096 Oct 10 17:49 /tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1/usr
+462675  4 drwxr-xr-x 3 root root  4096 Oct 10 17:49 /tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1/usr/lib
+462676  4 drwxr-xr-x 3 root root  4096 Oct 10 17:49 /tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1/usr/lib/php5
+462677  4 drwxr-xr-x 2 root root  4096 Oct 10 17:49 /tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs
+462673 52 -rwxr-xr-x 1 root root 49512 Oct 10 17:49 /tmp/pear/temp/pear-build-rootprXV8U/install-uploadprogress-1.0.3.1/usr/lib/php5/20121212+lfs/uploadprogress.so
 
 Build process completed successfully
 Installing '/usr/lib/php5/20121212+lfs/uploadprogress.so'
@@ -3313,9 +3582,13 @@ install failed
 + gunzip /build/buildd/php5-5.5.9+dfsg/pear-build-download/drush-6.2.0.0.tgz
 + pear upgrade /build/buildd/php5-5.5.9+dfsg/pear-build-download/drush-6.2.0.0.tar
 upgrade ok: channel://pear.drush.org/drush-6.2.0.0
++ export drupal_dir=/var/www/bcl
++ drupal_dir=/var/www/bcl
++ export 'drush=drush --root=/var/www/bcl'
++ drush='drush --root=/var/www/bcl'
 + ./drupal-make-and-install.sh
 + makefile=/usr/local/src/btr_client/build-btrclient.make
-+ sed -i /usr/local/src/btr_client/build-btrclient.make -e '/btr_client..download..branch/ c projects[btr_client][download][branch] = '
++ sed -i /usr/local/src/btr_client/build-btrclient.make -e '/btr_client..download..branch/ c projects[btr_client][download][branch] = openatrium'
 + rm -rf /var/www/bcl
 + drush make --prepare-install --force-complete --contrib-destination=profiles/btr_client /usr/local/src/btr_client/build-btrclient.make /var/www/bcl
 Beginning to build /usr/local/src/btr_client/build-btrclient.make.   [1;32;40m[1m[ok][0m
@@ -3332,21 +3605,86 @@ drupal patched with                                                  [1;32;40m
 drupal-7.x-allow_profile_change_sys_req-1772316-21.patch.
 drupal patched with 1664602-1.patch.                                 [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for drupal                                [1;32;40m[1m[ok][0m
+btr_client cloned from /usr/local/src/btr_client.                    [1;32;40m[1m[ok][0m
+Checked out branch openatrium.                                       [1;32;40m[1m[ok][0m
+Found makefile: btr_client.make                                      [1;32;40m[1m[ok][0m
+Project btrclient contains 6 modules: bcl_sharethis, bcl_service_links, bcl_disqus, btrProject, btrVocabulary, btrClient.
+btrclient-7.x-1.x-dev downloaded.                                    [1;32;40m[1m[ok][0m
+Found makefile: btrclient.make                                       [1;32;40m[1m[ok][0m
+ Project ctools contains 10 modules: ctools_custom_content, views_content, ctools_ajax_sample, bulk_export, page_manager, term_depth, ctools_plugin_example, ctools_access_ruleset, stylizer, ctools.
+ctools-7.x-1.4 downloaded.                                           [1;32;40m[1m[ok][0m
+libraries-7.x-2.2 downloaded.                                        [1;32;40m[1m[ok][0m
+Project entity contains 2 modules: entity, entity_token.
+entity-7.x-1.5 downloaded.                                           [1;32;40m[1m[ok][0m
+ Project http_client contains 3 modules: http_client_oauth, http_client_oauth2, http_client.
+http_client-7.x-2.x-dev downloaded.                                  [1;32;40m[1m[ok][0m
+ Project wsclient contains 6 modules: wsclient_tester, wsclient_soap, wsclient_ui, wsclient_rest, wsclient_examples, wsclient.
+wsclient-7.x-1.0 downloaded.                                         [1;32;40m[1m[ok][0m
+wsclient patched with                                                [1;32;40m[1m[ok][0m
+wsclient-1285310-http_basic_authentication-14.patch.
+wsclient patched with wsclient-2138617-oauth2_support.patch.         [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for wsclient                              [1;32;40m[1m[ok][0m
+oauth2_login-7.x-1.x-dev downloaded.                                 [1;32;40m[1m[ok][0m
+Found makefile: oauth2_login.make                                    [1;32;40m[1m[ok][0m
+oauth2_client-7.x-1.x-dev downloaded.                                [1;32;40m[1m[ok][0m
+ Project hybridauth contains 3 modules: hybridauth_ulogin, hybridauth_bonus, hybridauth.
+hybridauth-7.x-2.9 downloaded.                                       [1;32;40m[1m[ok][0m
+hybridauth downloaded from                                           [1;32;40m[1m[ok][0m
+https://github.com/hybridauth/hybridauth/archive/v2.2.1.tar.gz.
+hybridauth-drupaloauth2 downloaded from                              [1;32;40m[1m[ok][0m
+https://github.com/B-Translator/hybridauth-drupaloauth2/archive/v1.1.tar.gz.
+features-7.x-2.0 downloaded.                                         [1;32;40m[1m[ok][0m
+strongarm-7.x-2.0 downloaded.                                        [1;32;40m[1m[ok][0m
+disqus-7.x-1.10 downloaded.                                          [1;32;40m[1m[ok][0m
+sharethis-7.x-2.6 downloaded.                                        [1;32;40m[1m[ok][0m
+Project service_links contains 18 modules: dutch_services, forward_services, hungarian_services, swedish_services, widget_services, favorite_services, farsi_services, basque_services, general_services, spanish_services, russian_services, italian_services, print_services, german_services, polish_services, service_links_sprites, service_links_displays, service_links.
+service_links-7.x-2.2 downloaded.                                    [1;32;40m[1m[ok][0m
+xautoload-7.x-4.5 downloaded.                                        [1;32;40m[1m[ok][0m
+  Project rules contains 4 modules: rules_admin, rules_i18n, rules_scheduler, rules.
+rules-7.x-2.7 downloaded.                                            [1;32;40m[1m[ok][0m
+edit_profile-7.x-1.0-beta2 downloaded.                               [1;32;40m[1m[ok][0m
+Project captcha contains 2 modules: image_captcha, captcha.
+captcha-7.x-1.1 downloaded.                                          [1;32;40m[1m[ok][0m
+Project recaptcha contains 2 modules: recaptcha_mailhide, recaptcha.
+recaptcha-7.x-1.11 downloaded.                                       [1;32;40m[1m[ok][0m
+honeypot-7.x-1.17 downloaded.                                        [1;32;40m[1m[ok][0m
+ Project user_restrictions contains 2 modules: user_restrictions, user_restrictions_ui.
+user_restrictions-7.x-1.0 downloaded.                                [1;32;40m[1m[ok][0m
+Project features_extra contains 3 modules: fe_block, fe_nodequeue, fe_profile.
+features_extra-7.x-1.0-beta1 downloaded.                             [1;32;40m[1m[ok][0m
+ Project node_export contains 5 modules: node_export_feeds, node_export_relation, node_export_dependency, node_export_features, node_export.
+node_export-7.x-3.0 downloaded.                                      [1;32;40m[1m[ok][0m
+reroute_email-7.x-1.1 downloaded.                                    [1;32;40m[1m[ok][0m
+phpmailer cloned from http://git.drupal.org/project/phpmailer.git.   [1;32;40m[1m[ok][0m
+Checked out revision 8f7c632.                                        [1;32;40m[1m[ok][0m
+l10n_update-7.x-1.0 downloaded.                                      [1;32;40m[1m[ok][0m
+Project drush_language contains 0 modules: .
+drush_language-7.x-1.2 downloaded.                                   [1;32;40m[1m[ok][0m
+ Project drush_remake contains 0 modules: .
+drush_remake-7.x-5.2 downloaded.                                     [1;32;40m[1m[ok][0m
+delete_all-7.x-1.1 downloaded.                                       [1;32;40m[1m[ok][0m
+menu_import-7.x-1.6 downloaded.                                      [1;32;40m[1m[ok][0m
+Project boost contains 2 modules: boost_crawler, boost.
+boost-7.x-1.0 downloaded.                                            [1;32;40m[1m[ok][0m
+Project memcache contains 2 modules: memcache_admin, memcache.
+memcache-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
+ phpmailer downloaded from                                            [1;32;40m[1m[ok][0m
+https://github.com/PHPMailer/PHPMailer/archive/v5.2.6.zip.
 openatrium cloned from http://git.drupal.org/project/openatrium.git. [1;32;40m[1m[ok][0m
-Checked out branch 7.x-2.x.                                          [1;32;40m[1m[ok][0m
+Checked out tag 7.x-2.21.                                            [1;32;40m[1m[ok][0m
 Found makefile: drupal-org.make                                      [1;32;40m[1m[ok][0m
-Project oa_core contains 36 modules: oa_dashboard, oa_widgets, oa_access, oa_buttons, oa_permissions, oa_htmlmail, oa_users, oa_date, bootstrap_pane_styles, oa_teams, oa_tour_defaults, oa_news, oa_archive, oa_search, oa_clone, oa_layouts, oa_admin, oa_messages_digest, oa_tour, oa_adminrole, oa_panopoly_users, oa_config, oa_styles, oa_appearance, oa_domains, oa_sections, oa_diff, oa_sandbox, oa_section_context, oa_river, oa_home, oa_variables, oa_update, oa_favorites, oa_messages, oa_core.
+ Project oa_core contains 36 modules: oa_layouts, oa_home, oa_access, oa_htmlmail, oa_section_context, oa_messages_digest, oa_panopoly_users, oa_tour, oa_widgets, oa_appearance, oa_permissions, oa_dashboard, oa_config, oa_sandbox, oa_search, bootstrap_pane_styles, oa_buttons, oa_sections, oa_teams, oa_clone, oa_update, oa_river, oa_admin, oa_variables, oa_domains, oa_archive, oa_adminrole, oa_styles, oa_news, oa_favorites, oa_date, oa_messages, oa_tour_defaults, oa_diff, oa_users, oa_core.
 oa_core-7.x-2.21 downloaded.                                         [1;32;40m[1m[ok][0m
 Found makefile: oa_core.make                                         [1;32;40m[1m[ok][0m
 features-7.x-2.2 downloaded.                                         [1;32;40m[1m[ok][0m
- Project views contains 2 modules: views_ui, views.
+Project views contains 2 modules: views, views_ui.
 views-7.x-3.8 downloaded.                                            [1;32;40m[1m[ok][0m
 views patched with views-exposed-sorts-2037469-1.patch.              [1;32;40m[1m[ok][0m
 views patched with 1979926-views-reset_fetch_data-2.patch.           [1;32;40m[1m[ok][0m
 views patched with                                                   [1;32;40m[1m[ok][0m
 1735096-views-mltiple-instance-exposed-form-8.patch.
 Generated PATCHES.txt file for views                                 [1;32;40m[1m[ok][0m
-Project ctools contains 10 modules: stylizer, page_manager, ctools_plugin_example, ctools_access_ruleset, bulk_export, ctools_ajax_sample, ctools_custom_content, views_content, term_depth, ctools.
+ Project ctools contains 10 modules: ctools_custom_content, views_content, ctools_ajax_sample, bulk_export, page_manager, term_depth, ctools_plugin_example, ctools_access_ruleset, stylizer, ctools.
 ctools-7.x-1.4 downloaded.                                           [1;32;40m[1m[ok][0m
 ctools patched with ctools-icon-text-renderer-2280875-5.patch.       [1;32;40m[1m[ok][0m
 ctools patched with fix-autocomplete-581670.patch.                   [1;32;40m[1m[ok][0m
@@ -3356,7 +3694,7 @@ ctools-views_content-exposed_form_override-1901106-24.patch.
 ctools patched with 2023705-ctools-autosubmit-2_0.patch.             [1;32;40m[1m[ok][0m
 ctools patched with ctools-n2195471-1.patch.                         [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for ctools                                [1;32;40m[1m[ok][0m
- Project entity contains 2 modules: entity_token, entity.
+Project entity contains 2 modules: entity, entity_token.
 entity-7.x-1.5 downloaded.                                           [1;32;40m[1m[ok][0m
 entity patched with                                                  [1;32;40m[1m[ok][0m
 entity-translatable_fields_not_overriding_und_with_empty_values-1782134-5.patch.
@@ -3378,7 +3716,7 @@ message patched with message.target_bundles.2040735-3.patch.         [1;32;40m
 Generated PATCHES.txt file for message                               [1;32;40m[1m[ok][0m
 Project message_notify contains 2 modules: message_notify_example, message_notify.
 message_notify-7.x-2.5 downloaded.                                   [1;32;40m[1m[ok][0m
-Project message_subscribe contains 3 modules: message_subscribe_email, message_subscribe_ui, message_subscribe.
+ Project message_subscribe contains 3 modules: message_subscribe_ui, message_subscribe_email, message_subscribe.
 message_subscribe-7.x-1.0-rc1 downloaded.                            [1;32;40m[1m[ok][0m
 message_subscribe patched with                                       [1;32;40m[1m[ok][0m
 message_subscribe_empty_array_2094129_1.patch.
@@ -3395,7 +3733,7 @@ Checked out revision e742766.                                        [1;32;40m
 mailsystem-7.x-2.34 downloaded.                                      [1;32;40m[1m[ok][0m
 htmlmail-7.x-2.65 downloaded.                                        [1;32;40m[1m[ok][0m
 realname-7.x-1.1 downloaded.                                         [1;32;40m[1m[ok][0m
- Project advagg contains 8 modules: advagg_js_cdn, advagg_js_compress, advagg_css_compress, advagg_validator, advagg_mod, advagg_bundler, advagg_css_cdn, advagg.
+Project advagg contains 8 modules: advagg_css_compress, advagg_bundler, advagg_css_cdn, advagg_validator, advagg_js_cdn, advagg_mod, advagg_js_compress, advagg.
 advagg-7.x-2.6 downloaded.                                           [1;32;40m[1m[ok][0m
 chosen cloned from http://git.drupal.org/project/chosen.git.         [1;32;40m[1m[ok][0m
 Checked out revision c48c8a.                                         [1;32;40m[1m[ok][0m
@@ -3403,7 +3741,7 @@ feeds cloned from http://git.drupal.org/project/feeds.git.           [1;32;40m
 Checked out revision a8468a.                                         [1;32;40m[1m[ok][0m
 feeds patched with 2223853-fix_installing_taxonomy_module-7_0.patch. [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for feeds                                 [1;32;40m[1m[ok][0m
-Project job_scheduler contains 2 modules: job_scheduler_trigger, job_scheduler.
+ Project job_scheduler contains 2 modules: job_scheduler_trigger, job_scheduler.
 job_scheduler-7.x-2.0-alpha3 downloaded.                             [1;32;40m[1m[ok][0m
 command_buttons-7.x-1.2 downloaded.                                  [1;32;40m[1m[ok][0m
 contextual_tabs-7.x-1.0-beta2 downloaded.                            [1;32;40m[1m[ok][0m
@@ -3436,14 +3774,14 @@ http://git.drupal.org/project/date_facets.git.
 Checked out revision a7a35f8.                                        [1;32;40m[1m[ok][0m
 Project node_clone contains a module named clone.
 node_clone-7.x-1.0-rc2 downloaded.                                   [1;32;40m[1m[ok][0m
-Project og contains 7 modules: og_ui, og_register, og_access, og_context, og_example, og_field_access, og.
+Project og contains 7 modules: og_access, og_register, og_field_access, og_context, og_example, og_ui, og.
 og-7.x-2.7 downloaded.                                               [1;32;40m[1m[ok][0m
 og_vocab-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
 og_vocab patched with 2039009-allow-shared-vocabularies-13.patch.    [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for og_vocab                              [1;32;40m[1m[ok][0m
 og_session_context-7.x-1.0-beta1 downloaded.                         [1;32;40m[1m[ok][0m
 og_menu_single-7.x-1.0-beta1 downloaded.                             [1;32;40m[1m[ok][0m
-Project variable contains 7 modules: variable_store, variable_advanced, variable_views, variable_realm, variable_admin, variable_example, variable.
+ Project variable contains 7 modules: variable_advanced, variable_store, variable_views, variable_realm, variable_admin, variable_example, variable.
 variable-7.x-2.3 downloaded.                                         [1;32;40m[1m[ok][0m
 og_variables-7.x-1.0-beta1 downloaded.                               [1;32;40m[1m[ok][0m
 bootstrap_tour-7.x-1.0-beta9 downloaded.                             [1;32;40m[1m[ok][0m
@@ -3494,10 +3832,8 @@ oa_events_import-7.x-2.20 downloaded.                                [1;32;40m
 Found makefile: oa_events_import.make                                [1;32;40m[1m[ok][0m
 iCalcreator downloaded from                                          [1;32;40m[1m[ok][0m
 http://sourceforge.net/projects/icalcreator/files/icalcreator/2.18/iCalcreator-2.18.zip/download.
-Project oa_worktracker contains 2 modules: oa_worktracker_duedate, oa_worktracker.
+  Project oa_worktracker contains 2 modules: oa_worktracker_duedate, oa_worktracker.
 oa_worktracker-7.x-2.0-beta15 downloaded.                            [1;32;40m[1m[ok][0m
-oa_worktracker patched with 2335741-oa_worktracker-app-4.patch.      [1;32;40m[1m[ok][0m
-Generated PATCHES.txt file for oa_worktracker                        [1;32;40m[1m[ok][0m
 Found makefile: oa_worktracker.make                                  [1;32;40m[1m[ok][0m
 comment_alter cloned from                                            [1;32;40m[1m[ok][0m
 http://git.drupal.org/project/comment_alter.git.
@@ -3521,7 +3857,7 @@ Found makefile: oa_subspaces.make                                    [1;32;40m
 og_subgroups cloned from                                             [1;32;40m[1m[ok][0m
 http://git.drupal.org/project/og_subgroups.git.
 Checked out revision fd8bee.                                         [1;32;40m[1m[ok][0m
-Project oa_radix contains 2 themes: default, oa_radix.
+ Project oa_radix contains 2 themes: default, oa_radix.
 oa_radix-7.x-2.21 downloaded.                                        [1;32;40m[1m[ok][0m
 Found makefile: oa_radix.make                                        [1;32;40m[1m[ok][0m
 radix cloned from http://git.drupal.org/project/radix.git.           [1;32;40m[1m[ok][0m
@@ -3532,23 +3868,21 @@ markdown-7.x-1.1 downloaded.                                         [1;32;40m
 Project google_analytics contains a module named googleanalytics.
 google_analytics-7.x-1.3 downloaded.                                 [1;32;40m[1m[ok][0m
 panopoly_core-7.x-1.10 downloaded.                                   [1;32;40m[1m[ok][0m
-panopoly_core patched with 2303783-panopoly_core-apps-3.patch.       [1;32;40m[1m[ok][0m
-Generated PATCHES.txt file for panopoly_core                         [1;32;40m[1m[ok][0m
 Found makefile: panopoly_core.make                                   [1;32;40m[1m[ok][0m
- Install location /tmp/make_tmp_1410942315_5419456b318e1/__build__/profiles/openatrium/modules/contrib/ctools already exists. Do you want to overwrite it? (y/n): y
-Project ctools contains 10 modules: stylizer, page_manager, ctools_plugin_example, ctools_access_ruleset, bulk_export, ctools_ajax_sample, ctools_custom_content, views_content, term_depth, ctools.
+ Install location /tmp/make_tmp_1412963367_54381c27b87ee/__build__/profiles/openatrium/modules/contrib/ctools already exists. Do you want to overwrite it? (y/n): y
+Project ctools contains 10 modules: ctools_custom_content, views_content, ctools_ajax_sample, bulk_export, page_manager, term_depth, ctools_plugin_example, ctools_access_ruleset, stylizer, ctools.
 ctools-7.x-1.4 downloaded.                                           [1;32;40m[1m[ok][0m
 ctools patched with ctools-icon-text-renderer-2280875-5.patch.       [1;32;40m[1m[ok][0m
 ctools patched with fix-autocomplete-581670.patch.                   [1;32;40m[1m[ok][0m
 ctools patched with ctools-views-pane-more-link-2312505-1.patch.     [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for ctools                                [1;32;40m[1m[ok][0m
-Project panels contains 5 modules: i18n_panels, panels_node, panels_mini, panels_ipe, panels.
+Project panels contains 5 modules: panels_ipe, panels_node, panels_mini, i18n_panels, panels.
 panels-7.x-3.4 downloaded.                                           [1;32;40m[1m[ok][0m
 panels patched with panels-icon-text-renderer-2283719-1.patch.       [1;32;40m[1m[ok][0m
 panels patched with panels-ipe-keyboard-focus-2280797-2.patch.       [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for panels                                [1;32;40m[1m[ok][0m
 panels_breadcrumbs-7.x-2.1 downloaded.                               [1;32;40m[1m[ok][0m
-Install location /tmp/make_tmp_1410942315_5419456b318e1/__build__/profiles/openatrium/modules/contrib/panelizer already exists. Do you want to overwrite it? (y/n): y
+Install location /tmp/make_tmp_1412963367_54381c27b87ee/__build__/profiles/openatrium/modules/contrib/panelizer already exists. Do you want to overwrite it? (y/n): y
 panelizer-7.x-3.1 downloaded.                                        [1;32;40m[1m[ok][0m
 fieldable_panels_panes-7.x-1.5 downloaded.                           [1;32;40m[1m[ok][0m
 fieldable_panels_panes patched with                                  [1;32;40m[1m[ok][0m
@@ -3556,8 +3890,8 @@ fieldable_panels_panes-n2283263-5.patch.
 Generated PATCHES.txt file for fieldable_panels_panes                [1;32;40m[1m[ok][0m
 pm_existing_pages-7.x-1.4 downloaded.                                [1;32;40m[1m[ok][0m
 fape-7.x-1.2 downloaded.                                             [1;32;40m[1m[ok][0m
-Install location /tmp/make_tmp_1410942315_5419456b318e1/__build__/profiles/openatrium/modules/contrib/views already exists. Do you want to overwrite it? (y/n): y
-Project views contains 2 modules: views_ui, views.
+Install location /tmp/make_tmp_1412963367_54381c27b87ee/__build__/profiles/openatrium/modules/contrib/views already exists. Do you want to overwrite it? (y/n): y
+Project views contains 2 modules: views, views_ui.
 views-7.x-3.8 downloaded.                                            [1;32;40m[1m[ok][0m
 views patched with views-exposed-sorts-2037469-1.patch.              [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for views                                 [1;32;40m[1m[ok][0m
@@ -3565,28 +3899,31 @@ views_autocomplete_filters-7.x-1.1 downloaded.                       [1;32;40m
 views_autocomplete_filters patched with                              [1;32;40m[1m[ok][0m
 ViewsAutocompleteFilters-no_results_on_some_environments-2277453-1.patch.
 Generated PATCHES.txt file for views_autocomplete_filters            [1;32;40m[1m[ok][0m
-Project views_bulk_operations contains 2 modules: views_bulk_operations, actions_permissions.
+ Project views_bulk_operations contains 2 modules: actions_permissions, views_bulk_operations.
 views_bulk_operations-7.x-3.2 downloaded.                            [1;32;40m[1m[ok][0m
 pathauto-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
 pathauto patched with                                                [1;32;40m[1m[ok][0m
 pathauto-persist-936222-195-pathauto-state.patch.
 Generated PATCHES.txt file for pathauto                              [1;32;40m[1m[ok][0m
-Install location /tmp/make_tmp_1410942315_5419456b318e1/__build__/profiles/openatrium/modules/contrib/token already exists. Do you want to overwrite it? (y/n): y
+Install location /tmp/make_tmp_1412963367_54381c27b87ee/__build__/profiles/openatrium/modules/contrib/token already exists. Do you want to overwrite it? (y/n): y
 token-7.x-1.5 downloaded.                                            [1;32;40m[1m[ok][0m
-Install location /tmp/make_tmp_1410942315_5419456b318e1/__build__/profiles/openatrium/modules/contrib/entity already exists. Do you want to overwrite it? (y/n): y
-Project entity contains 2 modules: entity_token, entity.
+Install location /tmp/make_tmp_1412963367_54381c27b87ee/__build__/profiles/openatrium/modules/contrib/entity already exists. Do you want to overwrite it? (y/n): y
+Project entity contains 2 modules: entity, entity_token.
 entity-7.x-1.5 downloaded.                                           [1;32;40m[1m[ok][0m
 libraries-7.x-2.2 downloaded.                                        [1;32;40m[1m[ok][0m
 transliteration-7.x-3.2 downloaded.                                  [1;32;40m[1m[ok][0m
-Project date contains 11 modules: date_repeat, date_all_day, date_repeat_field, date_views, date_popup, date_context, date_migrate_example, date_migrate, date_api, date_tools, date.
+Project date contains 11 modules: date_all_day, date_migrate_example, date_migrate, date_repeat, date_api, date_repeat_field, date_views, date_tools, date_context, date_popup, date.
 date-7.x-2.8 downloaded.                                             [1;32;40m[1m[ok][0m
 Project entityreference contains 2 modules: entityreference_behavior_example, entityreference.
 entityreference-7.x-1.1 downloaded.                                  [1;32;40m[1m[ok][0m
-Install location /tmp/make_tmp_1410942315_5419456b318e1/__build__/profiles/openatrium/modules/contrib/field_group already exists. Do you want to overwrite it? (y/n): y
+Install location /tmp/make_tmp_1412963367_54381c27b87ee/__build__/profiles/openatrium/modules/contrib/field_group already exists. Do you want to overwrite it? (y/n): y
 field_group-7.x-1.4 downloaded.                                      [1;32;40m[1m[ok][0m
 link-7.x-1.2 downloaded.                                             [1;32;40m[1m[ok][0m
-apps-7.x-1.0-beta16 downloaded.                                      [1;32;40m[1m[ok][0m
-Install location /tmp/make_tmp_1410942315_5419456b318e1/__build__/profiles/openatrium/modules/contrib/features already exists. Do you want to overwrite it? (y/n): y
+apps cloned from http://git.drupal.org/project/apps.git.             [1;32;40m[1m[ok][0m
+Checked out revision b9d82b7.                                        [1;32;40m[1m[ok][0m
+apps patched with 1790902.4-check-last-modified-existing.patch.      [1;32;40m[1m[ok][0m
+Generated PATCHES.txt file for apps                                  [1;32;40m[1m[ok][0m
+Install location /tmp/make_tmp_1412963367_54381c27b87ee/__build__/profiles/openatrium/modules/contrib/features already exists. Do you want to overwrite it? (y/n): y
 features-7.x-2.0 downloaded.                                         [1;32;40m[1m[ok][0m
 strongarm-7.x-2.0 downloaded.                                        [1;32;40m[1m[ok][0m
 defaultconfig-7.x-1.0-alpha9 downloaded.                             [1;32;40m[1m[ok][0m
@@ -3602,13 +3939,13 @@ defaultcontent patched with 1754428-allow-node-export-alter.patch.   [1;32;40m
 defaultcontent patched with                                          [1;32;40m[1m[ok][0m
 1757782-cannot-import-menu-hierarchy-8.patch.
 Generated PATCHES.txt file for defaultcontent                        [1;32;40m[1m[ok][0m
-Project migrate contains 5 modules: migrate_example_oracle, migrate_example, migrate_example_baseball, migrate_ui, migrate.
+Project migrate contains 5 modules: migrate_example_baseball, migrate_example_oracle, migrate_example, migrate_ui, migrate.
 migrate-7.x-2.5 downloaded.                                          [1;32;40m[1m[ok][0m
-Project migrate_extras contains 4 modules: migrate_extras_pathauto, migrate_extras_media, migrate_extras_profile2, migrate_extras.
+ Project migrate_extras contains 4 modules: migrate_extras_profile2, migrate_extras_pathauto, migrate_extras_media, migrate_extras.
 migrate_extras-7.x-2.5 downloaded.                                   [1;32;40m[1m[ok][0m
-Project devel contains 3 modules: devel_generate, devel_node_access, devel.
+Project devel contains 3 modules: devel_generate, devel, devel_node_access.
 devel-7.x-1.5 downloaded.                                            [1;32;40m[1m[ok][0m
-Project uuid contains 5 modules: uuid_services, uuid_path, uuid_default_entities_example, uuid_services_example, uuid.
+Project uuid contains 5 modules: uuid_path, uuid_default_entities_example, uuid_services_example, uuid_services, uuid.
 uuid-7.x-1.0-alpha5 downloaded.                                      [1;32;40m[1m[ok][0m
 panopoly_images-7.x-1.10 downloaded.                                 [1;32;40m[1m[ok][0m
 Found makefile: panopoly_images.make                                 [1;32;40m[1m[ok][0m
@@ -3637,7 +3974,7 @@ tablefield-7.x-2.2 downloaded.                                       [1;32;40m
 tablefield patched with tablefield_event_click_conflict.patch.       [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for tablefield                            [1;32;40m[1m[ok][0m
 simple_gmap-7.x-1.2 downloaded.                                      [1;32;40m[1m[ok][0m
-Project menu_block contains 2 modules: menu_block_export, menu_block.
+Project menu_block contains 2 modules: menu_block, menu_block_export.
 menu_block-7.x-2.4 downloaded.                                       [1;32;40m[1m[ok][0m
 file_entity cloned from                                              [1;32;40m[1m[ok][0m
 http://git.drupal.org/project/file_entity.git.
@@ -3671,9 +4008,9 @@ navbar patched with navbar-conflict-1757466-14.patch.                [1;32;40m
 navbar patched with z-index-heart-cools-2050559-1.patch.             [1;32;40m[1m[ok][0m
 Generated PATCHES.txt file for navbar                                [1;32;40m[1m[ok][0m
 breakpoints-7.x-1.2 downloaded.                                      [1;32;40m[1m[ok][0m
-Project admin_menu contains 3 modules: admin_devel, admin_menu_toolbar, admin_menu.
+  Project admin_menu contains 3 modules: admin_devel, admin_menu_toolbar, admin_menu.
 admin_menu-7.x-3.0-rc4 downloaded.                                   [1;32;40m[1m[ok][0m
-Install location /tmp/make_tmp_1410942315_5419456b318e1/__build__/profiles/openatrium/modules/contrib/jquery_update already exists. Do you want to overwrite it? (y/n): y
+Install location /tmp/make_tmp_1412963367_54381c27b87ee/__build__/profiles/openatrium/modules/contrib/jquery_update already exists. Do you want to overwrite it? (y/n): y
 jquery_update-7.x-2.3 downloaded.                                    [1;32;40m[1m[ok][0m
 backbone downloaded from                                             [1;32;40m[1m[ok][0m
 https://github.com/jashkenas/backbone/archive/1.0.0.tar.gz.
@@ -3715,72 +4052,7 @@ search_api_solr-7.x-1.1 downloaded.                                  [1;32;40m
 search_api_db-7.x-1.0-rc2 downloaded.                                [1;32;40m[1m[ok][0m
 SolrPhpClient downloaded from                                        [1;32;40m[1m[ok][0m
 http://solr-php-client.googlecode.com/files/SolrPhpClient.r60.2011-05-04.zip.
-oa_admin-7.x-2.0-alpha2 downloaded.                                  [1;32;40m[1m[ok][0m
-btr_client cloned from /usr/local/src/btr_client.                    [1;32;40m[1m[ok][0m
-Found makefile: btr_client.make                                      [1;32;40m[1m[ok][0m
-Project btrclient contains 6 modules: btrVocabulary, btrProject, bcl_sharethis, bcl_service_links, bcl_disqus, btrClient.
-btrclient-7.x-1.x-dev downloaded.                                    [1;32;40m[1m[ok][0m
-Found makefile: btrclient.make                                       [1;32;40m[1m[ok][0m
-Project ctools contains 10 modules: stylizer, page_manager, ctools_plugin_example, ctools_access_ruleset, bulk_export, ctools_ajax_sample, ctools_custom_content, views_content, term_depth, ctools.
-ctools-7.x-1.4 downloaded.                                           [1;32;40m[1m[ok][0m
-libraries-7.x-2.2 downloaded.                                        [1;32;40m[1m[ok][0m
-Project entity contains 2 modules: entity_token, entity.
-entity-7.x-1.5 downloaded.                                           [1;32;40m[1m[ok][0m
-Project http_client contains 3 modules: http_client_oauth2, http_client_oauth, http_client.
-http_client-7.x-2.x-dev downloaded.                                  [1;32;40m[1m[ok][0m
- Project wsclient contains 6 modules: wsclient_tester, wsclient_ui, wsclient_soap, wsclient_examples, wsclient_rest, wsclient.
-wsclient-7.x-1.0 downloaded.                                         [1;32;40m[1m[ok][0m
-wsclient patched with                                                [1;32;40m[1m[ok][0m
-wsclient-1285310-http_basic_authentication-14.patch.
-wsclient patched with wsclient-2138617-oauth2_support.patch.         [1;32;40m[1m[ok][0m
-Generated PATCHES.txt file for wsclient                              [1;32;40m[1m[ok][0m
-oauth2_login-7.x-1.x-dev downloaded.                                 [1;32;40m[1m[ok][0m
-Found makefile: oauth2_login.make                                    [1;32;40m[1m[ok][0m
-oauth2_client-7.x-1.x-dev downloaded.                                [1;32;40m[1m[ok][0m
- Project hybridauth contains 3 modules: hybridauth_bonus, hybridauth_ulogin, hybridauth.
-hybridauth-7.x-2.9 downloaded.                                       [1;32;40m[1m[ok][0m
-hybridauth downloaded from                                           [1;32;40m[1m[ok][0m
-https://github.com/hybridauth/hybridauth/archive/v2.2.1.tar.gz.
-hybridauth-drupaloauth2 downloaded from                              [1;32;40m[1m[ok][0m
-https://github.com/B-Translator/hybridauth-drupaloauth2/archive/v1.1.tar.gz.
-features-7.x-2.0 downloaded.                                         [1;32;40m[1m[ok][0m
-strongarm-7.x-2.0 downloaded.                                        [1;32;40m[1m[ok][0m
-disqus-7.x-1.10 downloaded.                                          [1;32;40m[1m[ok][0m
-sharethis-7.x-2.6 downloaded.                                        [1;32;40m[1m[ok][0m
-Project service_links contains 18 modules: service_links_displays, service_links_sprites, dutch_services, german_services, italian_services, favorite_services, general_services, print_services, widget_services, farsi_services, spanish_services, forward_services, swedish_services, hungarian_services, basque_services, russian_services, polish_services, service_links.
-service_links-7.x-2.2 downloaded.                                    [1;32;40m[1m[ok][0m
-xautoload-7.x-4.5 downloaded.                                        [1;32;40m[1m[ok][0m
-Project rules contains 4 modules: rules_admin, rules_scheduler, rules_i18n, rules.
-rules-7.x-2.7 downloaded.                                            [1;32;40m[1m[ok][0m
-edit_profile-7.x-1.0-beta2 downloaded.                               [1;32;40m[1m[ok][0m
-Project captcha contains 2 modules: image_captcha, captcha.
-captcha-7.x-1.1 downloaded.                                          [1;32;40m[1m[ok][0m
-Project recaptcha contains 2 modules: recaptcha, recaptcha_mailhide.
-recaptcha-7.x-1.11 downloaded.                                       [1;32;40m[1m[ok][0m
-honeypot-7.x-1.17 downloaded.                                        [1;32;40m[1m[ok][0m
-Project user_restrictions contains 2 modules: user_restrictions, user_restrictions_ui.
-user_restrictions-7.x-1.0 downloaded.                                [1;32;40m[1m[ok][0m
-Project features_extra contains 3 modules: fe_block, fe_profile, fe_nodequeue.
-features_extra-7.x-1.0-beta1 downloaded.                             [1;32;40m[1m[ok][0m
-Project node_export contains 5 modules: node_export_dependency, node_export_features, node_export_relation, node_export_feeds, node_export.
-node_export-7.x-3.0 downloaded.                                      [1;32;40m[1m[ok][0m
-reroute_email-7.x-1.1 downloaded.                                    [1;32;40m[1m[ok][0m
-phpmailer cloned from http://git.drupal.org/project/phpmailer.git.   [1;32;40m[1m[ok][0m
-Checked out revision 8f7c632.                                        [1;32;40m[1m[ok][0m
-l10n_update-7.x-1.0 downloaded.                                      [1;32;40m[1m[ok][0m
- Project drush_language contains 0 modules: .
-drush_language-7.x-1.2 downloaded.                                   [1;32;40m[1m[ok][0m
-Project drush_remake contains 0 modules: .
-drush_remake-7.x-5.2 downloaded.                                     [1;32;40m[1m[ok][0m
-delete_all-7.x-1.1 downloaded.                                       [1;32;40m[1m[ok][0m
-menu_import-7.x-1.6 downloaded.                                      [1;32;40m[1m[ok][0m
-Project boost contains 2 modules: boost_crawler, boost.
-boost-7.x-1.0 downloaded.                                            [1;32;40m[1m[ok][0m
-Project memcache contains 2 modules: memcache_admin, memcache.
-memcache-7.x-1.2 downloaded.                                         [1;32;40m[1m[ok][0m
- phpmailer downloaded from                                            [1;32;40m[1m[ok][0m
-https://github.com/PHPMailer/PHPMailer/archive/v5.2.6.zip.
-  + cd /var/www/bcl/profiles/btr_client/
+    + cd /var/www/bcl/profiles/btr_client/
 + cp -a libraries/bootstrap themes/contrib/bootstrap/
 cp: cannot stat ‘libraries/bootstrap’: No such file or directory
 + cd /var/www/bcl/profiles/btr_client/libraries/
@@ -3805,9 +4077,8 @@ Cloning into 'btrclient'...
 + chown www-data /var/www/downloads/
 ++ grep '[m]ysqld'
 ++ ps ax
-+ test -z ''
-+ sleep 5
-+ nohup mysqld --user mysql
++ test -z ' 2098 ?        SN     0:00 /bin/sh /usr/bin/mysqld_safe
+ 2447 ?        SNl    0:01 /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/mysql/plugin --user=mysql --log-error=/var/log/mysql/error.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306'
 + db_name=bcl
 + db_user=bcl
 + db_pass=bcl
@@ -5079,11 +5350,11 @@ WD features: Reverting panopoly_search / search_api_index.              [notice]
 WD features: Revert completed for panopoly_search / search_api_index.   [notice]
 WD features: Reverting panopoly_search / search_api_server.             [notice]
 WD search_api_solr: SearchApiException while deleting an index's     [31;40m[1m[error][0m
-data: "0" Status: Request failed: Connection refused in
+data: "0" Status: Request failed: Network is unreachable in
 SearchApiSolrConnection->checkResponse() (line 548 of
 /var/www/bcl/profiles/openatrium/modules/contrib/search_api_solr/includes/solr_connection.inc).
 WD search_api_solr: SearchApiException while deleting an index's     [31;40m[1m[error][0m
-data: "0" Status: Request failed: Connection refused in
+data: "0" Status: Request failed: Network is unreachable in
 SearchApiSolrConnection->checkResponse() (line 548 of
 /var/www/bcl/profiles/openatrium/modules/contrib/search_api_solr/includes/solr_connection.inc).
 WD features: Revert completed for panopoly_search /                     [notice]
@@ -5150,9 +5421,6 @@ WD features: Reverting oa_worktracker / field_base.                     [notice]
 WD features: Revert completed for oa_worktracker / field_base.          [notice]
 WD features: Reverting oa_worktracker / message_type.                   [notice]
 WD features: Revert completed for oa_worktracker / message_type.        [notice]
-WD features: Reverting oa_worktracker / og_features_permission.         [notice]
-WD features: Revert completed for oa_worktracker /                      [notice]
-og_features_permission.
 WD features: Reverting oa_worktracker / views_view.                     [notice]
 WD features: Revert completed for oa_worktracker / views_view.          [notice]
 WD features: Reverting oa_worktracker / dependencies.                   [notice]
@@ -5732,15 +6000,15 @@ btrClient_translation_lng was set to "fr".                           [1;32;40m
 Added language: fr                                                   [1;32;40m[1m[ok][0m
 + drush --root=/var/www/bcl --yes l10n-update
 Fetching update information for all projects / all languages.        [1;32;40m[1m[status][0m
-Found 118 projects to update.                                        [1;32;40m[1m[status][0m
+Found 120 projects to update.                                        [1;32;40m[1m[status][0m
 Updating translation.                                                [1;32;40m[1m[status][0m
 Downloading and importing files.                                     [1;32;40m[1m[status][0m
 Importing: admin_views-7.x-1.3.fr.po.                                [1;32;40m[1m[ok][0m
 Imported: admin_views-7.x-1.3.fr.po.                                 [1;32;40m[1m[ok][0m
 Imported: admin_views-7.x-1.3.fr.po.                                 [1;32;40m[1m[ok][0m
-Importing: apps-7.x-1.0-beta16.fr.po.                                [1;32;40m[1m[ok][0m
-Imported: apps-7.x-1.0-beta16.fr.po.                                 [1;32;40m[1m[ok][0m
-Imported: apps-7.x-1.0-beta16.fr.po.                                 [1;32;40m[1m[ok][0m
+Importing: apps-7.x-1.0-beta17.fr.po.                                [1;32;40m[1m[ok][0m
+Imported: apps-7.x-1.0-beta17.fr.po.                                 [1;32;40m[1m[ok][0m
+Imported: apps-7.x-1.0-beta17.fr.po.                                 [1;32;40m[1m[ok][0m
 Importing: backports-7.x-1.0-alpha1.fr.po.                           [1;32;40m[1m[ok][0m
 Imported: backports-7.x-1.0-alpha1.fr.po.                            [1;32;40m[1m[ok][0m
 Imported: backports-7.x-1.0-alpha1.fr.po.                            [1;32;40m[1m[ok][0m
@@ -5789,9 +6057,9 @@ Imported: ctools-7.x-1.4.fr.po.                                      [1;32;40m
 Importing: date-7.x-2.8.fr.po.                                       [1;32;40m[1m[ok][0m
 Imported: date-7.x-2.8.fr.po.                                        [1;32;40m[1m[ok][0m
 Imported: date-7.x-2.8.fr.po.                                        [1;32;40m[1m[ok][0m
-Importing: date_ical-7.x-3.2.fr.po.                                  [1;32;40m[1m[ok][0m
-Imported: date_ical-7.x-3.2.fr.po.                                   [1;32;40m[1m[ok][0m
-Imported: date_ical-7.x-3.2.fr.po.                                   [1;32;40m[1m[ok][0m
+Importing: date_ical-7.x-3.3.fr.po.                                  [1;32;40m[1m[ok][0m
+Imported: date_ical-7.x-3.3.fr.po.                                   [1;32;40m[1m[ok][0m
+Imported: date_ical-7.x-3.3.fr.po.                                   [1;32;40m[1m[ok][0m
 Importing: date_popup_authored-7.x-1.1.fr.po.                        [1;32;40m[1m[ok][0m
 Imported: date_popup_authored-7.x-1.1.fr.po.                         [1;32;40m[1m[ok][0m
 Imported: date_popup_authored-7.x-1.1.fr.po.                         [1;32;40m[1m[ok][0m
@@ -5834,9 +6102,9 @@ Imported: fieldable_panels_panes-7.x-1.5.fr.po.                      [1;32;40m
 Importing: field_group-7.x-1.4.fr.po.                                [1;32;40m[1m[ok][0m
 Imported: field_group-7.x-1.4.fr.po.                                 [1;32;40m[1m[ok][0m
 Imported: field_group-7.x-1.4.fr.po.                                 [1;32;40m[1m[ok][0m
-Importing: file_entity-7.x-2.0-alpha3.fr.po.                         [1;32;40m[1m[ok][0m
-Imported: file_entity-7.x-2.0-alpha3.fr.po.                          [1;32;40m[1m[ok][0m
-Imported: file_entity-7.x-2.0-alpha3.fr.po.                          [1;32;40m[1m[ok][0m
+Importing: file_entity-7.x-2.0-beta1.fr.po.                          [1;32;40m[1m[ok][0m
+Imported: file_entity-7.x-2.0-beta1.fr.po.                           [1;32;40m[1m[ok][0m
+Imported: file_entity-7.x-2.0-beta1.fr.po.                           [1;32;40m[1m[ok][0m
 Importing: flag-7.x-2.2.fr.po.                                       [1;32;40m[1m[ok][0m
 Imported: flag-7.x-2.2.fr.po.                                        [1;32;40m[1m[ok][0m
 Imported: flag-7.x-2.2.fr.po.                                        [1;32;40m[1m[ok][0m
@@ -5885,9 +6153,9 @@ Imported: mailsystem-7.x-2.34.fr.po.                                 [1;32;40m
 Importing: manualcrop-7.x-1.4.fr.po.                                 [1;32;40m[1m[ok][0m
 Imported: manualcrop-7.x-1.4.fr.po.                                  [1;32;40m[1m[ok][0m
 Imported: manualcrop-7.x-1.4.fr.po.                                  [1;32;40m[1m[ok][0m
-Importing: media-7.x-2.0-alpha3.fr.po.                               [1;32;40m[1m[ok][0m
-Imported: media-7.x-2.0-alpha3.fr.po.                                [1;32;40m[1m[ok][0m
-Imported: media-7.x-2.0-alpha3.fr.po.                                [1;32;40m[1m[ok][0m
+Importing: media-7.x-2.0-alpha4.fr.po.                               [1;32;40m[1m[ok][0m
+Imported: media-7.x-2.0-alpha4.fr.po.                                [1;32;40m[1m[ok][0m
+Imported: media-7.x-2.0-alpha4.fr.po.                                [1;32;40m[1m[ok][0m
 Importing: media_colorbox-7.x-1.0-rc4.fr.po.                         [1;32;40m[1m[ok][0m
 Imported: media_colorbox-7.x-1.0-rc4.fr.po.                          [1;32;40m[1m[ok][0m
 Imported: media_colorbox-7.x-1.0-rc4.fr.po.                          [1;32;40m[1m[ok][0m
@@ -5936,6 +6204,9 @@ Imported: oa_core-7.x-2.21.fr.po.                                    [1;32;40m
 Importing: oa_events-7.x-2.21.fr.po.                                 [1;32;40m[1m[ok][0m
 Imported: oa_events-7.x-2.21.fr.po.                                  [1;32;40m[1m[ok][0m
 Imported: oa_events-7.x-2.21.fr.po.                                  [1;32;40m[1m[ok][0m
+Importing: oa_radix-7.x-2.21.fr.po.                                  [1;32;40m[1m[ok][0m
+Imported: oa_radix-7.x-2.21.fr.po.                                   [1;32;40m[1m[ok][0m
+Imported: oa_radix-7.x-2.21.fr.po.                                   [1;32;40m[1m[ok][0m
 Importing: oa_responsive_regions-7.x-1.0-beta1.fr.po.                [1;32;40m[1m[ok][0m
 Imported: oa_responsive_regions-7.x-1.0-beta1.fr.po.                 [1;32;40m[1m[ok][0m
 Imported: oa_responsive_regions-7.x-1.0-beta1.fr.po.                 [1;32;40m[1m[ok][0m
@@ -6080,6 +6351,9 @@ Imported: views_autocomplete_filters-7.x-1.1.fr.po.                  [1;32;40m
 Importing: views_bulk_operations-7.x-3.2.fr.po.                      [1;32;40m[1m[ok][0m
 Imported: views_bulk_operations-7.x-3.2.fr.po.                       [1;32;40m[1m[ok][0m
 Imported: views_bulk_operations-7.x-3.2.fr.po.                       [1;32;40m[1m[ok][0m
+Importing: views_load_more-7.x-1.5.fr.po.                            [1;32;40m[1m[ok][0m
+Imported: views_load_more-7.x-1.5.fr.po.                             [1;32;40m[1m[ok][0m
+Imported: views_load_more-7.x-1.5.fr.po.                             [1;32;40m[1m[ok][0m
 Importing: wsclient-7.x-1.0.fr.po.                                   [1;32;40m[1m[ok][0m
 Imported: wsclient-7.x-1.0.fr.po.                                    [1;32;40m[1m[ok][0m
 Imported: wsclient-7.x-1.0.fr.po.                                    [1;32;40m[1m[ok][0m
@@ -6089,7 +6363,7 @@ Imported: wysiwyg-7.x-2.2.fr.po.                                     [1;32;40m
 Importing: wysiwyg_filter-7.x-1.6-rc2.fr.po.                         [1;32;40m[1m[ok][0m
 Imported: wysiwyg_filter-7.x-1.6-rc2.fr.po.                          [1;32;40m[1m[ok][0m
 Imported: wysiwyg_filter-7.x-1.6-rc2.fr.po.                          [1;32;40m[1m[ok][0m
-118 projects updated: admin_views, apps, backports, boost,           [1;32;40m[1m[status][0m
+120 projects updated: admin_views, apps, backports, boost,           [1;32;40m[1m[status][0m
 bootstrap_tour, breakpoints, btrclient, captcha, caption_filter,
 chosen, colorbox, colorizer, colors, command_buttons,
 conditional_fields, contextual_tabs, ctools, date, date_ical,
@@ -6101,20 +6375,21 @@ job_scheduler, jquery_update, l10n_update, libraries, link, linkit,
 mailsystem, manualcrop, media, media_colorbox, media_vimeo,
 media_youtube, menu_block, message, message_digest, message_notify,
 message_subscribe, mimemail, module_filter, navbar, node_clone,
-node_export, oauth2_login, oa_core, oa_events, oa_responsive_regions,
-oa_subspaces, og, og_menu_single, og_session_context, og_subgroups,
-og_variables, og_vocab, options_element, panelizer, panels,
-panels_breadcrumbs, panels_customerror, panopoly_admin,
-panopoly_core, panopoly_images, panopoly_magic, panopoly_pages,
-panopoly_search, panopoly_theme, panopoly_users, panopoly_widgets,
-panopoly_wysiwyg, pathauto, pm_existing_pages, realname, recaptcha,
-reference_option_limit, rules, save_draft, search_api, search_api_db,
-search_api_solr, service_links, simple_gmap, simplified_menu_admin,
-strongarm, tablefield, token, transliteration, trash_flag,
-user_picture_field, user_restrictions, uuid, variable, views,
-views_autocomplete_filters, views_bulk_operations, wsclient, wysiwyg,
+node_export, oauth2_login, oa_core, oa_events, oa_radix,
+oa_responsive_regions, oa_subspaces, og, og_menu_single,
+og_session_context, og_subgroups, og_variables, og_vocab,
+options_element, panelizer, panels, panels_breadcrumbs,
+panels_customerror, panopoly_admin, panopoly_core, panopoly_images,
+panopoly_magic, panopoly_pages, panopoly_search, panopoly_theme,
+panopoly_users, panopoly_widgets, panopoly_wysiwyg, pathauto,
+pm_existing_pages, realname, recaptcha, reference_option_limit,
+rules, save_draft, search_api, search_api_db, search_api_solr,
+service_links, simple_gmap, simplified_menu_admin, strongarm,
+tablefield, token, transliteration, trash_flag, user_picture_field,
+user_restrictions, uuid, variable, views, views_autocomplete_filters,
+views_bulk_operations, views_load_more, wsclient, wysiwyg,
 wysiwyg_filter.
-French translation strings added: 11154, updated: 0, deleted: 0.
+French translation strings added: 11147, updated: 0, deleted: 0.
 + ./system-config.sh
 ++ dirname ./system-config.sh
 + cd .
@@ -6168,15 +6443,36 @@ To activate the new configuration, you need to run:
 + echo 'php_admin_value[max_execution_time] = 90'
 + update-locale
 + dev_scripts=/var/www/bcl/profiles/btr_client/dev
-+ /var/www/bcl/profiles/btr_client/dev/apache2.sh start
++ /var/www/bcl/profiles/btr_client/dev/webserver.sh apache2
++ case $1 in
++ supervisorctl stop nginx
+nginx: ERROR (no such process)
++ supervisorctl stop php5-fpm
+php5-fpm: ERROR (no such process)
++ drush @local_bcl -y dis memcache
 You are about to execute 'dis memcache' non-interactively (--yes forced) on all of the following targets:
   @local_bcl.bcl
 Continue?  (y/n): y
 memcache is already disabled.                                        [1;32;40m[1m[ok][0m
 There were no extensions that could be disabled.                     [1;32;40m[1m[ok][0m
-Stopping memcached: memcached.
- * Starting web server apache2
- * 
++ supervisorctl stop memcached
+memcached: ERROR (no such process)
+++ ls /var/www/bcl/sites/default/settings.php
++ for file in '$(ls /var/www/bcl*/sites/default/settings.php)'
++ sed -i /var/www/bcl/sites/default/settings.php -e '/comment memcache config/ d'
++ sed -i /var/www/bcl/sites/default/settings.php -e '/Adds memcache as a cache backend/a /* comment memcache config' -e '/'\''memcache_key_prefix'\''/a comment memcache config */'
++ mv /etc/supervisor/conf.d/nginx.conf /etc/supervisor/conf.d/nginx.conf.disabled
+mv: cannot stat ‘/etc/supervisor/conf.d/nginx.conf’: No such file or directory
++ mv /etc/supervisor/conf.d/php5-fpm.conf /etc/supervisor/conf.d/php5-fpm.conf.disabled
+mv: cannot stat ‘/etc/supervisor/conf.d/php5-fpm.conf’: No such file or directory
++ mv /etc/supervisor/conf.d/memcached.conf /etc/supervisor/conf.d/memcached.conf.disabled
+mv: cannot stat ‘/etc/supervisor/conf.d/memcached.conf’: No such file or directory
++ mv /etc/supervisor/conf.d/apache2.conf.disabled /etc/supervisor/conf.d/apache2.conf
+mv: cannot stat ‘/etc/supervisor/conf.d/apache2.conf.disabled’: No such file or directory
++ supervisorctl reload
+Restarted supervisord
++ supervisorctl start apache2
+apache2: ERROR (already started)
 + /usr/local/src/btr_client/install/config.sh
 
 ===> Set the domain name (fqdn)
@@ -6206,21 +6502,14 @@ You are about to execute 'php-script /usr/local/src/btr_client/install/config/gm
   @local_bcl.bcl
 Continue?  (y/n): y
 chown: cannot access ‘/var/www/bcl*/sites/default/files/css’: No such file or directory
-
-===> Password for Drupal 'admin' on https://example.org.
-
-stty: standard input: Inappropriate ioctl for device
-stty: standard input: Inappropriate ioctl for device
-
-Password: 
 WD phpmailer: The following From address failed:                     [31;40m[1m[error][0m
 MyEmailAddress@gmail.com : MAIL not accepted from server,530,5.5.1
 Authentication Required. Learn more at
 530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257
-i110sm13817843qgf.29 - gsmtp
+cs2sm3574365wib.2 - gsmtp
 SMTP server error: 5.5.1 Authentication Required. Learn more at
 530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257
-i110sm13817843qgf.29 - gsmtp
+cs2sm3574365wib.2 - gsmtp
 
 
 WD mail: Error sending e-mail (from MyEmailAddress@gmail.com to      [31;40m[1m[error][0m
@@ -6230,11 +6519,11 @@ following From address failed: MyEmailAddress@gmail.com : MAIL not
 accepted from server,530,5.5.1 Authentication Required. Learn more
 at
 530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257
-i110sm13817843qgf.29 - gsmtp
+cs2sm3574365wib.2 - gsmtp
 &lt;p&gt;SMTP server error: 5.5.1 Authentication Required. Learn more
 at
 530 5.5.1 http://support.google.com/mail/bin/answer.py?answer=14257
-i110sm13817843qgf.29 - gsmtp
+cs2sm3574365wib.2 - gsmtp
 &lt;/p&gt;
 .
 Unable to send e-mail. Contact the site administrator if the problem [31;40m[1m[error][0m
@@ -6262,15 +6551,10 @@ Enabling site bcl_dev.
 Enabling site bcl_dev-ssl.
 To activate the new configuration, you need to run:
   service apache2 reload
- * Stopping MySQL database server mysqld
-   ...done.
-df: Warning: cannot read table of mounted file systems: No such file or directory
- * Starting MySQL database server mysqld
-   ...done.
- * Checking for tables which need an upgrade, are corrupt or were 
-not closed cleanly.
- * Restarting web server apache2
-   ...done.
+mysql: stopped
+mysql: ERROR (abnormal termination)
+apache2: ERROR (not running)
+apache2: started
 + drush @bcl_dev user-create user1 --password=pass1 --mail=user1@example.org
 + template_init=btr_client/install/init.sh
 + init_script=/etc/init.d/chroot-bcl
@@ -6279,35 +6563,18 @@ not closed cleanly.
 + chmod +x /etc/init.d/chroot-bcl
 + service=chroot-bcl
 + update-rc.d chroot-bcl defaults
-update-rc.d: warning: /etc/init.d/chroot-bcl missing LSB information
-update-rc.d: see <http://wiki.debian.org/LSBInitScripts>
- System start/stop links for /etc/init.d/chroot-bcl already exist.
+update-rc.d: using dependency based boot sequencing
+insserv: warning: script 'K01chroot-bcl' missing LSB tags and overrides
+insserv: warning: script 'chroot-bcl' missing LSB tags and overrides
 + '[' false = true ']'
 + update-rc.d chroot-bcl disable
-update-rc.d: warning: /etc/init.d/chroot-bcl missing LSB information
-update-rc.d: see <http://wiki.debian.org/LSBInitScripts>
- Disabling system startup links for /etc/init.d/chroot-bcl ...
- Removing any system startup links for /etc/init.d/chroot-bcl ...
-   /etc/rc0.d/K20chroot-bcl
-   /etc/rc1.d/K20chroot-bcl
-   /etc/rc2.d/K80chroot-bcl
-   /etc/rc3.d/K80chroot-bcl
-   /etc/rc4.d/K80chroot-bcl
-   /etc/rc5.d/K80chroot-bcl
-   /etc/rc6.d/K20chroot-bcl
- Adding system startup for /etc/init.d/chroot-bcl ...
-   /etc/rc0.d/K20chroot-bcl -> ../init.d/chroot-bcl
-   /etc/rc1.d/K20chroot-bcl -> ../init.d/chroot-bcl
-   /etc/rc6.d/K20chroot-bcl -> ../init.d/chroot-bcl
-   /etc/rc2.d/K80chroot-bcl -> ../init.d/chroot-bcl
-   /etc/rc3.d/K80chroot-bcl -> ../init.d/chroot-bcl
-   /etc/rc4.d/K80chroot-bcl -> ../init.d/chroot-bcl
-   /etc/rc5.d/K80chroot-bcl -> ../init.d/chroot-bcl
+update-rc.d: error: chroot-bcl Default-Start contains no runlevels, aborting.
+update-rc.d: using dependency based boot sequencing
 + /etc/init.d/chroot-bcl stop
+Stopping supervisor: supervisord.
+/etc/init.d/chroot-bcl: line 25: kill: (7689) - No such process
 umount: /var/chroot/bcl/dev/pts: not mounted
 umount: /var/chroot/bcl/sys: not mounted
 umount: /var/chroot/bcl/dev: not mounted
 + test true = true
 + reboot
-4641.52user 666.30system 2:01:59elapsed 72%CPU (0avgtext+0avgdata 116092maxresident)k
-1075640inputs+4448288outputs (8608major+21062900minor)pagefaults 0swaps
