@@ -27,7 +27,6 @@ fi
 
 ### update /etc/hostname and /etc/hosts
 echo $domain > /etc/hostname
-old_domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
 sed -i /etc/hosts.conf \
     -e "s/$old_domain/$domain/g"
 /etc/hosts_update.sh
