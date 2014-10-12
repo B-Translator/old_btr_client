@@ -1,10 +1,4 @@
 
-### Default settings for building the chroot.
-target='bcl'
-arch='i386'
-suite='trusty'
-apt_mirror='http://archive.ubuntu.com/ubuntu'
-
 ### Git branch that will be used.
 git_branch='master'
 
@@ -35,10 +29,3 @@ oauth2_client_secret='0123456789'
 
 ### Install also extra things that are useful for development.
 development='true'
-
-### A reboot is needed after installation/configuration.
-### If you want to do it automatically, set it to 'true'.
-reboot='false'
-
-### Start chroot service automatically on reboot.
-start_on_boot='false'
