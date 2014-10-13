@@ -72,6 +72,9 @@ Drupal installation profile for B-Translator Client.
   docker.io run -d --name=bcl --hostname=example.org \
                 -p 80:80 -p 443:443 btr_client
   #+END_EXAMPLE
+  This way it can be accessed by typing =https://example.org=
+  on the browser location (not =https://127.0.0.1= or
+  =https://localhost=).
 
 
 * What is B-Translator
