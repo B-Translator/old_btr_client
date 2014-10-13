@@ -3,62 +3,40 @@ Drupal installation profile for B-Translator Client.
 
 * Installation
 
-  Assuming that we have a minimal ubuntu server 14.04 (trusty),
-  B-Translator Client can be installed in it like this:
+  Installation is done inside a Docker container.
+
+  + Modify and customize the settings:
+    #+BEGIN_EXAMPLE
+    cp btr_client/install/settings.sh cfg.sh
+    vim cfg.sh
+    #+END_EXAMPLE
+
+  + Build a Docker image:
+    #+BEGIN_EXAMPLE
+    btr_client/docker-build.sh cfg.sh --git_branch=master
+    less -r nohup-btr_client-master.out
+    #+END_EXAMPLE
+    This will create a docker image, named =btr_client:master= with a
+    minimal ubuntu system and everything that is needed for the normal
+    work of the system.
+
+  + Create a Docker container like this:
+    #+BEGIN_EXAMPLE
+    docker images
+    docker run -d --name=btr_client --hostname=example.org \
+	       -p 80:80 -p 443:443 btr_client:master
+    #+END_EXAMPLE
+    Then you can stop and start the container with =docker stop btr_client=
+    and =docker start btr_client=.
+
+  If it is installed on a local machine (for testing or development),
+  add the domain name =example.org= on ~/etc/hosts~:
   #+BEGIN_EXAMPLE
-  mkdir /var/chroot
-  cd /var/chroot/
-  git clone https://github.com/B-Translator/btr_client.git
-  cp btr_client/install/settings.sh btr_client/bcl.sh
-  vim btr_client/bcl.sh
-  nohup time nice btr_client/install/chroot.sh btr_client/bcl.sh &
-  tail -f nohup.out
-  less -r nohup.out
+  127.0.0.1 example.org
   #+END_EXAMPLE
-
-  This will install in ~/var/chroot/~ a minimal ubuntu system,
-  B-Translator Client, and everything that is needed for the normal
-  work of the system. It will also make the neccessary common
-  configurations of the system.
-
-  The installation script will also create the init script
-  ~/etc/init.d/chroot-bcl~, which can be used to start and stop the
-  services inside the chroot:
-  #+BEGIN_EXAMPLE
-  /etc/init.d/chroot-bcl start
-  /etc/init.d/chroot-bcl stop
-  #+END_EXAMPLE
-
-
-* Installation in a docker container
-
-  This is almost the same as the installation above, except that
-  instead of ~install/chroot.sh~ you call ~install/docker.sh~:
-  #+BEGIN_EXAMPLE
-  nohup time nice btr_client/install/docker.sh btr_client/bcl.sh &
-  #+END_EXAMPLE
-
-  Then to start and stop B-Translator Client you do:
-  #+BEGIN_EXAMPLE
-  docker.io start bcl
-  docker.io stop bcl
-  #+END_EXAMPLE
-
-  Compared to the installation with chroot, docker has the advantage
-  that it is platform independent (the host system does not have to be
-  Ubuntu or Debian).
-
-
-* Building with docker
-
-  Another way is to use the command =docker build= to build an image
-  and then =docker run= to create a container from this image:
-  #+BEGIN_EXAMPLE
-  vim btr_client/install/settings.sh
-  docker.io build --tag=btr_client btr_client/
-  docker.io run -d --name=bcl --hostname=example.org \
-                -p 80:80 -p 443:443 btr_client
-  #+END_EXAMPLE
+  This way it can be accessed by typing =https://example.org=
+  on the browser location (not =https://127.0.0.1= or
+  =https://localhost=).
 
 
 * What is B-Translator
