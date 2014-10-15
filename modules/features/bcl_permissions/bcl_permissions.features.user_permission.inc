@@ -182,13 +182,6 @@ function bcl_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: administer contexts.
-  $permissions['administer contexts'] = array(
-    'name' => 'administer contexts',
-    'roles' => array(),
-    'module' => 'context_ui',
-  );
-
   // Exported permission: administer features.
   $permissions['administer features'] = array(
     'name' => 'administer features',
