@@ -8,7 +8,6 @@ dependencies[] = book
 dependencies[] = boost
 dependencies[] = boxes
 dependencies[] = contact
-dependencies[] = context_ui
 dependencies[] = dashboard
 dependencies[] = devel
 dependencies[] = features
