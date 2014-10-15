@@ -4,9 +4,6 @@ core = 7.x
 ; Download Drupal core and apply core patches if needed.
 projects[drupal][type] = "core"
 projects[drupal][version] = 7.39
-; Drupal Core
-projects[drupal][type] = core
-projects[drupal][version] = 7.36
 
 ; *********** PATCHES ************
 
