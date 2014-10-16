@@ -13,7 +13,6 @@ drush make --prepare-install --force-complete \
 
 ### fix some things on the application directory
 cd $drupal_dir/profiles/btr_client/
-cp -a libraries/bootstrap themes/contrib/bootstrap/
 cd $drupal_dir/profiles/btr_client/libraries/
 cp hybridauth-drupaloauth2/DrupalOAuth2.php \
    hybridauth/hybridauth/Hybrid/Providers/
