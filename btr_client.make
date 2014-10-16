@@ -7,7 +7,6 @@ core = 7.x
 
 defaults[projects][subdir] = contrib
 
-
 ;--------------------
 ; Custom
 ;--------------------
@@ -52,8 +51,6 @@ projects[] = memcache
 ; Sending Emails
 ;--------------------
 
-;projects[mailsystem] = 2.34
-;projects[mimemail] = 1.0-beta4
 projects[reroute_email] = 1.2
 
 ;projects[phpmailer] = 3.x-dev
