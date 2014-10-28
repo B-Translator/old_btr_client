@@ -4,53 +4,42 @@
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
-#  btranslator.install: n/a
-#  btranslator.info: n/a
-#  modules/custom/btrClient/btrClient.info: n/a
-#  modules/custom/btrCore/btrCore.info: n/a
-#  modules/custom/btrServices/btrServices.info: n/a
-#  btranslator.profile: n/a
-#  modules/custom/btrCore/btrCore.admin.inc: n/a
-#  modules/custom/btrClient/btrClient.admin.inc: n/a
-#  modules/custom/btrClient/btrClient.blocks.inc: n/a
-#  modules/custom/btrClient/btrClient.projects.inc: n/a
-#  modules/custom/btrClient/editor/editor.js: n/a
-#  modules/custom/btrClient/translations/list/form_build.inc: n/a
-#  modules/custom/btrClient/translations/export.inc: n/a
-#  modules/custom/btrClient/translations/search_form.inc: n/a
-#  modules/custom/btrClient/translations/import.inc: n/a
-#  modules/custom/btrCore/includes/vocabulary_term.inc: n/a
-#  modules/custom/btrClient/translations/search.inc: n/a
-#  modules/custom/btrClient/translations/vote.inc: n/a
-#  modules/custom/btrClient/translations/list/form_submit.inc: n/a
-#  modules/custom/btrCore/includes/votes_and_translations.inc: n/a
-#  modules/custom/btrClient/translations/list/theme_functions.inc: n/a
-#  modules/custom/btrCore/btrCore.menu.inc: n/a
-#  modules/custom/btrCore/btrCore.module: n/a
-#  modules/custom/btrCore/includes/ajax_callbacks.inc: n/a
-#  modules/custom/btrCore/includes/get_sguid.inc: n/a
-#  modules/custom/btrCore/includes/mail_notifications.inc: n/a
-#  modules/custom/btrCore/includes/projects.inc: n/a
-#  modules/custom/btrCore/includes/rss_feed.inc: n/a
-#  modules/custom/btrServices/btrServices.inc: n/a
-#  themes/bartik1/bartik1.info: n/a
+#  btr_client.info: n/a
+#  install/config/gmailsmtp.php: n/a
+#  modules/features/bcl_btrClient/bcl_btrClient.info: n/a
+#  modules/features/bcl_captcha/bcl_captcha.info: n/a
+#  modules/features/bcl_content/bcl_content.info: n/a
+#  modules/features/bcl_drupalchat/bcl_drupalchat.info: n/a
+#  modules/features/bcl_fb/bcl_fb.info: n/a
+#  modules/features/bcl_googleanalytics/bcl_googleanalytics.info: n/a
+#  modules/features/bcl_invite/bcl_invite.info: n/a
+#  modules/features/bcl_layout/bcl_layout.info: n/a
+#  modules/features/bcl_mass_contact/bcl_mass_contact.info: n/a
+#  modules/features/bcl_misc/bcl_misc.info: n/a
+#  modules/features/bcl_permissions/bcl_permissions.info: n/a
+#  modules/features/bcl_simplenews/bcl_simplenews.info: n/a
+#  modules/features/bcl_captcha/bcl_captcha.admin.inc: n/a
+#  modules/features/bcl_content/bcl_content.features.field.inc: n/a
+#  modules/features/bcl_content/bcl_content.features.inc: n/a
+#  modules/features/bcl_googleanalytics/bcl_googleanalytics.admin.inc: n/a
+#  modules/features/bcl_layout/bcl_layout.context.inc: n/a
+#  modules/features/bcl_layout/bcl_layout.features.menu_custom.inc: n/a
+#  modules/features/bcl_layout/bcl_layout.features.menu_links.inc: n/a
+#  modules/features/bcl_layout/bcl_layout.views_default.inc: n/a
 #  themes/bootstrap1/bootstrap1.info: n/a
-#  themes/bartik1/color/color.inc: n/a
 #
 # #-#-#-#-#  installer.pot (PROJECT VERSION)  #-#-#-#-#
 # $Id$
 #
 # LANGUAGE translation of Drupal (installer)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from files:
-#  btranslator.profile: n/a
-#  modules/custom/btrClient/btrClient.projects.inc: n/a
+# Generated from file: btr_client.profile: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-18 08:27+0000\n"
+"POT-Creation-Date: 2014-10-28 07:11+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -59,1125 +48,246 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: btranslator.install:63
+#: btr_client.info:0
+msgid "B-Translator Client"
+msgstr ""
+
+#: btr_client.info:0
+msgid "Drupal installation profile for B-Translator Client."
+msgstr ""
+
+#: install/config/gmailsmtp.php:46
 msgid "Send e-mail to admin when a new user is registered"
 msgstr ""
 
-#: btranslator.install:73
+#: install/config/gmailsmtp.php:56
 msgid "Send e-mail to admin when user modifies his account"
 msgstr ""
 
-#: btranslator.info:0 modules/custom/btrClient/btrClient.info:0
-#: modules/custom/btrCore/btrCore.info:0
-#: modules/custom/btrServices/btrServices.info:0
-msgid "B-Translator"
+#: modules/features/bcl_btrClient/bcl_btrClient.info:0
+msgid "bcl_btrClient"
 msgstr ""
 
-#: btranslator.info:0
-msgid "Drupal installation profile for B-Translator."
+#: modules/features/bcl_btrClient/bcl_btrClient.info:0
+#: modules/features/bcl_captcha/bcl_captcha.info:0
+#: modules/features/bcl_content/bcl_content.info:0
+#: modules/features/bcl_drupalchat/bcl_drupalchat.info:0
+#: modules/features/bcl_fb/bcl_fb.info:0
+#: modules/features/bcl_googleanalytics/bcl_googleanalytics.info:0
+#: modules/features/bcl_invite/bcl_invite.info:0
+#: modules/features/bcl_layout/bcl_layout.info:0
+#: modules/features/bcl_mass_contact/bcl_mass_contact.info:0
+#: modules/features/bcl_misc/bcl_misc.info:0
+#: modules/features/bcl_permissions/bcl_permissions.info:0
+#: modules/features/bcl_simplenews/bcl_simplenews.info:0
+msgid "Features"
 msgstr ""
 
-#: btranslator.profile:54
-msgid "B-Translator configuration options"
+#: modules/features/bcl_captcha/bcl_captcha.admin.inc:37
+msgid "Public Key"
 msgstr ""
 
-#: btranslator.profile:65
-msgid "Translation Language"
-msgstr ""
-
-#: btranslator.profile:66
+#: modules/features/bcl_captcha/bcl_captcha.admin.inc:40
 msgid ""
-"The language of translations. This site is about collecting feedback for the "
-"translations of this language."
+"The public key given to you when you <a href=\"@url\" target=\"_blank"
+"\">registered at reCAPTCHA.net</a>."
 msgstr ""
 
-#: btranslator.profile:72 modules/custom/btrCore/btrCore.admin.inc:22
-msgid "Single"
+#: modules/features/bcl_captcha/bcl_captcha.admin.inc:46
+msgid "Private Key"
 msgstr ""
 
-#: btranslator.profile:73 modules/custom/btrCore/btrCore.admin.inc:23
-msgid "Multiple"
-msgstr ""
-
-#: btranslator.profile:75 modules/custom/btrCore/btrCore.admin.inc:25
+#: modules/features/bcl_captcha/bcl_captcha.admin.inc:49
 msgid ""
-"When voting mode is <em>Single</em>, only one translation can be voted as "
-"suitable for each string. When voting mode is <em>Multiple</em>, more than "
-"one translation can be selected as suitable for each string. <br/> "
-"<strong>Note:</strong> Switching back from <em>Multiple</em> to <em>Single</"
-"em> may have a bad impact on the existing votes."
+"The private key given to you when you <a href=\"@url\" target=\"_blank"
+"\">registered at reCAPTCHA.net</a>."
 msgstr ""
 
-#: btranslator.profile:79 modules/custom/btrCore/btrCore.admin.inc:28
-msgid "Select Voting Mode"
+#: modules/features/bcl_captcha/bcl_captcha.info:0
+msgid "bcl_captcha"
 msgstr ""
 
-#: btranslator.profile:87
-msgid "B-Translator default settings"
+#: modules/features/bcl_content/bcl_content.features.field.inc:88
+msgid "Body"
 msgstr ""
 
-#: btranslator.profile:91 modules/custom/btrCore/btrCore.admin.inc:54
+#: modules/features/bcl_content/bcl_content.features.inc:23
+msgid "Basic page"
+msgstr ""
+
+#: modules/features/bcl_content/bcl_content.features.inc:25
 msgid ""
-"Select the projects that will be used for review and translations. Only "
-"strings from these projects will be presented to the users. <br/> You can "
-"enter projects in the form <em>origin/project</em>, for example: <em>KDE/"
-"kdeedu</em>, <em>Mozilla/browser</em>, etc. Or you can include all the "
-"projects from a certain origin, like this: <em>KDE</em>, <em>LibreOffice</"
-"em>, etc. <br/> Enter each project on a separate line. See a list of the "
-"imported projects <a href='@project-list' target='_blank'>here</a>.<br/> "
-"<strong>Note</strong>: The user can override the preferred projects on his "
-"profile/settings. If the user does not select any preferred projects on his "
-"profile, then the projects listed here will be used. If this list is empty, "
-"then all the imported projects will be used."
+"Use <em>basic pages</em> for your static content, such as an 'About us' page."
 msgstr ""
 
-#: btranslator.profile:95 modules/custom/btrCore/btrCore.admin.inc:58
-msgid "The List of Projects that Will be Used for Voting and Translation"
+#: modules/features/bcl_content/bcl_content.features.inc:27
+msgid "Title"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.admin.inc:17
-msgid "B-Translator Client Default Settings"
+#: modules/features/bcl_content/bcl_content.info:0
+msgid "bcl_content"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.admin.inc:28
-#: modules/custom/btrCore/btrCore.admin.inc:47
-msgid "Default Translation Language"
+#: modules/features/bcl_drupalchat/bcl_drupalchat.info:0
+msgid "bcl_drupalchat"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.admin.inc:29
-msgid "The default language of translations (for anonymous users)."
+#: modules/features/bcl_fb/bcl_fb.info:0
+msgid "bcl_fb"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.admin.inc:37
-msgid "Server URL"
+#: modules/features/bcl_googleanalytics/bcl_googleanalytics.admin.inc:34
+msgid "Web Property ID"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.admin.inc:39
-msgid "The URL of the B-Translator server."
-msgstr ""
-
-#: modules/custom/btrClient/btrClient.blocks.inc:24
-msgid "B-Translator: Top contributors during the last period"
-msgstr ""
-
-#: modules/custom/btrClient/btrClient.blocks.inc:30
+#: modules/features/bcl_googleanalytics/bcl_googleanalytics.admin.inc:40
 msgid ""
-"B-Translator: Contribution statistics (for the last week, month and year)"
+"This ID is unique to each site you want to track separately, and is in the "
+"form of UA-xxxxxxx-yy. To get a Web Property ID, <a href=\"@analytics"
+"\">register your site with Google Analytics</a>, or if you already have "
+"registered your site, go to your Google Analytics Settings page to see the "
+"ID next to every site profile. <a href=\"@webpropertyid\">Find more "
+"information in the documentation</a>."
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:36
-msgid "B-Translator: Latest contributions"
+#: modules/features/bcl_googleanalytics/bcl_googleanalytics.info:0
+msgid "bcl_googleanalytics"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:59
-msgid "Size of the list"
+#: modules/features/bcl_invite/bcl_invite.info:0
+msgid "bcl_invite"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:60
+#: modules/features/bcl_layout/bcl_layout.context.inc:42
+msgid "Display development block to admin."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:110
+msgid "Pages, blogs, books, etc."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:184
+msgid "Layout of the front page."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:265
+msgid "Layout of a page."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:343
 msgid ""
-"The number of top contributers that will be shown in the list (5, 10, etc)"
+"The pages where the translation/feedback activity is happening (module "
+"btrClient)."
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:65
-msgid "Accumulation period"
+#: modules/features/bcl_layout/bcl_layout.features.menu_custom.inc:21
+msgid "Main menu"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:66
+#: modules/features/bcl_layout/bcl_layout.features.menu_custom.inc:22
 msgid ""
-"The period during which the contributions will be counted (last week or last "
-"month)."
+"The <em>Main</em> menu is used on many sites to show the major sections of "
+"the site, often in a top navigation bar."
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:68
-msgid "Last week"
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:102
+msgid "About"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:69
-msgid "Last month"
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:103
+msgid "Contact"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:123
-msgid "Top @nr contributors"
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:104
+msgid "Home"
 msgstr ""
 
-#: modules/custom/btrClient/btrClient.blocks.inc:129
-msgid "Contribution statistics"
-msgstr ""
-
-#: modules/custom/btrClient/btrClient.blocks.inc:133
-msgid "Latest contributions"
-msgstr ""
-
-#: modules/custom/btrClient/btrClient.blocks.inc:170
-msgid "<p>Top !nr contributors since !date:</p>"
-msgstr ""
-
-#: modules/custom/btrClient/btrClient.blocks.inc:204
-msgid ""
-" <strong><a href='@url_user' target='_blank'>!name</a></strong><br/><a "
-"href='@url_translations' target='_blank'>!nr_translations translations</a> + "
-"<a href='@url_votes' target='_blank'>!nr_votes votes</a>"
-msgstr ""
-
-#: modules/custom/btrClient/btrClient.blocks.inc:261
-msgid ""
-" + <a href='@url_votes'>!nr_votes votes</a> <br/> + <a "
-"href='@url_translations'>!nr_translations translations</a>"
-msgstr ""
-
-#: (duplicate) modules/custom/btrClient/btrClient.projects.inc:27
-msgid "Translation Projects"
-msgstr ""
-
-#: (duplicate) modules/custom/btrClient/btrClient.projects.inc:29
-msgid "Project Title"
-msgstr ""
-
-#: (duplicate) modules/custom/btrClient/btrClient.projects.inc:30
-msgid "Translating a software project."
-msgstr ""
-
-#: (duplicate) modules/custom/btrClient/btrClient.projects.inc:37
-msgid "Project Description"
-msgstr ""
-
-#: modules/custom/btrClient/btrClient.info:0
-msgid "B-Translator UI"
-msgstr ""
-
-#: modules/custom/btrClient/btrClient.info:0
-msgid "B-Translator User Interface for Drupal."
-msgstr ""
-
-#: modules/custom/btrClient/editor/editor.js:0;0
-msgid "Hide string details."
-msgstr ""
-
-#: modules/custom/btrClient/editor/editor.js:0
-msgid "Show related projects"
-msgstr ""
-
-#: modules/custom/btrClient/editor/editor.js:0;0
-msgid "Loading..."
-msgstr ""
-
-#: modules/custom/btrClient/editor/editor.js:0;0
-#: modules/custom/btrClient/translations/list/form_build.inc:294
-msgid "Decline"
-msgstr ""
-
-#: modules/custom/btrClient/editor/editor.js:0
-msgid "Undo decline"
-msgstr ""
-
-#: modules/custom/btrClient/editor/editor.js:0
-msgid "Do you want to overwrite the current suggestion?"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:27
-msgid "Export a Project"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:28
-msgid ""
-"<p>Submit a request for exporting a project. When the request is completed "
-"you will be notified by email.</p><br/>"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:35
-#: modules/custom/btrClient/translations/search_form.inc:345
-msgid "Origin"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:37
-msgid "The origin of the project."
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:43
-#: modules/custom/btrClient/translations/search_form.inc:337
-msgid "Project"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:44
-msgid "The name of the project."
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:57
-msgid "Export Mode"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:58
-msgid "The export mode that should be used."
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:60
-msgid "Export the most voted translations"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:61
-msgid "Prefer translations voted by me"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:62
-msgid "Prefer translations voted by my friends"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:69
-msgid "List of Friends"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:70
-msgid "Enter usernames of your friends, separated by comma."
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:84
-msgid "Export"
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:130
-msgid ""
-"Export of '!project' is scheduled. You will be notified by email when it is "
-"done."
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:162
-msgid "The project '!project' does not exist."
-msgstr ""
-
-#: modules/custom/btrClient/translations/export.inc:171
-msgid "The user '!username' does not exist."
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:30
-msgid "Add a New Term"
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:31
-msgid "Add a new interesting term on the vocabulary."
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:38
-msgid "New Term"
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:48
-msgid "Add"
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:64
-#: modules/custom/btrCore/includes/vocabulary_term.inc:19
-msgid "This term already exists."
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:117
-msgid "Delete a Term"
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:118
-msgid "Delete a term from the vocabulary."
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:125
-msgid "String ID"
-msgstr ""
-
-#: modules/custom/btrClient/translations/import.inc:135
-msgid "Delete"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search.inc:56
-msgid "Search Translations"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search.inc:65
-msgid "No strings found. Try adjusting the filter options."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:110;245
-msgid "Reset"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:115;240
-msgid "Filter"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:251
-msgid "Change Filter Parameters"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:270
-msgid "Language of Translation"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:271
-msgid "Select the language of the translations to be searched and displayed."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:278
-msgid "What To Search For"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:287
-msgid "Search Mode"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:294
-msgid "The String Or Words To Be Searched"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:295
-msgid ""
-"Search for l10n strings or translations that contain the given words. The "
-"<emphasized>natural</emphasized> search will try to find strings similar to "
-"the given one (see: <a href=\"!url1\">Natural Language Full-Text Searches</"
-"a>). The <emphasized>boolean</emphasized> search will try to match words "
-"according to logical rules. The words can be preceded by + (plus), - "
-"(minus), etc. (for more details see: <a href=\"!url2\">Boolean Full-Text "
-"Searches</a>)."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:307
-msgid "Limit"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:308
-msgid "The number of the results (strings) that can be displayed on a page."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:321
-msgid "Search Scope"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:329
-msgid "Projects"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:338
-msgid "Search only the strings belonging to the matching project."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:346
-msgid "Limit search only to the projects from a certain origin."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:360
-msgid "Author"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:368
-msgid "Only Mine"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:369
-msgid "Search only the strings with translations suggested or voted by me."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:376
-msgid "Translated By"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:377
-msgid ""
-"Search only the strings with translations suggested by the selected user."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:389
-msgid "Voted By"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:390
-msgid "Search only the strings with translations voted by the selected user."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:408
-msgid "Date"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:417
-msgid "What to Filter"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:418
-msgid "Select what to filter by date (strings, translations, or votes)."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:425
-msgid "From Date"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:431
-msgid "To Date"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:463
-msgid "Natural search on strings."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:464
-msgid "Natural search on translations."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:465
-msgid "Boolean search on strings."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:466
-msgid "Boolean search on translations."
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:474
-msgid "Filter Strings By Date"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:475
-msgid "Filter Translations By Date"
-msgstr ""
-
-#: modules/custom/btrClient/translations/search_form.inc:476
-msgid "Filter Votes By Date"
-msgstr ""
-
-#: modules/custom/btrClient/translations/vote.inc:60;97
-msgid "No string found!"
-msgstr ""
-
-#: modules/custom/btrClient/translations/vote.inc:103
-msgid "Vote Translations"
-msgstr ""
-
-#: modules/custom/btrClient/translations/vote.inc:145
-msgid "Login link has expired."
-msgstr ""
-
-#: modules/custom/btrClient/translations/vote.inc:151
-msgid "Could not validate login link."
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:58
-#: modules/custom/btrClient/translations/list/form_submit.inc:20;49
-msgid "Previous"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:64
-#: modules/custom/btrClient/translations/list/form_submit.inc:19;28
-msgid "Login"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:74
-#: modules/custom/btrClient/translations/list/form_submit.inc:21;34;56
-msgid "Save"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:82
-#: modules/custom/btrClient/translations/list/form_submit.inc:22;65
-msgid "Next"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:86
-#: modules/custom/btrClient/translations/list/form_submit.inc:23;68
-msgid "Translated"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:90
-#: modules/custom/btrClient/translations/list/form_submit.inc:24;71
-msgid "Untranslated"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:94
-msgid "Same Project"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:133
-msgctxt "set the page title"
-msgid "String: !string"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:184;185
-msgid "Translate"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:281
-msgid "(empty)"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:306
-#: modules/custom/btrClient/translations/list/form_submit.inc:140
-#: modules/custom/btrCore/includes/votes_and_translations.inc:227
-msgid "<New translation>"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:312;313
-msgid "Edit a copy"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:333
-msgid "Number of Votes: !count"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:373
-msgid "uknown user"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:376
-msgid "unknown time"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:377
-msgid "@time ago"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:377
-msgid "no time record available"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_build.inc:380
-msgid "by !author <span title=\"@ago\">on @date</span>"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_submit.inc:45
-msgid ""
-"You need to be logged in, in order to be able to submit votes and "
-"suggestions."
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_submit.inc:84
-msgid "You don't have access for giving feedback!"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/form_submit.inc:94
-msgid "You cannot give feedback for the language '@lng' on this site!"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/theme_functions.inc:17
-msgid "Source text"
-msgstr ""
-
-#: modules/custom/btrClient/translations/list/theme_functions.inc:20
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:105
 msgid "Translations"
 msgstr ""
 
-#: modules/custom/btrClient/translations/list/theme_functions.inc:31
-msgid "#"
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:106
+msgid "Vocabulary"
 msgstr ""
 
-#: modules/custom/btrClient/translations/list/theme_functions.inc:31
-msgid "Direct and permanent link to this string."
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:84
+msgid "Master"
 msgstr ""
 
-#: modules/custom/btrClient/translations/list/theme_functions.inc:58
-msgid ""
-"Show the string context and a list of projects where this string is used."
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:85
+msgid "more"
 msgstr ""
 
-#: modules/custom/btrClient/translations/list/theme_functions.inc:58
-msgid "Show string details."
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:86
+msgid "Apply"
 msgstr ""
 
-#: modules/custom/btrClient/translations/list/theme_functions.inc:95
-msgid "in context: @context"
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:87
+msgid "Reset"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.admin.inc:17
-msgid "B-Translator Configuration"
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:88
+msgid "Sort by"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.admin.inc:36
-msgid "B-Translator Defaults"
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:89
+msgid "Asc"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.admin.inc:48
-msgid ""
-"The default language of translations (suggested to the users when they "
-"register)."
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:90
+msgid "Desc"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.admin.inc:65
-msgid "B-Translator Export"
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:91
+msgid "Items per page"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.admin.inc:70
-msgid "Export path"
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:92
+msgid "- All -"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.admin.inc:72
-msgid ""
-"The directory where the exported projects will be placed. Must be accessable "
-"by the web server (www-data). Caution: This directory will be cleaned "
-"periodically by cron, so make sure that its value is correct, and make sure "
-"that <strong>it is not empty</strong>!"
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:93
+msgid "Offset"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.admin.inc:77
-msgid "Notify admin"
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:94
+msgid "« first"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.admin.inc:78
-msgid "Send a notification email to admin on each export request."
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:95
+msgid "‹ previous"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.menu.inc:182
-msgid "Authentication"
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:96
+msgid "next ›"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.module:38
-msgid "Vote translations."
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:97
+msgid "last »"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.module:39
-msgid "Can submit votes (or likes) for translation suggestions."
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:98
+msgid "Page"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.module:42
-msgid "Suggest new translations."
+#: modules/features/bcl_layout/bcl_layout.info:0
+msgid "bcl_layout"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.module:43
-msgid "Can submit new translation suggestions."
+#: modules/features/bcl_mass_contact/bcl_mass_contact.info:0
+msgid "bcl_mass_contact"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.module:46
-msgid "Flag translations."
+#: modules/features/bcl_misc/bcl_misc.info:0
+msgid "bcl_misc"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.module:47
-msgid "Can flag translations as inaproppriate."
+#: modules/features/bcl_permissions/bcl_permissions.info:0
+msgid "bcl_permissions"
 msgstr ""
 
-#: modules/custom/btrCore/btrCore.module:50
-msgid "Import translation (PO) files."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:51
-msgid "Can import to B-Translator new translation files (in the PO format)."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:54
-msgid "Export translation files."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:55
-msgid ""
-"Can export translations from B-Translator (either in PO format, or as diff/"
-"ediff)."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:58
-msgid "Statistics."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:59
-msgid "Can access global statistics of B-Translator."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:62
-msgid "Resolve issues."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:63
-msgid "Can resolve flag issues and other problems."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:66
-msgid "Administer B-Translator."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.module:67
-msgid "Can perform administration tasks for B-Translator."
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.info:0
-msgid "B-Translator Data"
-msgstr ""
-
-#: modules/custom/btrCore/btrCore.info:0
-msgid ""
-"B-Translator Back-End, including data of PO files, strings, translations, "
-"votes, etc."
-msgstr ""
-
-#: modules/custom/btrCore/includes/ajax_callbacks.inc:88
-msgid "Used with context: %context"
-msgstr ""
-
-#: modules/custom/btrCore/includes/ajax_callbacks.inc:92
-msgid "Used on these projects:"
-msgstr ""
-
-#: modules/custom/btrCore/includes/get_sguid.inc:97
-msgid ""
-"It seems that there is something wrong with your preferences. Please <a "
-"href='@edit-profile'>check your profile</a>."
-msgstr ""
-
-#: modules/custom/btrCore/includes/get_sguid.inc:113
-msgid ""
-"You have reached the end of the preferred projects. Please <a href='@edit-"
-"profile'>visit your profile</a> and modify them."
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:68
-msgid "[!prefix] Translation modified for: !string"
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:74
-msgid ""
-"Greetings !username,\n"
-"\n"
-"           The following translation has been modified by its author.\n"
-"           You are being notified because you have voted for the old\n"
-"           translation and your vote now counts for the new version\n"
-"           of the translation.\n"
-"\n"
-"           If the new version of the translation is OK for you,\n"
-"           then there is nothing you should do. Otherwise, you\n"
-"           can change your vote at this link: !url\n"
-"\n"
-"           Thanks\n"
-"\n"
-"           ---------- Original (English) String:\n"
-"           !string\n"
-"           ---------- Old Translation:\n"
-"           !old_translation\n"
-"           ---------- New Translation:\n"
-"           !new_translation\n"
-"           ----------\n"
-"           "
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:108
-msgid "[!prefix] New translation for: !string"
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:114
-msgid ""
-"Greetings !username,\n"
-"\n"
-"           A new translation has been suggested for a string\n"
-"           that you have voted for. If you think that the new\n"
-"           translation is more suitable than the one that you\n"
-"           have voted for, then you can change your vote\n"
-"           at this link: !url\n"
-"\n"
-"           Thanks\n"
-"\n"
-"           ---------- Original (English) String:\n"
-"           !string\n"
-"           ---------- Voted Translation:\n"
-"           !voted_translation\n"
-"           ---------- New Translation:\n"
-"           !new_translation\n"
-"           ----------\n"
-"          "
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:144
-msgid "[!prefix] New term: !string"
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:150
-msgid ""
-"Greetings !username,\n"
-"\n"
-"           A new term has been added to the vocabulary\n"
-"           by !author: !string\n"
-"\n"
-"           You can review its translation at this link:\n"
-"           !url\n"
-"\n"
-"           Thanks\n"
-"\n"
-"           ----------\n"
-"\n"
-"           - You can add a new term at:\n"
-"             !url_add_term\n"
-"\n"
-"           - You can see all the vocabulary terms at:\n"
-"             !url_vocabulary\n"
-"\n"
-"          "
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:185;215
-msgid "[!prefix] Translation deleted: !translation"
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:191
-msgid ""
-"Greetings !username,\n"
-"\n"
-"           A translation that you have submitted, has been deleted by a "
-"moderator.\n"
-"           You can see the string and the rest of translations at this "
-"link: !url\n"
-"\n"
-"           Thanks\n"
-"\n"
-"           ---------- Original (English) String:\n"
-"           !string\n"
-"           ---------- Deleted Translation:\n"
-"           !translation\n"
-"           ----------\n"
-"           "
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:221
-msgid ""
-"Greetings !username,\n"
-"\n"
-"           A translation that you have voted, has been deleted by a "
-"moderator.\n"
-"           You can see the string and the rest of translations at this "
-"link: !url\n"
-"\n"
-"           Thanks\n"
-"\n"
-"           ---------- Original (English) String:\n"
-"           !string\n"
-"           ---------- Deleted Translation:\n"
-"           !translation\n"
-"           ----------\n"
-"           "
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:245
-msgid "[!prefix] Export request: !origin/!project"
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:252
-msgid "Export request by user !uid for '!origin/!project'."
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:263
-msgid "[!prefix] Export: !project"
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:269
-msgid ""
-"Greetings !username,\n"
-"\n"
-"           The export of '!project', that you have requested, is done.\n"
-"           You can download it from these links:\n"
-"           * !export_url_tgz\n"
-"           * !export_url_diff\n"
-"           * !export_url_ediff\n"
-"           "
-msgstr ""
-
-#: modules/custom/btrCore/includes/mail_notifications.inc:292
-msgid ""
-"Greetings !username,\n"
-"\n"
-"       If you have time, please help to review the translation\n"
-"       of the string at this link: !url\n"
-"\n"
-"       Thanks\n"
-"\n"
-"       ---------- Original (English) String:\n"
-"       !string\n"
-"       ---------- Available Translations:\n"
-"      "
-msgstr ""
-
-#: modules/custom/btrCore/includes/projects.inc:176;186
-msgid "Export file '!filename' does not exist!"
-msgstr ""
-
-#: modules/custom/btrCore/includes/rss_feed.inc:40
-msgid "Latest translation suggestions on B-Translator"
-msgstr ""
-
-#: modules/custom/btrCore/includes/rss_feed.inc:43
-msgid "Latest translation suggestions on B-Translator, for @domain"
-msgstr ""
-
-#: modules/custom/btrCore/includes/votes_and_translations.inc:21;84
-msgid "You do not have enough rights for submitting votes!"
-msgstr ""
-
-#: modules/custom/btrCore/includes/votes_and_translations.inc:38;101
-msgid "The given translation does not exist."
-msgstr ""
-
-#: modules/custom/btrCore/includes/votes_and_translations.inc:213
-msgid "You do not have enough rights for making suggestions!"
-msgstr ""
-
-#: modules/custom/btrCore/includes/votes_and_translations.inc:221
-msgid "You cannot give translations for the language !lng"
-msgstr ""
-
-#: modules/custom/btrCore/includes/votes_and_translations.inc:229
-msgid "The given translation is empty."
-msgstr ""
-
-#: modules/custom/btrCore/includes/votes_and_translations.inc:245
-msgid "The given translation already exists."
-msgstr ""
-
-#: modules/custom/btrCore/includes/votes_and_translations.inc:471
-msgid "You are not allowed to delete this translation!"
-msgstr ""
-
-#: modules/custom/btrServices/btrServices.inc:481
-msgid "Action !action is not supported!"
-msgstr ""
-
-#: modules/custom/btrServices/btrServices.inc:489
-msgid "1 suggestion saved"
-msgid_plural "@count suggestions saved"
-msgstr[0] ""
-msgstr[1] ""
-
-#: modules/custom/btrServices/btrServices.inc:493
-msgid "1 vote saved"
-msgid_plural "@count votes saved"
-msgstr[0] ""
-msgstr[1] ""
-
-#: modules/custom/btrServices/btrServices.inc:497
-msgid "1 translation deleted"
-msgid_plural "@count translations deleted"
-msgstr[0] ""
-msgstr[1] ""
-
-#: modules/custom/btrServices/btrServices.info:0
-msgid "B-Translator Web Services"
-msgstr ""
-
-#: modules/custom/btrServices/btrServices.info:0
-msgid "Web Services (API-s) that are offered by B-Translator."
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Bartik1"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Slight modifications of the default theme Bartik"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Header"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0 themes/bootstrap1/bootstrap1.info:0
-msgid "Help"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Page top"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Page bottom"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0 themes/bootstrap1/bootstrap1.info:0
-msgid "Highlighted"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Featured"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0 themes/bootstrap1/bootstrap1.info:0
-msgid "Content"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Sidebar first"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Sidebar second"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Triptych first"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Triptych middle"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Triptych last"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Footer first column"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Footer second column"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Footer third column"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0
-msgid "Footer fourth column"
-msgstr ""
-
-#: themes/bartik1/bartik1.info:0 themes/bootstrap1/bootstrap1.info:0
-msgid "Footer"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:9
-msgid "Header top"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:10
-msgid "Header bottom"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:11
-msgid "Main background"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:12
-msgid "Sidebar background"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:13
-msgid "Sidebar borders"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:14
-msgid "Footer background"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:15
-msgid "Title and slogan"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:16
-msgid "Text color"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:17
-msgid "Link color"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:22
-msgid "Blue Lagoon (default)"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:36
-msgid "Firehouse"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:50
-msgid "Ice"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:64
-msgid "Plum"
-msgstr ""
-
-#: themes/bartik1/color/color.inc:78
-msgid "Slate"
+#: modules/features/bcl_simplenews/bcl_simplenews.info:0
+msgid "bcl_simplenews"
 msgstr ""
 
 #: themes/bootstrap1/bootstrap1.info:0
@@ -1197,6 +307,18 @@ msgid "Top Bar"
 msgstr ""
 
 #: themes/bootstrap1/bootstrap1.info:0
+msgid "Highlighted"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Help"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Content"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
 msgid "Primary"
 msgstr ""
 
@@ -1204,10 +326,18 @@ msgstr ""
 msgid "Secondary"
 msgstr ""
 
-#: btranslator.profile:28
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Footer"
+msgstr ""
+
+#: btr_client.profile:30
+msgid "Mail Settings"
+msgstr ""
+
+#: btr_client.profile:36
 msgid "B-Translator Settings"
 msgstr ""
 
-#: btranslator.profile:34
-msgid "Mail Settings"
+#: btr_client.profile:42
+msgid "OAuth2 Login Settings"
 msgstr ""
