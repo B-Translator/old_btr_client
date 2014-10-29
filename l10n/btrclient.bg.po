@@ -1,0 +1,343 @@
+# #-#-#-#-#  general.pot (PROJECT VERSION)  #-#-#-#-#
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright 2014 NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  btr_client.info: n/a
+#  install/config/gmailsmtp.php: n/a
+#  modules/features/bcl_btrClient/bcl_btrClient.info: n/a
+#  modules/features/bcl_captcha/bcl_captcha.info: n/a
+#  modules/features/bcl_content/bcl_content.info: n/a
+#  modules/features/bcl_drupalchat/bcl_drupalchat.info: n/a
+#  modules/features/bcl_fb/bcl_fb.info: n/a
+#  modules/features/bcl_googleanalytics/bcl_googleanalytics.info: n/a
+#  modules/features/bcl_invite/bcl_invite.info: n/a
+#  modules/features/bcl_layout/bcl_layout.info: n/a
+#  modules/features/bcl_mass_contact/bcl_mass_contact.info: n/a
+#  modules/features/bcl_misc/bcl_misc.info: n/a
+#  modules/features/bcl_permissions/bcl_permissions.info: n/a
+#  modules/features/bcl_simplenews/bcl_simplenews.info: n/a
+#  modules/features/bcl_captcha/bcl_captcha.admin.inc: n/a
+#  modules/features/bcl_content/bcl_content.features.field.inc: n/a
+#  modules/features/bcl_content/bcl_content.features.inc: n/a
+#  modules/features/bcl_googleanalytics/bcl_googleanalytics.admin.inc: n/a
+#  modules/features/bcl_layout/bcl_layout.context.inc: n/a
+#  modules/features/bcl_layout/bcl_layout.features.menu_custom.inc: n/a
+#  modules/features/bcl_layout/bcl_layout.features.menu_links.inc: n/a
+#  modules/features/bcl_layout/bcl_layout.views_default.inc: n/a
+#  themes/bootstrap1/bootstrap1.info: n/a
+#
+# #-#-#-#-#  installer.pot (PROJECT VERSION)  #-#-#-#-#
+# $Id$
+#
+# LANGUAGE translation of Drupal (installer)
+# Copyright 2014 NAME <EMAIL@ADDRESS>
+# Generated from file: btr_client.profile: n/a
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-10-28 07:11+0000\n"
+"PO-Revision-Date: 2014-10-28 07:11+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: bg\n"
+
+#: btr_client.info:0
+msgid "B-Translator Client"
+msgstr ""
+
+#: btr_client.info:0
+msgid "Drupal installation profile for B-Translator Client."
+msgstr ""
+
+#: install/config/gmailsmtp.php:46
+msgid "Send e-mail to admin when a new user is registered"
+msgstr ""
+
+#: install/config/gmailsmtp.php:56
+msgid "Send e-mail to admin when user modifies his account"
+msgstr ""
+
+#: modules/features/bcl_btrClient/bcl_btrClient.info:0
+msgid "bcl_btrClient"
+msgstr ""
+
+#: modules/features/bcl_btrClient/bcl_btrClient.info:0
+#: modules/features/bcl_captcha/bcl_captcha.info:0
+#: modules/features/bcl_content/bcl_content.info:0
+#: modules/features/bcl_drupalchat/bcl_drupalchat.info:0
+#: modules/features/bcl_fb/bcl_fb.info:0
+#: modules/features/bcl_googleanalytics/bcl_googleanalytics.info:0
+#: modules/features/bcl_invite/bcl_invite.info:0
+#: modules/features/bcl_layout/bcl_layout.info:0
+#: modules/features/bcl_mass_contact/bcl_mass_contact.info:0
+#: modules/features/bcl_misc/bcl_misc.info:0
+#: modules/features/bcl_permissions/bcl_permissions.info:0
+#: modules/features/bcl_simplenews/bcl_simplenews.info:0
+msgid "Features"
+msgstr ""
+
+#: modules/features/bcl_captcha/bcl_captcha.admin.inc:37
+msgid "Public Key"
+msgstr ""
+
+#: modules/features/bcl_captcha/bcl_captcha.admin.inc:40
+msgid ""
+"The public key given to you when you <a href=\"@url\" target=\"_blank"
+"\">registered at reCAPTCHA.net</a>."
+msgstr ""
+
+#: modules/features/bcl_captcha/bcl_captcha.admin.inc:46
+msgid "Private Key"
+msgstr ""
+
+#: modules/features/bcl_captcha/bcl_captcha.admin.inc:49
+msgid ""
+"The private key given to you when you <a href=\"@url\" target=\"_blank"
+"\">registered at reCAPTCHA.net</a>."
+msgstr ""
+
+#: modules/features/bcl_captcha/bcl_captcha.info:0
+msgid "bcl_captcha"
+msgstr ""
+
+#: modules/features/bcl_content/bcl_content.features.field.inc:88
+msgid "Body"
+msgstr ""
+
+#: modules/features/bcl_content/bcl_content.features.inc:23
+msgid "Basic page"
+msgstr ""
+
+#: modules/features/bcl_content/bcl_content.features.inc:25
+msgid ""
+"Use <em>basic pages</em> for your static content, such as an 'About us' page."
+msgstr ""
+
+#: modules/features/bcl_content/bcl_content.features.inc:27
+msgid "Title"
+msgstr ""
+
+#: modules/features/bcl_content/bcl_content.info:0
+msgid "bcl_content"
+msgstr ""
+
+#: modules/features/bcl_drupalchat/bcl_drupalchat.info:0
+msgid "bcl_drupalchat"
+msgstr ""
+
+#: modules/features/bcl_fb/bcl_fb.info:0
+msgid "bcl_fb"
+msgstr ""
+
+#: modules/features/bcl_googleanalytics/bcl_googleanalytics.admin.inc:34
+msgid "Web Property ID"
+msgstr ""
+
+#: modules/features/bcl_googleanalytics/bcl_googleanalytics.admin.inc:40
+msgid ""
+"This ID is unique to each site you want to track separately, and is in the "
+"form of UA-xxxxxxx-yy. To get a Web Property ID, <a href=\"@analytics"
+"\">register your site with Google Analytics</a>, or if you already have "
+"registered your site, go to your Google Analytics Settings page to see the "
+"ID next to every site profile. <a href=\"@webpropertyid\">Find more "
+"information in the documentation</a>."
+msgstr ""
+
+#: modules/features/bcl_googleanalytics/bcl_googleanalytics.info:0
+msgid "bcl_googleanalytics"
+msgstr ""
+
+#: modules/features/bcl_invite/bcl_invite.info:0
+msgid "bcl_invite"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:42
+msgid "Display development block to admin."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:110
+msgid "Pages, blogs, books, etc."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:184
+msgid "Layout of the front page."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:265
+msgid "Layout of a page."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.context.inc:343
+msgid ""
+"The pages where the translation/feedback activity is happening (module "
+"btrClient)."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.features.menu_custom.inc:21
+msgid "Main menu"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.features.menu_custom.inc:22
+msgid ""
+"The <em>Main</em> menu is used on many sites to show the major sections of "
+"the site, often in a top navigation bar."
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:102
+msgid "About"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:103
+msgid "Contact"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:104
+msgid "Home"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:105
+msgid "Translations"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.features.menu_links.inc:106
+msgid "Vocabulary"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:84
+msgid "Master"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:85
+msgid "more"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:86
+msgid "Apply"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:87
+msgid "Reset"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:88
+msgid "Sort by"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:89
+msgid "Asc"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:90
+msgid "Desc"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:91
+msgid "Items per page"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:92
+msgid "- All -"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:93
+msgid "Offset"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:94
+msgid "« first"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:95
+msgid "‹ previous"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:96
+msgid "next ›"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:97
+msgid "last »"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.views_default.inc:98
+msgid "Page"
+msgstr ""
+
+#: modules/features/bcl_layout/bcl_layout.info:0
+msgid "bcl_layout"
+msgstr ""
+
+#: modules/features/bcl_mass_contact/bcl_mass_contact.info:0
+msgid "bcl_mass_contact"
+msgstr ""
+
+#: modules/features/bcl_misc/bcl_misc.info:0
+msgid "bcl_misc"
+msgstr ""
+
+#: modules/features/bcl_permissions/bcl_permissions.info:0
+msgid "bcl_permissions"
+msgstr ""
+
+#: modules/features/bcl_simplenews/bcl_simplenews.info:0
+msgid "bcl_simplenews"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Bootstrap Subtheme"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Customized Bootstrap Theme."
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Navigation"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Top Bar"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Highlighted"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Help"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Content"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Primary"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Secondary"
+msgstr ""
+
+#: themes/bootstrap1/bootstrap1.info:0
+msgid "Footer"
+msgstr ""
+
+#: btr_client.profile:30
+msgid "Mail Settings"
+msgstr ""
+
+#: btr_client.profile:36
+msgid "B-Translator Settings"
+msgstr ""
+
+#: btr_client.profile:42
+msgid "OAuth2 Login Settings"
+msgstr ""
