@@ -1,7 +1,7 @@
 ### This file can be used to build a docker image like this:
 ###   `docker build --tag=btr_client .`
 
-FROM ubuntu-upstart:14.04
+FROM 32bit/ubuntu-upstart:14.04
 
 ### Install packages.
 COPY install/packages.sh /tmp/
