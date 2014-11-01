@@ -37,8 +37,17 @@ update-rc.d nginx disable
 /etc/init.d/php5-fpm stop
 update-rc.d php5-fpm disable
 
+### There is some problem with php-pear in 14.04
+### See: http://askubuntu.com/questions/451953/php-pear-is-not-working-after-upgrading-to-ubuntu-14-04
+### and: https://bugs.launchpad.net/ubuntu/+source/php5/+bug/1310552
+### I am using below a workaround described there.
+
 # install uploadprogress bar (from PECL) (requested by Drupal 7)
 pecl install uploadprogress
+
+gunzip /build/buildd/php5-*/pear-build-download/uploadprogress-*
+pear upgrade /build/buildd/php5-*/pear-build-download/uploadprogress-*
+
 mkdir -p /etc/php5/conf.d/
 echo "extension = uploadprogress.so" > /etc/php5/conf.d/uploadprogress.ini
 
@@ -46,3 +55,5 @@ echo "extension = uploadprogress.so" > /etc/php5/conf.d/uploadprogress.ini
 pear channel-discover pear.drush.org
 pear install pear.drush.org/drush-6.2.0.0
 
+gunzip /build/buildd/php5-*/pear-build-download/drush-*
+pear upgrade /build/buildd/php5-*/pear-build-download/drush-*
