@@ -15,7 +15,6 @@ then
 fi
 
 ### set drupal variable btrClient_translation_lng
-$(dirname $0)/mysqld.sh start
 drush @bcl --yes --exact vset btrClient_translation_lng $translation_lng
 
 ### add $translation_lng as a drupal language
