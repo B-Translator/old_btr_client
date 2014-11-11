@@ -19,7 +19,7 @@ $bcl/config/mysql_btrclient.sh
 $bcl/config/gmailsmtp.sh
 $bcl/config/drupalpass.sh
 $bcl/config/oauth2_login.sh
-$bcl/config/languages.sh
+$bcl/config/translation_lng.sh
 $bcl/config/ssh_keys.sh
 
 if [ "$development" = 'true' ]
