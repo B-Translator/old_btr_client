@@ -15,8 +15,8 @@ then
 fi
 
 ### set drupal variable btrClient_translation_lng
-drush @bcl --yes --exact vset btrClient_translation_lng $translation_lng
+drush @local_bcl --yes --exact vset btrClient_translation_lng $translation_lng
 
 ### add $translation_lng as a drupal language
-drush @bcl language-add $translation_lng
-drush @bcl --yes l10n-update
+drush @local_bcl --yes language-add $translation_lng
+drush @local_bcl --yes l10n-update
