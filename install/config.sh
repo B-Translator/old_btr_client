@@ -11,6 +11,8 @@ fi
 
 bcl=/usr/local/src/btr_client/install
 
+test -d /var/www/bcl_dev && $bcl/../dev/clone_rm.sh bcl_dev
+
 $bcl/config/domain.sh
 $bcl/config/mysql_passwords.sh
 $bcl/config/mysql_btrclient.sh
