@@ -47,7 +47,7 @@ projects[subpathauto] = 1.3
 
 ;;; User interface
 projects[context] = 3.6
-projects[views] = 3.8
+projects[views] = 3.10
 projects[homebox] = 2.0-rc1
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
