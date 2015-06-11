@@ -1,5 +1,5 @@
-variable:btrClient_topcontrib_period
-variable:btrClient_topcontrib_size
+variable:btrTranslations_topcontrib_period
+variable:btrTranslations_topcontrib_size
 variable:btrClient_translation_lng
 node:projects
 field:node-projects-body
@@ -7,6 +7,6 @@ field:node-projects-field_project_origin
 field:node-projects-field_project_name
 field:node-projects-field_project_icon
 field:node-projects-field_project_screenshots
-fe_block_settings:btrClient-latest
-fe_block_settings:btrClient-statistics
-fe_block_settings:btrClient-topcontrib
+fe_block_settings:btrTranslations-latest
+fe_block_settings:btrTranslations-statistics
+fe_block_settings:btrTranslations-topcontrib

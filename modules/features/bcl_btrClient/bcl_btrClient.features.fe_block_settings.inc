@@ -12,11 +12,11 @@ function bcl_btrClient_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['btrClient-latest'] = array(
+  $export['btrTranslations-latest'] = array(
     'cache' => -2,
     'custom' => '0',
     'delta' => 'latest',
-    'module' => 'btrClient',
+    'module' => 'btrTranslations',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -38,11 +38,11 @@ function bcl_btrClient_default_fe_block_settings() {
     'visibility' => '0',
   );
 
-  $export['btrClient-statistics'] = array(
+  $export['btrTranslations-statistics'] = array(
     'cache' => -2,
     'custom' => '0',
     'delta' => 'statistics',
-    'module' => 'btrClient',
+    'module' => 'btrTranslations',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -64,11 +64,11 @@ function bcl_btrClient_default_fe_block_settings() {
     'visibility' => '0',
   );
 
-  $export['btrClient-topcontrib'] = array(
+  $export['btrTranslations-topcontrib'] = array(
     'cache' => -2,
     'custom' => '0',
     'delta' => 'topcontrib',
-    'module' => 'btrClient',
+    'module' => 'btrTranslations',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),

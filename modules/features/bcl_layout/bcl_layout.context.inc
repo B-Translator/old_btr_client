@@ -138,14 +138,14 @@ function bcl_layout_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'btrClient-statistics' => array(
-          'module' => 'btrClient',
+        'btrTranslations-statistics' => array(
+          'module' => 'btrTranslations',
           'delta' => 'statistics',
           'region' => 'sidebar_first',
           'weight' => '-7',
         ),
-        'btrClient-topcontrib' => array(
-          'module' => 'btrClient',
+        'btrTranslations-topcontrib' => array(
+          'module' => 'btrTranslations',
           'delta' => 'topcontrib',
           'region' => 'sidebar_first',
           'weight' => '-6',
@@ -225,14 +225,14 @@ function bcl_layout_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-24',
         ),
-        'btrClient-statistics' => array(
-          'module' => 'btrClient',
+        'btrTranslations-statistics' => array(
+          'module' => 'btrTranslations',
           'delta' => 'statistics',
           'region' => 'sidebar_first',
           'weight' => '-22',
         ),
-        'btrClient-topcontrib' => array(
-          'module' => 'btrClient',
+        'btrTranslations-topcontrib' => array(
+          'module' => 'btrTranslations',
           'delta' => 'topcontrib',
           'region' => 'sidebar_first',
           'weight' => '-21',
