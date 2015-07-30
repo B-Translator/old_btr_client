@@ -70,12 +70,6 @@ function bcl_layout_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'sharethis-sharethis_block' => array(
-          'module' => 'sharethis',
-          'delta' => 'sharethis_block',
-          'region' => 'content',
-          'weight' => '-9',
-        ),
         'disqus-disqus_comments' => array(
           'module' => 'disqus',
           'delta' => 'disqus_comments',
@@ -206,12 +200,6 @@ function bcl_layout_context_default_contexts() {
           'delta' => 'main',
           'region' => 'content',
           'weight' => '-10',
-        ),
-        'sharethis-sharethis_block' => array(
-          'module' => 'sharethis',
-          'delta' => 'sharethis_block',
-          'region' => 'content',
-          'weight' => '-9',
         ),
         'disqus-disqus_comments' => array(
           'module' => 'disqus',

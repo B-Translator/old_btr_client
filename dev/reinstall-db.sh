@@ -71,10 +71,7 @@ drush --yes features-revert bcl_captcha
 drush --yes pm-enable bcl_permissions
 drush --yes features-revert bcl_permissions
 
-drush --yes pm-enable bcl_service_links
 drush --yes pm-enable bcl_disqus
-#drush --yes pm-enable bcl_sharethis
-#drush --yes features-revert bcl_sharethis
 #drush --yes pm-enable bcl_invite
 #drush --yes pm-enable bcl_simplenews
 #drush --yes pm-enable bcl_mass_contact
