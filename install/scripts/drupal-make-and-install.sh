@@ -11,9 +11,13 @@ drush make --prepare-install --force-complete \
            --contrib-destination=profiles/btr_client \
            $makefile $drupal_dir
 
-### fix some things on the application directory
+### copy the bootstrap library to the custom theme, etc.
 cd $drupal_dir/profiles/btr_client/
 cp -a libraries/bootstrap themes/contrib/bootstrap/
+cp -a libraries/bootstrap themes/btr_client/
+cp libraries/bootstrap/less/variables.less themes/btr_client/
+
+### copy hybriauth provider DrupalOAuth2.php to the right place
 cd $drupal_dir/profiles/btr_client/libraries/
 cp hybridauth-drupaloauth2/DrupalOAuth2.php \
    hybridauth/hybridauth/Hybrid/Providers/
