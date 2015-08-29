@@ -1,5 +1,5 @@
-name = btranslator
-description = A Bootstrap Sub-theme for B-Translator.
+name = btr_client
+description = A Bootstrap Sub-theme for B-Translator Client.
 core = 7.x
 base theme = bootstrap
 
