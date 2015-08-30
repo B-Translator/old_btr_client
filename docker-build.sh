@@ -1,6 +1,33 @@
 #!/bin/bash -x
 ### Build a docker image.
 
+### stop on error
+set -e
+
+### Get the project.
+project_dir=$(dirname $0)
+project=$(basename $(ls $project_dir/*.info | sed -e 's/\.info$//'))
+
+### make sure that the script is called with `nohup nice ...`
+if [ "$1" != "calling_myself" ]
+then
+    # this script has *not* been called recursively by itself
+    datestamp=$(date +%F | tr -d -)
+    nohup_out=nohup-$project-$git_branch-$datestamp.out
+    rm -f $nohup_out
+    nohup nice "$0" "calling_myself" "$@" > $nohup_out &
+    sleep 1
+    tail -f $nohup_out
+    exit
+else
+    # this script has been called recursively by itself
+    shift # remove the flag $1 that is used as a termination condition
+fi
+
+### get the start time
+start_time=$(date)
+
+### usage
 function usage {
     echo "
 Usage: $0 [<settings> options]
@@ -17,9 +44,6 @@ Examples:
 "
     exit 0
 }
-
-### Get the project directory.
-project_dir=$(dirname $0)
 
 ### collect in a file all the settings and options
 options=$project_dir/options.sh
@@ -81,10 +105,14 @@ git checkout $git_branch
 git pull
 cd $current_dir
 
-### start building and logging
-project=$(basename $(ls $project_dir/*.info | sed -e 's/\.info$//'))
-nohup_out=nohup-$project-$git_branch.out
-rm -f $nohup_out
-nohup nice docker build --tag=$project:$git_branch $project_dir/ > $nohup_out &
-sleep 1
-tail -f $nohup_out
+### build the docker image
+time docker build --tag=$project:$git_branch $project_dir/
+
+### print the start and end times
+end_time=$(date)
+set +x
+echo ================================================================
+echo "Start time : $start_time"
+echo "End time   : $end_time"
+echo ================================================================
+
