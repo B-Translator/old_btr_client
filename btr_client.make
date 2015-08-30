@@ -27,7 +27,7 @@ libraries[lessphp][download][url] = https://github.com/oyejorge/less.php/archive
 ; Custom
 ;--------------------
 
-projects[btrclient] = 1.x-dev
+projects[btrclient] = 2.x-dev
 
 ;--------------------
 ; Contrib
