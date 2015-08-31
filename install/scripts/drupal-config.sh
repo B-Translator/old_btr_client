@@ -128,7 +128,9 @@ $drush --yes --exact vset btrClient_translation_lng $translation_lng
 
 ### add $translation_lng as a drupal language
 $drush language-add $translation_lng
+$drush --yes l10n-update-refresh
 $drush --yes l10n-update
 
 ### update to the latest version of core and modules
+#$drush --yes pm-refresh
 #$drush --yes pm-update
