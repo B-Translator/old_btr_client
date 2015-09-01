@@ -82,6 +82,9 @@ drush site-install --verbose --yes btr_client \
       --site-name="$site_name" --site-mail="$site_mail" \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
 
+### set drupal variable btrClient_translation_lng
+drush --root=$drupal_dir --yes --exact vset btrClient_translation_lng $translation_lng
+
 ### install also multi-language support
 mkdir -p $drupal_dir/sites/all/translations
 chown -R www-data: $drupal_dir/sites/all/translations

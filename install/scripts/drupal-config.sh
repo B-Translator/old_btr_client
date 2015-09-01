@@ -99,9 +99,6 @@ $drush --yes features-revert bcl_permissions
 #$drush --yes pm-enable bcl_googleanalytics
 #$drush --yes pm-enable bcl_drupalchat
 
-### set drupal variable btrClient_translation_lng
-$drush --yes --exact vset btrClient_translation_lng $translation_lng
-
 ### update to the latest version of core and modules
 #$drush --yes pm-refresh
 #$drush --yes pm-update
