@@ -16,6 +16,7 @@ else
     ### create a container for development
     docker create --name=$container $image
     docker start $container
+    rm -rf btr_client/
     docker cp $container:/var/www/bcl/profiles/btr_client $(pwd)/
     docker stop $container
     docker rm $container
