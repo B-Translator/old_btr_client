@@ -5,13 +5,12 @@ sed -i $drupal_dir/robots.txt \
     -e '/# B-Translator/,$ d'
 cat <<EOF >> $drupal_dir/robots.txt
 # B-Translator
+Disallow: /btr/
+Disallow: /?q=btr/
 Disallow: /translations/
 Disallow: /?q=translations/
 Disallow: /vocabulary/
 Disallow: /?q=vocabulary/
-Disallow: /fb_cb/
-Disallow: /?q=fb_cb/
-Disallow: /downloads/
 EOF
 
 # Protect Drupal settings from prying eyes
@@ -100,36 +99,13 @@ $drush --yes features-revert bcl_permissions
 #$drush --yes pm-enable bcl_googleanalytics
 #$drush --yes pm-enable bcl_drupalchat
 
-### install FB integration
-#$drush --yes pm-enable bcl_fb
-
-# enable FB config
-cat >> $drupal_settings << EOF
-/* fb config
-\$conf['fb_api_file'] = 'profiles/btr_client/libraries/facebook-php-sdk/src/facebook.php';
-include "profiles/btr_client/modules/contrib/fb/fb_url_rewrite.inc";
-include "profiles/btr_client/modules/contrib/fb/fb_settings.inc";
-if (!headers_sent()) {
-  header('P3P: CP="We do not have a P3P policy."');
-}
-fb config */
-
-EOF
-#sed -i $drupal_settings \
-#    -e '#^/*fb config# c // /* fb config' \
-#    -e '#^fb config */# c // fb config */'
-
-### install also multi-language support
-$drush --yes pm-enable l10n_update
-mkdir -p $drupal_dir/sites/all/translations
-chown -R www-data: $drupal_dir/sites/all/translations
-
-### set drupal variable btrClient_translation_lng
-$drush --yes --exact vset btrClient_translation_lng $translation_lng
-
-### add $translation_lng as a drupal language
-$drush language-add $translation_lng
-$drush --yes l10n-update
-
 ### update to the latest version of core and modules
+#$drush --yes pm-refresh
 #$drush --yes pm-update
+
+### refresh and update translations
+if [ "$development" != 'true' ]
+then
+    $drush --yes l10n-update-refresh
+    $drush --yes l10n-update
+fi

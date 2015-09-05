@@ -11,9 +11,13 @@ drush make --prepare-install --force-complete \
            --contrib-destination=profiles/btr_client \
            $makefile $drupal_dir
 
-### fix some things on the application directory
+### copy the bootstrap library to the custom theme, etc.
 cd $drupal_dir/profiles/btr_client/
 cp -a libraries/bootstrap themes/contrib/bootstrap/
+cp -a libraries/bootstrap themes/btr_client/
+cp libraries/bootstrap/less/variables.less themes/btr_client/less/
+
+### copy hybriauth provider DrupalOAuth2.php to the right place
 cd $drupal_dir/profiles/btr_client/libraries/
 cp hybridauth-drupaloauth2/DrupalOAuth2.php \
    hybridauth/hybridauth/Hybrid/Providers/
@@ -77,6 +81,16 @@ drush site-install --verbose --yes btr_client \
       --db-url="mysql://$db_user:$db_pass@localhost/$db_name" \
       --site-name="$site_name" --site-mail="$site_mail" \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
+
+### set drupal variable btrClient_translation_lng
+drush --root=$drupal_dir --yes --exact vset btrClient_translation_lng $translation_lng
+
+### install also multi-language support
+mkdir -p $drupal_dir/sites/all/translations
+chown -R www-data: $drupal_dir/sites/all/translations
+
+### add $translation_lng as a drupal language
+drush --root=$drupal_dir language-add $translation_lng
 
 ### set propper directory permissions
 mkdir -p sites/default/files/

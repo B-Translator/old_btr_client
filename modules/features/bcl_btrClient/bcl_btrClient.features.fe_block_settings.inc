@@ -21,10 +21,10 @@ function bcl_btrClient_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap1' => array(
+      'btr_client' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bootstrap1',
+        'theme' => 'btr_client',
         'weight' => '0',
       ),
       'seven' => array(
@@ -47,10 +47,10 @@ function bcl_btrClient_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap1' => array(
+      'btr_client' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bootstrap1',
+        'theme' => 'btr_client',
         'weight' => '0',
       ),
       'seven' => array(
@@ -73,10 +73,10 @@ function bcl_btrClient_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bootstrap1' => array(
+      'btr_client' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bootstrap1',
+        'theme' => 'btr_client',
         'weight' => '0',
       ),
       'seven' => array(

@@ -442,13 +442,6 @@ function bcl_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: create projects content.
-  $permissions['create projects content'] = array(
-    'name' => 'create projects content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: create url aliases.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -484,13 +477,6 @@ function bcl_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete any projects content.
-  $permissions['delete any projects content'] = array(
-    'name' => 'delete any projects content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: delete own article content.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
@@ -517,13 +503,6 @@ function bcl_permissions_user_default_permissions() {
   // Exported permission: delete own page content.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: delete own projects content.
-  $permissions['delete own projects content'] = array(
-    'name' => 'delete own projects content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -559,13 +538,6 @@ function bcl_permissions_user_default_permissions() {
   // Exported permission: edit any page content.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: edit any projects content.
-  $permissions['edit any projects content'] = array(
-    'name' => 'edit any projects content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -612,13 +584,6 @@ function bcl_permissions_user_default_permissions() {
   // Exported permission: edit own page content.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: edit own projects content.
-  $permissions['edit own projects content'] = array(
-    'name' => 'edit own projects content',
     'roles' => array(),
     'module' => 'node',
   );
