@@ -303,6 +303,12 @@ function bcl_layout_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'rrssb-rrssb' => array(
+          'module' => 'rrssb',
+          'delta' => 'rrssb',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
         'disqus-disqus_recent_comments' => array(
           'module' => 'disqus',
           'delta' => 'disqus_recent_comments',
