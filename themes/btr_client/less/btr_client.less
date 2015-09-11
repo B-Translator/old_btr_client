@@ -5,14 +5,48 @@
     font-size: large;
 }
 
-/* The header of the front page. */
-#boxes-box-headerbox h1 {
-    color: #ff0000;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Don't show breadcrumbs and page headers. */
+/* Don't display breadcrumb and page header. */
 .breadcrumb, .page-header {
     display: none;
+}
+
+/* The header of the front page. */
+#boxes-box-headerbox {
+    h1 {
+	color: #ff0000;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 20px;
+    }
+}
+
+/* Styles of the main content. */
+#block-system-main {
+    .node {
+	h2 {
+	    margin-top: 5px;
+
+	    a {
+		text-decoration: none;
+	    }
+	}
+
+	.submitted {
+	    display: none;
+	}
+
+	.content {
+	    padding-bottom: 15px;
+	    margin-bottom: 10px;
+	    border-bottom: 1px solid #ccc;
+
+	    .field-name-field-tags {
+		display: none;
+	    }
+	}
+
+	.links {
+	    display: none;
+	}
+    }
 }
