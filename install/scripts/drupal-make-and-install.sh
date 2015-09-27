@@ -61,10 +61,10 @@ db_name=bcl
 db_user=bcl
 db_pass=bcl
 site_name="B-Translator"
-site_mail="admin@example.org"
+site_mail="$gmail_account"
 account_name=admin
-account_pass=admin
-account_mail="admin@example.org"
+account_pass="$admin_passwd"
+account_mail="$gmail_account"
 
 ### create the database and user
 mysql='mysql --defaults-file=/etc/mysql/debian.cnf'
