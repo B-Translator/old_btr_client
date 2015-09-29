@@ -2,6 +2,7 @@
 Drupal installation profile for B-Translator Client.
 
 * Installation
+
   Installation is done inside a Docker container. For instructions
   about installing Docker see: https://docs.docker.com/installation/
 
@@ -18,7 +19,7 @@ Drupal installation profile for B-Translator Client.
 
   + Modify and customize the settings:
     #+BEGIN_EXAMPLE
-    cd docker/settings.sh .
+    cp docker/settings.sh .
     vim settings.sh
     #+END_EXAMPLE
 
@@ -49,6 +50,7 @@ Drupal installation profile for B-Translator Client.
     #+END_EXAMPLE
     This way it can be accessed by typing =https://example.org:444= on the
     browser location (not =https://127.0.0.1:444= or =https://localhost:444=).
+
 
 * What is B-Translator
 
