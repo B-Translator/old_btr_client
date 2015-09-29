@@ -9,4 +9,6 @@ COPY . /usr/local/src/btr_client/
 ENV code_dir /usr/local/src/btr_client
 WORKDIR /usr/local/src/btr_client/
 RUN ["install/install.sh"]
-WORKDIR /var/www/lbd/profiles/labdoo
+
+### Set the default dir to the code of the application.
+WORKDIR /var/www/bcl/profiles/btr_client
