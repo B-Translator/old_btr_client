@@ -12,10 +12,22 @@ then
     docker create --name=$container --hostname=$hostname \
         -p 80:80 -p 443:443 -p $ssh:$ssh $image
 else
+    ### remove the directory btr_client/ if it exists
+    if test -d btr_client/
+    then
+        cd btr_client/
+        if test -n "$(git status --porcelain)"
+        then
+            echo "Directory btr_client/ cannot be removed because it has uncommited changes."
+            exit 1
+        fi
+        cd ..
+        rm -rf btr_client/
+    fi
+
     ### create a container for development
     docker create --name=$container $image
     docker start $container
-    rm -rf btr_client/
     docker cp $container:/var/www/bcl/profiles/btr_client $(pwd)/
     docker stop $container
     docker rm $container
