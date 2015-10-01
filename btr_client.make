@@ -46,7 +46,7 @@ projects[diff] = 3.2
 projects[ctools] = 1.9
 projects[libraries] = 2.2
 projects[entity] = 1.6
-projects[xautoload] = 5.2
+projects[xautoload] = 5.5
 projects[token] = 1.6
 projects[rules] = 2.9
 projects[pathauto] = 1.2
@@ -63,7 +63,7 @@ projects[wysiwyg] = 2.2
 ;;; Security
 projects[captcha] = 1.3
 projects[recaptcha] = 2.0
-projects[honeypot] = 1.19
+projects[honeypot] = 1.21
 projects[user_restrictions] = 1.0
 
 ;;; Features
@@ -89,7 +89,7 @@ projects[memcache] = 1.5
 projects[google_analytics] = 2.1
 projects[drupalchat] = 1.6
 projects[simplenews] = 1.1
-projects[mass_contact] = 1.0
+projects[mass_contact] = 1.1
 
 ;--------------------
 ; Sending Emails
