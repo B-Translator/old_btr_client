@@ -53,6 +53,10 @@ drush site-install --verbose --yes btr_client \
       --site-name="$site_name" --site-mail="$site_mail" \
       --account-name="$account_name" --account-pass="$account_pass" --account-mail="$account_mail"
 
+### install btrProject and btrVocabulary
+drush --yes pm-enable btrProject
+drush --yes pm-enable btrVocabulary
+
 ## install features modules
 drush --yes pm-enable bcl_btrClient
 drush --yes features-revert bcl_btrClient

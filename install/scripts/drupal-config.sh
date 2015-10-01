@@ -70,10 +70,12 @@ comment memcache config */
 
 EOF
 
-### install additional features
+### install btrProject and btrVocabulary
 ### $drush is an alias for 'drush --root=/var/www/bcl'
+$drush --yes pm-enable btrProject
 $drush --yes pm-enable btrVocabulary
 
+### install additional features
 $drush --yes pm-enable bcl_btrClient
 $drush --yes features-revert bcl_btrClient
 
