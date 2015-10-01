@@ -1,12 +1,12 @@
 
 ### Git branch that will be used.
-git_branch='master'
+bcl_git_branch='master'
 
 ### Domain of the website.
-domain='example.org'
+bcl_domain='example.org'
 
 ### Drupal 'admin' password.
-admin_passwd='admin'
+bcl_admin_passwd='admin'
 
 ### Emails from the server are sent through the SMTP
 ### of a GMAIL account. Give the full email
