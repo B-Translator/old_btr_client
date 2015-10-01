@@ -3,7 +3,7 @@
 ### make sure that we have the right git branch on the make file
 makefile="$code_dir/build-btrclient.make"
 sed -i $makefile \
-    -e "/btr_client..download..branch/ c projects[btr_client][download][branch] = $git_branch"
+    -e "/btr_client..download..branch/ c projects[btr_client][download][branch] = $bcl_git_branch"
 
 ### retrieve all the projects/modules and build the application directory
 rm -rf $drupal_dir
@@ -63,7 +63,7 @@ db_pass=bcl
 site_name="B-Translator"
 site_mail="$gmail_account"
 account_name=admin
-account_pass="$admin_passwd"
+account_pass="$bcl_admin_passwd"
 account_mail="$gmail_account"
 
 ### create the database and user
@@ -90,7 +90,10 @@ mkdir -p $drupal_dir/sites/all/translations
 chown -R www-data: $drupal_dir/sites/all/translations
 
 ### add $translation_lng as a drupal language
-drush --root=$drupal_dir language-add $translation_lng
+if [ "$translation_lng" != 'all' ]
+then
+    drush --root=$drupal_dir language-add $translation_lng
+fi
 
 ### set propper directory permissions
 mkdir -p sites/default/files/

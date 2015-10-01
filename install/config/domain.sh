@@ -15,38 +15,38 @@ It will modify the files:
 "
 
 ### get the old domain
-old_domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
-old_domain=${old_domain:-example.org}
+old_bcl_domain=$(head -n 1 /etc/hosts.conf | cut -d' ' -f2)
+old_bcl_domain=${old_bcl_domain:-example.org}
 
 ### get the new domain
-if [ -z "${domain+xxx}" -o "$domain" = '' ]
+if [ -z "${bcl_domain+xxx}" -o "$bcl_domain" = '' ]
 then
-    read -p "Enter the domain name for btr_client [$old_domain]: " input
-    domain=${input:-$old_domain}
+    read -p "Enter the domain name for btr_client [$old_bcl_domain]: " input
+    bcl_domain=${input:-$old_bcl_domain}
 fi
 
 ### update /etc/hostname and /etc/hosts
-echo $domain > /etc/hostname
+echo $bcl_domain > /etc/hostname
 sed -i /etc/hosts.conf \
-    -e "s/$old_domain/$domain/g"
+    -e "s/$old_bcl_domain/$bcl_domain/g"
 /etc/hosts_update.sh
 
 ### update config files
 for file in $(ls /etc/nginx/sites-available/bcl*)
 do
-    sed -i $file -e "/server_name/ s/$old_domain/$domain/"
+    sed -i $file -e "/server_name/ s/$old_bcl_domain/$bcl_domain/"
 done
 for file in $(ls /etc/apache2/sites-available/bcl*)
 do
     sed -i $file \
-        -e "/ServerName/ s/$old_domain/$domain/" \
-        -e "/RedirectPermanent/ s/$old_domain/$domain/"
+        -e "/ServerName/ s/$old_bcl_domain/$bcl_domain/" \
+        -e "/RedirectPermanent/ s/$old_bcl_domain/$bcl_domain/"
 done
 for file in $(ls /var/www/bcl*/sites/default/settings.php)
 do
-    sed -i $file -e "/^\\\$base_url/ s/$old_domain/$domain/"
+    sed -i $file -e "/^\\\$base_url/ s/$old_bcl_domain/$bcl_domain/"
 done
 
 ### update uri on drush aliases
 sed -i /etc/drush/local_bcl.aliases.drushrc.php \
-    -e "/'uri'/ s/$old_domain/$domain/"
+    -e "/'uri'/ s/$old_bcl_domain/$bcl_domain/"
