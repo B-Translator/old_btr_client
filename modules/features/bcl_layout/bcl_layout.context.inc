@@ -132,23 +132,11 @@ function bcl_layout_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'btrTranslations-statistics' => array(
-          'module' => 'btrTranslations',
-          'delta' => 'statistics',
+        'btrProject-list' => array(
+          'module' => 'btrProject',
+          'delta' => 'list',
           'region' => 'sidebar_first',
-          'weight' => '-7',
-        ),
-        'btrTranslations-topcontrib' => array(
-          'module' => 'btrTranslations',
-          'delta' => 'topcontrib',
-          'region' => 'sidebar_first',
-          'weight' => '-6',
-        ),
-        'aggregator-feed-1' => array(
-          'module' => 'aggregator',
-          'delta' => 'feed-1',
-          'region' => 'sidebar_first',
-          'weight' => '-5',
+          'weight' => '-10',
         ),
         'disqus-disqus_recent_comments' => array(
           'module' => 'disqus',

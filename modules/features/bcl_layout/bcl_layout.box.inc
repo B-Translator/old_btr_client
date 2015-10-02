@@ -19,8 +19,8 @@ function bcl_layout_default_box() {
   $box->description = 'Displays the title and slogan at the top of the front page.';
   $box->options = array(
     'body' => array(
-      'value' => '<p>Përkthimi i Programeve - E Duam Kompjuterin Shqip</p>',
-      'format' => 'filtered_html',
+      'value' => '<h1>Translating Computer Programs</h1>',
+      'format' => 'full_html',
     ),
     'additional_classes' => '',
   );
