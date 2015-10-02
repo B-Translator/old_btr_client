@@ -9,7 +9,7 @@ of your client site (something like 'fr' or 'fr_FR').
 "
 if [ -z "${translation_lng+xxx}" -o "$translation_lng" = '' ]
 then
-    translation_lng='fr'
+    translation_lng='all'
     read -p "Enter the language code [$translation_lng]: " input
     translation_lng=${input:-$translation_lng}
 fi
@@ -18,5 +18,8 @@ fi
 drush @local_bcl --yes --exact vset btrClient_translation_lng $translation_lng
 
 ### add $translation_lng as a drupal language
-drush @local_bcl --yes language-add $translation_lng
-drush @local_bcl --yes l10n-update
+if [ "$translation_lng" != 'all' ]
+then
+    drush @local_bcl --yes language-add $translation_lng
+    drush @local_bcl --yes l10n-update
+fi
