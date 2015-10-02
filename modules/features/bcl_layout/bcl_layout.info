@@ -15,7 +15,6 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = jquery_update
 dependencies[] = menu
-dependencies[] = rrssb
 dependencies[] = strongarm
 dependencies[] = system
 dependencies[] = taxonomy
