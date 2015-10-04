@@ -58,6 +58,7 @@ projects[views] = 3.11
 projects[homebox] = 2.0-rc1
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
+projects[menu_target] = 1.4
 projects[wysiwyg] = 2.2
 
 ;;; Security

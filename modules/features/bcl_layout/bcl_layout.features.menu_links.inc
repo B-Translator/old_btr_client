@@ -10,25 +10,51 @@
 function bcl_layout_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_about:node/1
-  $menu_links['main-menu_about:node/1'] = array(
+  // Exported menu link: main-menu_api-examples:http://info.btranslator.org/api-examples-js/
+  $menu_links['main-menu_api-examples:http://info.btranslator.org/api-examples-js/'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'node/1',
-    'router_path' => 'node/%',
-    'link_title' => 'About',
+    'link_path' => 'http://info.btranslator.org/api-examples-js/',
+    'router_path' => '',
+    'link_title' => 'API Examples',
     'options' => array(
       'attributes' => array(
-        'title' => 'About this website.',
+        'target' => array(
+          0 => '_blank',
+        ),
+        'title' => '',
       ),
-      'identifier' => 'main-menu_about:node/1',
+      'identifier' => 'main-menu_api-examples:http://info.btranslator.org/api-examples-js/',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 0,
+    'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
-    'customized' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: main-menu_api-reference:http://info.btranslator.org/api/
+  $menu_links['main-menu_api-reference:http://info.btranslator.org/api/'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'http://info.btranslator.org/api/',
+    'router_path' => '',
+    'link_title' => 'API Reference',
+    'options' => array(
+      'attributes' => array(
+        'target' => array(
+          0 => '_blank',
+        ),
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_api-reference:http://info.btranslator.org/api/',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
   );
   // Exported menu link: main-menu_contact:contact
   $menu_links['main-menu_contact:contact'] = array(
@@ -47,8 +73,8 @@ function bcl_layout_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
-    'customized' => 0,
+    'weight' => -48,
+    'customized' => 1,
   );
   // Exported menu link: main-menu_home:<front>
   $menu_links['main-menu_home:<front>'] = array(
@@ -67,12 +93,34 @@ function bcl_layout_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 0,
   );
+  // Exported menu link: main-menu_projects:btr/project
+  $menu_links['main-menu_projects:btr/project'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'btr/project',
+    'router_path' => 'btr/project',
+    'link_title' => 'Projects',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'List of projects',
+      ),
+      'identifier' => 'main-menu_projects:btr/project',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('About');
+  t('API Examples');
+  t('API Reference');
   t('Contact');
   t('Home');
+  t('Projects');
 
   return $menu_links;
 }
