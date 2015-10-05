@@ -25,6 +25,13 @@ input[type="checkbox"] {
 .breadcrumb, .page-header {
     display: none;
 }
+/* Hoever display it for nodes. */
+body.page-node {
+    .page-header {
+	display: block;
+	font-size: large;
+    }
+}
 
 /* The header of the front page. */
 #boxes-box-headerbox {
@@ -65,4 +72,35 @@ input[type="checkbox"] {
 	    display: none;
 	}
     }
+}
+
+div.field-name-field-image.field-type-image {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+
+    img {
+	width: 100px;
+	height: 100px;
+    }
+}
+
+code {
+    font-family: Ubuntu Mono, monospace, courier;
+    color: #009900;
+    white-space: nowrap;
+    border: 1pt solid #AEBDCC;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+pre {
+    padding: 10px;
+    border: 1pt solid #AEBDCC;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #eeeeee;
+    font-family: Ubuntu Mono, monospace, courier;
+    font-size: 16px;
+    line-height: 22px;
 }
