@@ -3,7 +3,7 @@
 bcl_git_branch='master'
 
 ### Domain of the website.
-bcl_domain='example.org'
+bcl_domain='fr.example.org'
 
 ### Drupal 'admin' password.
 bcl_admin_passwd='admin'
