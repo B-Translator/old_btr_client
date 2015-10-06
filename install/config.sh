@@ -28,4 +28,4 @@ then
 fi
 
 ### drush may create some css/js files with wrong permissions
-$btr/config/fix_file_permissions.sh
+$bcl/config/fix_file_permissions.sh
