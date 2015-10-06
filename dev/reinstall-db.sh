@@ -84,7 +84,7 @@ drush --yes pm-enable bcl_disqus
 #drush --yes pm-enable bcl_fb
 
 ### configure oauth2 login
-export oauth2_server_url='https://dev.btranslator.org'
+export oauth2_server_url='http://dev.btranslator.org'
 export oauth2_client_id='client1'
 export oauth2_client_secret='0123456789'
 config=$drupal_dir/profiles/btr_client/install/config
