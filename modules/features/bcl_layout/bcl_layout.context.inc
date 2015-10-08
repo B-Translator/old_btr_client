@@ -136,7 +136,19 @@ function bcl_layout_context_default_contexts() {
           'module' => 'btrProject',
           'delta' => 'list',
           'region' => 'sidebar_first',
-          'weight' => '-10',
+          'weight' => '-25',
+        ),
+        'btrTranslations-statistics' => array(
+          'module' => 'btrTranslations',
+          'delta' => 'statistics',
+          'region' => 'sidebar_first',
+          'weight' => '-24',
+        ),
+        'btrTranslations-topcontrib' => array(
+          'module' => 'btrTranslations',
+          'delta' => 'topcontrib',
+          'region' => 'sidebar_first',
+          'weight' => '-23',
         ),
         'disqus-disqus_recent_comments' => array(
           'module' => 'disqus',
