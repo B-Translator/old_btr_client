@@ -136,19 +136,25 @@ function bcl_layout_context_default_contexts() {
           'module' => 'btrProject',
           'delta' => 'list',
           'region' => 'sidebar_first',
-          'weight' => '-25',
+          'weight' => '-10',
+        ),
+        'btrVocabulary-list' => array(
+          'module' => 'btrVocabulary',
+          'delta' => 'list',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
         ),
         'btrTranslations-statistics' => array(
           'module' => 'btrTranslations',
           'delta' => 'statistics',
           'region' => 'sidebar_first',
-          'weight' => '-24',
+          'weight' => '-8',
         ),
         'btrTranslations-topcontrib' => array(
           'module' => 'btrTranslations',
           'delta' => 'topcontrib',
           'region' => 'sidebar_first',
-          'weight' => '-23',
+          'weight' => '-7',
         ),
         'disqus-disqus_recent_comments' => array(
           'module' => 'disqus',

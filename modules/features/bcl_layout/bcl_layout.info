@@ -6,6 +6,7 @@ dependencies[] = bcl_misc
 dependencies[] = boxes
 dependencies[] = btrProject
 dependencies[] = btrTranslations
+dependencies[] = btrVocabulary
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = disqus
