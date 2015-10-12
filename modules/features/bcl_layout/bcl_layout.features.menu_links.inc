@@ -30,7 +30,7 @@ function bcl_layout_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: main-menu_api-reference:http://info.btranslator.org/api/
@@ -53,7 +53,7 @@ function bcl_layout_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -45,
     'customized' => 1,
   );
   // Exported menu link: main-menu_contact:contact
@@ -73,7 +73,7 @@ function bcl_layout_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -47,
     'customized' => 1,
   );
   // Exported menu link: main-menu_home:<front>
@@ -113,6 +113,26 @@ function bcl_layout_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
+  // Exported menu link: main-menu_vocabularies:vocabularies
+  $menu_links['main-menu_vocabularies:vocabularies'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'vocabularies',
+    'router_path' => 'vocabularies',
+    'link_title' => 'Vocabularies',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_vocabularies:vocabularies',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -121,6 +141,7 @@ function bcl_layout_menu_default_menu_links() {
   t('Contact');
   t('Home');
   t('Projects');
+  t('Vocabularies');
 
   return $menu_links;
 }
