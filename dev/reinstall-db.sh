@@ -95,7 +95,11 @@ $config/oauth2_login.sh $alias
 ### add language
 drush --yes pm-enable l10n_update
 drush language-add $lng
-drush --yes l10n-update
+if [ "$development" != 'true' ]
+then
+    drush --yes l10n-update-refresh
+    drush --yes l10n-update
+fi
 
 ### update to the latest version of core and modules
 #drush --yes pm-update

@@ -21,5 +21,6 @@ drush @local_bcl --yes --exact vset btrClient_translation_lng $translation_lng
 if [ "$translation_lng" != 'all' ]
 then
     drush @local_bcl --yes language-add $translation_lng
+    drush @local_bcl --yes l10n-update-refresh
     drush @local_bcl --yes l10n-update
 fi
