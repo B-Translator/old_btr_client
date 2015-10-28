@@ -50,5 +50,6 @@ else
     ### create a container for development
     docker create --name=$container --hostname=$hostname --restart=always \
         -v $(pwd)/btr_client:/var/www/bcl/profiles/btr_client \
+        --link $btr_container:$btr_domain \
         $ports $image
 fi
