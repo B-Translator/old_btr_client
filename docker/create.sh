@@ -34,7 +34,7 @@ function remove_dir() {
 if [ "$dev" = 'false' ]
 then
     ### create a container for production
-    docker create --name=$container --hostname=$hostname \
+    docker create --name=$container --hostname=$hostname --restart=always \
         $ports $image
 else
     ### remove the directory btr_client/ if it exists
@@ -48,7 +48,7 @@ else
     docker rm $container
 
     ### create a container for development
-    docker create --name=$container --hostname=$hostname \
+    docker create --name=$container --hostname=$hostname --restart=always \
         -v $(pwd)/btr_client:/var/www/bcl/profiles/btr_client \
         $ports $image
 fi
