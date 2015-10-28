@@ -73,7 +73,7 @@ projects[strongarm] = 2.0
 projects[features_extra] = 1.0
 projects[node_export] = 3.0
 projects[uuid] = 1.0-beta1
-;projects[menu_import] = 1.6
+projects[menu_import] = 1.7
 
 ;;; Admin Utils
 projects[module_filter] = 2.0
