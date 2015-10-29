@@ -734,33 +734,31 @@ function bcl_misc_strongarm() {
     10 => 123,
     11 => 122,
     12 => 121,
-    13 => 117,
-    14 => 63,
-    15 => 62,
-    16 => 61,
-    17 => 60,
-    18 => 59,
-    19 => 58,
-    20 => 44,
-    21 => 31,
-    22 => 30,
-    23 => 29,
-    24 => 28,
-    25 => 27,
-    26 => 24,
-    27 => 23,
-    28 => 21,
-    29 => 15,
-    30 => 14,
-    31 => 13,
-    32 => 12,
-    33 => 11,
-    34 => 7,
-    35 => 6,
-    36 => 5,
-    37 => 3,
-    38 => 2,
-    39 => 1,
+    13 => 63,
+    14 => 62,
+    15 => 61,
+    16 => 60,
+    17 => 49,
+    18 => 44,
+    19 => 31,
+    20 => 30,
+    21 => 29,
+    22 => 28,
+    23 => 27,
+    24 => 24,
+    25 => 23,
+    26 => 21,
+    27 => 15,
+    28 => 14,
+    29 => 13,
+    30 => 12,
+    31 => 11,
+    32 => 7,
+    33 => 6,
+    34 => 5,
+    35 => 3,
+    36 => 2,
+    37 => 1,
   );
   $export['menu_masks'] = $strongarm;
 
@@ -844,10 +842,18 @@ function bcl_misc_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pattern';
+  $strongarm->value = '[node:title]';
+  $export['pathauto_node_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'path_alias_whitelist';
   $strongarm->value = array(
     'blog' => TRUE,
     'node' => TRUE,
+    'taxonomy' => TRUE,
     'user' => TRUE,
   );
   $export['path_alias_whitelist'] = $strongarm;
@@ -1132,13 +1138,6 @@ function bcl_misc_strongarm() {
   $strongarm->name = 'user_signatures';
   $strongarm->value = 0;
   $export['user_signatures'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_pattern';
-  $strongarm->value = '[node:title]';
-  $export['pathauto_node_pattern'] = $strongarm;
 
   return $export;
 }
