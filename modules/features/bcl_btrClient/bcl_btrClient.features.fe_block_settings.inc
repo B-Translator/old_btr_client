@@ -14,7 +14,7 @@ function bcl_btrClient_default_fe_block_settings() {
 
   $export['btrTranslations-latest'] = array(
     'cache' => -2,
-    'custom' => '0',
+    'custom' => 0,
     'delta' => 'latest',
     'module' => 'btrTranslations',
     'node_types' => array(),
@@ -25,22 +25,22 @@ function bcl_btrClient_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'btr_client',
-        'weight' => '0',
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => 0,
   );
 
   $export['btrTranslations-statistics'] = array(
     'cache' => -2,
-    'custom' => '0',
+    'custom' => 0,
     'delta' => 'statistics',
     'module' => 'btrTranslations',
     'node_types' => array(),
@@ -51,22 +51,22 @@ function bcl_btrClient_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'btr_client',
-        'weight' => '0',
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => 0,
   );
 
   $export['btrTranslations-topcontrib'] = array(
     'cache' => -2,
-    'custom' => '0',
+    'custom' => 0,
     'delta' => 'topcontrib',
     'module' => 'btrTranslations',
     'node_types' => array(),
@@ -77,17 +77,17 @@ function bcl_btrClient_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'btr_client',
-        'weight' => '0',
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => 0,
   );
 
   return $export;

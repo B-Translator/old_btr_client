@@ -1,7 +1,6 @@
 name = bcl_btrClient
 core = 7.x
 package = Features
-php = 5.2.4
 dependencies[] = btrClient
 dependencies[] = btrTranslations
 dependencies[] = ctools
@@ -13,7 +12,7 @@ features[ctools][] = strongarm:strongarm:1
 features[fe_block_settings][] = btrTranslations-latest
 features[fe_block_settings][] = btrTranslations-statistics
 features[fe_block_settings][] = btrTranslations-topcontrib
-features[features_api][] = api:1
+features[features_api][] = api:2
+features[variable][] = btrClient_translation_lng
 features[variable][] = btrTranslations_topcontrib_period
 features[variable][] = btrTranslations_topcontrib_size
-features[variable][] = btrClient_translation_lng
