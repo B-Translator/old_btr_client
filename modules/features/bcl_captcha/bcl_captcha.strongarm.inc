@@ -70,7 +70,7 @@ function bcl_captcha_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'captcha_persistence';
-  $strongarm->value = '0';
+  $strongarm->value = '3';
   $export['captcha_persistence'] = $strongarm;
 
   $strongarm = new stdClass();
