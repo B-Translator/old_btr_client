@@ -14,7 +14,7 @@ function bcl_btrClient_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'btrClient_translation_lng';
-  $strongarm->value = 'sq';
+  $strongarm->value = 'all';
   $export['btrClient_translation_lng'] = $strongarm;
 
   $strongarm = new stdClass();
