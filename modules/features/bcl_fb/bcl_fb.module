@@ -1,8 +1,0 @@
-<?php
-/**
- * @file
- * Code for the bcl_fb feature.
- */
-
-include_once 'bcl_fb.admin.inc';
-include_once 'bcl_fb.features.inc';
