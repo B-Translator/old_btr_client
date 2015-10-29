@@ -1,7 +1,6 @@
 name = bcl_simplenews
 core = 7.x
 package = Features
-php = 5.2.4
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = node
@@ -9,7 +8,7 @@ dependencies[] = simplenews
 dependencies[] = simplenews_rules
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
-features[features_api][] = api:1
+features[features_api][] = api:2
 features[user_permission][] = administer newsletters
 features[user_permission][] = administer simplenews settings
 features[user_permission][] = administer simplenews subscriptions
