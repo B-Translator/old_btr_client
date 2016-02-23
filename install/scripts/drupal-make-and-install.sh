@@ -90,6 +90,7 @@ mkdir -p $drupal_dir/sites/all/translations
 chown -R www-data: $drupal_dir/sites/all/translations
 
 ### add $translation_lng as a drupal language
+drush dl drush_language
 if [ "$translation_lng" != 'all' ]
 then
     drush --root=$drupal_dir language-add $translation_lng
