@@ -28,7 +28,8 @@ fi
 ### update /etc/hostname and /etc/hosts
 echo $bcl_domain > /etc/hostname
 sed -i /etc/hosts.conf \
-    -e "s/$old_bcl_domain/$bcl_domain/g"
+    -e "/127.0.0.1 $old_bcl_domain/c 127.0.0.1 $bcl_domain"
+    -e "/127.0.0.1 dev.$old_bcl_domain/c 127.0.0.1 dev.$bcl_domain/" \
 /etc/hosts_update.sh
 
 ### update config files
