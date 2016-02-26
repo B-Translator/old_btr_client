@@ -22,7 +22,7 @@ function btr_client_install_tasks($install_state) {
   drupal_add_css(drupal_get_path('profile', 'btr_client') . '/btr_client.css');
 
   module_load_include('inc', 'phpmailer', 'phpmailer.admin');
-  module_load_include('inc', 'btrClient', 'btrClient.admin');
+  module_load_include('inc', 'btrClient', 'callback/admin');
   module_load_include('inc', 'oauth2_login', 'oauth2_login.admin');
 
   $tasks = array(
