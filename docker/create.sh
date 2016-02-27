@@ -35,6 +35,7 @@ if [ "$dev" = 'false' ]
 then
     ### create a container for production
     docker create --name=$container --hostname=$hostname --restart=always \
+        -v $(pwd)/downloads:/var/www/downloads \
         $ports $image
 else
     ### remove the directory btr_client/ if it exists
