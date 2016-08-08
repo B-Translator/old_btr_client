@@ -63,7 +63,7 @@ projects[wysiwyg] = 2.2
 
 ;;; Security
 projects[captcha] = 1.3
-projects[recaptcha] = 2.1
+projects[recaptcha] = 2.2
 projects[honeypot] = 1.22
 projects[user_restrictions] = 1.0
 
@@ -72,7 +72,7 @@ projects[features] = 2.10
 projects[strongarm] = 2.0
 projects[features_extra] = 1.0
 projects[node_export] = 3.1
-projects[uuid] = 1.0-beta1
+projects[uuid] = 1.0-beta2
 projects[menu_import] = 1.7
 
 ;;; Admin Utils
