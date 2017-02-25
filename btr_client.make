@@ -40,29 +40,29 @@ projects[btrclient][download][branch] = 7.x-2.x
 ;;; Development
 projects[devel] = 1.5
 ;projects[coder] = 1.2
-projects[diff] = 3.2
+projects[diff] = 3.3
 
 ;;; Extensions
-projects[ctools] = 1.11
+projects[ctools] = 1.12
 projects[libraries] = 2.3
 projects[entity] = 1.8
 projects[xautoload] = 5.7
-projects[token] = 1.6
+projects[token] = 1.7
 projects[rules] = 2.9
 projects[pathauto] = 1.3
 projects[subpathauto] = 1.3
 
 ;;; User interface
 projects[context] = 3.7
-projects[views] = 3.14
+projects[views] = 3.15
 projects[homebox] = 2.0-rc1
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
-projects[menu_target] = 1.4
-projects[wysiwyg] = 2.2
+projects[menu_target] = 1.6
+projects[wysiwyg] = 2.3
 
 ;;; Security
-projects[captcha] = 1.3
+projects[captcha] = 1.4
 projects[recaptcha] = 2.2
 projects[honeypot] = 1.22
 projects[user_restrictions] = 1.0
@@ -79,7 +79,7 @@ projects[menu_import] = 1.7
 projects[module_filter] = 2.0
 projects[drush_language] = 1.5
 projects[delete_all] = 1.1
-projects[l10n_update] = 2.0
+projects[l10n_update] = 2.1
 projects[advuser] = 3.x-dev
 
 ;;; Performance
